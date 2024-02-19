@@ -310,7 +310,7 @@ Ein Empfänger muss grundlegend der Zertifizierungsstelle vertrauen. Mithilfe de
 
 Die Abbildung zeigt die Schritte zur Erstellung eines Zertifikats für einen Webserver.
 
-![Zertifikat erstellen](02_img/lf4_hs1_hs2_m1_ca.svg)
+![Zertifikat erstellen](02_img/lf4_ls1_hs2_m1_ca.svg)
 
  1. Der Administrator des Servers erstellt für den verwendeten Domäne-Namen des Servers ein Schlüsselpaar, bestehend aus privaten und öffentlichen Schlüsseln. Ein dafür verwendbares Tool ist OpenSSL.
  2. Mit dem gleichen Tool kann der **Certificate Signing Request (CSR)** erstellt werden. Der CSR ist ein elektronisches Dokument, in dem neben dem öffentlichen Schlüssel des Servers alle notwendigen Informationen für das Zertifikat enthalten sind. Der Administrator sendet dieses CSR mit der nötigen Authentifizierung an eine Zertifizierungsstelle, auf Englisch Certificate Authority (CA).
