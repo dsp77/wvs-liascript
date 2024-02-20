@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.0.1
 date:     18.02.2024
 language: de
 narrator: Deutsch Female
@@ -90,9 +90,11 @@ Für die IP-Adresse `192.168.16.109/24` soll der Netzanteil bestimmt werden. Daz
 
  * IP-Adresse: `192.168.16.109/24`
  * Netzadresse: `192.168.16.0`
-    * 1. Hostadresse `192.168.16.1`
-    * ...
-    * 254. Hostadresse `192.168.16.254`
+
+   * 1. Hostadresse `192.168.16.1`
+   * ...
+   * 254. Hostadresse `192.168.16.254`
+
  * Broadcastadresse: `192.168.16.255`
 
 # Übung Netzwerk berechnen
