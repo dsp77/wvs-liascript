@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.1
+version:  1.1.0
 date:     18.02.2024
 language: de
 narrator: Deutsch Female
@@ -99,9 +99,32 @@ Für die IP-Adresse `192.168.16.109/24` soll der Netzanteil bestimmt werden. Daz
 
 # Übung Netzwerk berechnen
 
-Berechnen Sie die Netzwerke für die IP-Adressen:
+Berechnen Sie:
 
- * `192.168.16.109/24`
- * `192.168.16.109/22`
- * `192.168.16.109/26`
+ * Netzwerkadresse
+ * Anzahl der Hostadressen
+ * Broadcastadresse
 
+für folgende IP-Adressen:
+
+ 1. `192.168.16.109/24`
+ 2. `192.168.16.109/22`
+ 3. `192.168.16.109/26`
+
+## Lösung zu 1.
+
+ * Netzwerkadresse: 192.168.16.0
+ * Anzahl der Hostadressen: $2^{(32-24)=8} = 256 - 2 = 254$
+ * Broadcastadresse: 192.168.16.255
+
+## Lösung zu 2.
+
+ * Netzwerkadresse: 192.168.16.0
+ * Anzahl der Hostadressen: $2^{(32-22)=10} = 1024 - 2 = 1022$
+ * Broadcastadresse: 192.168.19.255
+
+## Lösung zu 3.
+
+ * Netzwerkadresse: 192.168.16.64
+ * Anzahl der Hostadressen: $2^{(32-26)=6} = 64 - 2 = 62$
+ * Broadcastadresse: 192.168.16.127
