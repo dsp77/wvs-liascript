@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
+version:  1.1.1
 date:     18.02.2024
 language: de
 narrator: Deutsch Female
@@ -23,7 +23,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 Auf der OSI-Schicht 3, der Vermittlungsschicht (Network Layer) wird das Internetprotokoll verwendet. Die weltweite Verbreitung fand unter der Version 4 (IPv4) statt. Mittlerweile findet eine Umstellung auf die Protokollvariante 6 (IPv6) statt. In diesem Dokument wird die Version 4 beschrieben.
 
-Die IPv4-Adresse ist 32-Bit groß und wird in der sogenannten Deziaml-gepunkteten Notation dargestellt. Ein Beispiel einer Adresse ist **`192.168.16.109`**. Jeweils 8-Bit (Oktet) werden punktgetrennt als Dezimalwert dargestellt.
+Die IPv4-Adresse ist 32-Bit groß und wird in der sogenannten Deziaml-gepunkteten Notation (engl. Decimal-Dotted-Notation - DDN) dargestellt. Ein Beispiel einer Adresse ist **`192.168.16.109`**. Jeweils 8-Bit (Oktet) werden punktgetrennt als Dezimalwert dargestellt.
 
 Die Konfiguration eines Netzwerkknotens enthält mindestens die Parameter:
 
