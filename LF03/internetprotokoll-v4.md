@@ -128,3 +128,105 @@ für folgende IP-Adressen:
  * Netzwerkadresse: 192.168.16.64
  * Anzahl der Hostadressen: $2^{(32-26)=6} = 64 - 2 = 62$
  * Broadcastadresse: 192.168.16.127
+
+# Netzwerk aufteilen in N-Subnetze
+
+Hier wird beschrieben, wie ein gegebenes IP-Netzwerk in N-Subnetzwerke aufgeteilt wird, wobei N = 2, 4, 8, 16, etc. ist.
+
+Aufgabe: Das Netzwerk `192.168.16.0/24` soll in N=8 Subnetzwerke aufgeteilt werden.
+
+Vorgehen:
+
+ * Neue Netzwerkmaske bestimmen
+ * Die Netzgröße bestimmen
+ * Mit der neuen Netzwerkmaske die N=8 Netzwerkadressen bestimmen.
+ 
+
+ ## Neue Netzwerkmaske für N=8 Subnetzwerke berechnen
+
+Die neue Subnetzmaske muss vergrößert werden. Der Wert x berechnet sich basierend auf dem Wert N. Es gilt:
+
+$$2^x = N$$
+
+Stellt man die Formel um, erhält man die Berechnung:
+
+$$ x = \text{log}_2(N)$$
+
+$\text{log}_2$ ist der Binärlogarithmus oder der Logarithmus zur Basis 2. Wenn der Taschenrechner diesen nicht berechnen kann, ist es auch möglich eine andere Logarithmusfunktion zu verwenden. Als Beispiel, der Logarithmus zur Basis 10 `log` ist in der Regel bei allen Taschenrechner verfügbar. Die Berechnung ändert sich dann zu:
+
+$$x = \frac{\text{log}_{10}(N)}{\text{log}_{10}(10)}$$
+
+Für die Aufteilung in N=8 Subnetzwerke ergibt die Berechnung:
+
+$$x = \text{log}_2(8) = 3$$
+
+Die ursprüngliche Subnetzmaske wird also um 3-Bit vergrößert.
+
+Die neue Subnetzmaske: 24 + **3** = 27
+
+## Die Netzgröße bestimmen
+
+Mit der neuen Subnetzmaske 27-Bit ergibt sich die Anzahl der Hostbits:
+
+32 - 27 = 5-Bit
+
+Anzahl der Hostadressen:
+
+$$2^5 = 32 - 2 = 30$$
+
+## Die neuen Netzwerkadressen bestimmen
+
+Das Netzwerk wird in 8 Subnetzwerke unterteilt und damit gibt es 8 Netzwerkadresse. Diese 8 Adressen ergeben sich aus den 3 neuen Bits von der Vergrößerung der Subnetzmaske von 24 auf 27 Bits. Diese Vergrößerung findet im letzten Oktet der Adresse statt.
+
+
+![Netzadressen für N=8 Subnetzwerke bestimmen](02_img/netzadressen-plus-3bit.png)
+
+Für die Netzwerkadresse werden die Hostbits (0-4) auf null gesetzt. Die 8 Werte des letzten Oktets werden also durch die Bits 5 bis 7 bestimmt, die die Werte 32, 64 und 128 hat. Daraus ergeben sich die 8 Werte für das letzte Oktet von 0, 32, 64, 96, 128, 160, 192, 224.
+
+Beachtenswert ist der Spung der Werte, der immer 32 entspricht, siehe grüne Markierung. Das ist der Wert des niederwertigsten Bits (Bit 5) der Netzwerkadresse.
+
+# Netzwerk aufteilen in N-Subnetzwerke über Oktetstellen
+
+Bei der Unterteilung des Netzwerks `192.168.16.0/24` in 8 Subnetzwerke begrenzte sich die Veränderung der Netzwerk auf das letzte Oktet.
+
+Hier soll eine Unterteilung durchgeführt werden, die über zwei Oktets sich erstreckt.
+
+Das Netzwerk `192.168.16.0/22` soll in 16 Subnetzwerke aufgeteilt werden.
+
+## Neue Netzwerkmaske für N=16 Subnetzwerke berechnen
+
+$$x = \text{log}_2(16) = 4$$
+
+Die ursprüngliche Subnetzmaske `/22` liegt im dritten Oktet. Mit der Vergrößerung der Maske $22 + 4 = 26$ Bit vergrößert sich die Netzadresse bis ins vierte Oktet.
+
+## Die Netzgröße bestimmen
+
+Die Anzahl der Hostadressen berechnet sich aus:
+
+$$2^6 = 64 - 2 = 62$$
+
+## Die neuen Netzwerkadressen bestimmen
+
+In der Abbildung ist die alte Subnetzmaske orange eingezeichnet. Sie erstreckt sich bis zum zweiten Bit im dritten Oktet, hier gelb hinterlegt. Die niederwertigsten zwei Bit im dritten Oktet gehören nach der alten Subnetzmaske noch zum Hostanteil.
+
+Die neue Subnetzmaske ist rot eingezeichnet. Durch die Zunahme um vier Bits verschiebt sich die Subnetzmaske vom dritten Oktet in das vierte Oktet der IP-Adresse, hier grün hinterlegt.
+
+![Netzadressen für 16 Subnetze über zwei Oktets berechnen](02_img/netzadresse-plus4bit-2oktets.png)
+
+Für die 16 Subnetze berechnen sich die 16 Netzadresse durch Variation der vier Bits. In der Abbildung sind die 16 Netzadressen durch die roten Zahlen (1) bis (16) dargestellt.
+
+Im dritten Oktet ergeben sich für die Netzadressen:
+
+ * (1) bis (4) der Wert 16
+ * (5) bis (9) der Wert 17
+ * (10) bis (12) der Wert 18
+ * (13) bis (16) der Wert 19
+
+Im vierten Oktet ergeben sich die Werte:
+
+ * (1) = 0
+ * (2) = 64
+ * (3) = 128
+ * (4) = 192
+
+ Das Muster wiederholt sich für (5) bis (9), (10) bis (12) und (13) bis (16). Bemerkenswert, wie im vorherigen Abschnitt ist die Differenz zwischen den Werten wieder der Wert des niederwertigsten Bits, hier 64.
