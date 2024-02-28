@@ -8,7 +8,6 @@
 
  * [Internetprotokoll Version 4](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v4.md)
  * [Internetprotokoll Version 6](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v6.md)
- * [Internetprotokoll Version 6](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/ip-adresskonfiguration.md)
 
 ## LF4
 
