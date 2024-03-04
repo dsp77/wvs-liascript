@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.2
-date:     18.02.2024
+version:  1.1.3
+date:     04.03.2024
 language: de
 narrator: Deutsch Female
 
@@ -184,7 +184,7 @@ Für die Netzwerkadresse werden die Hostbits (0-4) auf null gesetzt. Die 8 Werte
 
 Beachtenswert ist der Sprung der Werte, der immer 32 entspricht, siehe grüne Markierung. Das ist der Wert des niederwertigsten Bits (Bit 5) der Netzwerkadresse.
 
-# Netzwerk aufteilen in N-Subnetzwerke über Oktetstellen
+# Netzwerk aufteilen in N-Subnetzwerke über Oktettgrenzen
 
 Bei der Unterteilung des Netzwerks `192.168.16.0/24` in 8 Subnetzwerke begrenzte sich die Veränderung des Netzwerks auf das letzte Oktett.
 
@@ -210,7 +210,7 @@ In der Abbildung ist die alte Subnetzmaske orange eingezeichnet. Sie erstreckt s
 
 Die neue Subnetzmaske ist rot eingezeichnet. Durch die Zunahme um vier Bits verschiebt sich die Subnetzmaske vom dritten Oktett in das vierte Oktett der IP-Adresse, hier grün hinterlegt.
 
-![Netzadressen für 16 Subnetze über zwei Oktets berechnen](02_img/netzadresse-plus4bit-2oktets.png)
+![Netzadressen für 16 Subnetze über zwei Oktetts berechnen](02_img/netzadresse-plus4bit-2oktetts.png)
 
 Für die 16 Subnetze berechnen sich die 16 Netzadresse durch Variation der vier Bits. In der Abbildung sind die 16 Netzadressen durch die roten Zahlen (1) bis (16) dargestellt.
 
