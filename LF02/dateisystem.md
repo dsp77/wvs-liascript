@@ -1,12 +1,12 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.1.0
 date:     05.03.2024
 language: de
 narrator: Deutsch Female
 
-comment:  Dateisytem, Journaling, NTFS, Linux
+comment:  Dateisytem, Journaling, Copy on Write, NTFS, Linux
 
 logo:     02_img/logo-dateisystem.png
 
@@ -138,6 +138,31 @@ Die folgende Abbildung beschreibt diesen Vorgang. Die Schritte sind:
 Wenn jetzt zwischen einem der durchgeführten Schritte z.B. ein Stromausfall auftritt, wird das System nach dem erneuten Starten das Journal überprüfen und feststellen, dass es noch unbearbeitete Schritte gibt. Die noch offenen Schritte würden durchgeführt werden und die Integrität des Dateisystems ist wieder hergestellt.
 
 # Copy on Write
+
+Copy-on-Write (CoW), zu Deutsch "Kopieren beim Schreiben", ist eine Optimierungsmethode, die in Dateisystemen eingesetzt wird, um unnötige Schreibvorgänge und Datenkopien zu vermeiden. Anstatt bei einer Änderung an einer Datei direkt die Originaldaten zu überschreiben, geht CoW folgendermaßen vor:
+
+1. **Prüfung auf Änderung:** Wenn auf eine Datei geschrieben werden soll, prüft das Dateisystem zunächst, ob sich die zu ändernden Datenblöcke bereits an anderer Stelle gespeichert sind.
+2. **Kopieren bei Änderung:** Sind die Datenblöcke original, werden sie **einmalig** kopiert und an einem freien Speicherplatz abgelegt.
+3. **Aktualisierung der Verweise:** Anschließend werden die Verweise auf die Datenblöcke in den Metadaten der Datei aktualisiert, sodass die Änderungen auf die kopierten Daten zeigen.
+4. **Original bleibt erhalten:** Die ursprünglichen Datenblöcke bleiben dabei unverändert.
+
+**Vorteile von CoW:**
+
+* **Effizienz:** Durch das Vermeiden unnötiger Schreibvorgänge kann CoW die Schreibperformance verbessern, insbesondere bei Systemen mit vielen Lese- und wenigen Schreibzugriffen.
+* **Snapshots:** Da das Original der Daten erhalten bleibt, ist es mit CoW einfach, Momentaufnahmen (Snapshots) des Dateisystems zu erstellen, die den Zustand zu einem bestimmten Zeitpunkt widerspiegeln.
+* **Datensicherheit:** Im Falle eines Fehlers oder Datenverlustes können die ursprünglichen Daten aus den Snapshots wiederhergestellt werden.
+
+**Nachteile von CoW:**
+
+* **Speicherverbrauch:** CoW kann zu einem höheren Speicherverbrauch führen, da neben den geänderten Daten auch die Originaldaten zunächst noch gespeichert bleiben.
+* **Komplexität:** Die Implementierung von CoW ist komplexer als die von traditionellen Dateisystemen, was die Stabilität und Fehleranfälligkeit potenziell erhöhen kann.
+
+**Beispiele für Dateisysteme mit CoW:**
+
+* ZFS (Zettabyte File System)
+* Btrfs (B-tree File System)
+* APFS (Apple File System)
+
 
 # Daten-Deduplikation
 
