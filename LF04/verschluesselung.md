@@ -1,13 +1,13 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.1
-date:     18.02.2024
+version:  2.0.0
+date:     13.03.2024
 language: de
 narrator: Deutsch Female
 
 comment:  Verschlüsselung; symmetrische und asymmetrische Verschlüsselung; 
-            hybride Verschlüsselung; digitale Signatur; X.509 Zertifikate
+            hybride Verschlüsselung; digitale Signatur; X.509 Zertifikate; openSSL
 
 logo:     02_img/logo-encryption.jpg
 
@@ -359,3 +359,41 @@ Nach Überprüfung des vom Webserver empfangenen Zertifikats geht es an den Aust
 Nach Austausch des Sessionschlüssels findet zwischen Webbrowser und Server eine verschlüsselte Übertragung der Verbindung statt.
 
 ![Verschlüsselte Übertragung](02_img/lf4_ls1_hs2_m1_https-encrypted-transmission.svg)
+
+
+# Praktische Übung; Mit openSSL eine eigene Zertifizierungsstelle betreiben
+
+![Zertifikat erstellen](02_img/lf4_ls1_hs2_m1_ca.svg)
+
+
+ * Privater Schlüssel mit Zertifikat erstellen: `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout private_ca.key -out certificate_ca.crt`
+ * Privaten Schlüssel und CSR erstellen: `openssl req -new -newkey rsa:2048 -nodes -out csr_customer.csr -keyout private_customer.key`
+ * Zertifikat aus CSR erstellen und mit privaten Schlüssel signieren: `openssl x509 -req -in csr_customer.csr -signkey private_ca.key -out certificate_customer.crt`
+
+Sie wechseln von der Rolle des Admin der CA zum Kunden der CA. Es ist sinnvoll, die zwei Ordner CA und Kunde anzulegen und die jeweiligen Aktivitäten in den entsprechenden Ordnern durchzuführen.
+
+```
+ +- CA
+ +- Kunden
+```
+
+## Aufgabe
+
+ * Admin CA: Erstellen Sie einen privaten Schlüssel und leiten Sie davon den öffentlichen Schlüssel ab. Erstellen Sie davon ein Zertifikat und signieren Sie das selbst.
+ * Kunde CA: 
+   * Erstellen Sie einen privaten Schlüssel und erstellen Sie daraus einen Certificate Signing Request (CSR) und tragen die nötigen Parameter ein.
+   * Senden (kopieren) Sie den CSR an die CA.
+ * Admin CA:
+   * Überprüfen Sie den CSR
+   *Erstellen Sie aus dem CSR ein Zertifikat und signieren Sie es mit Ihrem privaten Schlüssel
+   * Senden (kopieren) Sie das Zertifikat dem Kunden zurück
+
+## Fragen
+
+ * Welche Sicherung ist für den privaten Schlüssel sinnvoll?
+ * Admin CA: Was machen Sie mit Ihrem privaten Schlüssel?
+ * Was machen Sie mit dem Zertifikat zu Ihrem privaten Schlüssel?
+ * Kunde CA: Was machen Sie mit Ihrem privaten Schlüssel?
+ * Was machen Sie mit dem Zertifikat zu Ihrem privaten Schlüssel?
+
+ Quelle: https://www.ipswitch.com/de/blog/wie-man-mit-openssl-zertifikat-generiert
