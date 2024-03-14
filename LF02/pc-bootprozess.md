@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.0.1
 date:     14.03.2024
 language: de
 narrator: Deutsch Female
@@ -41,7 +41,7 @@ In der Execute-Phase wird schließlich der Maschinenbefehl ausgeführt und das E
 
 ## Der Weg zum Betriebssystem
 
-![CPU mit I/O-Systemen](02_img/lf02_chipset.svg)
+![CPU mit I/O-Systemen](02_img/lf02_bp_chipset.svg)
 
 Um jetzt den Weg zu verstehen, wie aus diesem einfachen Befehlszyklus das Betriebssystem gestartet wird, ist es hilfreich, sich die Architektur auf dem Motherboard anzuschauen.
 
@@ -68,7 +68,7 @@ Beispiel:
 Mit N = 4 Bit ist es möglich $2^4=16$ Werte darzustellen, mit den Zahlen von 0-15. Die maximale Zahl ist also $2^N−1$.
 
 
-![Partitionseintrag im MBR](02_img/lf02_partitionseintrag-aufteilung.png)
+![Partitionseintrag im MBR](02_img/lf02_bp_partitionseintrag-aufteilung.png)
 
 Die Partitionstabelle im MBR stellt 4 Byte zur Verfügung, um die Größe einer Partition in LBA zu bestimmen.
 
@@ -103,7 +103,7 @@ Aber die neue Tabelle hat noch einen Vorteil. Sollten Sie innerhalb Ihrer berufl
 # Partitionsgröße berechnen
 
 
-![Partitionseintrag der GPT](02_img/lf02_gpt-partition-entry.svg)
+![Partitionseintrag der GPT](02_img/lf02_bp_gpt-partition-entry.svg)
 
 Um eine Partitionsgröße zu berechnen, soll als Grundlage ein Partitionseintrag der GPT dienen. Die nebenstehende Abbildung beschreibt die Struktur. Eine Zeile in der Darstellung entspricht 16 Byte an Daten.
 
@@ -114,7 +114,7 @@ Um eine Partitionsgröße zu berechnen, soll als Grundlage ein Partitionseintrag
 Der Start- und End-LBA beschreibt die Position und Größe der Partion. In dieser Lektion soll die Partitionsgrößenberechnung erklärt werden.
 
 
-![](02_img/lf02_inf_part_size.png)
+![](02_img/lf02_bp_inf_part_size.png)
 
 Um die Rechnung zu verdeutlichen, sollen die folgenden zwei einfachen Beispiele dienen. Im **Beispiel 1** ist die Partition beschrieben durch die LBAs:
 
@@ -144,7 +144,7 @@ $$\begin{aligned}
 
 # Beispiel 1: gparted
 
-![](02_img/lf02_inf_gparted.png)
+![](02_img/lf02_bp_inf_gparted.png)
 
 Mit der Partitionierungssoftware **GParted** wurde eine Partition ausgelesen. Einige Werte sind in der Abbildung nicht lesbar und sie sollen berechnet werden.
 
@@ -166,7 +166,7 @@ $$\begin{aligned}
 
 # Beispiel 2: USB-Stick gparted
 
-![](02_img/lf02_usb_partition.png)
+![](02_img/lf02_bp_usb_partition.png)
 
 Partitionsgröße:
 
@@ -178,13 +178,13 @@ $$\begin{aligned}
 \frac{29653,30 ~\text{MiB}}{1024} &= 28,96~\text{GiB}
 \end{aligned}$$
 
-![](02_img/lf02_usb_win_info.jpg)
+![](02_img/lf02_bp_usb_win_info.jpg)
 
 # Bootprozess mit UEFI
 
 Die folgende Abbildung zeigt die Partitionierung eines Computers, der mit UEFI startet.
 
-![UEFI bootet das Betriebssystem](02_img/lf02_uefi_startvorgang.svg)
+![UEFI bootet das Betriebssystem](02_img/lf02_bp_uefi_startvorgang.svg)
 
 Die ersten 34 Sektoren sind mit der **GUID-Partitionstabelle** belegt. Zur Sicherheit werden in den letzten 34 Sektoren des Speichermediums eine Kopie der GPT abgelegt.
 
@@ -203,7 +203,7 @@ Der Bootprozess läuft jetzt folgendermaßen ab:
 
 Für die Kompatibilität zu älteren Betriebssystemen enthält das UEFI das sogenannte **Compatibility Support Modul (CSM)**. Es erlaubt, den Computer wie mit dem BIOS und dem Master Boot Record zu starten.
 
-![UEFI bootet auch im BIOS-Modus](02_img/lf02_uefi_bios_start.svg)
+![UEFI bootet auch im BIOS-Modus](02_img/lf02_bp_uefi_bios_start.svg)
 
 Die Abbildung zeigt, wie mit eingeschaltetem CSM der Sprung zum MBR stattfindet und darüber das Betriebssystem gestartet wird.
 
