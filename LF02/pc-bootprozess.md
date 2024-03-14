@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.0.0
+version:  2.0.1
 date:     14.03.2024
 language: de
 narrator: Deutsch Female
@@ -20,7 +20,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 # PC-Boot-Prozess
 
-Beim Systemstart ist die Firmware die erste Software, die auf der CPU zur Ausführung kommt. Gespeichert in einem nichtflüchtigen Speicher, der fest auf dem Motherboard verbaut ist, initialisiert sie sämtliche Systemkomponenten, die zum Booten des PCs nötig sind. Für Intel-basierte Computer war das BIOS der Firmwarestandard, der diese Funktion übernahm. Die Entwicklung des BIOS startet ca. 1975 und so mussten über die Jahre Neuerungen in der Hardwareentwicklung mit in das BIOS aufgenommen werden, ohne die Kompatibilität zu vorherigen Versionen aufzugeben. BIOS-Hersteller wie z.B. AMI, Insyde oder Phoenix (Award) betrieben diese Weiterentwicklung ohne Absprache untereinander nach eigenen Ideen. Unterstützung von z.B. neuen SATA-, USB- oder Ethernet-Bausteinen muss für jede BIOS-Variante angepasst werden. Hinzu kam, dass das Schema des mit dem BIOS verbundenen Master-Boot-Records, erste Grenzen aufzeigte.
+Beim Systemstart ist die Firmware die erste Software, die auf der CPU zur Ausführung kommt. Gespeichert in einem nichtflüchtigen Speicher, der fest auf dem Motherboard verbaut ist, initialisiert sie sämtliche Systemkomponenten, die zum Booten des PCs nötig sind. Für Intel-basierte Computer war das BIOS der Firmwarestandard, der diese Funktion übernahm. Die Entwicklung des BIOS startet ca. 1975 und so mussten über die Jahre Neuerungen in der Hardwareentwicklung mit in das BIOS aufgenommen werden, ohne die Kompatibilität zu vorherigen Versionen aufzugeben. BIOS-Hersteller wie z.B. AMI, Insyde oder Phoenix (Award) betrieben diese Weiterentwicklung ohne Absprache untereinander nach eigenen Ideen. Unterstützung von z.B. neuen SATA-, USB- oder Ethernet-Bausteinen musste für jede BIOS-Variante angepasst werden. Hinzu kam, dass das Schema des mit dem BIOS verbundenen Master-Boot-Records, erste Grenzen aufzeigte.
 
 
 ## Einschalten des Computers
