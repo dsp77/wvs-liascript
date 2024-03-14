@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.2
+version:  1.1.0
 date:     14.03.2024
 language: de
 narrator: Deutsch Female
@@ -198,6 +198,11 @@ Der Bootprozess läuft jetzt folgendermaßen ab:
 
  * Im nichtflüchtigen Speicher wird ein Link auf das zu starten Betriebssystem gesetzt. Dieser Link zeigt auf den Bootloader in der EFI-Systempartition.
  * Der Bootloader in der EFI-Systempartition startet das Betriebssystem von der betriebssystemspezifischen Partition.
+
+## Ausführungsmaschine für EFI-Bytecode
+
+Um den Bootprozess flexibel für zukünftige Hardwarekomponenten zu machen und die Bootloaderentwicklung CPU-Plattformunabhängig, gibt es die sogenannte **EFI Bytecode Virtual Machine**. Der Bootloader und nötige Hardwaretreiber werden als sogenannter EFI Bytecode entwickelt, der vergleichbar mit Java Bytecode ist. Auf der jeweiligen CPU-Plattform gibt es eine angepasste Virtual Machine, auf der der Bytecode ausgeführt wird.
+
 
 ## Compatibility Support Modul (CSM)
 
