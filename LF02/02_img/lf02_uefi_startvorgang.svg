@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="179.25905mm"
+   height="47.156139mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uefi_startvorgang.svg"
+   inkscape:export-filename="C:\Users\guenter\Seafile\wvs\_Unterricht\LF10\02_fig\uefi_startvorgang.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4113"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3262128"
+     inkscape:cx="280.06836"
+     inkscape:cy="118.29815"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="mm"
+     inkscape:window-width="1250"
+     inkscape:window-height="859"
+     inkscape:window-x="5"
+     inkscape:window-y="19"
+     inkscape:window-maximized="0"
+     fit-margin-top="3"
+     fit-margin-left="3"
+     fit-margin-right="3"
+     fit-margin-bottom="3" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(19.213327,-633.63397)">
+    <rect
+       style="fill:#fff6d5;fill-opacity:1;stroke:#000000;stroke-width:2.35674787;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2985"
+       width="611.55328"
+       height="91.226746"
+       x="-7.4050317"
+       y="645.44226"
+       ry="0.74009585" />
+    <rect
+       style="fill:#fff6d5;fill-opacity:1;stroke:#000000;stroke-width:1.39981818;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2987"
+       width="122.6952"
+       height="32.675587"
+       x="1.2348766"
+       y="755.11566"
+       ry="0.37112248" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.69665146px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="6.7057824"
+       y="772.55109"
+       id="text2989"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="6.7057824"
+         y="772.55109"
+         style="font-size:7.5418396px"
+         id="tspan2993">UEFI-Firmware</tspan></text>
+    <g
+       id="g3005"
+       transform="matrix(0.63672328,0,0,0.53571237,-5.1061002,274.87229)">
+      <rect
+         ry="0.69014627"
+         y="902.00085"
+         x="108.59451"
+         height="45.479755"
+         width="77.965294"
+         id="rect3003"
+         style="fill:#d7eef4;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="translate(0,527.95305)"
+         sodipodi:linespacing="125%"
+         id="text2997"
+         y="393.53912"
+         x="148.05667"
+         style="font-style:normal;font-weight:normal;font-size:14px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           y="393.53912"
+           x="148.05667"
+           id="tspan2999"
+           sodipodi:role="line">NVRAM-</tspan><tspan
+           id="tspan3001"
+           y="411.03912"
+           x="148.05667"
+           sodipodi:role="line">Eintrag</tspan></text>
+    </g>
+    <rect
+       style="fill:#ffdd55;fill-opacity:1;stroke:#000000;stroke-width:1.65846229;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192"
+       width="109.11483"
+       height="38.957767"
+       x="2.0101914"
+       y="673.61694"
+       ry="0.53891075" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="56.550682"
+       y="684.5957"
+       id="text3031"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3033"
+         x="56.550682"
+         y="684.5957">34 Sektoren</tspan><tspan
+         sodipodi:role="line"
+         x="56.550682"
+         y="694.02301"
+         id="tspan3035">GUID-Partitionstabelle (GPT)</tspan><tspan
+         sodipodi:role="line"
+         x="56.550682"
+         y="703.45032"
+         id="tspan3037">mit &quot;Protective MBR&quot;</tspan></text>
+    <rect
+       style="fill:#80b3ff;fill-opacity:1;stroke:#000000;stroke-width:1.45420516;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6"
+       width="83.919357"
+       height="38.945366"
+       x="111.14423"
+       y="673.58514"
+       ry="0.53873926" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="152.88023"
+       y="688.36963"
+       id="text3031-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="152.88023"
+         y="688.36963"
+         id="tspan3037-0">128 MiB:</tspan><tspan
+         sodipodi:role="line"
+         x="152.88023"
+         y="697.79694"
+         id="tspan3071">&quot;Microsoft Reserved&quot;</tspan></text>
+    <rect
+       style="fill:#d5e5ff;fill-opacity:1;stroke:#000000;stroke-width:1.39945471;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-1"
+       width="77.610115"
+       height="39.000118"
+       x="195.19714"
+       y="673.58838"
+       ry="0.53949666" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="227.48344"
+       y="684.48242"
+       id="text3031-1-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="227.48344"
+         y="684.48242"
+         id="tspan3037-0-4">200 MiB FAT:</tspan><tspan
+         sodipodi:role="line"
+         x="227.48344"
+         y="693.90973"
+         id="tspan3071-8"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle"
+   id="tspan4196">EFI</tspan> System-</tspan><tspan
+         sodipodi:role="line"
+         x="227.48344"
+         y="703.33704"
+         id="tspan3127">partition (ESP)</tspan></text>
+    <rect
+       style="fill:#80b3ff;fill-opacity:1;stroke:#000000;stroke-width:1.1826247;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-1-4"
+       width="138.98027"
+       height="39.216949"
+       x="260.84042"
+       y="673.47101"
+       ry="0.54249609" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="325.02219"
+       y="684.29266"
+       id="text3031-1-9-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="326.22269"
+         y="684.29266"
+         id="tspan3071-8-4">200 GiB </tspan><tspan
+         sodipodi:role="line"
+         x="325.02219"
+         y="693.71997"
+         id="tspan3123"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">Windows</tspan><tspan
+         sodipodi:role="line"
+         x="325.02219"
+         y="703.14728"
+         id="tspan3125">(NTFS)</tspan></text>
+    <rect
+       style="fill:#d5e5ff;fill-opacity:1;stroke:#000000;stroke-width:1.54277444;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-1-4-2"
+       width="94.320389"
+       height="39.000118"
+       x="400.57019"
+       y="673.57935"
+       ry="0.53949666" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="442.12433"
+       y="690.29297"
+       id="text3031-1-9-8-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="443.32483"
+         y="690.29297"
+         id="tspan3393">weitere </tspan><tspan
+         sodipodi:role="line"
+         x="442.12433"
+         y="699.72028"
+         id="tspan3404">Partitionen</tspan></text>
+    <rect
+       style="fill:#ffdd55;fill-opacity:1;stroke:#000000;stroke-width:1.61610854;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-2"
+       width="103.50031"
+       height="39.000118"
+       x="494.7926"
+       y="673.57935"
+       ry="0.53949666" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="547.56708"
+       y="689.86963"
+       id="text3031-11"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3033-5"
+         x="547.56708"
+         y="689.86963">34 Sektoren</tspan><tspan
+         sodipodi:role="line"
+         x="547.56708"
+         y="699.29694"
+         id="tspan3037-7">Kopie der GPT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="166.98949"
+       y="726.84607"
+       id="text4070"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4074"
+         x="166.98949"
+         y="726.84607"> \EFI\Microsoft\Boot\bootmgfw.efi</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="304.45737"
+       y="726.70123"
+       id="text4070-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4101"
+         x="304.45737"
+         y="726.70123"> \Windows\System32\winload.efi</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="311.99939"
+       y="765.01581"
+       id="text4097"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4099"
+         x="311.99939"
+         y="765.01581" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.52063423;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 123.58144,786.56313 c 0,0 16.11481,6.51437 41.61242,1.15882 25.49761,-5.35556 47.66111,-47.47267 47.66111,-47.47267"
+       id="path4103"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.53870285px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 223.43291,741.67457 c 0,0 36.13352,38.35905 62.22558,36.76967 26.09208,-1.58939 62.93269,-37.47677 62.93269,-37.47677"
+       id="path4105"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="czc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       id="text4070-6"
+       sodipodi:linespacing="125%"
+       y="756.54309"
+       x="136.2749"><tspan
+         sodipodi:role="line"
+         id="tspan4074-8"
+         x="136.2749"
+         y="756.54309">verweist auf</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5418396px;line-height:125%;font-family:Sans;-inkscape-font-specification:Sans;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="263.69278"
+       y="764.58453"
+       id="text4070-6-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4074-8-7"
+         x="263.69278"
+         y="764.58453">verweist auf</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="261.28464"
+       y="664.61005"
+       id="text3406"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3408"
+         x="261.28464"
+         y="664.61005"
+         style="font-size:17.5px">Festplatte</tspan></text>
+  </g>
+</svg>

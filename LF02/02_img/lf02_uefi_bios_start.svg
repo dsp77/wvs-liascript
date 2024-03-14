@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="161.14299mm"
+   height="39.41927mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uefi_bios_start.svg"
+   inkscape:export-filename="C:\Users\guenter\Seafile\wvs\_Unterricht\LF10\02_fig\uefi_bios_start.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible">
+      <path
+         id="path4113"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5968191"
+     inkscape:cx="340.41722"
+     inkscape:cy="44.821485"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="mm"
+     inkscape:window-width="1222"
+     inkscape:window-height="879"
+     inkscape:window-x="17"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     fit-margin-top="3"
+     fit-margin-left="3"
+     fit-margin-right="3"
+     fit-margin-bottom="3" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-40.535758,-642.73014)">
+    <rect
+       style="fill:#fff6d5;fill-opacity:1;stroke:#000000;stroke-width:2.51278806;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2985"
+       width="547.20648"
+       height="115.90195"
+       x="52.422073"
+       y="654.61646"
+       ry="0.94027865" />
+    <rect
+       style="fill:#ffdd55;fill-opacity:1;stroke:#000000;stroke-width:1.34670389;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192"
+       width="76.362747"
+       height="36.705341"
+       x="401.76794"
+       y="723.15936"
+       ry="0.50775248" />
+    <rect
+       style="fill:#80b3ff;fill-opacity:1;stroke:#000000;stroke-width:1.4057796;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6"
+       width="77.960884"
+       height="39.176384"
+       x="401.14139"
+       y="664.11688"
+       ry="0.54193491" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="440.25229"
+       y="678.99579"
+       id="text3031-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="440.25229"
+         y="678.99579"
+         id="tspan3071">Bootcode</tspan><tspan
+         sodipodi:role="line"
+         x="440.25229"
+         y="688.4657"
+         id="tspan3041">im MBR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="473.91962"
+       y="739.16541"
+       id="text4097"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4099"
+         x="473.91962"
+         y="739.16541" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="441.9913"
+       y="734.70953"
+       id="text3031-1-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="443.19724"
+         y="734.70953"
+         id="tspan3041-4">Verweis auf </tspan><tspan
+         sodipodi:role="line"
+         x="443.19724"
+         y="744.17944"
+         id="tspan3074">ESP-Bootloader </tspan><tspan
+         sodipodi:role="line"
+         x="441.9913"
+         y="753.64935"
+         id="tspan3076">im NVRAM</tspan></text>
+    <rect
+       style="fill:#ffdd55;fill-opacity:1;stroke:#000000;stroke-width:1.34670389;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-0"
+       width="76.362747"
+       height="36.705341"
+       x="512.82709"
+       y="723.14954"
+       ry="0.50775248" />
+    <rect
+       style="fill:#80b3ff;fill-opacity:1;stroke:#000000;stroke-width:1.4057796;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-9"
+       width="77.960884"
+       height="39.176384"
+       x="512.20056"
+       y="664.10699"
+       ry="0.54193491" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="551.31146"
+       y="676.49988"
+       id="text3031-1-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="552.5174"
+         y="676.49988"
+         id="tspan3041-8">Bootloader lädt </tspan><tspan
+         sodipodi:role="line"
+         x="552.5174"
+         y="685.96979"
+         id="tspan3122">Betriebssystem </tspan><tspan
+         sodipodi:role="line"
+         x="551.31146"
+         y="695.4397"
+         id="tspan3124">im BIOS-Modus</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="553.05054"
+       y="734.69983"
+       id="text3031-1-1-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="554.25647"
+         y="734.69983"
+         id="tspan3076-5">Bootloader lädt </tspan><tspan
+         sodipodi:role="line"
+         x="554.25647"
+         y="744.16974"
+         id="tspan3135">Betriebssystem </tspan><tspan
+         sodipodi:role="line"
+         x="553.05054"
+         y="753.63965"
+         id="tspan3137">im UEFI-Modus</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="589.64874"
+       y="815.37079"
+       id="text3126"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3128"
+         x="589.64874"
+         y="815.37079" /></text>
+    <rect
+       style="fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:0.48064768;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3249"
+       width="280.62662"
+       height="105.87062"
+       x="99.772507"
+       y="659.9541"
+       ry="0.20121834" />
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1.4057796;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-1"
+       width="77.960884"
+       height="39.176384"
+       x="110.18195"
+       y="721.98199"
+       ry="0.54193491" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="149.27101"
+       y="737.35901"
+       id="text3031-1-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="149.27101"
+         y="737.35901"
+         id="tspan3041-1">Initialisierung</tspan><tspan
+         sodipodi:role="line"
+         x="149.27101"
+         y="746.82892"
+         id="tspan3183">CPU, RAM</tspan></text>
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1.4057796;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-1-5"
+       width="77.960884"
+       height="39.176384"
+       x="211.71564"
+       y="722.06427"
+       ry="0.54193491" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="250.80476"
+       y="737.44116"
+       id="text3031-1-7-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="250.80476"
+         y="737.44116"
+         id="tspan3041-1-7">Initialisierung</tspan><tspan
+         sodipodi:role="line"
+         x="250.80476"
+         y="746.91107"
+         id="tspan3183-6">Storage / LAN / GPU</tspan></text>
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:#000000;stroke-width:1.4057796;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3192-6-1-5-1"
+       width="36.273266"
+       height="38.674179"
+       x="332.93939"
+       y="663.36682"
+       ry="0.54193491" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="351.43576"
+       y="679.24603"
+       id="text3031-1-7-2-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="351.43576"
+         y="679.24603"
+         id="tspan3183-6-3">CSM</tspan><tspan
+         sodipodi:role="line"
+         x="351.43576"
+         y="688.71594"
+         id="tspan3247">laden</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.57592535px;line-height:125%;font-family:Sans;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="125.17995"
+       y="668.44519"
+       id="text3031-1-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="125.17995"
+         y="668.44519"
+         id="tspan3041-16">Firmware</tspan></text>
+    <g
+       id="g5527"
+       transform="matrix(0.37505319,0,0,0.37505319,50.456295,424.73045)">
+      <rect
+         ry="0.46402577"
+         y="802.34436"
+         x="23.203949"
+         height="76.758781"
+         width="69.61187"
+         id="rect3013"
+         style="fill:#ff0066;fill-opacity:1;stroke:#000000;stroke-width:2.45992422;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <circle
+         transform="translate(-27.284474,622.70018)"
+         id="path3277"
+         style="fill:none;stroke:#ffffff;stroke-width:4.53543329;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         cx="85.648064"
+         cy="223.38188"
+         r="25.76005" />
+      <rect
+         ry="0.8101573"
+         y="814.01917"
+         x="55.71505"
+         height="12.208861"
+         width="6.302731"
+         id="rect4055"
+         style="fill:none;stroke:#ff0066;stroke-width:9.31889725;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4053"
+         d="m 58.855818,808.67248 0,23.46297"
+         style="fill:none;stroke:#ffffff;stroke-width:4.53543329;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.54113752px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 85.534329,740.74442 23.606281,0"
+       id="path4057"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.54113752px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 187.99564,741.24667 23.10402,0"
+       id="path4059"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.51779109px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 290.45693,741.74893 110.36586,0"
+       id="path4061"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.54113752px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 290.45693,728.16886 18.58368,0 0,-45.75008 23.10402,0"
+       id="path4063"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.47744673px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 369.31196,682.92105 31.2791,0"
+       id="path4065"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.54113752px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 478.24149,740.74442 34.15378,0"
+       id="path4067"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.54113752px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:url(#Arrow1Lend)"
+       d="m 479.24602,682.92105 32.14472,0"
+       id="path4069"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
