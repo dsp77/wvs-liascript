@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="241.93361mm"
+   height="175.05612mm"
+   viewBox="0 0 857.24507 620.27759"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="10_secure_boot.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5103"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path5105"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4671"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path4673"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker4637"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path4639"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path4358"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.5498021"
+     inkscape:cx="412.58963"
+     inkscape:cy="195.68519"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:snap-grids="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="843"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3336"
+       units="mm"
+       spacingx="3.5433071"
+       spacingy="3.5433071"
+       empspacing="2"
+       dotted="false"
+       originx="18.216142"
+       originy="32.389379" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Günter Dannoritzer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(18.216142,-464.47396)">
+    <rect
+       style="fill:#c6afe9;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4329"
+       width="255.1181"
+       height="538.58264"
+       x="453.5433"
+       y="527.95276" />
+    <rect
+       style="fill:#d7f4ee;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3487"
+       width="184.25197"
+       height="382.67712"
+       x="0"
+       y="655.51184" />
+    <rect
+       style="fill:#80ffb3;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3457-0"
+       width="155.9055"
+       height="98.866119"
+       x="14.173228"
+       y="670.03149" />
+    <rect
+       style="fill:#c6afe9;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4327"
+       width="141.73228"
+       height="63.779503"
+       x="21.259842"
+       y="698.03149" />
+    <rect
+       style="fill:#f4e3d7;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3457"
+       width="99.212601"
+       height="70.866142"
+       x="42.519684"
+       y="783.07086" />
+    <rect
+       style="fill:#ececec;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3409-3"
+       width="195.791"
+       height="224.9581"
+       x="484.52396"
+       y="827.40411" />
+    <rect
+       style="fill:#ececec;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3409"
+       width="196.41969"
+       height="146.4081"
+       x="483.89526"
+       y="615.40289" />
+    <rect
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3407"
+       width="99.212601"
+       height="127.55905"
+       x="42.519684"
+       y="896.45673" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="91.040466"
+       y="640.06482"
+       id="text3699"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="91.040466"
+         y="640.06482"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3701">UEFI-Firmware</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="94.028549"
+       y="924.80316"
+       id="text3705"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3703"
+         x="94.028549"
+         y="924.80316"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px">Secure-</tspan><tspan
+         sodipodi:role="line"
+         x="94.028549"
+         y="945.31097"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3707">Boot</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="505.86069"
+       y="608.98236"
+       id="text3745"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3743"
+         x="505.86069"
+         y="608.98236"
+         style="stroke-width:0.9375px">EFI-Systempartition</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="507.8291"
+       y="821.54498"
+       id="text3749"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3747"
+         x="507.8291"
+         y="821.54498"
+         style="stroke-width:0.9375px">Windows-Partition</tspan></text>
+    <rect
+       style="fill:#afc6e9;fill-opacity:1;stroke:#00112b;stroke-width:0.93676186;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3741-3"
+       width="170.07875"
+       height="77.952751"
+       x="497.94785"
+       y="839.08942" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="582.87689"
+       y="875.2832"
+       id="text3719-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="582.87689"
+         y="875.2832"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3721-7">Windows</tspan><tspan
+         sodipodi:role="line"
+         x="582.87689"
+         y="895.79102"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3725-5">Betriebssystem</tspan></text>
+    <rect
+       style="fill:#ff8080;fill-opacity:1;stroke:#ff8080;stroke-width:0.93676186;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3739-9"
+       width="162.99213"
+       height="49.606277"
+       x="500.06299"
+       y="627.16534" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="93.013054"
+       y="715.29175"
+       id="text3729-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3727-6"
+         x="93.013054"
+         y="715.29175"
+         style="text-align:center;text-anchor:middle;stroke:none;stroke-width:0.9375px;stroke-opacity:1">Starte:</tspan><tspan
+         sodipodi:role="line"
+         x="93.013054"
+         y="735.79956"
+         style="text-align:center;text-anchor:middle;stroke:none;stroke-width:0.9375px;stroke-opacity:1;-inkscape-font-specification:Courier;font-family:Courier;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+         id="tspan3704">Windows</tspan><tspan
+         sodipodi:role="line"
+         x="93.013054"
+         y="756.30737"
+         style="text-align:center;text-anchor:middle;stroke:none;stroke-width:0.9375px;stroke-opacity:1;-inkscape-font-specification:Courier;font-family:Courier;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
+         id="tspan3731-0">Bootloader.efi</tspan></text>
+    <rect
+       style="fill:#ffeeaa;stroke:#000000;stroke-opacity:1"
+       id="rect3615-2-6"
+       width="120.47243"
+       height="28.346441"
+       x="526.1062"
+       y="679.69092"
+       ry="7.0865993" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="532.6618"
+       y="699.47028"
+       id="text5339-0-7-9-2"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5337-7-5-1-6"
+         x="532.6618"
+         y="699.47028"
+         style="stroke-width:0.9375px">1001110010</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="776.49963"
+       y="658.89532"
+       id="text5339-6-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5337-0-8"
+         x="776.49963"
+         y="658.89532"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px">signierter</tspan><tspan
+         sodipodi:role="line"
+         x="776.49963"
+         y="679.40314"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan6596">Bootloader</tspan></text>
+    <g
+       style="display:inline"
+       id="g6828-2-6-7"
+       transform="translate(-486.36171,393.82297)">
+      <path
+         id="path3418-5-0-0-2-9"
+         d="m 580.83845,571.71275 a 13.055453,12.283357 0 0 0 -13.05664,12.28321 13.055453,12.283357 0 0 0 9.04297,11.68164 l -0.17383,0.002 0,14.98047 -3.95508,0 0,3.59375 2.99609,0 0,2.87695 -4.07422,0 0,3.59571 5.15235,0 0,4.91211 8.38867,0 0,-30.06641 a 13.055453,12.283357 0 0 0 8.73438,-11.57617 13.055453,12.283357 0 0 0 -13.05469,-12.28321 z"
+         style="fill:#aaffaa;fill-opacity:1;stroke:#000000;stroke-width:0.35433072;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <ellipse
+         ry="8.8653259"
+         rx="9.422575"
+         cy="584.0473"
+         cx="580.91931"
+         id="path3418-3-6-7-6-6-2"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.2557328;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="0%"
+         id="text4263-2-5-0-9-0"
+         y="590.46503"
+         x="574.96893"
+         style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:15px;line-height:1.25"
+           y="590.46503"
+           x="574.96893"
+           id="tspan4265-9-6-0-3-2"
+           sodipodi:role="line">Ö</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="92.865494"
+       y="804.42975"
+       id="text3699-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="95.477036"
+         y="804.42975"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3451">EFI- </tspan><tspan
+         sodipodi:role="line"
+         x="92.865494"
+         y="824.93756"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3449">Byte-Code-</tspan><tspan
+         sodipodi:role="line"
+         x="92.865494"
+         y="845.44537"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3423">VM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="93.211952"
+       y="686.77618"
+       id="text3699-5-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="93.211952"
+         y="686.77618"
+         style="text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3449-7">NV RAM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.40625px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.9375px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="582.89832"
+       y="647.62805"
+       id="text3729-3-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3727-6-3"
+         x="582.89832"
+         y="647.62805"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Courier;-inkscape-font-specification:Courier;text-align:center;text-anchor:middle;stroke-width:0.9375px">Windows</tspan><tspan
+         sodipodi:role="line"
+         x="582.89832"
+         y="668.13586"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Courier;-inkscape-font-specification:Courier;text-align:center;text-anchor:middle;stroke-width:0.9375px"
+         id="tspan3731-0-6">Bootloader.efi</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="524.79877"
+       y="501.1846"
+       id="text4331"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4333"
+         x="524.79877"
+         y="501.1846">Festplatte</tspan></text>
+    <rect
+       style="fill:#f4d7ee;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4343"
+       width="255.1181"
+       height="42.519684"
+       x="453.5433"
+       y="527.95276" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="568.40942"
+       y="554.29926"
+       id="text4335"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4337"
+         x="568.40942"
+         y="554.29926"
+         style="font-size:16.25px">GPT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="524.40942"
+       y="570.47247"
+       id="text4339"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4341"
+         x="524.40942"
+         y="570.47247" /></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4671)"
+       d="m 198.4252,712.20474 c 0,0 48.25767,6.84529 70.86614,0 32.6064,-9.87242 52.43297,-46.82049 85.03937,-56.69291 27.13017,-8.21435 85.03937,0 85.03937,0"
+       id="path4345"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker4637)"
+       d="m 439.37008,698.03151 c 0,0 -30.46322,-7.45131 -42.51969,0 -80.87724,49.98489 -46.68181,205.13321 -127.55905,255.1181 -20.09411,12.41884 -70.86614,12.77517 -70.86614,12.77517"
+       id="path4347"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99921262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 198.4252,924.80316 c 0,0 56.69291,-29.96762 56.69291,-56.69291 0,-26.7253 -56.69291,-56.69292 -56.69291,-56.69292"
+       id="path4349"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker5103)"
+       d="m 202.07525,799.06913 c 0,0 53.31641,-5.37996 85.31886,10.82595 32.00245,16.20592 62.76622,44.87261 90.66192,50.91507 27.70398,6.00094 61.31405,7.3001 61.31405,7.3001"
+       id="path5095"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssc" />
+    <circle
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path16722"
+       cx="304.28549"
+       cy="647.16211"
+       r="17.716536" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="296.74307"
+       y="655.16162"
+       id="text16718"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan16720"
+         x="296.74307"
+         y="655.16162">1</tspan></text>
+    <circle
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path16722-0"
+       cx="246.27007"
+       cy="988.09027"
+       r="17.716536" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="238.72762"
+       y="996.08978"
+       id="text16718-6"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan16720-2"
+         x="238.72762"
+         y="996.08978">2</tspan></text>
+    <circle
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path16722-6"
+       cx="222.4276"
+       cy="864.69147"
+       r="17.716536" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="214.88515"
+       y="872.69098"
+       id="text16718-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan16720-8"
+         x="214.88515"
+         y="872.69098">3</tspan></text>
+    <circle
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.99921262;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path16722-7"
+       cx="289.46796"
+       cy="783.67059"
+       r="17.716536" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="281.92551"
+       y="791.6701"
+       id="text16718-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan16720-20"
+         x="281.92551"
+         y="791.6701">4</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:25px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="127.55907"
+       y="712.20471"
+       id="text3700"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3702"
+         x="127.55907"
+         y="712.20471" /></text>
+  </g>
+</svg>

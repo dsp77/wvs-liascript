@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
+version:  2.0.0
 date:     14.03.2024
 language: de
 narrator: Deutsch Female
@@ -19,6 +19,9 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 -->
 
 # PC-Boot-Prozess
+
+Beim Systemstart ist die Firmware die erste Software, die auf der CPU zur Ausführung kommt. Gespeichert in einem nichtflüchtigen Speicher, der fest auf dem Motherboard verbaut ist, initialisiert sie sämtliche Systemkomponenten, die zum Booten des PCs nötig sind. Für Intel-basierte Computer war das BIOS der Firmwarestandard, der diese Funktion übernahm. Die Entwicklung des BIOS startet ca. 1975 und so mussten über die Jahre Neuerungen in der Hardwareentwicklung mit in das BIOS aufgenommen werden, ohne die Kompatibilität zu vorherigen Versionen aufzugeben. BIOS-Hersteller wie z.B. AMI, Insyde oder Phoenix (Award) betrieben diese Weiterentwicklung ohne Absprache untereinander nach eigenen Ideen. Unterstützung von z.B. neuen SATA-, USB- oder Ethernet-Bausteinen muss für jede BIOS-Variante angepasst werden. Hinzu kam, dass das Schema des mit dem BIOS verbundenen Master-Boot-Records, erste Grenzen aufzeigte.
+
 
 ## Einschalten des Computers
 
@@ -212,3 +215,39 @@ Für die Kompatibilität zu älteren Betriebssystemen enthält das UEFI das soge
 
 Die Abbildung zeigt, wie mit eingeschaltetem CSM der Sprung zum MBR stattfindet und darüber das Betriebssystem gestartet wird.
 
+## Secure Boot
+
+Vor der Ausführung des Betriebssystems, mit seinen Schutzmechanismen gegenüber Schadsoftware, wird beim UEFI-Start der Bootloader aufgerufen. Um sicherzustellen, dass in dieser Phase keine Schadsoftware eingebracht wird, sind die Softwarekomponenten mithilfe digitaler Signatur vor Veränderung geschützt. Der Bootprozess mit eingeschaltetem **Secure Boot** überprüft die digitale Signatur der Komponenten und startet das Betriebssystem nur, wenn keine Veränderung der Komponenten stattfand.
+
+### Entwicklung des Bootloaders für Secure Boot
+
+Um den Bootprozess zu verstehen, wird zuerst die Absicherung des Bootloaders beschrieben. Die folgende Abbildung zeigt den Entwicklungsprozess am Beispiel von Microsoft Windows.
+
+![EFI-Bytecode Bootloader wird zur Absicherung mit einer digitalen Signatur versehen.](02_img/lf02_bp_secure_boot_signing.svg)
+
+ 1. Im ersten Schritt wird das Betriebssystem entwickelt.
+ 2. Für den Bootprozess wird ein Bootloader im EFI-Byte-Code entwickelt.
+ 3. Für die Signierung des Bootloaders wird ein Schlüsselpaar mit **öffentlichen und privaten Schlüsseln** erzeugt.
+ 4. Für den Bootloader wird ein **Hashwert** berechnet, der dann mit dem **privaten Schlüssel** verschlüsselt und als **Signatur** dem Bootloader angehängt wird.
+ 5. Ausgeliefert wird:
+
+    * Das Betriebssystem
+    * Der signierte Bootloader
+    * Der öffentliche Schlüssel zur Überprüfung der Signatur des Bootloaders.
+
+### Bootprozess mit Secure Boot
+
+Auf dem eingesetzten Computer ist der Ablauf des Bootprozesses mit Secure Boot jetzt in der folgenden Abbildung beschrieben.
+
+
+![Bootprozess mit eingeschaltetem Secure Boot](02_img/lf02_bp_secure_boot.svg)
+
+ 1. Im nichtflüchtigen Speicher (NVRAM) ist eingestellt, dass der **Windows Bootloader.efi** von der **EFI-Systempartition** gestartet werden soll.
+ 2. Mit eingeschaltetem **Secure-Boot** wird der **signierte Bootloader** von der EFI-Systempartition geladen. Das **Secure-Boot-Modul** hat den **öffentlichen Schlüssel** für den Bootloader hinterlegt und damit kann die Signatur überprüft werden.
+ 3. Nach der Überprüfung der Signatur und damit, dass der Bootloader nach der Auslieferung von Microsoft nicht verändert wurde, wird er mithilfe der **EFI-Byte-Code-VM** gestartet.
+ 4. Der **Windows Bootloader** startet dann das Betriebssystem von der Windows-Partition.
+
+
+### Weiter Informationen
+
+ * [The state of Secure Boot, Linux Magazin, 164/2014](http://www.linux-magazine.com/Issues/2014/164/The-State-of-Secure-Boot)
