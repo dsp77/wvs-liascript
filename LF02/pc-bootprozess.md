@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.0.1
+version:  2.1.0
 date:     14.03.2024
 language: de
 narrator: Deutsch Female
@@ -251,3 +251,4 @@ Auf dem eingesetzten Computer ist der Ablauf des Bootprozesses mit Secure Boot j
 ### Weiter Informationen
 
  * [The state of Secure Boot, Linux Magazin, 164/2014](http://www.linux-magazine.com/Issues/2014/164/The-State-of-Secure-Boot)
+ * [UEFI 2.10 Spezifikation](https://uefi.org/specs/UEFI/2.10/index.html)
