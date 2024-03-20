@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.1.1
+version:  2.2.0
 date:     20.03.2024
 language: de
 narrator: Deutsch Female
@@ -84,13 +84,19 @@ wird der Wert mit den 512 Byte/LBA multipliziert, ergibt das eine Partitionsgrö
 $4.294.967.295 \quad \text{LBA} \cdot 512 \frac{Byte}{LBA} = 2.199.023.255 \text{Byte} ÷1024^4 = 2 \quad \text{TiB}$
 
 
-## Aufgabe: Maximale Partitionsgröße berechnen
+# GUID-Partionstabelle (GPT)
+
+Mit dem UEFI wurde eine neue Partitionstabelle eingeführt, die **GUID-Partitionstabelle**, abgekürzt als **GPT**, bezeichnet wird. Sie ist ganze 34 LBAs groß.
+
+![Aufbau der GUID-Partititionstabelle](02_img/lf02_bp_gpt_primar.png)
+
+Die GPT enthält als ersten LBA den Master Boot Record, um kompatibel zu älteren Systemen zu sein, die auf den Datenträger zugreifen und nicht die Struktur der GPT kennen.
+
+Es folgt dann der LBA 1, der den primären GPT-Header enthält. Danach folgen mit LBA 2 bis 33 die eigentlichen Partitionseinträge, je vier Einträge pro LBA. Insgesamt können in der aktuellen Version 128 Partitionseinträge gespeichert werden.
+
+## Aufgabe: Maximale Partitionsgröße der GPT berechnen
 
 Berechnen Sie die maximal mögliche Partitionsgröße, wenn für die Adressierung des Start- und End-LBAs Zahlen nutzbar sind, die in einem 8 Byte großen Feld gespeichert werden.
-
-## GUID-Partionstabelle (GPT)
-
-Mit dem UEFI wurde eine neue Partitionstabelle eingeführt, die GUID-Partitionstabelle oder abgekürzt GPT bezeichnet wird. Sie ist ganze 34 LBAs groß.
 
 Ein Vorteil ist, dass die Felder für die Dokumentation der Partitionsgröße jetzt auf 8 Byte vergrößert wurden.
 
