@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.0
+version:  2.2.1
 date:     20.03.2024
 language: de
 narrator: Deutsch Female
@@ -84,11 +84,11 @@ wird der Wert mit den 512 Byte/LBA multipliziert, ergibt das eine Partitionsgrö
 $4.294.967.295 \quad \text{LBA} \cdot 512 \frac{Byte}{LBA} = 2.199.023.255 \text{Byte} ÷1024^4 = 2 \quad \text{TiB}$
 
 
-# GUID-Partionstabelle (GPT)
+# GUID-Partitionstabelle (GPT)
 
 Mit dem UEFI wurde eine neue Partitionstabelle eingeführt, die **GUID-Partitionstabelle**, abgekürzt als **GPT**, bezeichnet wird. Sie ist ganze 34 LBAs groß.
 
-![Aufbau der GUID-Partititionstabelle](02_img/lf02_bp_gpt_primar.png)
+![Aufbau der GUID-Partitionstabelle](02_img/lf02_bp_gpt_primar.png)
 
 Die GPT enthält als ersten LBA den Master Boot Record, um kompatibel zu älteren Systemen zu sein, die auf den Datenträger zugreifen und nicht die Struktur der GPT kennen.
 
