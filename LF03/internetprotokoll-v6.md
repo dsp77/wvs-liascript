@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.2.0
+version:  0.4.0
 date:     22.03.2024
 language: de
 narrator: Deutsch Female
@@ -94,7 +94,7 @@ Der enorme Adressraum wird unterteilt in Bereiche (Scopes) mit unterschiedlicher
 
 ![Gültigkeitsbereich von Adressen](02_img/lf03_ipv6_scope.svg)
 
-Die wichtigsten Gültigkeitsbereiche:
+Die Abbildung verdeutlicht den Scope vom Rechner ausgehend, der schalenförmig sich ausbreitet. Die wichtigsten Gültigkeitsbereiche sind:
 
  * **Host-Scope**: Diese Adressen sind nur auf dem lokalen Host gültig und können nicht von anderen Hosts im Netzwerk verwendet werden. Die IPv6-Loopback-Adresse `::1/128` oder die unspezifische Adresse `::/128` gehört zu dem Bereich, der nur auf einem Host genutzt werden kann.
  * `fe80::/10` - **Link-Local-Scope**: Diese Adressen sind nur im lokalen Netzwerk (z.B. einem WLAN) gültig und dürfen nicht geroutet werden.
@@ -108,7 +108,28 @@ Um ein IP-Paket über das LAN zu versenden, muss das Paket in einen Ethernetrahm
 
 ![Link-ID aus der MAC-Adresse bilden](02_img/lf03_ipv6_interface_id.svg)
 
+TODO: beschreiben
 
+````
+Adresspräfix: fe80:0000:0000:0000::/32
+Interface MAC-Adresse: 01:02:03:04:05:06
+
+Bit-41: 01 -> 0000 0001
+                     ^
+Bit-41 invertiert: 0000 0011 -> 03
+
+MAC-Adresse mit Bit-41-Flip: 03:02:03:04:05:06
+
+Interface-ID: 03:02:03:ff:fe:04:05:06
+
+IP-Adresse: fe80:0000:0000:0000:0302:03ff:fe04:0506
+````
+
+## Bildung der Interface-ID
+
+ * EUI-64
+ * mit einem zufälligen Bitmuster
+ * mithilfe manueller Konfiguration
 
 # Aufgabe
 
@@ -124,3 +145,107 @@ Nennen Sie die folgenden zugehörigen Werte:
  (IT-Berufe, IHK-Abschlussprüfung Teil 1 Frühjahr 2024)
 
  # IPv6-Header
+
+Ein IPv4-Paket ist aufgebaut nach dem allgemeinen Schema:
+
+````
++---------+-------------+
+| Header  |  Data field |
++---------+-------------+
+````
+
+Der [RFC8200](https://datatracker.ietf.org/doc/html/rfc8200) beschreibt den Aufbau des IPv6-Headers. Durch die 128-Bit IPv6-Adresse, die als Quell- und Zieladresse in einem IP-Paket zweimal vorhanden sein muss, übertrifft die Größe des Headers schon alleine durch die Adressen den 20-Byte großen IPv4-Header. Um eine effiziente Übertragung zu erhalten, wurde der Header modularisiert. Das bedeutet, dass es einen Header mit den minimalen Information gibt, die für die Übertragung nötig sind. Um weitere Informationen, wenn nötig mit aufnehmen zu können, wird ein Erweitungsheader hinzugefügt, der 
+
+````
+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |Version| Traffic Class |           Flow Label                  |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |         Payload Length        |  Next Header  |   Hop Limit   |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +                         Source Address                        +
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +                      Destination Address                      +
+   |                                                               |
+   +                                                               +
+   |                                                               |
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+````
+
+| Feld | Bedeutung |
+|------|-----------|
+| Version | 4-Bit, für IPv4 = 4 für IPv6 = 6|
+| Traffic Class | 8-Bit Der [RFC2474 Differentiated Services Field (DS Field)](https://datatracker.ietf.org/doc/html/rfc2474) beschreibt Verkehrsklassen und wie diese bei der Überlastung von Verbindungen behandelt werden sollen. Zeitkritische Daten wie z.B. Telefonie werden verworfen, zeitunkritische Daten werden zwischengespeichert und später weitergeleitet.  |
+| Flow Label  | 20-Bit großes Label, mit dem eine Reihe von Paketen gemäß [RFC6437](https://datatracker.ietf.org/doc/html/rfc6437) zu einem Flow zusammengefasst werden können. |
+| Payload Length  | 16-Bit -> maximal 65536 Oktetts kann das dem Header folgende Datenfeld groß sein. |
+| **Next Header** | 8-Bit legen fest, welcher Header in dem Datenfeld folgt. Die [Protokollnummern werden von der IANA festgelegt](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). |
+| **Hop Limit** | 8-Bit Wert, der beim Übergang über einen Router verringert wird. |
+| Source Address | 128-Bit Quelladresse, von der das Paket losgesendet wurde. |
+| Destination Address | 128-Bit Zieladresse, an die das Paket gesendet werden soll. |
+
+Das **Hop Limit** wurde von dem *Time-To-Live (TTL)*-Wert von IPv4 abgeleitet und reduziert sich jetzt nur noch auf die Anzahl der Router. Bei jedem Routerübergang wird der Wert um eins verringert. Ein Router, der den Wert auf null setzt, verwirft das Paket und sendete ein ICMP-Paket mit der Meldung *Time Exceeded* an die Quelladresse des verworfenen Pakets zurück.
+
+## Extended Header (Next Header)
+
+Um den Header so klein wie nötig zu halten, wurden Parameter, die nicht für jedes Paket nötig sind, in sogenannte Erweiterungs-Header (Extended Header) ausgelagert. Der RFC spezifiziert die sechs extended Headers:
+
+ * Hop-by-Hop Options
+ * Fragment
+ * Destination Options
+ * Routing
+ * Authentication
+ * Encapsulating Security Payload
+
+Das **Next Header**-Feld kann jetzt einen der sechs Erweiterungsheaders oder ein anderes Protokoll, wie unter ["Protokollnummern der IANA"](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) festgelegt verwendet werden.
+
+Beispiel für Protokollnummern sind:
+
+| Protokollnummer | Bezeichnung |
+|-----------------|-----------------------------|
+| 6 |  TCP |
+| 17 | UDP |
+| 0 | IPv6 Hop-by-Hop Options |
+| 44 | IPV6 Fragment |
+| 60 | IPv6 Destination Options |
+| 43 | IPv6 Routing |
+| 51 | IPv6 Authentication |
+| 50 | IPv6 Encapsulating Security Payload |
+| 58 | IPv6-ICMP |
+
+
+
+````
+   +---------------+------------------------
+   |  IPv6 header  | TCP header + data
+   |               |
+   | Next Header = |
+   |      TCP      |
+   +---------------+------------------------
+
+   +---------------+----------------+------------------------
+   |  IPv6 header  | Routing header | TCP header + data
+   |               |                |
+   | Next Header = |  Next Header = |
+   |    Routing    |      TCP       |
+   +---------------+----------------+------------------------
+
+   +---------------+----------------+-----------------+-----------------
+   |  IPv6 header  | Routing header | Fragment header | fragment of TCP
+   |               |                |                 |  header + data
+   | Next Header = |  Next Header = |  Next Header =  |
+   |    Routing    |    Fragment    |       TCP       |
+   +---------------+----------------+-----------------+-----------------
+````
+
+
+
+# Hilfsfunktionen
+
