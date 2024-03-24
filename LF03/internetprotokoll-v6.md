@@ -157,7 +157,7 @@ Ein IPv4-Paket ist aufgebaut nach dem allgemeinen Schema:
 Der [RFC8200](https://datatracker.ietf.org/doc/html/rfc8200) beschreibt den Aufbau des IPv6-Headers. Durch die 128-Bit IPv6-Adresse, die als Quell- und Zieladresse in einem IP-Paket zweimal vorhanden sein muss, übertrifft die Größe des Headers schon alleine durch die Adressen den 20-Byte großen IPv4-Header. Um eine effiziente Übertragung zu erhalten, wurde der Header modularisiert. Das bedeutet, dass es einen Header mit den minimalen Information gibt, die für die Übertragung nötig sind. Um weitere Informationen, wenn nötig mit aufnehmen zu können, wird ein Erweitungsheader hinzugefügt, der 
 
 ````
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |Version| Traffic Class |           Flow Label                  |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |         Payload Length        |  Next Header  |   Hop Limit   |
