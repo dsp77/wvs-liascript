@@ -12,6 +12,7 @@ Berufsausbildung zur Fachinformatikerin oder zum Fachinformatiker mit der Fachri
 
 ## Lernfeld 3
 
+ * [Netzwerkverkabelung, Lichtwellenleiter](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/lichtwellenleiter.md)
  * [Internetprotokoll Version 4](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v4.md)
  * [IP-Übertragung](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/ip-transmission.md)
  * [Internetprotokoll Version 6](https://liascript.github.io/course/?https://raw.
