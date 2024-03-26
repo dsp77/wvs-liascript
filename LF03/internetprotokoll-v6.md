@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.5.0
+version:  1.1.0
 date:     26.03.2024
 language: de
 narrator: Deutsch Female
@@ -20,7 +20,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 # Internetprotokoll Version 6 (IPv6)
 
-Das massive Wachstum des Internets und die dadurch entstandenen Probleme in den 90er-Jahren des letzten Jahrhunderts haben die Entwicklung eines neuen Internetprotokolls vorangetrieben. Insbesondere die begrenzte Anzahl an IP-Adressen mit der Version 4 des Internetprotokolls hat zu einer schrittweisen Einführung des neuen Protokolls geführt.
+Das massive Wachstum des Internets und die dadurch entstandenen Probleme in den 1990er-Jahren haben die Entwicklung eines neuen Internetprotokolls vorangetrieben. Insbesondere die begrenzte Anzahl an IP-Adressen mit der Version 4 des Internetprotokolls hat zu einer schrittweisen Einführung des neuen Protokolls geführt.
 
 Da die Versionsnummer 5 schon für eine Streamingvariante des Protokolls verwendet wurde, kamen die neuen Funktionen als Version 6 daher.
 
@@ -104,62 +104,15 @@ Die wichtigsten Gültigkeitsbereiche sind:
  * **Global-Scope**: Diese Adressen sind im öffentlichen Internet geroutet und können weltweit verwendet werden.
  * `ff::/8` - **Multicast-Scope**: Diese Adressen werden für die Kommunikation mit einer Gruppe von Empfängern verwendet. Sie ersetzen u.a. die von IPv4 bekannten Broadcastadressen.
 
-# Interface-ID in IPv6-Adressen
-
-Um ein IP-Paket über das LAN zu versenden, muss das Paket in einen Ethernetrahmen gepackt werden. Um bei IPv4 die zur Ziel-IP-Adresse gehörige MAC-Adresse zu ermitteln, wird das Address Resolution Protocol (ARP) verwendet. Mithilfe einer festen Zuordnung von IP-Adresse zur MAC-Adresse kann auf die ARP-Funktion verzichtet werden. Es werden folgende drei Methoden dazu verwendet:
-
- * IEEE Extended Unique Identifier (EUI-64)
- * mit einem zufälligen Bitmuster
- * mithilfe manueller Konfiguration
-
-## IEEE Extended Unique Identifier
-
-Mithilfe der **Interface-ID** wird eine IPv6-Adresse basierend auf der zugehörigen MAC-Adresse des Interfaces gebildet.
-
-Die folgende Abbildung zeigt die Schritte, um von einer dem Interface zugehörigen 48-Bit großen MAC-Adresse die 64-Bit große Interface-ID und daraus die IPv6-Adresse zu bilden.
-
-![Interface-ID aus der MAC-Adresse bilden](02_img/lf03_ipv6_interface_id.svg)
-
-Zu bemerken ist das Bit 41 der MAC-Adresse, das sich im ersten Oktett der MAC-Adresse befindet. Es bestimmt, ob es sich um eine weltweit eindeutige oder eine im lokalen Netzwerk lokal vergebene MAC-Adresse handelt. Dieses Bit wird für die Bildung der Interface-ID umgedreht (flipped). Ein gesetztes Bit wird gelöscht oder ein gelöschtes Bit wird gesetzt. Bei einer eindeutigen MAC-Adresse entsprechen die ersten 24 Bits der sogenannten Company-ID, die der Herstellerfirma vom IEEE zugewiesen wird. Die MAC-Adresse wird an der Grenze aufgesplittet und die 16-Bit `ff fe` werden eingefügt. So werden aus den 48 Bit der MAC-Adresse die 64 Bit der Interface-ID.
-
-Das folgende Beispiel zeigt die Schritte anhand des Adresspräfix `fe80:0000:0000:0000::/32`.
-
-````
-Adresspräfix: fe80:0000:0000:0000::/32
-Interface MAC-Adresse: 01:02:03:04:05:06
-
-Bit-41: 01 -> 0000 0001
-                     ^
-Bit-41 invertiert: 0000 0011 -> 03
-
-MAC-Adresse mit Bit-41-Flip: 03:02:03:04:05:06
-
-Interface-ID: 03:02:03:ff:fe:04:05:06
-
-IP-Adresse: fe80:0000:0000:0000:0302:03ff:fe04:0506
-````
-
-# Aufgabe
-
-Sie analysieren die IPv6-Adresse `fe80::521a:c5ff:fef2:38b7`.
-
-Nennen Sie die folgenden zugehörigen Werte:
-
- * Länge der IPv6-Adresse in Bits: [[128]]
- * Ungekürzte Darstellung der IPv6-Adresse in Hexadezimalschreibweise: [[fe80:0000:0000:0000:521a:c5ff:fef2:38b7]]
- * Präfixlänge: [[64]] Bits.
- * Interface-Identifier: [[521a:c5ff:fef2:38b7]]
-
- (IT-Berufe, IHK-Abschlussprüfung Teil 1 Frühjahr 2024)
 
 # IPv6-Header
 
 Ein IP-Paket ist aufgebaut nach dem allgemeinen Schema:
 
 ````
-+---------+-------------+
-| Header  |  Data field |
-+---------+-------------+
++-----------+-------------+
+| IP-Header |  Data field |
++-----------+-------------+
 ````
 
 Der [RFC8200](https://datatracker.ietf.org/doc/html/rfc8200) beschreibt den Aufbau des IPv6-Headers. Durch die 128 Bit IPv6-Adresse, die als Quell- und Zieladresse in einem IP-Paket zweimal vorhanden sein muss, übertrifft die Größe des Headers schon alleine durch die Adressen den 20 Byte großen IPv4-Header. Um eine effiziente Übertragung zu erhalten, wurde der Header modularisiert. Das bedeutet, dass es einen Header mit den minimalen Information gibt, die für die Übertragung nötig sind. Um weitere Informationen, wenn nötig mit aufnehmen zu können, wird ein Erweitungsheader (**Extension Header**) hinzugefügt.
@@ -257,7 +210,66 @@ Die folgende Abbildung kommt aus dem RFC8200 und zeigt drei mögliche Verkettung
    +---------------+----------------+-----------------+-----------------
 ````
 
+# Neighbour Discovery Protocol (NDP)
+
+Das **Neighbour Discovery Protocol** nutzt ICMPv6-Nachrichten, um im Link-Lokalen-Bereich Nachrichten zu versenden. Damit werden u.a. die im IPv4-Ablauf verwendete ARP-Funktion ersetzt. Beschrieben im [RFC 4861](https://datatracker.ietf.org/doc/html/rfc4861) stellt das Protokoll folgende Funktionen zur Verfügung:
 
 
-# Hilfsfunktionen
+ * Router Discovery: How hosts locate routers that reside on an
+                attached link.
+ * Prefix Discovery: How hosts discover the set of address prefixes
+                that define which destinations are on-link for an
+                attached link.  (Nodes use prefixes to distinguish
+                destinations that reside on-link from those only
+                reachable through a router.)
+ * Parameter Discovery: How a node learns link parameters (such as the
+                link MTU) or Internet parameters (such as the hop limit
+                value) to place in outgoing packets.
+ * Address Autoconfiguration: Introduces the mechanisms needed in
+                order to allow nodes to configure an address for an
+                interface in a stateless manner.
+ * Address resolution: How nodes determine the link-layer address of
+                an on-link destination (e.g., a neighbor) given only the
+                destination's IP address.
+ * Next-hop determination: The algorithm for mapping an IP destination
+                address into the IP address of the neighbor to which
+                traffic for the destination should be sent.  The next-
+                hop can be a router or the destination itself.
+ * Neighbor Unreachability Detection: How nodes determine that a
+                neighbor is no longer reachable.  For neighbors used as
+                routers, alternate default routers can be tried.  For
+                both routers and hosts, address resolution can be
+                performed again.
+ * Duplicate Address Detection: How a node determines whether or not
+                an address it wishes to use is already in use by another
+                node.
+ * Redirect:  Ein Router informiert einen Host über einen besseren First-Hop-Knoten.
+
+Dazu werden fünf ICMPv6-Typen spezifiziert.
+
+Router Solicitation: When an interface becomes enabled, hosts may
+                send out Router Solicitations that request routers to
+                generate Router Advertisements immediately rather than
+                at their next scheduled time.
+
+     Router Advertisement: Routers advertise their presence together
+                with various link and Internet parameters either
+                periodically, or in response to a Router Solicitation
+                message.  Router Advertisements contain prefixes that
+                are used for determining whether another address shares
+                the same link (on-link determination) and/or address
+                configuration, a suggested hop limit value, etc.
+     Neighbor Solicitation: Sent by a node to determine the link-layer
+                address of a neighbor, or to verify that a neighbor is
+                still reachable via a cached link-layer address.
+                Neighbor Solicitations are also used for Duplicate
+                Address Detection.
+
+     Neighbor Advertisement: A response to a Neighbor Solicitation
+                message.  A node may also send unsolicited Neighbor
+                Advertisements to announce a link-layer address change.
+
+     Redirect:  Used by routers to inform hosts of a better first hop
+                for a destination.
+
 
