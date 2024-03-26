@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.4.0
-date:     22.03.2024
+version:  0.5.0
+date:     26.03.2024
 language: de
 narrator: Deutsch Female
 
@@ -92,9 +92,11 @@ Der enorme Adressraum wird unterteilt in Bereiche (Scopes) mit unterschiedlicher
  * Global-Scope
  * Multicast-Scope
 
+Die Abbildung verdeutlicht den Scope vom Rechner ausgehend, der schalenförmig sich ausbreitet.
+
 ![Gültigkeitsbereich von Adressen](02_img/lf03_ipv6_scope.svg)
 
-Die Abbildung verdeutlicht den Scope vom Rechner ausgehend, der schalenförmig sich ausbreitet. Die wichtigsten Gültigkeitsbereiche sind:
+Die wichtigsten Gültigkeitsbereiche sind:
 
  * **Host-Scope**: Diese Adressen sind nur auf dem lokalen Host gültig und können nicht von anderen Hosts im Netzwerk verwendet werden. Die IPv6-Loopback-Adresse `::1/128` oder die unspezifische Adresse `::/128` gehört zu dem Bereich, der nur auf einem Host genutzt werden kann.
  * `fe80::/10` - **Link-Local-Scope**: Diese Adressen sind nur im lokalen Netzwerk (z.B. einem WLAN) gültig und dürfen nicht geroutet werden.
@@ -104,11 +106,23 @@ Die Abbildung verdeutlicht den Scope vom Rechner ausgehend, der schalenförmig s
 
 # Interface-ID in IPv6-Adressen
 
-Um ein IP-Paket über das LAN zu versenden, muss das Paket in einen Ethernetrahmen gepackt werden. Um bei IPv4 die zur Ziel-IP-Adresse gehörige MAC-Adresse zu ermitteln, wird das Address Resolution Protocol (ARP) verwendet. Mithilfe einer festen Zuordnung von IP-Adresse zur MAC-Adresse kann auf die ARP-Funktion verzichtet werden. Mithilfe der **Interface-ID** wird eine IPv6-Adresse basierend auf der zugehörigen MAC-Adresse des Interfaces gebildet.
+Um ein IP-Paket über das LAN zu versenden, muss das Paket in einen Ethernetrahmen gepackt werden. Um bei IPv4 die zur Ziel-IP-Adresse gehörige MAC-Adresse zu ermitteln, wird das Address Resolution Protocol (ARP) verwendet. Mithilfe einer festen Zuordnung von IP-Adresse zur MAC-Adresse kann auf die ARP-Funktion verzichtet werden. Es werden folgende drei Methoden dazu verwendet:
 
-![Link-ID aus der MAC-Adresse bilden](02_img/lf03_ipv6_interface_id.svg)
+ * IEEE Extended Unique Identifier (EUI-64)
+ * mit einem zufälligen Bitmuster
+ * mithilfe manueller Konfiguration
 
-TODO: beschreiben
+## IEEE Extended Unique Identifier
+
+Mithilfe der **Interface-ID** wird eine IPv6-Adresse basierend auf der zugehörigen MAC-Adresse des Interfaces gebildet.
+
+Die folgende Abbildung zeigt die Schritte, um von einer dem Interface zugehörigen 48-Bit großen MAC-Adresse die 64-Bit große Interface-ID und daraus die IPv6-Adresse zu bilden.
+
+![Interface-ID aus der MAC-Adresse bilden](02_img/lf03_ipv6_interface_id.svg)
+
+Zu bemerken ist das Bit 41 der MAC-Adresse, das sich im ersten Oktett der MAC-Adresse befindet. Es bestimmt, ob es sich um eine weltweit eindeutige oder eine im lokalen Netzwerk lokal vergebene MAC-Adresse handelt. Dieses Bit wird für die Bildung der Interface-ID umgedreht (flipped). Ein gesetztes Bit wird gelöscht oder ein gelöschtes Bit wird gesetzt. Bei einer eindeutigen MAC-Adresse entsprechen die ersten 24 Bits der sogenannten Company-ID, die der Herstellerfirma vom IEEE zugewiesen wird. Die MAC-Adresse wird an der Grenze aufgesplittet und die 16-Bit `ff fe` werden eingefügt. So werden aus den 48 Bit der MAC-Adresse die 64 Bit der Interface-ID.
+
+Das folgende Beispiel zeigt die Schritte anhand des Adresspräfix `fe80:0000:0000:0000::/32`.
 
 ````
 Adresspräfix: fe80:0000:0000:0000::/32
@@ -125,12 +139,6 @@ Interface-ID: 03:02:03:ff:fe:04:05:06
 IP-Adresse: fe80:0000:0000:0000:0302:03ff:fe04:0506
 ````
 
-## Bildung der Interface-ID
-
- * EUI-64
- * mit einem zufälligen Bitmuster
- * mithilfe manueller Konfiguration
-
 # Aufgabe
 
 Sie analysieren die IPv6-Adresse `fe80::521a:c5ff:fef2:38b7`.
@@ -144,9 +152,9 @@ Nennen Sie die folgenden zugehörigen Werte:
 
  (IT-Berufe, IHK-Abschlussprüfung Teil 1 Frühjahr 2024)
 
- # IPv6-Header
+# IPv6-Header
 
-Ein IPv4-Paket ist aufgebaut nach dem allgemeinen Schema:
+Ein IP-Paket ist aufgebaut nach dem allgemeinen Schema:
 
 ````
 +---------+-------------+
@@ -154,7 +162,7 @@ Ein IPv4-Paket ist aufgebaut nach dem allgemeinen Schema:
 +---------+-------------+
 ````
 
-Der [RFC8200](https://datatracker.ietf.org/doc/html/rfc8200) beschreibt den Aufbau des IPv6-Headers. Durch die 128-Bit IPv6-Adresse, die als Quell- und Zieladresse in einem IP-Paket zweimal vorhanden sein muss, übertrifft die Größe des Headers schon alleine durch die Adressen den 20-Byte großen IPv4-Header. Um eine effiziente Übertragung zu erhalten, wurde der Header modularisiert. Das bedeutet, dass es einen Header mit den minimalen Information gibt, die für die Übertragung nötig sind. Um weitere Informationen, wenn nötig mit aufnehmen zu können, wird ein Erweitungsheader hinzugefügt, der 
+Der [RFC8200](https://datatracker.ietf.org/doc/html/rfc8200) beschreibt den Aufbau des IPv6-Headers. Durch die 128 Bit IPv6-Adresse, die als Quell- und Zieladresse in einem IP-Paket zweimal vorhanden sein muss, übertrifft die Größe des Headers schon alleine durch die Adressen den 20 Byte großen IPv4-Header. Um eine effiziente Übertragung zu erhalten, wurde der Header modularisiert. Das bedeutet, dass es einen Header mit den minimalen Information gibt, die für die Übertragung nötig sind. Um weitere Informationen, wenn nötig mit aufnehmen zu können, wird ein Erweitungsheader (**Extension Header**) hinzugefügt.
 
 ````
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -182,20 +190,20 @@ Der [RFC8200](https://datatracker.ietf.org/doc/html/rfc8200) beschreibt den Aufb
 
 | Feld | Bedeutung |
 |------|-----------|
-| Version | 4-Bit, für IPv4 = 4 für IPv6 = 6|
-| Traffic Class | 8-Bit Der [RFC2474 Differentiated Services Field (DS Field)](https://datatracker.ietf.org/doc/html/rfc2474) beschreibt Verkehrsklassen und wie diese bei der Überlastung von Verbindungen behandelt werden sollen. Zeitkritische Daten wie z.B. Telefonie werden verworfen, zeitunkritische Daten werden zwischengespeichert und später weitergeleitet.  |
-| Flow Label  | 20-Bit großes Label, mit dem eine Reihe von Paketen gemäß [RFC6437](https://datatracker.ietf.org/doc/html/rfc6437) zu einem Flow zusammengefasst werden können. |
-| Payload Length  | 16-Bit -> maximal 65536 Oktetts kann das dem Header folgende Datenfeld groß sein. |
-| **Next Header** | 8-Bit legen fest, welcher Header in dem Datenfeld folgt. Die [Protokollnummern werden von der IANA festgelegt](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). |
-| **Hop Limit** | 8-Bit Wert, der beim Übergang über einen Router verringert wird. |
-| Source Address | 128-Bit Quelladresse, von der das Paket losgesendet wurde. |
-| Destination Address | 128-Bit Zieladresse, an die das Paket gesendet werden soll. |
+| Version | 4 Bit, für IPv4 = 4 für IPv6 = 6|
+| Traffic Class | 8 Bit Der [RFC2474 Differentiated Services Field (DS Field)](https://datatracker.ietf.org/doc/html/rfc2474) beschreibt Verkehrsklassen und wie diese bei der Überlastung von Verbindungen behandelt werden sollen. Zeitkritische Daten wie z.B. Telefonie werden verworfen, zeitunkritische Daten werden zwischengespeichert und später weitergeleitet.  |
+| Flow Label  | 20 Bit großes Label, mit dem eine Reihe von Paketen gemäß [RFC6437](https://datatracker.ietf.org/doc/html/rfc6437) zu einem Flow zusammengefasst werden können. |
+| Payload Length  | 16 Bit -> maximal 65536 Oktetts kann das dem Header folgende Datenfeld groß sein. |
+| **Next Header** | 8 Bit legen fest, welcher Header in dem Datenfeld folgt. Die [Protokollnummern werden von der IANA festgelegt](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). |
+| **Hop Limit** | 8 Bit Wert, der beim Übergang über einen Router verringert wird. |
+| Source Address | 128 Bit Quelladresse, von der das Paket losgesendet wurde. |
+| Destination Address | 128 Bit Zieladresse, an die das Paket gesendet werden soll. |
 
 Das **Hop Limit** wurde von dem *Time-To-Live (TTL)*-Wert von IPv4 abgeleitet und reduziert sich jetzt nur noch auf die Anzahl der Router. Bei jedem Routerübergang wird der Wert um eins verringert. Ein Router, der den Wert auf null setzt, verwirft das Paket und sendete ein ICMP-Paket mit der Meldung *Time Exceeded* an die Quelladresse des verworfenen Pakets zurück.
 
-## Extended Header (Next Header)
+## Extension Header (Next Header)
 
-Um den Header so klein wie nötig zu halten, wurden Parameter, die nicht für jedes Paket nötig sind, in sogenannte Erweiterungs-Header (Extended Header) ausgelagert. Der RFC spezifiziert die sechs extended Headers:
+Um den Header so klein wie nötig zu halten, wurden Parameter, die nicht für jedes Paket nötig sind, in sogenannte Erweiterungs-Header (Extension Header) ausgelagert. Der RFC8200 spezifiziert die sechs Extension Headers:
 
  * Hop-by-Hop Options
  * Fragment
@@ -220,7 +228,11 @@ Beispiel für Protokollnummern sind:
 | 50 | IPv6 Encapsulating Security Payload |
 | 58 | IPv6-ICMP |
 
+Die folgende Abbildung kommt aus dem RFC8200 und zeigt drei mögliche Verkettungen von Header:
 
+ 1. IPv6 Header -> TCP
+ 2. IPv6 Header -> Routing ->  TCP
+ 1. IPv6 Header -> Routing -> Fragment -> TCP
 
 ````
    +---------------+------------------------
