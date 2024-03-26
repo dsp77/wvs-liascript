@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="140.4949mm"
+   height="178.86194mm"
+   viewBox="0 0 149.329 190.10849"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="lf04_gs_phasen_sicherheitsprozess.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.74300929"
+     inkscape:cx="75.369179"
+     inkscape:cy="211.97582"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid28"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="2.1257569"
+       spacingy="2.1257569"
+       empcolor="#3f3fff"
+       empopacity="0.25098039"
+       color="#3f3fff"
+       opacity="0.1254902"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.8786502,-8.8689998)">
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect23"
+       width="133.45323"
+       height="24.676258"
+       x="4.4609103"
+       y="162.74236"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect19"
+       width="133.45323"
+       height="11.079139"
+       x="4.4609103"
+       y="80.215981"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect18"
+       width="133.45323"
+       height="37.26619"
+       x="4.4609103"
+       y="33.649303"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="67.802261"
+       y="16.023409"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="67.802261"
+         y="16.023409">Phasen des Sicherheitsprozesses</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="68.352592"
+         y="21.315071"
+         id="tspan2">nach BSI-Grundschutz </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="30.921421"
+       y="40.695763"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:0.264583"
+         x="30.921421"
+         y="40.695763">Initiierung des Sicherheitsprozesses</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="18.750586"
+       y="86.733276"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:0.264583"
+         x="18.750586"
+         y="86.733276">Erstellen der Leitlinie zur Informationssicherheit</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="32.475563"
+       y="169.76718"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:0.264583"
+         x="32.475563"
+         y="169.76718">Aufrechterhaltung und Verbesserung</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="31.771309"
+       y="179.06987"
+       id="text9"><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="31.771309"
+         y="179.06987"
+         id="tspan11">* Fortentwicklung des ISMS</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="31.771309"
+         y="183.4796"
+         id="tspan27">* Erweiterung der gewählten Vorgehensweisen</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="9.310111"
+       y="49.589333"
+       id="text14"><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="9.310111"
+         y="49.589333"
+         id="tspan14">* Übernahem der Verantwortung durch die Leitungsebene</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="9.310111"
+         y="53.999058"
+         id="tspan16">* Konzeption und Planung des Sicherheitsprozesses</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="9.310111"
+         y="58.408783"
+         id="tspan17">* Bereitstellung von finanziellen, personellen und zeitlichen Ressourcen</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;stroke-width:0.264583"
+         x="9.310111"
+         y="62.818508"
+         id="tspan18">* Entscheidung für eine Vorgehensweise</tspan></text>
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect20"
+       width="133.45323"
+       height="11.079139"
+       x="4.4609103"
+       y="101.02654"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="31.165432"
+       y="107.95293"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="stroke-width:0.264583"
+         x="31.165432"
+         y="107.95293">Organisation des Sicherheitsprozesses</tspan></text>
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect21"
+       width="133.45323"
+       height="11.079139"
+       x="4.4609103"
+       y="121.668"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect22"
+       width="133.45323"
+       height="11.079139"
+       x="4.4609103"
+       y="142.3311"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="31.669029"
+       y="128.61606"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="stroke-width:0.264583"
+         x="31.669029"
+         y="128.61606">Erstellung einer Sicherheitskonzeption</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="32.424423"
+       y="148.47263"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.264583"
+         x="32.424423"
+         y="148.47263">Umsetzung der Sicherheitskonzeption</tspan></text>
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 4.3979601,70.915496 67.158749,79.980245 137.97706,70.852546 Z"
+       id="path23"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 4.3979601,91.552997 67.158749,100.61775 137.97706,91.490047 Z"
+       id="path24"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 4.3979601,112.1905 62.7607889,9.06475 70.818311,-9.1277 z"
+       id="path25"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 4.3979601,132.82801 62.7607889,9.06475 70.818311,-9.1277 z"
+       id="path26"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 4.3979601,153.46552 62.7607889,9.06475 70.818311,-9.1277 z"
+       id="path27"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:1.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 128.46619,175.0558 c 0,0 20.92355,-12.28481 20.39876,-29.58263 -0.52479,-17.29782 -17.94928,-17.20608 -17.94928,-17.20608"
+       id="path28"
+       sodipodi:nodetypes="czc" />
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Günter Dannoritzer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

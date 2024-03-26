@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="191.57008mm"
+   height="171.24817mm"
+   viewBox="0 0 208.616 186.48584"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="lf04_gs_bsi_ablauf_standardabsicherung.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.88601771"
+     inkscape:cx="223.47183"
+     inkscape:cy="345.92988"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid28"
+       units="mm"
+       originx="189.98032"
+       originy="-13.924731"
+       spacingx="2.1257569"
+       spacingy="2.1257569"
+       empcolor="#3f3fff"
+       empopacity="0.25098039"
+       color="#3f3fff"
+       opacity="0.1254902"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(51.5476,-12.784912)">
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect37"
+       width="41.079964"
+       height="41.129219"
+       x="-48.910091"
+       y="22.111687"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect17"
+       width="20.67564"
+       height="13.817426"
+       x="119.14721"
+       y="121.39893"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect14"
+       width="133.45323"
+       height="11.079139"
+       x="6.7659183"
+       y="185.69424"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect19"
+       width="133.45323"
+       height="11.079139"
+       x="6.7659183"
+       y="60.023399"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect18"
+       width="133.5351"
+       height="18.264374"
+       x="6.6840568"
+       y="32.458538"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="70.107254"
+       y="18.328417"
+       id="text1"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.107254"
+         y="18.328417"
+         id="tspan2">Ablauf Standard-Absicherung</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.107254"
+         y="23.620079"
+         id="tspan9">nach BSI</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="70.082108"
+       y="39.694588"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.082108"
+         y="39.694588">Strukturanalyse</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.082108"
+         y="44.986252"
+         id="tspan10">Analyse des Ist-Zustands</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="44.115627"
+       y="66.54068"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="stroke-width:0.264583"
+         x="44.115627"
+         y="66.54068">Schutzbedarfsfeststellung</tspan></text>
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect13"
+       width="133.45323"
+       height="11.079139"
+       x="6.7659183"
+       y="165.4464"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="40.9674"
+       y="172.07217"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="stroke-width:0.264583"
+         x="40.9674"
+         y="172.07217">IT-Grundschutz-Check - Teil 2</tspan></text>
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect20"
+       width="133.45323"
+       height="11.079139"
+       x="6.7659183"
+       y="80.833946"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="73.473259"
+       y="84.948135"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="73.473259"
+         y="84.948135">Modellierung</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="73.473259"
+         y="90.239799"
+         id="tspan12">(Auswahl der Sicherheitsanforderungen)</tspan></text>
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect21"
+       width="133.45323"
+       height="11.079139"
+       x="6.7659183"
+       y="102.03784"
+       ry="0" />
+    <rect
+       style="fill:#eeffaa;stroke:#0000ff;stroke-width:0.665001"
+       id="rect22"
+       width="133.45323"
+       height="11.079139"
+       x="6.7659183"
+       y="144.63609"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="70.059074"
+       y="106.17371"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.059074"
+         y="106.17371">IT-Grundschutz-Check - Teil 1</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="70.059074"
+         y="111.46538"
+         id="tspan13">(Soll-Ist-Vergleich)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="54.414818"
+       y="150.77762"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="stroke-width:0.264583"
+         x="54.414818"
+         y="150.77762">Konsolidierung</tspan></text>
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.7029677,50.722912 69.463757,59.787661 140.28206,50.659962 Z"
+       id="path23"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.7029677,71.360413 69.463757,80.425166 140.28206,71.297463 Z"
+       id="path24"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.7029677,91.997912 69.463757,101.06266 140.28206,91.934962 Z"
+       id="path25"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.3094147,113.21034 62.461733,144.3036 110.4715,113.21034 Z"
+       id="path26"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 6.7029677,155.77052 62.7607893,9.06475 70.818303,-9.1277 z"
+       id="path27"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:1.165;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 133.85482,191.86335 c 0,0 22.68572,-37.00653 19.65783,-91.963874 -3.02789,-54.957352 -19.65783,-58.96487 -19.65783,-58.96487"
+       id="path28"
+       sodipodi:nodetypes="czc" />
+    <rect
+       style="fill:#ffffff;stroke:#0000ff;stroke-width:0.83307;stroke-dasharray:none"
+       id="rect38"
+       width="8.62743"
+       height="65.651886"
+       x="145.74567"
+       y="80.50145" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="40.9674"
+       y="192.32001"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         style="stroke-width:0.264583"
+         x="40.9674"
+         y="192.32001">Realisierung der Maßnahmen</tspan></text>
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 6.7029677,176.5808 62.7607893,9.06475 70.818303,-9.1277 z"
+       id="path14"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="129.6777"
+       y="126.98396"
+       id="text16"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="129.6777"
+         y="126.98396"
+         id="tspan16">Risiko-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="129.6777"
+         y="132.27562"
+         id="tspan17">analyse</tspan></text>
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 118.97452,113.21034 10.62879,8.50303 10.61583,-8.59639 z"
+       id="path29"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 119.14722,135.21636 10.45609,8.99461 10.21954,-8.99461 z"
+       id="path30"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;stroke-width:0.264583"
+       x="-45.270226"
+       y="28.274113"
+       id="text31"><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="28.274113"
+         id="tspan31">Festlegung des</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="33.565773"
+         id="tspan32">Geltungsbereichs</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="38.857437"
+         id="tspan33">* Organisation</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="44.149101"
+         id="tspan34">* Infrastruktur</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="49.440762"
+         id="tspan35">* IT-Systeme</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="54.732422"
+         id="tspan36">* Anwendungen</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:start;text-anchor:start;stroke-width:0.264583"
+         x="-45.270226"
+         y="60.024086"
+         id="tspan37">* Mitarbeiter</tspan></text>
+    <path
+       style="fill:#d8d8ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M -7.8301284,63.240906 6.3094147,40.934606 -7.8301284,22.111687 Z"
+       id="path38"
+       sodipodi:nodetypes="cccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="-142.41313"
+       y="151.63245"
+       id="text38"
+       transform="rotate(-90)"><tspan
+         sodipodi:role="line"
+         id="tspan38"
+         style="stroke-width:0.264583"
+         x="-142.41313"
+         y="151.63245">Kontinuierliche Verbesserung</tspan></text>
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Günter Dannoritzer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
