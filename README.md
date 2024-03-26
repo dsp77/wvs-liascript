@@ -4,7 +4,7 @@ Berufsausbildung zur Fachinformatikerin oder zum Fachinformatiker mit der Fachri
 
 ## Lernnfeld 2
 
- * [Binär-/SI-Präfix](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF02/binprefix.md))
+ * [Binär-/SI-Präfix](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF02/binprefix.md)
  * [PC Boot-Prozess, UEFI](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF02/pc-bootprozess.md)
  * [Betriebssystem](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF02/betriebssystem.md)
  * [Dateisysteme](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF02/dateisystem.md)
@@ -15,8 +15,7 @@ Berufsausbildung zur Fachinformatikerin oder zum Fachinformatiker mit der Fachri
  * [Netzwerkverkabelung, Lichtwellenleiter](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/lichtwellenleiter.md)
  * [Internetprotokoll Version 4](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v4.md)
  * [IP-Übertragung](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/ip-transmission.md)
- * [Internetprotokoll Version 6](https://liascript.github.io/course/?https://raw.
- githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v6.md)
+ * [Internetprotokoll Version 6](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v6.md)
  * [IP-Adresskonfiguration](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/ip-adresskonfiguration.md)
  * [Domain Name System (DNS)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md)
 
