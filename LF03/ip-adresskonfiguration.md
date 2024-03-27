@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
-date:     26.03.2024
+version:  1.3.0
+date:     27.03.2024
 language: de
 narrator: Deutsch Female
 
@@ -81,9 +81,30 @@ Um über Routergrenzen hinweg die Konfiguration mithilfe von DHCP zu nutzen, ben
 
 Ausfallsicherheit kann z.B. durch zwei DHCP-Server erreicht werden. Dazu muss der zu vergebende Adressbereich auf die beiden Server aufgeteilt werden. Bei konkurrierendem **Offer** der beiden Server wird der Client, dass ihm schneller erreichende **Offer** akzeptieren.
 
-# DHCPv6
+## DHCPv6
 
 Für die IP-Adressvergabe hat IPv6 einen eigenen Mechanismus, jedoch sind die konfigurierbaren Parameter nicht so umfangreich, wie es mit DHCP möglich ist. Daher gibt es seit 2003 den [**RFC 8415**](https://www.rfc-editor.org/rfc/rfc8415.html), in dem beschrieben ist, wie die Konfiguration von DHCP auch über IPv6 möglich ist.
+
+# Übung zu DHCP mit Filius
+
+Mit der [Netzwerksimulationssoftware Filius](https://www.lernsoftware-filius.de) soll eine Netzwerksimulation zur Konfiguration eines PCs mithilfe von DHCP erfolgen. Die folgende Abbildung zeigt die Konfiguration.
+
+![IP-Konfiguration mit DHCP](02_img/lf03_ac_dhcp_filius.png)
+
+Für den PC muss die Konfiguration auf:
+
+ * [x] DHCP zur Konfiguration verwenden
+
+ gesetzt werden. Als DHCP-Server wird der Heimrouter verwendet. Auf der LAN-Schnittstelle, rot hinterlegt, wird der DHCP-Server eingerichtet. Als IP-Adressbereich wird eingestellt:
+
+  * Address-Untergrenze: `192.168.0.10`
+  * Address-Obergrenze: `192.168.0.100`
+
+Als Gateway ist die IP-Adresse des LAN-Interfaces des Heimrouters automatisch eingetragen. Der DNS-Server wird erst mal leer gelassen.
+
+![DORA-Handshake mit Netzwerkmitschnitt](02_img/lf03_ac_dhcp_mitschnitt.png)
+
+Über den Netzwerkmitschnitt des PC1 kann der Datenaustausch mit dem `Discover`, `Offer`, `Request`und `Acknowledge` zu sehen.
 
 
 # Stateless Address Autoconfiguration (SLAAC)
