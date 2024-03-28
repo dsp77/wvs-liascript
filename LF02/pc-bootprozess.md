@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.3.0
-date:     27.03.2024
+version:  2.4.0
+date:     28.03.2024
 language: de
 narrator: Deutsch Female
 
@@ -275,6 +275,8 @@ Mit dem Befehl `mountvol --help` erhalten Sie die Hilfe zu dem Befehl. Eine `cmd
 
 **WARNUNG!** verändern Sie nichts an den Einträgen, nutzen Sie nur die gezeigten Kommandos, um sich Informationen anzeigen zu lassen. Unbeabsichtigte Veränderungen können den korrekten Bootvorgang des Systems zukünftig verhindern.
 
+Mit dem Minuszeichen vor dem folgenden "-mountvol P: /S" kann der Mitschnitt expandiert werden.
+
 ````cmd -mountvol P: /S
 C:\>mountvol P: /S
 P:
@@ -347,11 +349,17 @@ Mit dem Befehl `mountvol P: /d` wird schließlich die Systempartition wieder unm
 
 ## UEFI-Variablen auslesen
 
-https://oofhours.com/2022/06/29/geeking-out-with-the-uefi-boot-manager/
+Um die UEFI-Variable auszulesen und herauszufinden, welche von den zuvor gefundenen Dateien auf der EFI-Systempartition als Bootloader gestartet werden nutzen wir die **PowerShell** und ein von [Michael Niehaus](https://oofhours.com/2022/06/29/geeking-out-with-the-uefi-boot-manager/) erstelltes Modul [**UEFIv2**](https://www.powershellgallery.com/packages/UEFIv2).
 
+Hier wieder eine wichtige Anmerkung. Das Tool funktioniert für die Übung und muss in einer PowerShell mit **Administrationsrechten** ausgeführt werden. Mit der Ausführung fremder Software, besonders mit Administrationsrechten, besteht immer die Gefahr Schadsoftware unbeabsichtigt auszuführen. Überprüfen Sie die Quelle entsprechend oder führen den Code in einer abgeschirmten virtualisierten Umgebung aus.
+
+Das Modul enthält PowerShell-Commandlets für das auslesen (`Get-`), als auch welche zur Veränderung von Werten (`Set-`). Hier auch wieder die Warnung, nur Werte auszulesen und anzeigen zu lassen, um nicht unbeabsichtigt die Bootfähigkeit des Systems zu gefährden.
+
+Mithilfe des Commandlets `Get-UEFIVariable -All` können alle verfügbaren UEFI-Variablen angezeigt werden.
+
+Über das Minuszeichen von "-Get-UEFIVariable" kann der PowerShell-Verlauf der Kommandos aufgeklappt werden.
 
 ````ps -Get-UEFIVariable
-Get-UEFIVariable -All
 
 PS C:\WINDOWS\system32> Get-UEFIBootEntry
 
@@ -389,8 +397,13 @@ PS C:\WINDOWS\system32> Get-UEFIVariable -VariableName Boot0000 | Format-Hex
 00000120   10 00 00 00 04 00 00 00 7F 3F 04 00              ........⌂?..
 ````
 
+Als erstes wird mit `Get-UEFIBootEntry` die Anzahl der Booteinträge angezeigt. Diese werden durchnummeriert und starten mit `Boot0000`.
+
+Die Variable `Boot0000` lesen wir mit dem Kommando `Get-UEFIVariable -VariableName Boot0000 | Format-Hex` aus. Da es sich um einen binären Wert handelt, ist dir hexadezimale Formatierung mithilfe der PowerShell Pipe-Funktion `|` sinnvoll.
+
 Ab der Adresse `0000 0060` steht der Text: `E.F.I.\.M.i.c.r.o.s.o.f.t.\.B.o.o.t.\.b.o.o.t.m.g.f.w...e.f.i`
 
+Als UTF-8-formatierter Text werden immer 8 Bit pro Zeichen genommen. Der Eintrag liest sich also als `EFI\Microsoft\Boot\bootmgfw.efi`. Vergleicht man das mit dem zuvor angezeigten Inhalt der EFI-Systempartition findet man im gezeigten Pfad den entsprechenden Bootloader, der gestartet wird.
 
 # Angriffe auf Secure Boot
 
