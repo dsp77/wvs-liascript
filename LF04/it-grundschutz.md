@@ -2,14 +2,14 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.0
-date:     06.04.2024
+version:  0.4.0
+date:     07.04.2024
 language: de
 narrator: Deutsch Female
 
-comment:  Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen.
+comment:  Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen. Lernfeld 4 der Fachinformatiker Ausbildung.
 
-logo:     02_img/logo-it-grundschutz.jpg
+logo:     02_img/logo-it-grundschutz.png
 
 tags:     LiaScript
 
@@ -56,6 +56,8 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 ## Sicherheitsleitlinie
 
+TODO: Sicherheitsleitlinie beschreiben
+
 ## Absicherungen nach IT-Grundschutz
  
 ![Absicherungen nach dem BSI-Grundschutz](02_img/lf04-gs_bsi_absicherungen.svg)
@@ -67,10 +69,20 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 ## Vorgehen nach der Variante Standardabsicherung
 
+Die folgende Abbildung zeigt den Ablauf der Standard-Absicherung nach BSI.
+
+Nach Festlegung des Geltungsbereiches wird zuerst die Strukturanalyse erstellt.
+
+Das Lernfeld 4 bezieht sich auf die Schutzbedarfsanalyse im eignenen Arbeitsbereich, was den Geltungsbereich entsprechend einschränkt.
+
 ![Ablauf der Standard-Absicherung nach BSI](02_img/lf04_gs_bsi_ablauf_standardabsicherung.svg)
 
+Nach der Strukturanalyse folgt die eigentliche Schutzbedarfsfeststellung. Die Begriffe Schutzbedarfsanalyse und Schutzbedarfsfeststellung werden hier als Synonyme verwendet.
 
- TODO: Vorgehensweise basierend auf dem Bild zeigen
+Es folgt dann die Modellierung der festgestellten Schutzbedarfe. Danach wird überprüft, was die Modellierung für Anforderungen ergeben hat und wie die bereits umgesetzt sind.
+
+Eine Risikoanalyse erfolgt für die Schutzbedarfskategorien hoch. Nach der Konsolidierung folgt die Überprüfung Teil 2 und schließlich die Umsetzung.
+
 
 ### Strukturanalyse
 
