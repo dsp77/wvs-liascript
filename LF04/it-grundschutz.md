@@ -83,7 +83,6 @@ Es folgt dann die Modellierung der festgestellten Schutzbedarfe. Danach wird üb
 
 Eine Risikoanalyse erfolgt für die Schutzbedarfskategorien hoch. Nach der Konsolidierung folgt die Überprüfung Teil 2 und schließlich die Umsetzung.
 
-
 ### Strukturanalyse
 
 Um die Strukturanalyse durchzuführen ist als Grundlage ein Netzwerkplan sinnvoll.
@@ -235,18 +234,18 @@ Die Anforderungen für das Abschlussprojekt werden in der [Verordnung über die 
   5. Schwachstellen von IT-Systemen zu analysieren und Schutzmaßnahmen vorzuschlagen und umzusetzen sowie
   6. Projekte der Systemintegration anforderungsgerecht zu dokumentieren.
 
-  Der Prüfling hat eine betriebliche Projektarbeit durchzuführen und mit praxisbezogenen Unterlagen zu dokumentieren. Vor der Durchführung der Projektarbeit hat er dem Prüfungsausschuss eine Projektbeschreibung zur Genehmigung vorzulegen. In der Projektbeschreibung hat er die Ausgangssituation und das Projektziel zu beschreiben und eine Zeitplanung aufzustellen. Die Prüfungszeit beträgt für die betriebliche Projektarbeit und für die Dokumentation mit praxisbezogenen Unterlagen höchstens 40 Stunden.
+Der Prüfling hat eine betriebliche Projektarbeit durchzuführen und mit praxisbezogenen Unterlagen zu dokumentieren. Vor der Durchführung der Projektarbeit hat er dem Prüfungsausschuss eine Projektbeschreibung zur Genehmigung vorzulegen. In der Projektbeschreibung hat er die Ausgangssituation und das Projektziel zu beschreiben und eine Zeitplanung aufzustellen. Die Prüfungszeit beträgt für die betriebliche Projektarbeit und für die Dokumentation mit praxisbezogenen Unterlagen höchstens 40 Stunden.
 
-  Für das Projekt ist in Bezug auf das Lernfeld 4 der Punkt **5. Schwachstellen von IT-Systemen zu analysieren und Schutzmaßnahmen vorzuschlagen und umzusetzen** relevant.
+Für das Projekt ist in Bezug auf das Lernfeld 4 der Punkt **5. Schwachstellen von IT-Systemen zu analysieren und Schutzmaßnahmen vorzuschlagen und umzusetzen** relevant.
 
 Der [Bewertungsbogen zum Projekt der IHK-Frankfurt](https://www.frankfurt-main.ihk.de/blueprint/servlet/resource/blob/6089272/fa59060ce400e323fc1ffdb2192653e8/fisi-bewertung-betriebl-projektarbeit-dihk-10-2023-data.pdf) listet unter **2. Ressourcen-/Ablaufplan** die Punkte:
 
-  * Analyse der Schwachstellen des IT-Systems und/oder Schutzbedarfsanalyse
-  * Darstellung der vorgeschlagenen Schutzmaßnahmen
+ * Analyse der Schwachstellen des IT-Systems und/oder Schutzbedarfsanalyse
+ * Darstellung der vorgeschlagenen Schutzmaßnahmen
 
 und unter **6. Kundendokumentation/Anhang**
- 
-  * Schutzbedarfsanalyse (Auszug)
+
+ * Schutzbedarfsanalyse (Auszug)
 
 Die Herausforderung ist also, unter der Restriktion das Projekt in 40 Stunden durchzuführen, dabei auch noch zu zeigen, dass Sie exemplarisch eine Schutzbedarfsanalyse durchführen, Schutzmaßnahmen vorschlagen und diese auszugsweise dokumentieren. Realistisch gesehen können hierzu aus den 40 Stunden nur 1-2 Stunden verwendet werden.
 
