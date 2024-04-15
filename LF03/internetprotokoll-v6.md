@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
-date:     26.03.2024
+version:  1.1.1
+date:     15.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -245,31 +245,32 @@ Das **Neighbour Discovery Protocol** nutzt ICMPv6-Nachrichten, um im Link-Lokale
                 node.
  * Redirect:  Ein Router informiert einen Host über einen besseren First-Hop-Knoten.
 
-Dazu werden fünf ICMPv6-Typen spezifiziert.
+Dazu werden fünf ICMPv6-Typen spezifiziert:
 
-Router Solicitation: When an interface becomes enabled, hosts may
+ 1. Router Solicitation: When an interface becomes enabled, hosts may
                 send out Router Solicitations that request routers to
                 generate Router Advertisements immediately rather than
                 at their next scheduled time.
 
-     Router Advertisement: Routers advertise their presence together
+ 2. Router Advertisement: Routers advertise their presence together
                 with various link and Internet parameters either
                 periodically, or in response to a Router Solicitation
                 message.  Router Advertisements contain prefixes that
                 are used for determining whether another address shares
                 the same link (on-link determination) and/or address
                 configuration, a suggested hop limit value, etc.
-     Neighbor Solicitation: Sent by a node to determine the link-layer
+
+ 3. Neighbor Solicitation: Sent by a node to determine the link-layer
                 address of a neighbor, or to verify that a neighbor is
                 still reachable via a cached link-layer address.
                 Neighbor Solicitations are also used for Duplicate
                 Address Detection.
 
-     Neighbor Advertisement: A response to a Neighbor Solicitation
+ 4. Neighbor Advertisement: A response to a Neighbor Solicitation
                 message.  A node may also send unsolicited Neighbor
                 Advertisements to announce a link-layer address change.
 
-     Redirect:  Used by routers to inform hosts of a better first hop
+ 5. Redirect:  Used by routers to inform hosts of a better first hop
                 for a destination.
 
 
