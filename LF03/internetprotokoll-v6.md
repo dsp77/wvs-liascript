@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.1
-date:     15.04.2024
+version:  1.2.0
+date:     18.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -49,15 +49,23 @@ Bei der maschinenbezogenen Nutzung und Darstellung wird von der sogenannten *kom
 
  1. Alle alphabetischen Zeichen (Buchstaben a, b, c, d, e, f) werden grundsätzlich kleingeschrieben.
  2. Alle führenden Nullen eines Blocks werden grundsätzlich weggelassen.
-     * 0000 -> 0; 0005 -> 5; 0600 -> 600
-     * `adcf:0005:0000:0000:0000:0000:0600:fedc`
-       * `adcf:5:0:0:0:0:600:fedc`
+
+    * 0000 -> 0; 0005 -> 5; 0600 -> 600
+    * `adcf:0005:0000:0000:0000:0000:0600:fedc`
+
+        * `adcf:5:0:0:0:0:600:fedc`
+
  3. Einer oder mehrere aufeinanderfolgende 4er-Nullerblöcke werden durch zwei Doppelpunkte ("::") gekürzt.
-     * `adcf:5:0:0:0:0:600:fedc`
-       * `adcf:5::600:fedc`
+
+    * `adcf:5:0:0:0:0:600:fedc`
+
+        * `adcf:5::600:fedc`
+
  4. Die Kürzung zu zwei Doppelpunkten ("::") darf nur einmal von links beginnend durchgeführt werden.
+
      * `127f:5:0:0:127:0:0:fedc`
-       * `127f:5::127:0:0:fedc`
+
+        * `127f:5::127:0:0:fedc`
 
 
 # Vorstellung vom Umfang der verfügbaren Adressen
@@ -69,6 +77,8 @@ Das *Réseaux IP Européens Network Coordination Centre* (RIPE NCC) ist u.a. fü
 Eine Motivation für die Entwicklung von IPv6 war es, dass die Adressen nicht so schnell ausgehen. Um eine Vorstellung von dem Umfang der Adressen zu erhalten, kann der Film von *Sunny Classroom* einen Eindruck geben.
 
 !?[Sunny Classroom: Kürzen von IPv6-Adressen; Umfang des Adressbereichs](https://youtu.be/O4LrtBS3laQ)
+
+In dem Film wird auf eine [Google-Webseite](https://www.google.de/intl/en/ipv6/statistics.html) verwiesen, auf der Google eine Statistik veröffentlicht, wie viele Nutzer die Google-Webseite mit IPv6 aufrufen. Im Jahr 2024 waren weltweit 45 % der Aufrufe mit IPv6.
 
 # IPv6-Adresspräfix
 
