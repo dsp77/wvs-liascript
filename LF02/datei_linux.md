@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.0
-date:     21.03.2024
+version:  0.1.1
+date:     19.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -22,13 +22,14 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 Bei Linux handelt es sich um ein Multiuser-System. Das bedeutet, dass sich mehrere Benutzer gleichzeitig anmelden und an dem System arbeiten können. Damit sich die angemeldeten Benutzer beim Arbeiten nicht in die Quere kommen, muss das System wissen, wer was machen darf. Dafür gibt es die Benutzer und die Gruppen.
  
- ##  Benutzer
+##  Benutzer
 
 Bei den Benutzern unterscheidet man zwischen den „normalen Benutzern“ und den sogenannten „Systembenutzern“. Die folgende Abbildung gibt dazu einen Überblick. 
 
 ![Benutzer unter Linux](02_img/lf02_lx_user_root.png)
 
 Bei dem normalen Benutzer handelt es sich um das Benutzerkonto, das Sie benötigen, um sich an einem Computer mit Ihrem Benutzernamen und Passwort anzumelden. Die Systembenutzer werden vom System erzeugt. Diese dienen als Benutzer für Systemdienste und es ist nicht möglich, sich über den Benutzernamen eines Systembenutzers am System anzumelden. Unter Linux gibt es einen Benutzer, der alles darf (unter Windows der Administrator), den „root“. Allgemein gilt, dass auf einem System nur mit „root“-Rechten gearbeitet wird, wenn es wirklich nötig ist. Ansonsten wird mit dem normalen Benutzer gearbeitet. In der Abbildung gezeigt, der Benutzer werner darf über das sudo-Kommando Administrationsrechte erreichen. Dem Benutzer krause ist das verwehrt.
+
  * Informationen über konfigurierte Benutzer finden Sie in der Datei `/etc/passwd`
  * Eine Beschreibung über den Inhalt der Datei erhalten Sie auf der Konsole über den Befehl `man 5 passwd`.
  * Konfiguration wer `sudo` verwenden darf über `/etc/sudoers`. Unter Ubuntu wird Verwendung über Gruppenzugehörigkeit in der Gruppe sudo erreicht.
@@ -37,14 +38,16 @@ Bei dem normalen Benutzer handelt es sich um das Benutzerkonto, das Sie benötig
 
 Benutzer werden in Gruppen zusammengefasst. Dabei hat ein Benutzer eine Hauptgruppe (Primärgruppe) und kann noch weiteren Gruppen (Sekundärgruppen) zugeordnet werden.
 Die Gruppenzugehörigkeit hat u.a. einen Einfluss auf den Dateizugriff. Eine Datei, die von einem Benutzer erzeugt wird, erhält als Besitzer den Benutzernamen und normalerweise als Gruppe die primäre Gruppe des Benutzers. Den Zugriff auf eine Datei über die Gruppenrechte erhält ein Benutzer basierend auf seiner primären und sekundären Gruppenzugehörigkeit. Dazu aber mehr im Expertenblatt für Dateirechte.
+
  * Informationen über die primäre Gruppe eines Benutzers finden Sie in der Datei `/etc/passwd`.
  * Informationen über die sekundären Gruppen finden Sie in der Datei `/etc/group`.
  * Eine Beschreibung über den Inhalt der Datei `/etc/group` erhalten Sie auf der Konsole über den Befehl `man 5 group`.
  * Gruppenzugehörigkeit kann auch mit dem Befehl `id` abgefragt werden.
 
+
 # Linux Dateirechte
 
- ## Dateieigenschaften im VFS
+## Dateieigenschaften im VFS
 
 UNIX-Systeme wie Linux verwalten ihre Dateien in einem virtuellen Dateisystem (VFS, Virtual File System). Dieses ordnet jeder Datei u.a. folgende Eigenschaften zu, unabhängig davon, ob diese vom zugrunde liegenden realen Dateisystem tatsächlich unterstützt werden oder nicht:
 
@@ -53,9 +56,10 @@ UNIX-Systeme wie Linux verwalten ihre Dateien in einem virtuellen Dateisystem (V
  * Gruppe
  * Zugriffsrechte
 
-Quasi jedes unter Linux gängige Dateisystem (z.B. ext2/3/4, ReiserFS, xfs usw.) unterstützt diese Rechte. Gar nicht oder nicht vollständig umgesetzt werden die Rechte jedoch auf Nicht-Linux Dateisystemen, also z.B. FAT oder NTFS aus der Windows-Welt.
+Quasi jedes unter Linux gängige Dateisystem (z.B. ext2/3/4, ReiserFS, xfs usw.) unterstützt diese Rechte. Gar nicht oder nicht vollständig umgesetzt werden die Rechte jedoch auf Nicht-Linux-Dateisystemen, also z.B. FAT oder NTFS aus der Windows-Welt.
+
  
- ## Rechte
+## Rechte
 
 Unter Linux sind jeder Datei und jedem Ordner drei Rechteebenen zugeordnet. Sie gelten für:
 
@@ -70,6 +74,7 @@ Jeder dieser Ebenen lassen sich gesonderte Rechte zuordnen. Diese Rechte sind:
  * `x` wie „execute“ für das Recht, eine Datei auszuführen (bei Verzeichnissen bedeutet das `x`, dass das Verzeichnis geöffnet werden darf).
 
 Wer mit dem Befehl `ls -l` den Inhalt eines Linux-Verzeichnisses anzeigen lässt, sieht links die Dateirechte, beispielsweise `-rwxrw-r--`. Diese Rechte gelten von links nach rechts gelesen für den 
+
  1. Eigentümer einer Datei `rwx`, 
  2. für die Gruppe `rw-` 
  3. und für die anderen Benutzer `r--`.
