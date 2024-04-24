@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.0
-date:     18.04.2024
+version:  1.2.1
+date:     24.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -88,7 +88,7 @@ Die folgenden drei Adresspräfixe mit `/4`, `/8` und `/16`-Bit zeigen, wie der z
 
  * `2004::/4` -> `2xxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`
  * `2004::/8` -> `20xx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`
- * `2004::/16` -> `2000:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`
+ * `2004::/16` -> `2004:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`
 
 Die von IPv4 bekannten Begriffe von *Netzwerkadresse* und *Broadcastadresse* gibt es bei IPv6 nicht mehr. Anstelle der Netzwerkadresse gibt es jetzt das **Adresspräfix**. Der Broadcast wird bei IPv6 mithilfe von Multicastadressen realisiert.
 
