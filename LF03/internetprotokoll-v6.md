@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.1
-date:     24.04.2024
+version:  1.3.1
+date:     25.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -50,22 +50,17 @@ Bei der maschinenbezogenen Nutzung und Darstellung wird von der sogenannten *kom
  1. Alle alphabetischen Zeichen (Buchstaben a, b, c, d, e, f) werden grundsätzlich kleingeschrieben.
  2. Alle führenden Nullen eines Blocks werden grundsätzlich weggelassen.
 
-    * 0000 -> 0; 0005 -> 5; 0600 -> 600
-    * `adcf:0005:0000:0000:0000:0000:0600:fedc`
-
-        * `adcf:5:0:0:0:0:600:fedc`
+    * `0000` -> `0`; `0005` -> `5`; `0600` -> `600`
+    * `adcf:0005:0000:0000:0000:0000:0600:fedc` --> `adcf:5:0:0:0:0:600:fedc`
 
  3. Einer oder mehrere aufeinanderfolgende 4er-Nullerblöcke werden durch zwei Doppelpunkte ("::") gekürzt.
 
-    * `adcf:5:0:0:0:0:600:fedc`
+    * `adcf:5:0:0:0:0:600:fedc` --> `adcf:5::600:fedc`
 
-        * `adcf:5::600:fedc`
+ 4. Die Kürzung zu zwei Doppelpunkten ("::") darf nur einmal durchgeführt werden und muss die längste Anzahl an 4er-Blöcken mit Nullen kürzen. Sollten zwei 4er-Blöcke mit gleicher Anzahl von Nullen vorhanden sein, wird die linke Gruppe gekürzt.
 
- 4. Die Kürzung zu zwei Doppelpunkten ("::") darf nur einmal von links beginnend durchgeführt werden.
-
-     * `127f:5:0:0:127:0:0:fedc`
-
-        * `127f:5::127:0:0:fedc`
+    * `2001:0:0:1:0:0:0:2` --> `2001:0:0:1::2`
+    * `127f:5:0:0:127:0:0:fedc` --> `127f:5::127:0:0:fedc`
 
 
 # Vorstellung vom Umfang der verfügbaren Adressen
