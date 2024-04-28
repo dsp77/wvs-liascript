@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.1
-date:     25.04.2024
+version:  1.2.0
+date:     28.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -62,6 +62,23 @@ Bei der maschinenbezogenen Nutzung und Darstellung wird von der sogenannten *kom
     * `2001:0:0:1:0:0:0:2` --> `2001:0:0:1::2`
     * `127f:5:0:0:127:0:0:fedc` --> `127f:5::127:0:0:fedc`
 
+
+## Übung: IPv6-Adressen nach RFC 5952 kürzen
+
+ * `2001:0db8:3c4d:0016:0000:0000:2a3f:2a4d` -> [[2001:0db8:3c4d:16::2a3f:2a4d]]
+ * `2001:0000:0000:0000:0002:0000:0000:0001` -> [[2001::2:0:0:1]]
+ * `2001:0db8:0000:0000:f065:00ff:0000:04ec` -> [[2001:db8::f065:ff:0:e4c]]
+ * `1080:0000:0000:0000:0007:0700:0004:316b` -> [[1080::7:700:4:316b]]
+ * `2001:0db8:0000:0000:08d3:0000:0000:0000` -> [[2001:db8:0:0:8d3::]]
+ 
+
+## Übung: Gekürzte IPv6-Adressen erweitern
+
+ * `ff02::1` -> [[ff02:0000:0000:0000:0000:0000:0000:0001]]
+ * `2001:0:0:3f::` -> [[2001:0000:0000:003f:0000:0000:0000:0000]]
+ * `ff06:0:1::c3` -> [[ff06:0000:0001:0000:0000:0000:0000:00c3]]
+ * `fc08::2:0:3` -> [[fc08:0000:0000:0000:0000:0002:0000:0003]]
+ * `2022::fc:2` -> [[2022:0000:0000:0000:0000:0000:00fc:0002]]
 
 # Vorstellung vom Umfang der verfügbaren Adressen
 
