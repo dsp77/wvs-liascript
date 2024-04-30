@@ -2,7 +2,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.4.0
+version:  0.4.1
 date:     07.04.2024
 language: de
 narrator: Deutsch Female
@@ -57,6 +57,12 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 ## Sicherheitsleitlinie
 
 TODO: Sicherheitsleitlinie beschreiben
+
+https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/Zertifizierte-Informationssicherheit/IT-Grundschutzschulung/Online-Kurs-IT-Grundschutz/Lektion_2_Sicherheitsmanagement/Lektion_2_07/Lektion_2_07_node.html
+
+https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Hilfsmittel/Recplast/A01_Sicherheitsleitlinie.pdf?__blob=publicationFile&v=2
+
+
 
 ## Absicherungen nach IT-Grundschutz
  
