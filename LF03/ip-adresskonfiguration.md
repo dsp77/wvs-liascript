@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.0
-date:     27.03.2024
+version:  1.4.0
+date:     30.04.2024
 language: de
 narrator: Deutsch Female
 
@@ -80,6 +80,10 @@ Um über Routergrenzen hinweg die Konfiguration mithilfe von DHCP zu nutzen, ben
 ## Ausfallsicherheit
 
 Ausfallsicherheit kann z.B. durch zwei DHCP-Server erreicht werden. Dazu muss der zu vergebende Adressbereich auf die beiden Server aufgeteilt werden. Bei konkurrierendem **Offer** der beiden Server wird der Client, dass ihm schneller erreichende **Offer** akzeptieren.
+
+## DHCP Parameter
+
+Die [Internet Assigned Numbers Authority (IANA)](www.iana.org) dokumentiert in dem Dokument ["Dynamic Host Configuration Protocol (DHCP) and Bootstrap Protocol (BOOTP) Parameters"](https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml) mögliche Parameter, die mit DHCP konfiguriert werden können.
 
 ## DHCPv6
 
