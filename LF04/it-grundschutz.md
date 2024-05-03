@@ -74,6 +74,31 @@ https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Hilfsmittel/Recp
     * Die Organisationsstruktur für Informationssicherheit und die Aufgaben der verschiedenen Sicherheitsverantwortlichen werden vorgestellt.
     * Sinnvoll ist auch der Hinweis auf Sicherheitsschulungen und Sensibilisierungsmaßnahmen.
 
+## Sicherheitsleitlinie nach IT-Grundschutz
+
+**Grundsatzdokument der Leitung**
+
+Die Sicherheitsleitlinie ist ein zentrales Dokument der Unternehmensleitung, das den Stellenwert der Informationssicherheit in der Organisation definiert. Sie legt die verbindlichen Prinzipien und das anzustrebende Niveau der Informationssicherheit fest. 
+
+**Bekanntgabe und Aktualisierung**
+
+Die Leitlinie muss allen betroffenen Mitarbeitern bekannt gegeben und in regelmäßigen Abständen aktualisiert werden, um den aktuellen Gegebenheiten und Bedrohungen zu entsprechen.
+
+**Inhalt der Sicherheitsleitlinie**
+
+Die Sicherheitsleitlinie sollte folgende Punkte beinhalten:
+
+* **Geltungsbereich:** Konkretisierung des Geltungsbereichs der Leitlinie, z. B. die gesamte Organisation oder bestimmte Bereiche.
+* **Bedeutung der Informationssicherheit:** Hervorhebung der Bedeutung der Informationssicherheit für die Organisation, z. B. mögliche Schadensfälle bei einem Ausfall der IT oder einem Datenleck.
+* **Verantwortung der Leitung:** Betonung der Verantwortung der Leitung für die Initiierung und kontinuierliche Verbesserung des Informationssicherheitsprozesses.
+* **Gesetze und Auflagen:** Verweis auf einschlägige Gesetze und Regulierungsauflagen im Bereich der Informationssicherheit und Verpflichtung der Mitarbeiter zur Einhaltung.
+* **Kritische Geschäftsprozesse:** Benennung besonders kritischer Geschäftsprozesse für die Informationssicherheit, z. B. Produktionsabläufe, Forschungsverfahren oder Personalbearbeitung, und Hervorhebung der strikten Einhaltung von Sicherheitsregeln in diesen Bereichen.
+* **Organisationsstruktur:** Darstellung der Organisationsstruktur für Informationssicherheit und Festlegung der Aufgaben der verschiedenen Sicherheitsverantwortlichen.
+* **Sicherheitsschulungen:** Hinweis auf die Bedeutung von Sicherheitsschulungen und Sensibilisierungsmaßnahmen für alle Mitarbeiter.
+
+Die Sicherheitsleitlinie bildet die Grundlage für ein umfassendes Informationssicherheitsmanagement (ISMS) in der Organisation. Sie trägt dazu bei, die Vertraulichkeit, Integrität und Verfügbarkeit von Informationen zu schützen und das Unternehmen vor Cyberangriffen und anderen Sicherheitsrisiken zu bewahren.
+
+
 ## Absicherungen nach IT-Grundschutz
  
 ![Absicherungen nach dem BSI-Grundschutz](02_img/lf04-gs_bsi_absicherungen.svg)
