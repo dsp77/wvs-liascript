@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="241.34001mm"
+   height="58.095631mm"
+   viewBox="0 0 251.64808 60.577"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="lf04-gs_aufbau.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.76167929"
+     inkscape:cx="466.73187"
+     inkscape:cy="126.69374"
+     inkscape:window-width="1600"
+     inkscape:window-height="828"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-24.94833,-71.720291)">
+    <ellipse
+       style="fill:#ffd42a;stroke-width:0.264583"
+       id="path1"
+       cx="149.28035"
+       cy="101.67159"
+       rx="59.537945"
+       ry="19.418312" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;fill:#000000;stroke-width:0.264583"
+       x="112.63642"
+       y="104.09741"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="112.63642"
+         y="104.09741">Sicherheitsniveau</tspan></text>
+    <rect
+       style="fill:#e9afaf;stroke-width:0.264583"
+       id="rect5"
+       width="82.589973"
+       height="21.053974"
+       x="189.76787"
+       y="72.823822"
+       ry="7.360992" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;fill:#000000;stroke-width:0.264583"
+       x="197.30324"
+       y="86.105797"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="197.30324"
+         y="86.105797">Organisatorisch</tspan></text>
+    <rect
+       style="fill:#e9afaf;stroke-width:0.264583"
+       id="rect6"
+       width="82.589973"
+       height="21.053974"
+       x="189.76787"
+       y="109.86547"
+       ry="7.360992" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;fill:#000000;stroke-width:0.264583"
+       x="213.1781"
+       y="123.67674"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="213.1781"
+         y="123.67674">Personell</tspan></text>
+    <rect
+       style="fill:#e9afaf;stroke-width:0.264583"
+       id="rect7"
+       width="82.589973"
+       height="21.053974"
+       x="31.017792"
+       y="109.86547"
+       ry="7.360992" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;fill:#000000;stroke-width:0.264583"
+       x="45.432346"
+       y="123.14742"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="45.432346"
+         y="123.14742">Infrastruktur</tspan></text>
+    <rect
+       style="fill:#e9afaf;stroke-width:0.264583"
+       id="rect8"
+       width="82.589973"
+       height="21.053974"
+       x="31.017792"
+       y="72.82383"
+       ry="7.360992" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;fill:#000000;stroke-width:0.264583"
+       x="50.723995"
+       y="86.634926"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-size:8.46667px;stroke-width:0.264583"
+         x="50.723995"
+         y="86.634926">Technisch</tspan></text>
+  </g>
+</svg>

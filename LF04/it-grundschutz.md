@@ -2,8 +2,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.5.0
-date:     07.04.2024
+version:  0.6.0
+date:     05.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -49,30 +49,19 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
   * organisatorische
   * personelle
 
+![Übersicht des IT-Grundschutzes](02_img/lf04-gs_aufbau.svg)
+
+Die Vorgehensweise nach IT-Grundschutz hilft, systematisch für eine Institution ein angemessenes Sicherheitsniveau zu erreichen.
+
+Eine traditionelle Risikoanalyse mit den Schritten: Ermittlung von Bedrohungen, Bewertung von Eintrittswhrscheinlichkeiten und Auswahl von Sichheitsmaßnahmen ist nicht mehr notwendig.
+
+Der Begriff Risikonalyse bekommt im Zusammenhang mit dem IT-Grundschutz eine neue Bedeutung.
+
+
 # Umsetzung des IT-Grundschutzes
 
 ![Phasen des Sicherheitsprozesses nach dem BSI-Grundschutz](02_img/lf04_gs_phasen_sicherheitsprozess.svg)
 
-
-## Sicherheitsleitlinie
-
-TODO: Sicherheitsleitlinie beschreiben
-
-https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/Zertifizierte-Informationssicherheit/IT-Grundschutzschulung/Online-Kurs-IT-Grundschutz/Lektion_2_Sicherheitsmanagement/Lektion_2_07/Lektion_2_07_node.html
-
-https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Hilfsmittel/Recplast/A01_Sicherheitsleitlinie.pdf?__blob=publicationFile&v=2
-
- * Grundsatzdokument der Leitung des Unternehmens
- * Stellenwert, den verbindlichen Prinzipien und dem anzustrebenden Niveau der Informationssicherheit in einer Institution
- * Die Leitlinie muss allen betroffenen Mitarbeitern bekannt gegeben und kontinuierlich aktualisiert werden.
- * Was sollte in der Leitlinie zur Informationssicherheit festgelegt werden?
-    * Der Geltungsbereich wird konkretisiert.
-    * Die Bedeutung, die Informationssicherheit für eine Institution hat, wird hervorgehoben, etwa indem darauf hingewiesen wird, dass ein Ausfall der Informationstechnik oder Verletzungen der Vertraulichkeit und Integrität von Informationen die Existenz der Institution gefährden.
-    * Die Verantwortung der Leitung wird betont, sowohl im Hinblick auf die Initiierung des Sicherheitsprozesses als auch auf dessen kontinuierliche Verbesserung.
-    * Es wird auf einschlägige Gesetze und Regulierungsauflagen hingewiesen und die Mitarbeiter werden verpflichtet, diese zu beachten.
-    * Es werden für die Informationssicherheit besonders wichtige Geschäftsprozesse genannt, etwa Produktionsabläufe, Forschungsverfahren oder Personalbearbeitung, und auf die strikte Einhaltung von Sicherheitsregeln hingewiesen.
-    * Die Organisationsstruktur für Informationssicherheit und die Aufgaben der verschiedenen Sicherheitsverantwortlichen werden vorgestellt.
-    * Sinnvoll ist auch der Hinweis auf Sicherheitsschulungen und Sensibilisierungsmaßnahmen.
 
 ## Sicherheitsleitlinie nach IT-Grundschutz
 
@@ -97,6 +86,10 @@ Die Sicherheitsleitlinie sollte folgende Punkte beinhalten:
 * **Sicherheitsschulungen:** Hinweis auf die Bedeutung von Sicherheitsschulungen und Sensibilisierungsmaßnahmen für alle Mitarbeiter.
 
 Die Sicherheitsleitlinie bildet die Grundlage für ein umfassendes Informationssicherheitsmanagement (ISMS) in der Organisation. Sie trägt dazu bei, die Vertraulichkeit, Integrität und Verfügbarkeit von Informationen zu schützen und das Unternehmen vor Cyberangriffen und anderen Sicherheitsrisiken zu bewahren.
+
+Der BSI gibt ein [Beispiel für Sicherheitsleitlinie](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Hilfsmittel/Recplast/A01_Sicherheitsleitlinie.pdf?__blob=publicationFile&v=2
+) als [Teil des Onlinekurses](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/Zertifizierte-Informationssicherheit/IT-Grundschutzschulung/Online-Kurs-IT-Grundschutz/Lektion_2_Sicherheitsmanagement/Lektion_2_07/Lektion_2_07_node.html).
+
 
 
 ## Absicherungen nach IT-Grundschutz
