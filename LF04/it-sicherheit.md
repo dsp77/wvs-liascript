@@ -61,7 +61,7 @@ Ich kann …
  * … beschreiben, welcher Zusammenhang zwischen der EU-DSGVO und dem BDSG besteht.
  * … beschreiben, was technische organisatorische Maßnahmen (TOM) sind und wie sie angewendet werden.
  * … nach der DSGVO die **allgemeinen Prinzipien der Verarbeitung personenbezogener Daten (Art. 5 DSGVO)** benennen und zu jedem Begriff ein Beispiel nennen.
- * … kann nach Art. 1 bis 23 DSGVO **Rechte betroffener Personen** nennen.
+ * … kann nach Art. 12 bis 23 DSGVO **Rechte betroffener Personen** nennen.
  * … erklären, was die **Grundsätze ordnungsmäßiger Datenverarbeitung (GoBD)** sind und welche Anforderungen daraus an die Datensicherheit entstehen.
  * … erklären, welche Anforderungen aus dem **Handelsgesetzbuch** an die Datensicherheit entstehen.
  * … erklären, was eine **revisionssichere Speicherung** von Daten bedeutet und für welche Daten diese nötig ist.

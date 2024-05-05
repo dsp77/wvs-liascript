@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.3
+version:  1.3.3
 date:     04.03.2024
 language: de
 narrator: Deutsch Female
@@ -11,7 +11,7 @@ comment:  Internetprotokoll Version 4 (IPv4); Aufbau der Adresse, Subnetzwerkmas
 
 logo:     02_img/logo-ipv4.png
 
-tags:     LiaScript
+tags:     LiaScript, IPv4, Gateway, IP-Header, ICMP, Trace Route
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -439,6 +439,7 @@ Die IP-Adresse lautet also `192.168.0.19`
 
  1. Bestimmen Sie den Versionswert des Paketes.
  2. Bestimmen Sie, über wie viele Netzwerkknoten das Paket auf seinem Weg zum Ziel noch gesendet werden kann, bevor es verworfen wird (Time to Live).
+
 
 # Quellen
 

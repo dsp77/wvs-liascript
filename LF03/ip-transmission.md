@@ -94,7 +94,7 @@ Der verwerfende Router sendet ein **ICMP-Paket** zurück an die Quelladresse des
 
 ![Trace Route](02_img/lf03_ipv4_traceroute.svg)
 
-Mit der Funktion
+Mit der Funktion TODO: ...
 
 Diese Funktion kann genutzt werden, um die Router einer Strecke bis zu einem bestimmten Ziel zu ermitteln.
 
