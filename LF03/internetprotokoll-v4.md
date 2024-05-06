@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.3
-date:     04.03.2024
+version:  1.4.0
+date:     06.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -313,6 +313,71 @@ Um so ein großes Paket mit Ethernet zu übertragen, muss das IP-Paket aufgeteil
 
  * DF - Don't Fragment - dieses Paket darf nicht aufgeteilt werden
  * MF - More Fragments - es folgen noch weitere Fragmente, die zu einem Gesamtpaket zusammengesetzt werden müssen
+
+# Übung Ping und Traceroute
+
+Mit dem Tool `ping` und `traceroute` soll die Laufzeit eines IP-Pakets über eine längere Strecke und die Zwischenstationen ermittelt werden.
+
+Als Ziel soll die Webseite der Regierung von Tonga dienen, die unter dem Domänennamen [www.gov.to](www.gov.to) erreichbar ist. Auf Google-Maps ist [Tonga findbar](https://www.google.de/maps/place/Tonga/@-21.1716063,163.7017822,4z/data=!4m15!1m8!3m7!1s0x7193b644bb9fd01d:0xf36dcccac55ee2a9!2sTonga!3b1!8m2!3d-21.178986!4d-175.198242!16zL20vMDdmYjY!3m5!1s0x7193b644bb9fd01d:0xf36dcccac55ee2a9!8m2!3d-21.178986!4d-175.198242!16zL20vMDdmYjY?entry=ttu).
+
+```
+ping www.gov.to
+PING www.gov.to (175.176.147.36) 56(84) bytes of data.
+64 bytes from 175.176.147.36 (175.176.147.36): icmp_seq=1 ttl=50 time=414 ms
+64 bytes from 175.176.147.36 (175.176.147.36): icmp_seq=2 ttl=50 time=410 ms
+64 bytes from 175.176.147.36 (175.176.147.36): icmp_seq=3 ttl=50 time=431 ms
+```
+
+Aus Europa gestartet, beträgt die Laufzeit ca 400 ms.
+
+Die ursprüngliche Definition von Time To Live ist, dass der Wert einmal pro Sekunde reduziert werden muss oder wenn ein Router passiert wird, was als Hop bezeichnet wird. Mit der Strecke von Europa nach Tonga ist die Paketlaufzeit gerade mal 400 ms. Daher ist die Funktion hauptsächlich ein Hop-Count.
+
+Um die Strecke der verwendeten Router zu ermittlen, wird ein Ping mit steigenden TTL-Werten verwendet. Der erste Router wird ermittelt, indem der TTL-Wert auf 1 gesetzt wird. Der erste Router (Hop) reduziert den TTL-Wert zu null, muss damit das Paket verwerfen und meldet den Verwurf an die Quelladresse. Damit erlangt das Ping-Kommando die Information des ersten Routers.
+
+```
+ping -t 1 www.gov.to
+PING www.gov.to (175.176.147.36) 56(84) bytes of data.
+From fritz.box (192.168.178.1) icmp_seq=1 Time to live exceeded
+
+
+ping -t 2 www.gov.to
+PING www.gov.to (175.176.147.36) 56(84) bytes of data.
+From p12345678.dip0.t-ipconnect.de (62.155.246.196) icmp_seq=1 Time to live exceeded
+```
+
+Um das ganze abzukürzen, gibt es das Kommando `traceroute`, das genau die Schritte wiederholt, bis das Ziel erreicht ist:
+
+```
+traceroute --resolve-hostname www.gov.to
+traceroute to www.gov.to (175.176.147.36), 64 hops max
+  1   192.168.178.1 (fritz.box)  2,287ms  1,556ms  2,309ms 
+  2   62.155.246.196 (p12345678.dip0.t-ipconnect.de)  9,754ms  5,843ms  5,138ms 
+  3   217.5.67.154 (f-ed12-i.F.DE.NET.DTAG.DE)  8,820ms  8,784ms  8,569ms 
+  4   80.150.170.131 (80.150.170.131)  22,768ms  21,243ms  21,552ms 
+  5   130.117.1.118 (be3187.ccr42.fra03.atlas.cogentco.com)  17,543ms  16,385ms  16,732ms 
+  6   130.117.3.66 (be5160.ccr41.ams03.atlas.cogentco.com)  22,800ms  21,528ms  21,826ms 
+  7   154.54.56.93 (154.54.56.93)  111,801ms  110,097ms  108,202ms 
+  8   154.54.60.14 (be3488.ccr52.lhr01.atlas.cogentco.com)  198,984ms  112,938ms  112,507ms 
+  9   154.54.47.145 (be4283.ccr32.bos01.atlas.cogentco.com)  106,568ms  106,823ms  160,212ms 
+ 10   66.28.4.237 (66.28.4.237)  204,988ms  130,440ms  112,120ms 
+ 11   154.54.6.221 (be2717.ccr41.ord01.atlas.cogentco.com)  196,007ms  183,672ms  204,909ms 
+ 12   154.54.6.221 (be2717.ccr41.ord01.atlas.cogentco.com)  114,156ms  193,046ms  113,431ms 
+ 13   154.54.31.89 (be3036.ccr22.den01.atlas.cogentco.com)  193,182ms  262,304ms  206,145ms 
+ 14   154.54.42.97 (be3038.ccr32.slc01.atlas.cogentco.com)  189,847ms  192,075ms  204,903ms 
+ 15   154.54.2.197 (be2085.ccr21.sea02.atlas.cogentco.com)  204,116ms  204,902ms  204,964ms 
+ 16   154.54.86.110 (be2029.ccr22.sea02.atlas.cogentco.com)  208,729ms  186,208ms  203,955ms 
+ 17   154.54.31.158 (be2216.ccr51.pdx02.atlas.cogentco.com)  176,891ms  244,746ms  204,845ms 
+ 18   154.54.31.158 (be2216.ccr51.pdx02.atlas.cogentco.com)  210,188ms  198,906ms  204,966ms 
+ 19   154.54.47.229 (be3588.ccr71.syd01.atlas.cogentco.com)  409,341ms  401,072ms  404,847ms 
+ 20   154.18.98.18 (tongacable.demarc.cogentco.com)  409,263ms  389,952ms  352,661ms 
+ 21   *  *  * 
+ 22   *  *  * 
+ 23   103.245.162.6 (103.245.162.6)  378,883ms  409,624ms  408,577ms 
+ 24   *  *  * 
+ 25   *  *  * 
+
+```
+
 
 # Hex-Dump-Analyse
 
