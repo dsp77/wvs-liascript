@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.4.0
+version:  1.4.1
 date:     06.05.2024
 language: de
 narrator: Deutsch Female
@@ -377,7 +377,7 @@ traceroute to www.gov.to (175.176.147.36), 64 hops max
  25   *  *  * 
 
 ```
-
+Auf der Webseite https://stefansundin.github.io/traceroute-mapper/ kann die Ausgabe von traceroute auf einer Weltkartedargestellt werden.
 
 # Hex-Dump-Analyse
 
