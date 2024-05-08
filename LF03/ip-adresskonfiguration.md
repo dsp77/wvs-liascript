@@ -85,6 +85,54 @@ Ausfallsicherheit kann z.B. durch zwei DHCP-Server erreicht werden. Dazu muss de
 
 Die [Internet Assigned Numbers Authority (IANA)](www.iana.org) dokumentiert in dem Dokument ["Dynamic Host Configuration Protocol (DHCP) and Bootstrap Protocol (BOOTP) Parameters"](https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.xhtml) mögliche Parameter, die mit DHCP konfiguriert werden können.
 
+Hierbei handelt es sich um konfigurierbare Parameter, die ein DHCP-Server an DHCP-Clients im Netzwerk weitergeben kann. Diese Optionen liefern zusätzliche Informationen und Konfigurationseinstellungen, die für den Client-Betrieb notwendig sind, jenseits der einfachen IP-Adresszuweisung.
+
+Allgemeine Informationen:
+
+Zweck: DHCP-Optionen ermöglichen die Anpassung der Netzwerkkonfiguration für verschiedene Client-Typen und Umgebungen.
+Funktionsweise: Optionen werden als Code-Wert-Paare definiert und in DHCP-Nachrichten zwischen Server und Client übertragen.
+Standardisierung: Die Definition und Zuweisung von DHCP-Optionen wird durch RFCs (Request for Comments) geregelt.
+
+Beispiele für gängige DHCP-Optionen:
+
+ * Option 1: Subnetzmaske
+ * Option 3: Router-Adresse
+ * Option 6: DNS-Server-Adresse
+ * Option 42: NTP-Server-Adresse
+ * Option 150: TFTP-Server-Adresse
+ * Option 153: Domain-Name-Server (DNS) Suchdomain
+
+Detaillierte Beschreibungen der Optionen 1, 3, 6 und 42:
+
+### Option 1: Subnetzmaske
+
+Zweck: Definition der Subnetzmaske für das IP-Netzwerk, dem der Client angehört.
+Wert: 32-Bit-Binärzahl, die die Subnetzmaske des Netzwerks repräsentiert.
+
+### Option 3: Router-Adresse
+
+Zweck: Angabe der IP-Adresse des Standard-Gateways für den Client.
+Wert: Einzelne IP-Adresse des Routers, der den Datenverkehr zwischen dem Client und anderen Netzen weiterleitet.
+
+### Option 6: DNS-Server-Adresse
+
+Zweck: Bereitstellung der IP-Adressen von DNS-Servern, die der Client zur Namensauflösung verwenden kann.
+Wert: Liste von IP-Adressen von DNS-Servern, getrennt durch Leerzeichen.
+
+### Option 42: NTP-Server
+
+Zweck: Bereitstellung der IP-Adressen von NTP-Servern (Network Time Protocol) zur Zeitsynchronisation des Clients.
+Wert: Liste von IP-Adressen von NTP-Servern, getrennt durch Leerzeichen, in bevorzugter Reihenfolge.
+DHCP-Optionen für PXE-Boot
+
+### PXE (Preboot Execution Environment) 
+
+PXE nutzt DHCP-Optionen, um Informationen an Client-Geräte bereitzustellen, die von einem PXE-Server booten möchten. Diese Optionen enthalten Konfigurationsdetails für den Boot-Prozess und steuern den Ablauf des Netzwerkstarts.
+
+Übermittelte Optionen sind z.B. der TFTP-Server, von dem ein Betriebssystem-Image geladen werden soll, und der Pfad und Name des zu ladenden Images.
+
+Weitere Informationen liefert z.B. der Wikipediaartikel zu [Preboot Execution Environment](https://de.wikipedia.org/wiki/Preboot_Execution_Environment)
+
 ## DHCPv6
 
 Für die IP-Adressvergabe hat IPv6 einen eigenen Mechanismus, jedoch sind die konfigurierbaren Parameter nicht so umfangreich, wie es mit DHCP möglich ist. Daher gibt es seit 2003 den [**RFC 8415**](https://www.rfc-editor.org/rfc/rfc8415.html), in dem beschrieben ist, wie die Konfiguration von DHCP auch über IPv6 möglich ist.
