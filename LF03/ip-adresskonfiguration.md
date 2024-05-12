@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.4.0
-date:     30.04.2024
+version:  1.5.0
+date:     12.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -184,7 +184,7 @@ Die folgende Abbildung zeigt die Schritte, um von einer dem Interface zugehörig
 
 Zu bemerken ist das Bit 41 der MAC-Adresse, das sich im ersten Oktett der MAC-Adresse befindet. Es bestimmt, ob es sich um eine weltweit eindeutige oder eine im lokalen Netzwerk lokal vergebene MAC-Adresse handelt. Dieses Bit wird für die Bildung der Interface-ID umgedreht (flipped). Ein gesetztes Bit wird gelöscht oder ein gelöschtes Bit wird gesetzt. Bei einer eindeutigen MAC-Adresse entsprechen die ersten 24 Bits der sogenannten Company-ID, die der Herstellerfirma vom IEEE zugewiesen wird. Die MAC-Adresse wird an der Grenze aufgesplittet und die 16-Bit `ff fe` werden eingefügt. So werden aus den 48 Bit der MAC-Adresse die 64 Bit der Interface-ID.
 
-Das folgende Beispiel zeigt die Schritte anhand des Adresspräfix `fe80:0000:0000:0000::/32`.
+Das folgende Beispiel zeigt die Schritte anhand des Adresspräfixes `fe80:0000:0000:0000::/32`.
 
 ````
 Adresspräfix: fe80:0000:0000:0000::/32
@@ -213,3 +213,25 @@ Nennen Sie die folgenden zugehörigen Werte:
  * Interface-Identifier: [[521a:c5ff:fef2:38b7]]
 
  (IT-Berufe, IHK-Abschlussprüfung Teil 1 Frühjahr 2024)
+
+# Duplicate Address Detection (DAD)
+
+Nach Bildung der Link-Local-Adresse muss überprüft werden, ob diese Adresse nicht doppelt vergeben wurde. Das findet mit dem **Duplicate Address Detection (DAD)** statt. Dazu bindet sich das Interface an eine Multicast Adresse, die von der erstellten Link-Local-Adresse abgeleitet wird. Die Multicast-Gruppe basiert auf dem Präfix `ff02::1:ff` und wird mit den 24 Bit der Link-Local-Adresse erweitert.
+
+Beispiel, bei der Link-Local-Adresse: `fe80:0000:0000:0000:0302:03ff:fe04:0506` sind die unteren 24 Bit (6-Hexadezimalstellen) `04:0506`. Daraus folgt die Multicast-Adresse:
+
+ * `ff02::1:ff04:0506`
+
+Jeder Knoten, der in dem Netzwerk die gleiche Link-Local-Adresse gebildet hat, würde der gleichen Multicast-Adresse beitreten.
+
+Der Knoten sendet dann eine **ICMPv6 (Neighbor Solicitation)-Nachricht** mit den Adressen:
+
+ * Quelladresse `::`
+ * Zieladresse `ff02::1:ff04:0506`
+
+Wenn kein anderer Knoten die gleiche IP-Adresse hat, wird die Nachricht nicht beantwortet und der Knoten hat damit die Bestätigung, dass seine Adresse in dem Netzwerk eindeutig ist.
+
+# Global Unicast Address Assignment
+
+ * Router Solicitation (RS)
+ * Router Advertisement (RA)
