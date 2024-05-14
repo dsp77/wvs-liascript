@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.5.0
-date:     12.05.2024
+version:  1.6.0
+date:     14.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -235,3 +235,13 @@ Wenn kein anderer Knoten die gleiche IP-Adresse hat, wird die Nachricht nicht be
 
  * Router Solicitation (RS)
  * Router Advertisement (RA)
+
+# GNS3-Übung SLAAC
+
+Die folgende Abbildung zeigt einen Netzwerkaufbau mit GNS3.
+
+![2 PCs über Switch mit Router verbunden](02_img/lf03_ipv6_slaac.png)
+
+Ein [Wireshark-Mitschnitt `lf03-ipv6-slaac.pcapng`](lf03-ipv6-slaac.pcapng) zwischen PC1 und dem Switch wurde erstellt.
+
+Analysieren Sie den Mitschnitt und orientieren Sie sich anhand der MAC-Adressen.
