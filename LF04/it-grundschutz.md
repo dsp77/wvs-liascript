@@ -2,8 +2,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.6.0
-date:     05.05.2024
+version:  0.6.1
+date:     23.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -39,12 +39,12 @@ attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 * Informationssicherheits-Managementsystem (ISMS) nach ISO 27001
 
     * Nach Vorgaben der ISO 27001 werden Geschäftsprozesse beschrieben, deren Ziel die IT-Sicherheit ist.
-    * Jede Mitarbeiterrin und jeder Mitarbeiter muss sich an die Prozesse halten.
+    * Jede Mitarbeiterin und jeder Mitarbeiter muss sich an die Prozesse halten.
     * Von externen Unternehmen werden die erstellten Prozesse und deren Umsetzung im Arbeitsalltag regelmäßig überprüft und eine **Zertifizierung nach ISO 27001** für das Unternehmen ausgesprochen.
 
 * Der IT-Grundschutz ist eine Umsetzungsunterstützung für den Aufbau eines ISMS nach ISO 27001
-* Ziel des Grundschutzes ist es, Unternehmen zu unterstützen, einen *angemessenes Schutzniveau* für IT-Systeme zu erreichen.
-* Der Grundschutzkatalog des BSI bietet Sicherheitsmaßnahmen die organisisert sind in:
+* Ziel des Grundschutzes ist es, Unternehmen zu unterstützen, ein *angemessenes Schutzniveau* für IT-Systeme zu erreichen.
+* Der Grundschutzkatalog des BSI bietet Sicherheitsmaßnahmen, die organisiert sind in:
 
   * technische
   * infrastrukturelle
@@ -55,9 +55,9 @@ attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Die Vorgehensweise nach IT-Grundschutz hilft, systematisch für eine Institution ein angemessenes Sicherheitsniveau zu erreichen.
 
-Eine traditionelle Risikoanalyse mit den Schritten: Ermittlung von Bedrohungen, Bewertung von Eintrittswhrscheinlichkeiten und Auswahl von Sichheitsmaßnahmen ist nicht mehr notwendig.
+Eine traditionelle Risikoanalyse mit den Schritten: Ermittlung von Bedrohungen, Bewertung von Eintrittswahrscheinlichkeiten und Auswahl von Sicherheitsmaßnahmen ist nicht mehr notwendig.
 
-Der Begriff Risikonalyse bekommt im Zusammenhang mit dem IT-Grundschutz eine neue Bedeutung.
+Der Begriff Risikoanalyse bekommt durch den IT-Grundschutz eine neue Bedeutung.
 
 
 # Umsetzung des IT-Grundschutzes
@@ -100,7 +100,7 @@ Der BSI gibt ein [Beispiel für Sicherheitsleitlinie](https://www.bsi.bund.de/Sh
 
  * Die **Basis-Absicherung** ist interessant für einen Einstieg in den IT-Grundschutz, um alle relevanten Geschäftsprozesse mit Basismaßnahmen abzusichern.
  * Die **Standard-Absicherung** entspricht der empfohlenen Vorgehensweise nach dem IT-Grundschutz und bietet einen umfassenden Schutz für alle Prozesse und Bereiche.
- * Die **Kern-Absicherung** fokusiert sich auf die sogenannten **Kronjuwelen** einer Institution. Damit sind die Systeme, Abläufe und Prozesse gemeint, die das Kerngeschäft der Institutition ausmachen.
+ * Die **Kern-Absicherung** fokussiert sich auf die sogenannten **Kronjuwelen** einer Institution. Damit sind die Systeme, Abläufe und Prozesse gemeint, die das Kerngeschäft der Institution ausmachen.
 
 
 ## Vorgehen nach der Variante Standardabsicherung
@@ -109,7 +109,7 @@ Die folgende Abbildung zeigt den Ablauf der Standard-Absicherung nach BSI.
 
 Nach Festlegung des Geltungsbereiches wird zuerst die Strukturanalyse erstellt.
 
-Das Lernfeld 4 bezieht sich auf die Schutzbedarfsanalyse im eignenen Arbeitsbereich, was den Geltungsbereich entsprechend einschränkt.
+Das Lernfeld 4 bezieht sich auf die Schutzbedarfsanalyse im eigenen Arbeitsbereich, was den Geltungsbereich entsprechend einschränkt.
 
 ![Ablauf der Standard-Absicherung nach BSI](02_img/lf04_gs_bsi_ablauf_standardabsicherung.svg)
 
@@ -191,7 +191,7 @@ Im Abschnitt "Absicherungen nach IT-Grundschutz" wurden die drei Absicherungen *
 
 #### Vererbung
 
-Grundlage der Schutzbedarfsfeststellung sind die Geschäftsprozesse. Der festgestellte Schutzbedarf **vererbt** sich dann auf die beteiligten Räume, Geräte und IT-Systeme. Eine Geschäftsprozess mit der Vertraulichkeit sehr hoch vererbt diesen Schutzbedarf über die verwendeten IT-Geräte, wie genutzte Software, PC, Standort des PCs, Netzwerk, Server, Standort der Server, Speicherung der Daten auf dem Server, Sicherungskopie der Daten von dem Server, Ablageort der Sicherungskopie.
+Grundlage der Schutzbedarfsfeststellung sind die Geschäftsprozesse. Der festgestellte Schutzbedarf **vererbt** sich dann auf die beteiligten Räume, Geräte und IT-Systeme. Ein Geschäftsprozess mit der Vertraulichkeit sehr hoch vererbt diesen Schutzbedarf über die verwendeten IT-Geräte, wie genutzte Software, PC, Standort des PCs, Netzwerk, Server, Standort der Server, Speicherung der Daten auf dem Server, Sicherungskopie der Daten von dem Server, Ablageort der Sicherungskopie.
 
 ##### Maximalprinzip
 
@@ -199,15 +199,16 @@ Die Absicherung eines Systems oder Raums muss nach der höchsten Kategorie statt
 
 ##### Kumulation und Verteilung
 
-Bei der Virtualisierung können Effekte auftreten, die bei der Schutzbedarfsfeststellung zu berücksichtgen sind. Diese werden mit den Begriffen **Kumulation** und **Verteilung** beschrieben.
+Bei der Virtualisierung können Effekte auftreten, die bei der Schutzbedarfsfeststellung zu berücksichtigen sind. Diese werden mit den Begriffen **Kumulation** und **Verteilung** beschrieben.
 
-Ein virtualisierter Server vererbt seine Schutzbedarfskategorie auf den Virtualisierungsserver. Enzeln betrachtet können mehrere virtualisierte Server z.B. die Schutzbedarfskategorie **normal** haben. In der Summe kann jedoch der Schaden beim Ausfall aller Server höher sein. Daher kann diese **Kumulation** zu einer höheren Schadenskategorie bei dem Virtualisierungsserver führen.
+Ein virtualisierter Server vererbt seine Schutzbedarfskategorie auf den Virtualisierungsserver. Einzeln betrachtet können mehrere virtualisierte Server z.B. die Schutzbedarfskategorie **normal** haben. In der Summe kann jedoch der Schaden beim Ausfall aller Server höher sein. Daher kann diese **Kumulation** zu einer höheren Schadenskategorie bei dem Virtualisierungsserver führen.
 
-Durch Funktionen der Virtualisierungsumgebung wie z.B. eines Hochverfügbarkeits-Cluster können virtuelle Server nach Ausfall eines Virtualisierungsservers automatisch auf einem noch verfügbaren Server wieder gestartet werden. Diese Funktion nennt sich **Verteilung**.
+Durch Funktionen der Virtualisierungsumgebung wie z.B. eines Hochverfügbarkeit-Clusters können virtuelle Server nach Ausfall eines Virtualisierungsservers automatisch auf einem noch verfügbaren Server wieder gestartet werden. Diese Funktion nennt sich **Verteilung**.
 
-Die Kombination aus **Kumulation** und **Verteilung** erlaubt die **Vererbung** von Schutzbedarfskategorien gleich zu halten.
+Die Kombination aus **Kumulation** und **Verteilung** erlaubt, die **Vererbung** von Schutzbedarfskategorien gleich zu halten.
 
-Beispiel, durch die **Kumulation** mehrerer virtualisierter Server mit der Schutzbedarfskategorie **Normal** würde sich für den Virtualisierungsserver die Kategorie **Hoch** ergeben. Da der Virtualisierungsserver als Hochverfügbarkeits-Cluster ausgelegt ist, reduziert sich die Kategorie wieder auf **Normal**.
+Beispiel: durch die **Kumulation** mehrerer virtualisierter Server mit der Schutzbedarfskategorie **normal** würde sich für den Virtualisierungsserver die Kategorie **Hoch** ergeben. Da der Virtualisierungsserver als Hochverfügbarkeit-Cluster ausgelegt ist, reduziert sich die Kategorie wieder auf **Normal**.
+
 
 Siehe auch:
 
@@ -283,12 +284,12 @@ und unter **6. Kundendokumentation/Anhang**
 
  * Schutzbedarfsanalyse (Auszug)
 
-Die Herausforderung ist also, unter der Restriktion das Projekt in 40 Stunden durchzuführen, dabei auch noch zu zeigen, dass Sie exemplarisch eine Schutzbedarfsanalyse durchführen, Schutzmaßnahmen vorschlagen und diese auszugsweise dokumentieren. Realistisch gesehen können hierzu aus den 40 Stunden nur 1-2 Stunden verwendet werden.
+Die Herausforderung ist also, unter der Restriktion, das Projekt in 40 Stunden durchzuführen, dabei auch noch zu zeigen, dass Sie exemplarisch eine Schutzbedarfsanalyse durchführen, Schutzmaßnahmen vorschlagen und diese auszugsweise dokumentieren. Realistisch gesehen können hierzu aus den 40 Stunden nur 1-2 Stunden verwendet werden.
 
-Es ist sinnvoll bei der Dokumenation eine Übersichtsgrafik zu erstellen, in der das Projekt und die angrenzenten Systeme dargestellt werden. Basierend auf dieser Übersichtszeichnung können die Schritte:
+Es ist sinnvoll, bei der Dokumentation eine Übersichtsgrafik zu erstellen, in der das Projekt und die angrenzenden Systeme dargestellt werden. Basierend auf dieser Übersichtszeichnung können die Schritte:
 
  * Strukturanalyse
  * Schutzbedarfsanalyse
  * Vorschlag für Schutzmaßnahmen
 
-durchgeführt werden. Je nach komplexität des Projektes ist das nur exemplarisch durchzuführen.
+durchgeführt werden. Je nach Komplexität des Projektes ist das nur exemplarisch durchzuführen.
