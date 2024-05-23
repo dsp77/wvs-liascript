@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  Internetprotokoll Version 6 (IPv4); Aufbau der Adresse; OSI-Schicht 3
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-ipv6.jpg
 
 tags:     LiaScript

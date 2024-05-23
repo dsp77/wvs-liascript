@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  IP Adresskonfiguration; DHCP, SLAAC; OSI-Schicht 3
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-dhcp-slaac.jpg
 
 tags:     LiaScript

@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  Domain Name System (DNS)
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-dns.png
 
 tags:     LiaScript, DNS, FQDN

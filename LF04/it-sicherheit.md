@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  IT-Sicherheit
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-it-sicherheit.jpg
 
 tags:     LiaScript

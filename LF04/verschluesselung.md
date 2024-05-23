@@ -9,7 +9,7 @@ narrator: Deutsch Female
 comment:  Verschlüsselung; symmetrische und asymmetrische Verschlüsselung; 
             hybride Verschlüsselung; digitale Signatur; X.509 Zertifikate; openSSL
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:    02_img/logo-encryption.jpg
 
 tags:    LiaScript

@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  IP-Übertragung
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-ip-transmission.png
 
 tags:     LiaScript, IP-Übertragung, Gateway, Router, ARP, Address_Resolution_Protocol

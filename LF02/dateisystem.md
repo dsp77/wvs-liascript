@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  Dateisytem, Journaling, Copy on Write, NTFS, Linux
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-dateisystem.png
 
 tags:     LiaScript, Lernfeld_2, Fachinformatiker, Dateisystem

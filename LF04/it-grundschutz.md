@@ -9,7 +9,7 @@ narrator: Deutsch Female
 
 comment:  Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen. Lernfeld 4 der Fachinformatiker Ausbildung.
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-it-grundschutz.png
 
 tags:     LiaScript

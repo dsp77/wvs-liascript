@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  Dateisytem, Linux, Dateirechte
 
-icon:    ../../wvs-logo.png
+icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
 logo:     02_img/logo-dateirechte-linux.png
 
 tags:     LiaScript, Lernfeld_2, Fachinformatiker, Dateisystem
