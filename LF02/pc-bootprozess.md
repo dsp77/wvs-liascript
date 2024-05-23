@@ -8,7 +8,7 @@ narrator: Deutsch Female
 
 comment:  PC-Boot-Prozess, UEFI, GPT, GUID-Partition Table, Secure Boot, Betriebssystem, EFI-Systempartition
 
-icon:    https://github.com/dsp77/wvs-liascript/blob/main/wvs-logo.png
+icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-uefi.png
 
 tags:     LiaScript, Lernfeld_2, Fachinformatiker, UEFI, GPT, Secure_Boot
