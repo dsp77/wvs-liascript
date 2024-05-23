@@ -9,6 +9,7 @@ narrator: Deutsch Female
 comment:  Internetprotokoll Version 4 (IPv4); Aufbau der Adresse, Subnetzwerkmaske, 
             Gateway, Berechnung von Netzwerkgrößen; OSI-Schicht 3
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-ipv4.png
 
 tags:     LiaScript, IPv4, Gateway, IP-Header, ICMP, Trace Route
@@ -17,6 +18,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # Internetprotokoll Version 4 (IPv4)

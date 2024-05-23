@@ -8,6 +8,7 @@ narrator: Deutsch Female
 
 comment:  IT-Sicherheit
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-it-sicherheit.jpg
 
 tags:     LiaScript
@@ -16,6 +17,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # IT-Sicherheit

@@ -9,6 +9,7 @@ narrator: Deutsch Female
 
 comment:  Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen. Lernfeld 4 der Fachinformatiker Ausbildung.
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-it-grundschutz.png
 
 tags:     LiaScript
@@ -17,6 +18,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # Leitfragen zum IT-Grundschutz des BSI

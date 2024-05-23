@@ -8,6 +8,7 @@ narrator: Deutsch Female
 
 comment:  Dateisytem, Journaling, Copy on Write, NTFS, Linux
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-dateisystem.png
 
 tags:     LiaScript, Lernfeld_2, Fachinformatiker, Dateisystem
@@ -16,6 +17,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # Dateisystem
@@ -84,6 +86,8 @@ Auf den formatierten Datenträger wird eine Textdatei angelegt und die Zahlen `0
  * Größe auf dem Datenträger: 8192 Byte
 
 ![Größe der Datei, größe auf dem Datenträger](02_img/lf02_ds_dateigroesse-ze-8192.png)
+
+
 
 ## Größenangaben, verwendete Präfixe
 

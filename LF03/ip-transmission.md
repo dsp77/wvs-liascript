@@ -8,6 +8,7 @@ narrator: Deutsch Female
 
 comment:  IP-Übertragung
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-ip-transmission.png
 
 tags:     LiaScript, IP-Übertragung, Gateway, Router, ARP, Address_Resolution_Protocol
@@ -16,6 +17,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # IP-Übertragung

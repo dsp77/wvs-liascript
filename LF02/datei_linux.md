@@ -8,6 +8,7 @@ narrator: Deutsch Female
 
 comment:  Dateisytem, Linux, Dateirechte
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-dateirechte-linux.png
 
 tags:     LiaScript, Lernfeld_2, Fachinformatiker, Dateisystem
@@ -16,6 +17,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # Linux Benutzer und Gruppen

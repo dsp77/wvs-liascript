@@ -9,15 +9,16 @@ narrator: Deutsch Female
 comment:  Verschlüsselung; symmetrische und asymmetrische Verschlüsselung; 
             hybride Verschlüsselung; digitale Signatur; X.509 Zertifikate; openSSL
 
-logo:     02_img/logo-encryption.jpg
+icon:    ../../wvs-logo.png
+logo:    02_img/logo-encryption.jpg
 
-tags:     LiaScript
+tags:    LiaScript
 
-link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
+link:    https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
-script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
+script:  https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
-attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de)
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 
 translation: English translation/verschluesselung_en.md
 -->

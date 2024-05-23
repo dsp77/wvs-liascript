@@ -1,13 +1,14 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.6.0
-date:     14.05.2024
+version:  1.7.0
+date:     15.05.2024
 language: de
 narrator: Deutsch Female
 
 comment:  IP Adresskonfiguration; DHCP, SLAAC; OSI-Schicht 3
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-dhcp-slaac.jpg
 
 tags:     LiaScript
@@ -16,6 +17,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn26sdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # IP Adresskonfiguration
@@ -238,10 +240,29 @@ Wenn kein anderer Knoten die gleiche IP-Adresse hat, wird die Nachricht nicht be
 
 # GNS3-Übung SLAAC
 
+<!-- https://scholz.ruhr/blog/ipv6-dynamix-prefixes-and-mikrotik-the-proper-way/ -->
+
 Die folgende Abbildung zeigt einen Netzwerkaufbau mit GNS3.
 
 ![2 PCs über Switch mit Router verbunden](02_img/lf03_ipv6_slaac.png)
 
 Ein [Wireshark-Mitschnitt `lf03-ipv6-slaac.pcapng`](lf03-ipv6-slaac.pcapng) zwischen PC1 und dem Switch wurde erstellt.
+
+Der [OpenWRT-Router hat folgende Konfiguration](https://openwrt.org/docs/guide-user/network/ipv6/configuration):
+
+````
+# cat /etc/config/network
+config interface wan
+        option device   eth1
+        option proto    static
+        option ip6addr  2001:db80::2/64   # Own address
+        option ip6gw    2001:db80::1      # Gateway address
+        option ip6prefix 2001:db80:1::/48 # Prefix addresses for distribution to downstream interfaces
+        option dns      2001:db80::1      # DNS server
+ 
+config interface lan
+        option proto    static
+        option ip6assign 60
+````
 
 Analysieren Sie den Mitschnitt und orientieren Sie sich anhand der MAC-Adressen.

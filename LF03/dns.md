@@ -8,6 +8,7 @@ narrator: Deutsch Female
 
 comment:  Domain Name System (DNS)
 
+icon:    ../../wvs-logo.png
 logo:     02_img/logo-dns.png
 
 tags:     LiaScript, DNS, FQDN
@@ -16,6 +17,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 
 # Domain Name System (DNS)
