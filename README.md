@@ -2,6 +2,8 @@
 
 Berufsausbildung zur Fachinformatikerin oder zum Fachinformatiker mit der Fachrichtung Systemintegration
 
+Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+
 ## Lernnfeld 2
 
  * [Binär-/SI-Präfix](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF02/binprefix.md)
@@ -27,4 +29,4 @@ Berufsausbildung zur Fachinformatikerin oder zum Fachinformatiker mit der Fachri
  * [IT-Grundschutz nach BSI](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/it-grundschutz.md)
 
 
- Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
+ 
