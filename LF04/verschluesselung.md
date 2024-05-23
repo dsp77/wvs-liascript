@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.1.0
-date:     16.05.2024
+version:  2.1.1
+date:     23.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -16,6 +16,8 @@ tags:     LiaScript
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
+
+attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/legalcode.de)
 
 translation: English translation/verschluesselung_en.md
 -->
