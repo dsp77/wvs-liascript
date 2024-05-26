@@ -2,8 +2,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.6.1
-date:     23.05.2024
+version:  0.7.0
+date:     26.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -164,7 +164,9 @@ Es kann sinnvoll sein, die Clients von den Servern zu trennen, da sonst die Tabe
 
 ### Schutzbedarfsfeststellung
 
-TODO: Müssen hier die Geschäftsprozesse mit rein? Siehe Online Kurs des BSI; dort machen sie Tabellen mit den Geschäftsprozessen
+Bei der Schutzbedarfsfeststellung steht die Frage im Zentrum, welcher Schaden entstehen kann, wenn für ein Zielobjekt die Grundwerte **Vertraulichkeit, Integrität oder Verfügbarkeit** verletzt werden.
+
+Der Schutzbedarf eines Objekts bezüglich eines dieser Grundwerte orientiert sich an dem Ausmaß des bei der Verletzung jeweils drohenden Schadens.
 
 Der Grundschutz ist hier sehr umfangreich und beinhaltet die Schritte:
 
@@ -240,6 +242,15 @@ Siehe auch:
 |  |  | Verfügbarkeit |  |  | 
 
 ### Modellierung
+
+Nach der Bewertung des Schutzbedarfs folgt die Modellierung gemäß des IT-Grundschutzes. Dabei werden die relevanten Sicherheitsanforderungen für die einzelnen Zielobjekte bestimmt. Das Ergebnis ist ein **IT-Grundschutz-Modell des Informationsverbundes**.
+
+Das Modell liefert:
+
+ * für bestehende Systeme des Informationsverbundes die Vorgaben für einen Prüfplan
+ * für geplante Teile die Vorgabe für ein Entwicklungskonzept
+
+ Für die Modellierung stellt das Grundschutzkompendium Bausteien zur Verfügung.
 
 ### IT-Grundschutz-Check Teil 1
 
