@@ -257,14 +257,16 @@ Das Modell liefert:
 
 ### Risikoanalyse
 
+Die Grundschutz-Bausteine beinhalten Maßnahmen für einen **normalen Schutzbedarf**. Für Zielobjekte, die bei einem der drei Grundwerte Vertraulichkeit, Integrität oder Verfügbarkeit einen **hohen** oder **sehr hohen Schutzbedarf** haben, muss zusätzlich eine **Risikoanalyse** durchgeführt werden.
+
 ### Umsetzung planen
 
 
 # Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen
 
  * TODO: Hier die Reduktion auf den eigenen Arbeitsplatz
- * bild mit rotem 
- * JIKU-Bild
+ <!-- * bild mit rotem 
+ * JIKU-Bild -->
 
 # IHK-Abschlussprüfung für die Fachrichtung Systemintegration
 
