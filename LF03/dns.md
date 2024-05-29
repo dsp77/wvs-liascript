@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.1
-date:     12.05.2024
+version:  0.4.1
+date:     29.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -85,7 +85,77 @@ Der **Reverse Look-up** ist die umgekehrte Anfrage. Hier hat ein Computer eine I
 
 ## DNSSEC
 
+
+
 # DNS-Hierarchie
 
 # DNS-Übung mit Filius
+
+Mit der Filus-Übung sollen Sie ein Netzwerk aufbauen in dem ein Rechner, ein Webserver und ein DNS-Server über einen Switch miteinander verbunden sind. Die folgende Abbildung zeigt den Netzwerkplan.
+
+![Filus Netzwerkplan zur DNS-Übung](02_img/lf03_dns_filius.png)
+
+Die Netzwerkkonfiguration aller Geräte wird manuell durchgeführt. In dem Netzwerk gibt es keinen Router, daher ist keine Gatewayadresse zu konfigurieren.
+
+Damit im PC1 eine Namensauflösung durchgeführt werden kann, muss die IP-Adresse des DNS-Servers konfiguriert werden. Welche Adresse müssen Sie konfigurieren?
+
+DNS-Adresse: [[192.168.0.10]]
+
+Konfigurieren Sie bei PC1 die IP-Adresse in dem Feld **Domain Namen Server**.
+
+## Webserverkonfiguration
+
+Als nächster Schritt wird der Webserver und im PC1 der Webbrowser konfiguriert.
+
+  * Starten Sie die Simulation mit dem **grünen Pfeilknopf**
+  * Mit Doppelklick auf den Webserver können Sie die Software **Webserver** hinzufügen und starten.
+  * Führen Sie die gleichen Schritte mit dem PC1 durch und fügen hier den **Webbrowser** hinzu und starten die Software.
+
+Öffnen Sie den Webbrowser und geben Sie die IP-Adresse des **Webservers** in das Browserfenster ein und starten Sie den Verbindungsaufgaufbau. Sie sollten das folgende Fenster sehen:
+
+![Filius Webbrowser mit Zugriff auf den Webserver per IP-Adresse](02_img/lf03_dns_pc1_webbrowser_ip.png)
+
+## DNS-Server konfigurieren
+
+Um die Webseite mit einem DNS-Namen aufzurufen, muss im DNS-Server der gewünschte DNS-Name mit der IP-Adresse des Webserver hinterlegt werden. Der Browser fragt dann erst die zugehörige IP-Adresse zu dem DNS-Namen und baut dann die Verbindung per IP zu dem Webserver auf.
+
+Als Fully Quallified Domain Namen (FQDN) nutzen wir `www.meinwebserver.de`.
+
+  * Installieren Sie auf dem DNS-Server die DNS-Software und starten diese.
+  * Fügen Sie als **A-Record** über den entsprechenden Tab hinzu:
+     * Host-/Domainname: `www.meinwebserver.de`
+     * IP-Adresse: `192.168.0.20`
+  * Starten Sie den DNS-Server
+
+![A-Record für `www.meinwebserver.de` hinzufügen](02_img/lf03_dns_add_a_record.png)
+
+## Aufruf der Webseite mit Domainnamen
+
+Rufen Sie im Webbrowser von PC1 jetzt den Domainnamen `www.meinwebserver.de` auf. Öffnen Sie den Protokollmitschnitt am PC1.
+
+Anmerkung, Sie müssen ggf. nach unten Scrollen, um den Protokollmitschnitt mit der DNS-Abfrage zu finden. Die folgende Abbildung zeigt den Mitschnitt.
+
+![Protokollmitschnitt des Webseitenaufrufs mit Domainnamen](02_img/lf03_dns_forward_lookup_protokollmitschnitt.png)
+
+In dem Mitschnitt sind zwei ARP-Anfragen zu sehen. Nach welcher IP-Adresse fragt der **erste ARP-Request** und woher bekommt der PC1 diese Adresse?
+
+  * IP-Adresse: [[192.168.0.10]]
+
+Wählen Sie aus, welche Antwort richtig sind:
+
+<!-- data-randomize -->
+  * [(x)] Die Adresse habe ich vorher unter dem Feld **Domain Name Server** im PC1 selber konfiguriert.
+  * [( )] Die Adresse fragt der PC1 vom Domain Namen System ab.
+  * [( )] Der DNS-Server sendet seine Adresse ins Netzwerk und der PC1 kennt sie daher.
+
+Nach der DNS-Abfrage erfolgt ein **zweiter ARP-Request**. Um welche IP-Adresse handelt es sich hier?
+
+  * IP-Adresse: [[192.168.0.20]]
+
+Woher hat der PC1 diese IP-Adresse erhalten?
+
+<!-- data-randomize -->
+  * [(x)] Die IP-Adresse kam als Antwort der DNS-Anfrage (Forward Lookup).
+  * [( )] Die IP-Adresse ist im PC1 konfiguriert.
+  * [( )] Die IP-Adresse wurde in der Adressleiste des Browsers eingegeben.
 
