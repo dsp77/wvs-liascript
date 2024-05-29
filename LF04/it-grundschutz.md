@@ -2,8 +2,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.7.0
-date:     26.05.2024
+version:  0.8.0
+date:     29.05.2024
 language: de
 narrator: Deutsch Female
 
@@ -139,27 +139,34 @@ Basierend auf dem Netzwerkplan werden Tabellen für die Systeme erstellt.
 | N2 | Netzwerk-Router |||||
 | N3 | Netzwerk-Firewall |||||
 
+#### Kreuztabelle für die Clients
+
 Über die Kreuztabelle werden die Systeme mit der Software verbunden.
 
 | Nr | Anwendung | C1 | C2 |
-|----|-----------|----|----|
-| AC01 | Office |||
-| AC02 | E-Mail, Kalender |||
-| AC03 | Visual Studio |||
-| AC04 | Git |||
+|----|-----------|:--:|:--:|
+| AC01 | Office  | x  | x |
+| AC02 | E-Mail, Kalender | x | x |
+| AC03 | Visual Studio | | x |
+| AC04 | Git | | x |
+
+#### Kreuztabelle für die Server
 
 Es kann sinnvoll sein, die Clients von den Servern zu trennen, da sonst die Tabelle unnötig groß wird.
 
-| Nr | Anwendung | S1 | S2 | S3 |
-|----|-----------|----|----|----|
-| AS01 | VMWare ESXi |||
+| Nr | Anwendung      | S1 | S2 | S3 |
+|----|----------------|:--:|:--:|:--:|
+| AS01 | VMWare ESXi  | x | x | x |
 
 
-| Nr | Anwendung | V1 | V2 | V3 |
-|----|-----------|----|----|----|
-| AV01 | Windows Server 2020 |||
-| AV02 |  |||
-| AV03 |  |||
+Virtuelle Server erhalten eine extra Tabelle
+
+
+| Nr | Anwendung             | V1 | V2 | V3 |
+|----|-----------------------|:--:|:--:|:--:|
+| AV01 | Windows Server 2020 | x  | x  | x  |
+| AV02 | MS Exchange         |    |    | x  |
+| AV03 |                     |    |    |   |
 
 
 ### Schutzbedarfsfeststellung
@@ -265,8 +272,8 @@ Die Grundschutz-Bausteine beinhalten Maßnahmen für einen **normalen Schutzbeda
 # Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen
 
  * TODO: Hier die Reduktion auf den eigenen Arbeitsplatz
- <!-- * bild mit rotem 
- * JIKU-Bild -->
+ 
+<!-- * bild mit rotem  * JIKU-Bild -->
 
 # IHK-Abschlussprüfung für die Fachrichtung Systemintegration
 
