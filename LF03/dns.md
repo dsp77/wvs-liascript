@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.5.0
+version:  0.6.0
 date:     02.06.2024
 language: de
 narrator: Deutsch Female
@@ -62,9 +62,10 @@ Beispiel: `https://bank.de/index.html`
 
 ## Anfragende DNS-Server
 
-Anfragende DNS-Server führen die Abfrage von DNS-Clients im Domain Name System aus. Sie sind werden z.B. von Internetservice-Provider angeboten oder von anderen Anbietern. Ein bekannter DNS-Server zur Abfrage ist der von Google, der unter IP-Adresse `8.8.8.8` erreichbar ist.
+Anfragende DNS-Server führen die Abfrage von DNS-Clients im Domain-Name-System aus. Sie werden z.B. von Internetservice-Providern angeboten oder von anderen Anbietern. Ein bekannter DNS-Server zur Abfrage ist der von Google, der unter IP-Adresse `8.8.8.8` erreichbar ist.
 
-Internetzugangsrouter erhalten die Information der verwendbaren DNS-Server des Internetanbieters in der Regel mit dem Zugang zum Internet. Der Router leitet dann die an ihn gerichteten DNS-Anfragen an den DNS-Server des Anbieters weiter. Der Prozess wird als **Forawarder** bezeichnet.
+Internetzugangsrouter erhalten die Information der verwendbaren DNS-Server des Internetanbieters, in der Regel mit dem Zugang zum Internet. Der Router leitet dann die an ihn gerichteten DNS-Anfragen an den DNS-Server des Anbieters weiter. Der Prozess wird als **Forwarder** bezeichnet.
+
 
 ## Forward Look-up
 
@@ -74,7 +75,7 @@ Bei einem **Forward Look-up** stellt der Computer eine Anfrage an das Domain Nam
 
 Neben der IP-Adresse mit Subnetzmaske und Gateway-Adresse gehört der DNS-Server zur Grundkonfiguration eines Endgerätes.
 
-![DNS-Konfiguration eines Netzwerkprofils bei einem Computer mit Linux Mint Betriebssystem](02_img/lf03_dns_computer_konfiguration.png)
+![DNS-Konfiguration eines Netzwerkprofils bei einem Computer mit Linux Mint Betriebssystem](02_img/lf03_dns_computer_konfiguration.svg)
 
 Zur Absicherung kann ein weiterer DNS-Server konfiguriert werden, der bei Nichterreichbarkeit des Ersten verwendet wird.
 
@@ -85,14 +86,17 @@ Manchmal soll ein anderer DNS-Server für Abfragen verwendet werden. Ein Bekannt
 
 ### Ablauf des Forward Look-up
 
+![Netzwerk mit DNS-System](02_img/lf03_dns.svg)
+
 Ein Forward Look-up läuft folgendermaßen ab.
 
  1. Ein Benutzer ruft z.B. im Browser eine Webseite auf und tippt den FQDN in das Adressfeld des Browsers.
  2. Der Browser leitet die Anfrage an den DNS-Resolver des Betriebssystems.
- 3. Der DNS-Resolver des Betriebssystems fragt den konfigurierten DNS-Server nach der IP-Adresse zu dem gefragten FQDN.
+ 3. Der DNS-Resolver des Betriebssystems fragt den konfigurierten DNS-Server nach der IP-Adresse zu dem gefragten FQDN. In der Abbildung ist der DNS-Resolver des Internetrouters, der die Anfragen an den DNS-Server 8.8.8.8 weiterleitet.
  4. Der DNS-Server führt die Abfrage im Domain Name System ab, sofern die Adresse nicht schon in seinem Cache steht.
  5. Der DNS-Server liefert die abgefragte IP-Adresse an den Resolver zurück.
  6. Der Webbrowser stellt eine Verbindung zur erhaltenen IP-Adresse her und fragt den aufgerufenen Webserver nach der Webseite ab.
+
 
 
 ## Reverse Look-up
