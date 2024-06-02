@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.4.1
-date:     29.05.2024
+version:  0.5.0
+date:     02.06.2024
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Domain Name System (DNS)
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-dns.png
 
-tags:     LiaScript, DNS, FQDN
+tags:     LiaScript, DNS, FQDN, Domain Name System, DNS-Root-Server
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -22,7 +22,7 @@ attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 
 # Domain Name System (DNS)
 
-Bei dem Aufruf einer Webseite im Browser wird in der Adressleiste des Browsers ein Name der Webseite eingegeben und nicht die IP-Adresse des Servers. Die Verbindung über das Internetprotokoll wird aber mit IP-Adressen adressiert. Das Domain-Name-System (DNS) hilft hier, für den Domain-Namen des Servers die zugehörige IP-Adresse zu ermitteln. In diesem Text werden Funktionen und Abläufe des Domain-Namen-Systems erklärt.
+Bei dem Aufruf einer Webseite im Browser wird in der Adressleiste des Browsers ein Name der Webseite eingegeben und nicht die IP-Adresse des Servers. Die Verbindung über das Internetprotokoll wird aber mit IP-Adressen adressiert. Das Domain-Name-System (DNS) hilft hier, für den Domain-Namen des Servers die zugehörige IP-Adresse zu ermitteln. Das System ist als Client-Server-Model umgesetzt. In diesem Text werden Funktionen und Abläufe des Domain-Namen-Systems erklärt.
 
 ## Fully Qualified Domain Name (FQDN)
 
@@ -35,6 +35,36 @@ Die Adresse wird als Hierarchie abgebildet:
    bank    ---> First-Level-Label
       www  ---> Servername
 ````
+
+Die Umsetzung der Server, die Auskunft über einen FQDN geben, sind auch in einer Hierarchie angeordnet. Die Webseite [https://root-servers.org/](https://root-servers.org/) gibt Informationen über die DNS-Root-Server, die in der Abfrage immer als Erstes angefragt werden.  Root-Server verweisen dann an autoritative DNS-Server der Top-Level-Domain.
+
+Für die Top-Level-Domain **.de.** verwaltet die [DENIC](https://www.denic.de/) die Vergabe der FQDNs und betreibt entsprechend die autoritativen DNS-Server für diese Top-Level-Domain.
+
+Neben den autoritativen DNS-Servern, die Auskunft geben, gibt es abfragende DNS-Server, die Anfragen von Clients durchführen.
+
+## Abgrenzung FQDN-URL
+
+Ein **FQDN** ist ein Domain-Name im Domain Name System. Ihm wird eine IP-Adresse zugeordnet.
+
+Ein **URL (Uniform Resource Locator)** ist die Vollständige Adresse für eine Ressource im Internet. Sie setzt sich zusammen aus den Informationen:
+
+ * Protokoll
+ * FQDN
+ * Pfad
+
+Aufgebaut ist sie nach dem Schema: `<Protokoll>://<FQDN>/<Pfad>`.
+
+Beispiel: `https://bank.de/index.html`
+
+ * Protokoll: `https`
+ * FQDN: `bank.de`
+ * Pfad: `index.html`
+
+## Anfragende DNS-Server
+
+Anfragende DNS-Server führen die Abfrage von DNS-Clients im Domain Name System aus. Sie sind werden z.B. von Internetservice-Provider angeboten oder von anderen Anbietern. Ein bekannter DNS-Server zur Abfrage ist der von Google, der unter IP-Adresse `8.8.8.8` erreichbar ist.
+
+Internetzugangsrouter erhalten die Information der verwendbaren DNS-Server des Internetanbieters in der Regel mit dem Zugang zum Internet. Der Router leitet dann die an ihn gerichteten DNS-Anfragen an den DNS-Server des Anbieters weiter. Der Prozess wird als **Forawarder** bezeichnet.
 
 ## Forward Look-up
 
