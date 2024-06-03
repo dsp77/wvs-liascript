@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.6.0
-date:     02.06.2024
+version:  0.6.1
+date:     03.06.2024
 language: de
 narrator: Deutsch Female
 
@@ -193,3 +193,10 @@ Woher hat der PC1 diese IP-Adresse erhalten?
   * [( )] Die IP-Adresse ist im PC1 konfiguriert.
   * [( )] Die IP-Adresse wurde in der Adressleiste des Browsers eingegeben.
 
+## DHCP
+
+Fügen Sie einen DHCP-Server hinzu mit der IP-Adresse 192.168.0.15.
+
+Konfigurieren Sie den DHCP-Server entsprechend und den PC1, damit er per DHCP seine Konfiguration erhält.
+
+überprüfen Sie den korrekten Aufruf der Webseite von PC1.
