@@ -105,9 +105,9 @@ Der **Reverse Look-up** ist die umgekehrte Anfrage. Hier hat ein Computer eine I
 
 # Absicherung einer DNS-Abfrage
 
- * DoT
- * DoH
- * DNSSEC
+Die Verbindung vom DNS-Client zum abfragenden DNS-Server ist unverschlüsselt und kann von jedem, der auf dem Weg Zugriff auf das Netzwerk hat, mitgelesen werden, welche Namensanfragen gestellt werden. Um diese Anfrage abzusichern, werden die beiden Techniken **DNS over TLS** und **DNS over HTTPS** verwendet.
+
+Um sicherzustellen, dass Abfragen wirklich von autoritativen DNS-Servern kommen und nicht gespooft sind, implementieren die autoritativen DNS-Server eine digitale Signierung der Antworten, was unter dem Begriff **DNSSEC** standardisiert ist.
 
 ## DoT
 
@@ -117,11 +117,6 @@ Der **Reverse Look-up** ist die umgekehrte Anfrage. Hier hat ein Computer eine I
 
 **DNS over HTTPS (DOH)** nutzt eine HTTPS-Verbindung über Port 443, um die DNS-Anfrage über eine verschlüsselte Verbindung zu versenden. Mit DoH kann der Browser den DNS-Resolver des Betriebssystems umgehen und die Anfrage direkt zu einem DoH-unterstützenden Server senden.
 
-## DNSSEC
-
-
-
-# DNS-Hierarchie
 
 # DNS-Übung mit Filius
 
@@ -193,10 +188,11 @@ Woher hat der PC1 diese IP-Adresse erhalten?
   * [( )] Die IP-Adresse ist im PC1 konfiguriert.
   * [( )] Die IP-Adresse wurde in der Adressleiste des Browsers eingegeben.
 
-## DHCP
+## IP-Vergabe mit DHCP durchführen
 
-Fügen Sie einen DHCP-Server hinzu mit der IP-Adresse 192.168.0.15.
+Fügen Sie einen weiteren Rechner zu dem Netzwerk mit der IP-Adresse 192.168.0.15 und richten Sie auf dem Server die DHCP-Server-Funktion ein.
 
-Konfigurieren Sie den DHCP-Server entsprechend und den PC1, damit er per DHCP seine Konfiguration erhält.
+Ändern Sie die Konfiguration von PC1, damit die Netzwerkkonfiguration per DHCP zur Verfügung gestellt wird.
 
-überprüfen Sie den korrekten Aufruf der Webseite von PC1.
+Überprüfen Sie den korrekten Aufruf der Webseite von PC1.
+
