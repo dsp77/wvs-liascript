@@ -20,6 +20,7 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
  * [Internetprotokoll Version 6](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/internetprotokoll-v6.md)
  * [IP-Adresskonfiguration](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/ip-adresskonfiguration.md)
  * [Domain Name System (DNS)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md)
+ * [WLAN](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/wlan.md)
 
 ## Lernfeld 4
 
@@ -29,4 +30,3 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
  * [IT-Grundschutz nach BSI](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/it-grundschutz.md)
 
 
- 
