@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.0
+version:  0.2.0
 date:     07.07.2024
 language: de
 narrator: Deutsch Female
@@ -58,6 +58,8 @@ attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 
 
 ## Frequenzen / Kanäle
+
+![2,4 GHz-Kanäle des WLANs](02_img/wlan-channels-24.svg)
 
 ## Carrier Sense Multipe Access / Collission Avoidance (CSMA/CA)
 
