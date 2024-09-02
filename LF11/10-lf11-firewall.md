@@ -19,25 +19,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
-# Firewall Stichpunkte
-
-Themen:
-
-  * Übersicht Firewall
- * BSI NET.3.2: Firewall
- * BSI NET.1.1: Netzarchitektur und -design
- * Firewallarten
- * Well-Known-Ports
- * Regelwerk
- * Filter
- * SPI
- * Application-Layer
- * Abgrenzung IDS/IPS
- * DMZ
- * Zonenkonzept nach BSI
-
-
-# Firewall Übersicht
+# Firewall
 
 Firewalls sind ein essenzieller Bestandteil moderner Netzwerksicherheit. Sie dienen dazu, unberechtigten Zugriff auf ein Netzwerk oder System zu verhindern und so vor Cyberangriffen zu schützen. Es gibt eine Vielzahl von Firewall-Typen, die sich in ihrer Funktionsweise und ihren Einsatzbereichen unterscheiden.
 
