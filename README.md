@@ -31,11 +31,9 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
 
 
 
+
 ## Lernfeld 11
 
-  * [Übersicht LF11](https://liascript.github.io/course/?https://raw.githubusercontent.com/
-  dsp77/wvs-liascript/main/LF11/00-lf11-intro.md)
-  * [Verfügbarkeit](https://liascript.github.io/course/?https://raw.githubusercontent.com/
-  dsp77/wvs-liascript/main/LF11/10-lf11-availability.md)
-  * [Firewall](https://liascript.github.io/course/?https://raw.githubusercontent.com/
-  dsp77/wvs-liascript/main/LF11/10-lf11-firewall.md)
+  * [Übersicht LF11](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/00-lf11-intro.md)
+  * [Verfügbarkeit](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/10-lf11-availability.md)
+  * [Firewall](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/10-lf11-firewall.md)
