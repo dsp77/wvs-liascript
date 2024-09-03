@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.0.1
 date:     03.09.2024
 language: de
 narrator: Deutsch Female
@@ -9,7 +9,7 @@ narrator: Deutsch Female
 comment:  Firewall
 
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
-logo:     02_img/logo-firewall.png
+logo:     02_img/logo-firewall.jpg
 
 tags:     LiaScript, Firewall, Paket Filter, SPI, Deep Paket Inspection, Application Layer Firewall, Next-Generation Firewall, NGFW
 
