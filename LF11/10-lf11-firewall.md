@@ -1,17 +1,17 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.0
-date:     26.08.2024
+version:  1.0.0
+date:     03.09.2024
 language: de
 narrator: Deutsch Female
 
 comment:  Firewall
 
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
-logo:     02_img/logo-firewall.jpg
+logo:     02_img/logo-firewall.png
 
-tags:     LiaScript
+tags:     LiaScript, Firewall, Paket Filter, SPI, Deep Paket Inspection, Application Layer Firewall, Next-Generation Firewall, NGFW
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -212,6 +212,8 @@ Vergleich mit einfacher Paketfilterung:
 # Aplication Layer Firewall
 
 Eine Application Layer Firewall (ALF), auch als Anwendungsfirewall bezeichnet, ist eine spezialisierte Firewall, die sich auf die Schutzschicht der Anwendungen konzentriert. Im Gegensatz zu herkömmlichen Firewalls, die den Netzwerkverkehr auf Basis von IP-Adressen, Ports und Protokollen filtern, geht die ALF einen Schritt weiter und analysiert den Inhalt der Datenpakete auf Anwendungsebene.
+
+![Prinzip einer Application Layer Firewall](02_img/lf11-fw-alf.svg)
 
 Was macht eine ALF so besonders?
 
