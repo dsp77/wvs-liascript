@@ -341,5 +341,36 @@ Nachteile einer DMZ:
   * Komplexität: Die Konfiguration einer DMZ erfordert Fachwissen.
  * Zusätzliche Verwaltung: Die DMZ muss separat verwaltet werden.
 
-# Zonenkonzept nach BSI
+<!-- # Zonenkonzept nach BSI -->
+
+# Praktische Übung ufw
+
+ In Portainer einen neuen Stack erstellen. Über den Webeditor die folgende YAML-Datei editieren:
+
+````
+services:
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+````
+
+**Y**et **A**nother **M**arkup **L**anguage ist ein Dateiformat, bei dem über die Einrückung mit Leerzeichen gemeinsame Daten gruppiert werden. In dem Beispiel ist jede Einrückung mit zwei Leerzeichen vorgenommen.
+
+Nach Erstellen des Stacks mit dem Container sollte über den Webbrowser und der Eingabe von `localhost` in der Adressleiste die Standardseite von nginx erscheinen.
+
+Überprüfen Sie in einem Terminal mit dem Befel `sudo ss -tlnp` welche Ports geöffnet sind.
+
+````
+State      Recv-Q     Send-Q           Local Address:Port            Peer Address:Port     Process                                       
+LISTEN     0          4096                   0.0.0.0:80                   0.0.0.0:*         users:(("docker-proxy",pid=8012,fd=4)) 
+````
+
+Die Adresse `0.0.0.0` ist eine Pseudoadresse, die angibt, dass sich der Webserver aus dem Container mit allen verfügbaren Interfaces auf dem Hostsystem gebunden hat.
+
+Verbinden Sie sich von einem anderer VM über den Webbrowser mit dem Webserver des 
+
+ * Schalten Sie die Firewall `ufw` ein
+ * Überprüfen Sie den Zugriff auf den Webserver
+ * Schalten Sie den Port 80 in der Firewall frei und überprüfen Sie den erneuten Zugriff auf den Webserver
 
