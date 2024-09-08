@@ -243,6 +243,8 @@ Nachteile einer ALF:
 
 # Next-Generation Firewall (NGFW)
 
+![NextGeneration Firewall](02_img/lf11-fw-ngfw.svg)
+
 Eine Next-Generation-Firewall (NGFW) ist die Weiterentwicklung der traditionellen Firewall und bietet einen umfassenderen Schutz vor modernen Cyberbedrohungen. Während klassische Firewalls hauptsächlich den Netzwerkverkehr nach IP-Adressen, Ports und Protokollen filtern, geht eine NGFW deutlich tiefer und bietet eine Vielzahl zusätzlicher Funktionen.
 Kernfunktionen einer NGFW:
 
