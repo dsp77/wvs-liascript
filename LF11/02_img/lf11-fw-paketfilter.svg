@@ -13,7 +13,10 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><sodipodi:namedview
      id="namedview1"
      pagecolor="#ffffff"
      bordercolor="#000000"
@@ -24,7 +27,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.1280546"
-     inkscape:cx="271.26347"
+     inkscape:cx="271.70671"
      inkscape:cy="108.15079"
      inkscape:window-width="1431"
      inkscape:window-height="821"
@@ -450,4 +453,14 @@
          d="m 146.49971,114.57435 a 12.533373,1.7196476 0 0 1 -12.5314,1.71965 12.533373,1.7196476 0 0 1 -12.53534,-1.71911 12.533373,1.7196476 0 0 1 12.52746,-1.72019 12.533373,1.7196476 0 0 1 12.53928,1.71857" /><path
          style="fill:#afc6e9;fill-opacity:1;stroke:#afc6e9;stroke-width:0.101;stroke-dasharray:none;stroke-opacity:1"
          d="m 131.23206,124.50727 v 8.66308 l 4.86421,-2.80835 v -5.85558 z"
-         id="path40" /></g></g></svg>
+         id="path40" /></g></g><metadata
+     id="metadata1"><rdf:RDF><cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/"><cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" /><cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" /><cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" /><cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" /><cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" /><cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" /></cc:License><cc:Work
+         rdf:about=""><cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" /><dc:creator><cc:Agent><dc:title>Günter Dannoritzer</dc:title></cc:Agent></dc:creator></cc:Work></rdf:RDF></metadata></svg>
