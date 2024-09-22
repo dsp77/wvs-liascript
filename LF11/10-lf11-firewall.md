@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.1
-date:     03.09.2024
+version:  1.1.0
+date:     20.09.2024
 language: de
 narrator: Deutsch Female
 
@@ -345,34 +345,62 @@ Nachteile einer DMZ:
 
 <!-- # Zonenkonzept nach BSI -->
 
-# Praktische Übung ufw
 
- In Portainer einen neuen Stack erstellen. Über den Webeditor die folgende YAML-Datei editieren:
+# Firwall-Übung mit GNS3
 
-````
-services:
-  nginx:
-    image: nginx
-    ports:
-      - "80:80"
-````
+![Übersicht; GNS3 mit Alpine Linux](02_img/lf11_fw_gns3_alpine_liunx.png)
 
-**Y**et **A**nother **M**arkup **L**anguage ist ein Dateiformat, bei dem über die Einrückung mit Leerzeichen gemeinsame Daten gruppiert werden. In dem Beispiel ist jede Einrückung mit zwei Leerzeichen vorgenommen.
+## Setup der Umgebung
 
-Nach Erstellen des Stacks mit dem Container sollte über den Webbrowser und der Eingabe von `localhost` in der Adressleiste die Standardseite von nginx erscheinen.
-
-Überprüfen Sie in einem Terminal mit dem Befel `sudo ss -tlnp` welche Ports geöffnet sind.
+https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-with-awall-on-alpine-linux/
 
 ````
-State      Recv-Q     Send-Q           Local Address:Port            Peer Address:Port     Process                                       
-LISTEN     0          4096                   0.0.0.0:80                   0.0.0.0:*         users:(("docker-proxy",pid=8012,fd=4)) 
+udhcpc
+apk update
+apk upgrade
+reboot
+apk add ip6tables iptables
 ````
 
-Die Adresse `0.0.0.0` ist eine Pseudoadresse, die angibt, dass sich der Webserver aus dem Container mit allen verfügbaren Interfaces auf dem Hostsystem gebunden hat.
 
-Verbinden Sie sich von einem anderer VM über den Webbrowser mit dem Webserver des 
+````
+iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source       destination         
 
- * Schalten Sie die Firewall `ufw` ein
- * Überprüfen Sie den Zugriff auf den Webserver
- * Schalten Sie den Port 80 in der Firewall frei und überprüfen Sie den erneuten Zugriff auf den Webserver
+Chain FORWARD (policy ACCEPT)
+target     prot opt source       destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source       destination
+````
+
+
+
+````
+apk add lighttpd
+rc-update add lighttpd default
+rc-service lighttpd restart
+````
+
+````
+wget 192.168.122.52
+Connecting to 192.168.122.52 (192.168.122.52:80)
+wget: server returned error: HTTP/1.1 403 Forbidden
+````
+
+
+````
+echo '<!DOCTYPE html><html><head><title>✔️</title><meta charset="utf-8"></head><body>Lighttpd is running!</body></html>' > /var/www/localhost/htdocs/index.html
+````
+
+````
+alpine:~# wget 192.168.122.52
+Connecting to 192.168.122.52 (192.168.122.52:80)
+saving to 'index.html'
+index.html           100% |********************************|   118  0:00:00 ETA
+'index.html' saved
+````
+
+## Übung
 
