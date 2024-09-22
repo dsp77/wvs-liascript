@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
-date:     20.09.2024
+version:  1.1.1
+date:     22.09.2024
 language: de
 narrator: Deutsch Female
 
@@ -310,6 +310,8 @@ Wann welche Firewall?
 # Demilitarisierte Zone (DMZ)
 
 Eine DMZ, kurz für Demilitarisierte Zone, ist in der IT ein spezieller Bereich eines Netzwerks, der als Puffer zwischen dem öffentlichen Internet und dem internen Netzwerk dient. Man kann sich das wie eine neutrale Zone vorstellen, in der bestimmte Dienste angeboten werden, ohne dass das gesamte interne Netzwerk gefährdet wird.
+
+![Demilitarisierte Zone (DMZ)](02_img/lf11-fw-dmz.svg)
 
 Warum braucht man eine DMZ?
 
