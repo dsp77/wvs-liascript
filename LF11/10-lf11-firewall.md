@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.1
+version:  1.2.1
 date:     22.09.2024
 language: de
 narrator: Deutsch Female
@@ -156,6 +156,39 @@ Nachteile von Paketfilter-Firewalls:
  * (4) Das Netzwerk 192.168.1.0/24 darf SMTP-Anfragen (25) an die Adresse 10.0.0.10 senden.
  * (5) Das Netzwerk 192.168.1.0/24 darf IMAP-Anfragen (110) an die Adresse 10.0.0.10 senden.
  * (6) Alle anderen einkommenden Pakete im LAN-Interface werden verworfen.
+
+## Webzugang mit Paketfilter
+
+Von einem Client im Netzwerk `192.168.1.0/24` soll ein HTTP-GET-Zugriff auf den Webserver `2.19.85.159` stattfinden. Ein erfolgreicher Zugriff wird mit einer HTTP-200-OK-Antwort mit dem Inhalt der Seite beantwortet.
+
+* `HTTP Get 2.19.85.159`
+* `HTTP 200 OK`
+
+Die Paketfilter-Firwall ist folgendermaßen konfiguriert:
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 1 | Permit | TCP | 192.168.1.0/24 | Any | Any | 80 | LAN | IN |
+| 2 | Deny  | IP  | Any | Any | - | - | Any | IN |
+
+Der detaillierte Ablauf sieht folgendermaßen aus:
+
+````
+HTTP Get
+	Src: 192.168.1.20 Port: 50527
+  Dst: 2.19.85.159	Port: 80
+
+HTTP 200 OK
+  Src: 2.19.85.159	Port: 80
+  Dst: 192.168.1.20 Port: 50527
+  <Content>
+````
+
+Ist die Firewall richtig konfiguriert, damit der HTTP-Get-Request und die HTTP-200-OK-Antwort durchgelassen wird?
+
+[[ Ja, der Rückkanal für die HTTP-200-OK-Antwort wird automatisch von der Firewall geöffnet.
+| (Nein, mit einer Paketfilter-Firwall muss jede zugelassene Verbindung extra konfiguriert werden.)
+]]
 
 
 # Stateful Paket Inspection (SPI)
