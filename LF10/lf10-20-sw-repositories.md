@@ -6,7 +6,7 @@ date:     01.10.2024
 language: de
 narrator: Deutsch Female
 
-comment:  Virtualisierung und Container
+comment:  Integrität von Software Repositories
 
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-vm-sw-repository.jpg
