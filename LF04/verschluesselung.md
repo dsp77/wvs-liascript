@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.1.1
+version:  2.1.2
 date:     23.05.2024
 language: de
 narrator: Deutsch Female
@@ -384,12 +384,15 @@ Sie wechseln von der Rolle des Admin der CA zum Kunden der CA. Es ist sinnvoll, 
 ## Aufgabe
 
  * Admin CA: Erstellen Sie einen privaten Schlüssel und leiten Sie davon den öffentlichen Schlüssel ab. Erstellen Sie davon ein Zertifikat und signieren Sie das selbst.
- * Kunde CA: 
+ * Kunde CA:
+
    * Erstellen Sie einen privaten Schlüssel und erstellen Sie daraus einen Certificate Signing Request (CSR) und tragen die nötigen Parameter ein.
    * Senden (kopieren) Sie den CSR an die CA.
+
  * Admin CA:
+
    * Überprüfen Sie den CSR
-   *Erstellen Sie aus dem CSR ein Zertifikat und signieren Sie es mit Ihrem privaten Schlüssel
+   * Erstellen Sie aus dem CSR ein Zertifikat und signieren Sie es mit Ihrem privaten Schlüssel
    * Senden (kopieren) Sie das Zertifikat dem Kunden zurück
 
 ## Fragen
