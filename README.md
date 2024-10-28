@@ -39,3 +39,5 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
 ## Lernfeld 11
 
   * [Firewall](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/10-lf11-firewall.md)
+  * [Passwortlose Anmeldung mit FIDO2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/10-lf11-50-password-passkeys.md)
+  * [Transport Layer Security (TLS)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-20-tls.md)
