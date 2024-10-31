@@ -159,4 +159,10 @@ Gemeinsam wird festgelegt:
 | $X_S = 4^3 = 64 \quad mod \quad 7 = 1$ || $X_S = 1 ^5 = 1 \quad mod \quad 7 = 1$| Mit den ausgetauschten Werten berechnen beide den geheimen Schlüssel $X_S$ |
 
 
-Bemerkenswert ist das im letzten Schritt beide den gleichen geheimen Schlüssel berechnen. Ausgetauscht wurden die Werte $X_A$ und $X_B$ und die vorher festgelegten Werte g und p.
+      Bemerkenswert ist das im letzten Schritt beide den gleichen geheimen Schlüssel berechnen. Ausgetauscht wurden die Werte $X_A$ und $X_B$ und die vorher festgelegten Werte g und p.
+
+
+# Cipher Suite
+
+https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR02102/BSI-TR-02102-2.pdf?__blob=publicationFile
+https://www.heise.de/hintergrund/Sichere-Cipher-Suites-fuer-TLS-auswaehlen-6317457.html?seite=all
