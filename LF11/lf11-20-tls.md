@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.9.0
-date:     21.10.2024
+version:  1.0.0
+date:     31.10.2024
 language: de
 narrator: Deutsch Female
 
@@ -25,19 +25,19 @@ Aufbauend auf die [Einführung in die Verschlüsselung](https://liascript.github
 
 Transport Layer Security (TLS), früher bekannt als Secure Sockets Layer (SSL), ist ein kryptographisches Protokoll, das eine sichere Kommunikation über das Internet gewährleistet. Es bildet eine Art Schutzschicht, die Ihre Daten vor unbefugtem Zugriff schützt, während sie von einem Gerät zum anderen übertragen werden.
 
-Wofür wird TLS verwendet?
+## Wofür wird TLS verwendet?
 
  * Verschlüsselung von Webverkehr: Wenn Sie "https://" in einer URL sehen, bedeutet das, dass die Verbindung zwischen Ihrem Browser und dem Webserver mit TLS verschlüsselt ist. Dadurch werden Ihre persönlichen Daten, wie Passwörter oder Kreditkartennummern, vor neugierigen Blicken geschützt.
  * E-Mail-Verschlüsselung: TLS schützt auch E-Mails vor dem Abfangen und Lesen durch Dritte.
  * VPN-Verbindungen: Viele VPN-Dienste nutzen TLS, um eine sichere Verbindung zwischen Ihrem Gerät und dem VPN-Server herzustellen.
 
-Wie funktioniert TLS?
+## Wie funktioniert TLS?
 
  * Handshake: Wenn Sie eine Verbindung zu einer TLS-geschützten Website aufbauen, findet zunächst ein sogenannter Handshake statt. Dabei überprüfen sich Server und Client gegenseitig und einigen sich auf ein gemeinsames Verschlüsselungsverfahren.
  * Verschlüsselung: Alle Daten, die anschließend zwischen Server und Client ausgetauscht werden, werden verschlüsselt. Dies bedeutet, dass selbst wenn jemand die Daten abfangen würde, er sie ohne den passenden Schlüssel nicht entschlüsseln könnte.
  * Authentifizierung: TLS ermöglicht es, die Identität des Servers zu überprüfen. Dies geschieht durch digitale Zertifikate, die von vertrauenswürdigen Zertifizierungsstellen ausgestellt werden.
 
-TLS-Versionen: Ein Überblick
+## TLS-Versionen: Ein Überblick
 
 Transport Layer Security (TLS) hat sich seit seiner Einführung kontinuierlich weiterentwickelt, um die Sicherheit der Online-Kommunikation zu verbessern. Im Laufe der Zeit wurden verschiedene Versionen von TLS veröffentlicht, die jeweils neue Funktionen und Sicherheitsverbesserungen mit sich brachten.
 Die wichtigsten TLS-Versionen
@@ -52,13 +52,13 @@ Die wichtigsten TLS-Versionen
    * Verbesserte Sicherheit: Es werden nur noch sichere Verschlüsselungsverfahren unterstützt und einige veraltete Funktionen wurden entfernt.
    * Einfachere Konfiguration: TLS 1.3 ist einfacher zu konfigurieren und erfordert weniger Handshakes.
 
-Weitere Informationen:
+## Weitere Informationen
 
  * **Cipher Suites**: TLS verwendet sogenannte Cipher Suites, die die Kombination aus Verschlüsselungsverfahren, Hash-Funktionen und Schlüsselaustauschmechanismen definieren.
  * **Perfect Forward Secrecy (PFS)**: PFS sorgt dafür, dass die Kompromittierung eines langfristigen Schlüssels nicht die Vertraulichkeit vergangener Kommunikation gefährdet.
  * **Zertifikate**: TLS-Verbindungen basieren auf digitalen Zertifikaten, die die Identität des Servers bestätigen. Mit dem Zertifikat wird der öffentliche Schlüssel des Servers mit dessen Adresse durch eine digitale Signatur der Zertifizierungsstelle verknüpft.
 
-### TLS-Handshake
+## TLS-Handshake
 
 Die folgende Abbildung zeigt das Message Sequence Chart (MSC) für den TLS-Handshake. Nach dem Aufbau der TCP-Verbindung, in blau dargestellt, findet der anschließende TLS-Handshake in grün statt.
 
@@ -95,9 +95,61 @@ Im Detail laufen die vier Phasen wie folgt ab:
    * Finished-Nachrichten: Beide Seiten senden eine "Finished"-Nachricht, die mit dem neuen Session Key verschlüsselt ist. Dies bestätigt, dass der Handshake erfolgreich abgeschlossen wurde und die Kommunikation nun sicher ist.
 
 
-### Schlüsselaustausch mit Diffie Hellman
+## Schlüsselaustausch
+
+Für den Schlüsselaustausch werden folgende beide Systeme genommen:
+
+ * RSA - Rivest-Shamir-Adleman
+ * DH - Diffie Hellman
+
+### RSA
+
+RSA ist eine Abkürzung, die für Rivest-Shamir-Adleman steht. Es bezeichnet ein asymmetrisches Kryptosystem, das häufig für den sicheren Austausch von Informationen über unsichere Kanäle verwendet wird. Für den Schlüsselaustausch sendet z.B. der Webserver seinen öffentlichen Schlüssel in einem Zertifikat, der Client verschlüsselt nach Überprüfung des Zertifikats den symmetrischen Sitzungsschlüssel mit dem öffentlichen Schlüssel des Servers. Dieser entschlüsselt dann nach Empfang mit seinem privaten Schlüssel den Sitzungsschlüssel.
+
+Mit TLS 1.3 wird RSA nicht mehr verwendet, da die Diffie-Hellman-Varianten mehr Sicherheit bieten.
+
+### Übersicht Diffie Hellman
 
 Das Diffie-Hellman-Schlüsselaustauschverfahren (DH) ist ein kryptographisches Verfahren, das es zwei Parteien ermöglicht, über einen unsicheren Kommunikationskanal einen gemeinsamen geheimen Schlüssel zu vereinbaren. Dieser Schlüssel kann dann zur symmetrischen Verschlüsselung der eigentlichen Kommunikation genutzt werden. Wichtig bei dem Verfahren ist, dass der Schlüssel niemals über den Kommunikationskanal übertragen wird, sondern durch das Berechnungsverfahren, auf beiden Seiten der gleiche Schlüssel gebildet wird.
+
+Unterschieden werden die drei Varianten:
+
+ * DH - Diffie Hellman
+ * DHE - Diffie Hellman Ephemeral
+ * ECDHE - Eliptic Curve Diffie Hellman Ephemeral
+
+Diese drei Begriffe beschreiben verschiedene Methoden zur sicheren Schlüsselübertragung in der Kryptographie, wobei sie auf dem gleichen Grundprinzip des Diffie-Hellman-Schlüsselaustauschs basieren.
+
+#### Grundprinzip von Diffie-Hellman
+
+Grundprinzip: Zwei Parteien (Alice und Bob) erzeugen jeweils einen privaten Schlüssel und einen öffentlichen Schlüssel. Durch Austausch der öffentlichen Schlüssel können sie einen gemeinsamen geheimen Schlüssel berechnen, der nur ihnen bekannt ist.
+ 
+Charakteristika:
+ 
+ * Statische Schlüssel: Die privaten Schlüssel werden typischerweise über einen längeren Zeitraum verwendet.
+ * Anfälligkeit: Bei einem Kompromiss des privaten Schlüssels eines Teilnehmers kann ein Angreifer möglicherweise vergangene Kommunikation entschlüsseln.
+
+#### Diffie-Hellman Ephemeral (DHE)
+
+Das Grundprinzip ist ähnlich wie bei Diffie-Hellman, aber mit dem entscheidenden Unterschied, das ein Ephemere Schlüssel verwendet wird. Das bedeutet, für jede Verbindung wird ein neues Schlüsselpaar erzeugt.
+
+Vorteile:
+
+  * Forward Secrecy: Selbst wenn ein langfristiger privater Schlüssel kompromittiert wird, kann vergangene Kommunikation nicht entschlüsselt werden, da für jede Sitzung ein neuer Schlüssel verwendet wurde.
+ * Höhere Sicherheit: Da die Schlüssel nur für eine begrenzte Zeit gültig sind, wird das Risiko eines Kompromisses verringert.
+
+#### Elliptic Curve Diffie-Hellman Ephemeral (ECDHE)
+
+Grundprinzip: Baut auf DHE auf, verwendet jedoch die Mathematik elliptischer Kurven.
+
+Vorteile:
+
+  * Höhere Effizienz: Für ein vergleichbares Sicherheitsniveau können kürzere Schlüssellängen verwendet werden, was zu einer effizienteren Berechnung führt.
+ * Breite Anwendung: ECDHE ist in vielen modernen Krypto-Protokollen wie TLS (Transport Layer Security) standardmäßig implementiert.
+
+### Schlüsselaustausch mit Diffie Hellman
+
+Der Ablauf des Schlüsselaustauschs mithilfe von Diffie Hellman funktioniert nach folgenden Schritten:
 
 1. Vereinbarung öffentlicher Parameter
 
@@ -162,7 +214,7 @@ Gemeinsam wird festgelegt:
       Bemerkenswert ist das im letzten Schritt beide den gleichen geheimen Schlüssel berechnen. Ausgetauscht wurden die Werte $X_A$ und $X_B$ und die vorher festgelegten Werte g und p.
 
 
-# Cipher Suite
+# Cipher Suites
 
 https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR02102/BSI-TR-02102-2.pdf?__blob=publicationFile
 https://www.heise.de/hintergrund/Sichere-Cipher-Suites-fuer-TLS-auswaehlen-6317457.html?seite=all
