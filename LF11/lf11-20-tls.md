@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.1.0
 date:     31.10.2024
 language: de
 narrator: Deutsch Female
@@ -115,7 +115,7 @@ Das Diffie-Hellman-Schlüsselaustauschverfahren (DH) ist ein kryptographisches V
 Unterschieden werden die drei Varianten:
 
  * DH - Diffie Hellman
- * DHE - Diffie Hellman Ephemeral
+ * DHE - Diffie Hellman Ephemeral (ephemeral - kurzlebig)
  * ECDHE - Eliptic Curve Diffie Hellman Ephemeral
 
 Diese drei Begriffe beschreiben verschiedene Methoden zur sicheren Schlüsselübertragung in der Kryptographie, wobei sie auf dem gleichen Grundprinzip des Diffie-Hellman-Schlüsselaustauschs basieren.
@@ -131,7 +131,7 @@ Charakteristika:
 
 #### Diffie-Hellman Ephemeral (DHE)
 
-Das Grundprinzip ist ähnlich wie bei Diffie-Hellman, aber mit dem entscheidenden Unterschied, das ein Ephemere Schlüssel verwendet wird. Das bedeutet, für jede Verbindung wird ein neues Schlüsselpaar erzeugt.
+Das Grundprinzip ist ähnlich wie bei Diffie-Hellman, aber mit dem entscheidenden Unterschied, das ein kurzlebiger (emphemeral) Schlüssel verwendet wird. Das bedeutet, für jede Verbindung wird ein neues Schlüsselpaar erzeugt.
 
 Vorteile:
 
@@ -146,6 +146,14 @@ Vorteile:
 
   * Höhere Effizienz: Für ein vergleichbares Sicherheitsniveau können kürzere Schlüssellängen verwendet werden, was zu einer effizienteren Berechnung führt.
  * Breite Anwendung: ECDHE ist in vielen modernen Krypto-Protokollen wie TLS (Transport Layer Security) standardmäßig implementiert.
+
+Bei elliptischen Kurven handelt es sich um Kurven, die durch bestimmte Gleichungen beschrieben werden. Diese Kurven haben in der Kryptographie eine besondere Bedeutung gefunden.
+
+Der größte Vorteil elliptischer Kurven liegt in ihrer Effizienz. Im Vergleich zu anderen kryptografischen Verfahren, wie RSA, ermöglichen elliptische Kurven eine vergleichbare Sicherheitsebene bei wesentlich kürzeren Schlüssellängen. Das hat mehrere Vorteile:
+
+ * Schnellere Berechnungen: Kürzere Schlüssel führen zu weniger Rechenaufwand bei der Verschlüsselung und Entschlüsselung.
+ * Geringerer Speicherbedarf: Kürzere Schlüssel benötigen weniger Speicherplatz
+ * Höhere Bandbreite: Kleinere Datenpakete können schneller übertragen werden.
 
 ### Schlüsselaustausch mit Diffie Hellman
 
