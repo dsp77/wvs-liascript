@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
-date:     31.10.2024
+version:  1.2.0
+date:     02.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Transport Layer Security (TLS)
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-tls.jpg
 
-tags:     LiaScript, TLS, SSL, Cipher Suite, Diffie Hellman
+tags:     LiaScript, TLS, SSL, Cipher Suite, Diffie Hellman, AES, FIPS197, SHA2, SHA256, NIST
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -94,6 +94,8 @@ Im Detail laufen die vier Phasen wie folgt ab:
    * Change Cipher Spec: Sowohl Client als auch Server wechseln in den verschlüsselten Modus und bestätigen sich gegenseitig, dass sie bereit sind, mit der verschlüsselten Kommunikation zu beginnen.
    * Finished-Nachrichten: Beide Seiten senden eine "Finished"-Nachricht, die mit dem neuen Session Key verschlüsselt ist. Dies bestätigt, dass der Handshake erfolgreich abgeschlossen wurde und die Kommunikation nun sicher ist.
 
+
+!?[TLS Essentials 14: TLS 1.3 Wireshark analysis von Cyrill Gössi](https://www.youtube.com/watch?v=jjETd0YlKFs)
 
 ## Schlüsselaustausch
 
@@ -221,3 +223,33 @@ Gemeinsam wird festgelegt:
 
       Bemerkenswert ist das im letzten Schritt beide den gleichen geheimen Schlüssel berechnen. Ausgetauscht wurden die Werte $X_A$ und $X_B$ und die vorher festgelegten Werte g und p.
 
+
+## Cipher Suites
+
+Eine TLS Cipher Suite ist eine Kombination aus kryptographsichen Algorithmen, mit den folgende Funktionen durchgeführt werden:
+
+ * Schlüsselaustausch: Wie die beiden Kommunikationsparteien kryptographische Schlüssel austauschen.
+ * Verschlüsselung: Wie der Datenaustausch verschlüsselt wird.
+ * Message authentication: Wie die Integrität und Authentizität der Nachrichten überpüft wird.
+
+ Die folgende Abbildung zeigt die Informationen im Firefox-Browser, welche Cipher Suite für eine HTTPS-Verbindung zu einer Webseite verwendet wird.
+
+ ![Verwendete Cipher Suite für eine aufgerufene Webseite im Firefox-Browser](02_img/lf11-20-tls-firefox-cipher-suite.png)
+
+Das Fenster kann über das Schlosssymbol in der Adressleiste des Browsers -> Verbindung sicher -> weitere Informationen erreicht werden.
+
+Die ausgewählte Cipher Suite ist: **`TLS_AES_128_GCM_SHA256`**
+
+Als Zusatzinformation wird explizit noch die 128-Bit Verschlüsselung erwähnt und das die Cipher Suite gemäß TLS 1.3 verwendet wird.
+
+Die Aufschlüsselung im Detail:
+
+ * `TLS`- Es handelt sich um eine TLS Cipher Suite
+ * `AES`- **Advanced Encryption Standard** ist Teil des [FIPS197 Standard des National Institute of Standards and Technology (NIST)](https://csrc.nist.gov/pubs/fips/197/final)
+ * `128`- es werden AES Schlüssel mit der Länge von 128-Bit verwendet
+ * `GCM`- Galois/Counter Modus, der im Zusammenhang mit der AES-Verschlüsselung verwendet wird
+ * `SHA256`- als Hashalgorithmus wird `SHA256`verwendet, der einen Hashwert von 256-Bit Länge erzeugt. Der SHA256 ist Teil des [**SHA2-Standards** des **National Institute of Standards and Technologiy (NIST)**](https://csrc.nist.gov/projects/hash-functions).
+
+Der folgende Film von Cyrill Gössi erklärt die Cipher Suites:
+
+ !?[ TLS cipher suites explained von Cyrill Gössi](https://www.youtube.com/watch?v=mFdDap9A9-Q&t=323s)
