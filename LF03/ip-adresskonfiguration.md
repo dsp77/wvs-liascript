@@ -1,12 +1,12 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.7.0
+version:  1.8.1
 date:     15.05.2024
 language: de
 narrator: Deutsch Female
 
-comment:  IP Adresskonfiguration; DHCP, SLAAC; OSI-Schicht 3
+comment:  IP Adresskonfiguration; DHCP, SLAAC; OSI-Schicht 3; Multicast
 
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-dhcp-slaac.jpg
@@ -216,9 +216,56 @@ Nennen Sie die folgenden zugehörigen Werte:
 
  (IT-Berufe, IHK-Abschlussprüfung Teil 1 Frühjahr 2024)
 
+# IP-Multicast
+
+Multicastadressen haben den Präfix `ff::/8`. Analog zu dem Scope von IPv6-Adressen sind auch Multicastadressen in Scopes aufgeteilt:
+
+  * `ff01::/16` gilt nur im lokalen Interface
+  * `ff02::/16` gilt nur im Link-Local-Scope
+
+Über vorbestimmte Multicastgruppen können bestimmte Ziele erreicht werden:
+
+  * `ff0X::1` : hierüber sind alle Netzknoten erreichbar
+  * `ff0X::2` : hierüber sind alle Rouer erreichbar
+
+Um z.B. alle Computer im lokalen Netzwerk zu erreichen kann unter Linux folgender Ping ausgeführt werden:
+
+````
+ping6 -c 5 ff02::1 -I eth0
+ping6: Warning: source address might be selected on device other than: eth0
+PING ff02::1(ff02::1) from :: eth0: 56 data bytes
+64 bytes from fe80::2c7a:1f59:905:c65%eth0: icmp_seq=1 ttl=64 time=0.038 ms
+64 bytes from fe80::464e:6dff:fe20:892b%eth0: icmp_seq=1 ttl=64 time=3.21 ms
+64 bytes from fe80::18a7:aea4:7e63:8251%eth0: icmp_seq=1 ttl=64 time=3.21 ms
+...
+````
+
+Unter Windows geht das mit `ping -6 ff02::1`.
+
+Weitere IPv6-Mulicastgruppen legt die IANA unter [IPv6 Multicast Address Space Registry](https://www.iana.org/assignments/ipv6-multicast-addresses/ipv6-multicast-addresses.xhtml) fest.
+
+
+
+
+
+
+````
+netsh interface ip show joins
+````
+
+
+````
+ip -6 maddr show
+````
+
+
+
+
+
+
 # Duplicate Address Detection (DAD)
 
-Nach Bildung der Link-Local-Adresse muss überprüft werden, ob diese Adresse nicht doppelt vergeben wurde. Das findet mit dem **Duplicate Address Detection (DAD)** statt. Dazu bindet sich das Interface an eine Multicast Adresse, die von der erstellten Link-Local-Adresse abgeleitet wird. Die Multicast-Gruppe basiert auf dem Präfix `ff02::1:ff` und wird mit den 24 Bit der Link-Local-Adresse erweitert.
+Nach Bildung der Link-Local-Adresse muss überprüft werden, ob diese Adresse nicht doppelt vergeben wurde. Das findet mit dem **Duplicate Address Detection (DAD)** statt. Dazu bindet sich das Interface an eine Multicast Adresse, die von der erstellten Link-Local-Adresse abgeleitet wird. Die Multicast-Gruppe basiert auf der Adresse `ff02::1:ffcc:cccc` wobei die Stellen `cc:cccc` mit den 24 Bit der Link-Local-Adresse ersetzt werden.
 
 Beispiel, bei der Link-Local-Adresse: `fe80:0000:0000:0000:0302:03ff:fe04:0506` sind die unteren 24 Bit (6-Hexadezimalstellen) `04:0506`. Daraus folgt die Multicast-Adresse:
 
