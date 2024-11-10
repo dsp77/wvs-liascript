@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.8.1
-date:     15.05.2024
+version:  1.8.2
+date:     10.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -220,13 +220,13 @@ Nennen Sie die folgenden zugehörigen Werte:
 
 Multicastadressen haben den Präfix `ff::/8`. Analog zu dem Scope von IPv6-Adressen sind auch Multicastadressen in Scopes aufgeteilt:
 
-  * `ff01::/16` gilt nur im lokalen Interface
-  * `ff02::/16` gilt nur im Link-Local-Scope
+ * `ff01::/16` gilt nur im lokalen Interface
+ * `ff02::/16` gilt nur im Link-Local-Scope
 
 Über vorbestimmte Multicastgruppen können bestimmte Ziele erreicht werden:
 
-  * `ff0X::1` : hierüber sind alle Netzknoten erreichbar
-  * `ff0X::2` : hierüber sind alle Rouer erreichbar
+ * `ff0X::1` : hierüber sind alle Netzknoten erreichbar
+ * `ff0X::2` : hierüber sind alle Rouer erreichbar
 
 Um z.B. alle Computer im lokalen Netzwerk zu erreichen kann unter Linux folgender Ping ausgeführt werden:
 
@@ -245,10 +245,6 @@ Unter Windows geht das mit `ping -6 ff02::1`.
 Weitere IPv6-Mulicastgruppen legt die IANA unter [IPv6 Multicast Address Space Registry](https://www.iana.org/assignments/ipv6-multicast-addresses/ipv6-multicast-addresses.xhtml) fest.
 
 
-
-
-
-
 ````
 netsh interface ip show joins
 ````
@@ -257,10 +253,6 @@ netsh interface ip show joins
 ````
 ip -6 maddr show
 ````
-
-
-
-
 
 
 # Duplicate Address Detection (DAD)
