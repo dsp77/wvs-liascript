@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.8.3
+version:  1.9.3
 date:     11.11.2024
 language: de
 narrator: Deutsch Female
@@ -244,15 +244,47 @@ Unter Windows geht das mit `ping -6 ff02::1`.
 
 Weitere IPv6-Mulicastgruppen legt die IANA unter [IPv6 Multicast Address Space Registry](https://www.iana.org/assignments/ipv6-multicast-addresses/ipv6-multicast-addresses.xhtml) fest.
 
+Für welche Multicastadressen ein Windows-Computer ein Join gemacht hat, kann mithilfe des `netsh`-Befehls ermittelt werden.
 
 ````
 netsh interface ipv6 show joins
 ````
 
+Die gleiche Information auf einem Linux-Computer ist abrufbar mithilfe des `ip`-Befehls:
 
 ````
 ip -6 maddr show
 ````
+
+Die Ausgabe kann zum Beispiel folgendermaßen aussehen:
+
+````
+...
+3:	wlo1
+	inet6 ff02::fb
+	inet6 ff02::1:ff14:fb21
+	inet6 ff02::1:ff05:c65
+	inet6 ff02::1
+	inet6 ff01::1
+````
+
+
+Zum Vergleich, die auf dem WLAN-Interface konfigurierten IP-Adressen sind:
+
+````
+ip -6 addr
+
+3: wlo1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 2003:ea:5f12:f400:d697:df83:f414:fb21/64 scope global temporary dynamic 
+       valid_lft 7081sec preferred_lft 1180sec
+    inet6 fe80::2c7a:1f59:905:c65/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+````
+
+Zu sehen ist, dass für folgende IP-Adressen entsprechende Multicast-Adressen erzeugt wurden:
+
+ * `2003:ea:5f12:f400:d697:df83:f414:fb21` die Multicast-Adresse `ff02::1:ff14:fb21`
+ * `fe80::2c7a:1f59:905:c65` die Multicast-Adresse `ff02::1:ff05:c65`
 
 
 # Duplicate Address Detection (DAD)
