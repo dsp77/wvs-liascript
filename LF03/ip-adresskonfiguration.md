@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.8.2
-date:     10.11.2024
+version:  1.8.3
+date:     11.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -246,7 +246,7 @@ Weitere IPv6-Mulicastgruppen legt die IANA unter [IPv6 Multicast Address Space R
 
 
 ````
-netsh interface ip show joins
+netsh interface ipv6 show joins
 ````
 
 
