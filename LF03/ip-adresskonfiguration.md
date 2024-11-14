@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.9.3
-date:     11.11.2024
+version:  1.9.4
+date:     14.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -306,8 +306,27 @@ Wenn kein anderer Knoten die gleiche IP-Adresse hat, wird die Nachricht nicht be
 
 # Global Unicast Address Assignment
 
- * Router Solicitation (RS)
- * Router Advertisement (RA)
+ Router **Solicitation (RS)** und **Router Advertisement (RA)** sind zwei grundlegende Protokolle im IPv6, die für die automatische Konfiguration von Netzwerkknoten zuständig sind. Sie ermöglichen es Geräten, ohne manuelle Eingriffe einen Router zu finden und sich mit dem Netzwerk zu verbinden.
+
+Der Ablauf ist wie folgt:
+
+**Router Solicitation (RS):**
+
+  * Ein neu ins Netzwerk eingebundenes Gerät (z.B. ein Computer, Smartphone) sendet eine Router Solicitation (RS)-Nachricht.
+ * Diese Nachricht ist ein Broadcast, der an alle Geräte im Netzwerk gerichtet ist und fragt: "Gibt es hier einen Router?"
+
+**Router Advertisement (RA):**
+
+  * Ein Router, der diese RS-Nachricht empfängt, antwortet mit einer Router Advertisement (RA)-Nachricht.
+ * In dieser RA-Nachricht teilt der Router dem anfragenden Gerät wichtige Informationen mit, wie zum Beispiel:
+ * Präfix: Der Netzwerkpräfix, der für die Adressierung im Netzwerk verwendet wird.
+ * Router-Adresse: Die eigene IP-Adresse des Routers, damit das Gerät weiß, wohin es Pakete senden muss.
+ * Lebensdauer: Wie lange die angegebenen Informationen gültig sind.
+ * Weitere Optionen: Informationen über DNS-Server, Default Gateway, etc.
+
+Konfiguration des Geräts:
+
+Das Gerät, das die RA-Nachricht erhalten hat, nutzt die darin enthaltenen Informationen, um seine eigene IP-Adresse zu konfigurieren und den Router als Standard-Gateway einzurichten.
 
 # GNS3-Übung SLAAC
 
