@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.0.1
 date:     15.11.2024
 language: de
 narrator: Deutsch Female
@@ -11,7 +11,7 @@ comment:  Network Address Translation (NAT)
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-nat.jpg
 
-tags:     LiaScript, NAT, Network Address Tranlation
+tags:     LiaScript, NAT, Network Address Tranlation, SNAT, DNAT, CGNAT, Dual Stack Lite
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
