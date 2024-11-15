@@ -126,10 +126,21 @@ Da die IPv4-Pakete der Kunden per NAT in das IPv4-Netzwerk des Carriers und dann
 
 Eine Variante des CGNAT ist, für den Anbieter nur noch ein IPv6-Netzwerk zu betreiben und für Kunden durch den NAT-Prozess im Zusammenhang mit der Tunnelung von IPv4-Paketen darüber einen IPv4-Zugang für Kunden zur Verfügung zu stellen.
 
+![NAT464](02_img/lf11-40-nat464.svg)
+
 Das Tunneling von IPv4-Pakete über ein nur IPv6-basiertes Carrier-Netzwerk wird auch als **NAT464** genannt, da das IPv4-Netzwerk des Kunden per NAT über einen IPv6-Tunnel durch das Carrier-Netzwerk per NAT in das IPv4-Netzwerk des Internets transportiert wird.
 
 ## Dual Stack Lite
 
+Dual Stack Lite (DS-Lite), im [RFC6333](https://datatracker.ietf.org/doc/rfc6333/) beschrieben, ist eine Übergangstechnologie, die es Internet Service Providern (ISPs) ermöglicht, ihren Kunden sowohl IPv4- als auch IPv6-Dienste anzubieten, ohne dass sie ihre gesamte Infrastruktur auf IPv6 umstellen müssen. Es ist eine Art Brücke zwischen den beiden Internetprotokollversionen.
+
+Wie funktioniert DS-Lite?
+
+  * Globale IPv6-Adresse: Jeder Kunde erhält eine globale IPv6-Adresse, die ihn im Internet eindeutig identifiziert.
+ * Private IPv4-Adresse: Zusätzlich erhält jeder Kunde eine private IPv4-Adresse innerhalb seines Heimnetzwerks.
+ * IPv4-in-IPv6-Tunneling: Wenn ein Gerät im Kundennetzwerk eine Verbindung zu einem IPv4-Dienst im Internet aufbauen möchte, wird das IPv4-Paket in ein IPv6-Paket eingekapselt (getunnellet). Die Tunnelung wird im [RFC2473](https://datatracker.ietf.org/doc/rfc2473/) beschrieben.
+ * NAT464: Am Rand des Netzwerks des ISPs befindet sich ein NAT464-Gerät. Es übersetzt die in einem IPv6-Paket getunnelte IPv4-Paket des Kunden in die öffentliche IPv4-Adresse.
+ * Rückweg: Antworten vom Internet werden auf dem gleichen Weg zurück zum Kunden geleitet.
 
 
-# STUN und TURN - Problemlöser für NAT
+<!--  STUN und TURN - Problemlöser für NAT -->

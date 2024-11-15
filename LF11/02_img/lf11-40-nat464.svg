@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="208.85091mm"
+   height="109.0034mm"
+   viewBox="0 0 236.307 123.33328"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="lf11-40-nat464.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="406"
+     inkscape:cy="161.5"
+     inkscape:window-width="1600"
+     inkscape:window-height="828"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path10" />
+    </marker>
+    <rect
+       x="664.81372"
+       y="180.04716"
+       width="61.275303"
+       height="114.62556"
+       id="rect4" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(7.4030686,-8.9735514)">
+    <path
+       id="path1"
+       style="fill:#fff6d5;stroke:#000000;stroke-width:0.43724;stroke-opacity:1"
+       d="m 189.49657,60.886088 c -10.61343,-0.01184 -18.10621,-4.938583 -18.83668,-10.215153 -4.63938,-1.911471 -7.32928,-4.753378 -7.33855,-7.753204 0.0147,-2.228519 1.5108,-4.391798 4.25454,-6.151573 -0.0636,-0.300422 -0.10005,-0.602117 -0.10927,-0.904171 0.004,-5.566459 10.52665,-11.084454 21.69667,-11.08349 8.94561,0.0088 16.52698,2.186541 19.06549,6.461244 7.15054,1.644719 10.55954,6.973203 10.57465,10.897846 v 0.0061 c -0.0186,3.094135 -2.00826,7.733241 -6.90296,9.636911 -0.0912,5.534649 -2.56982,8.834583 -13.67638,8.834405 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <path
+       id="path4"
+       style="fill:#fff6d5;stroke:#000000;stroke-width:0.43724;stroke-opacity:1"
+       d="m 195.48389,83.039181 c -10.61343,-0.01184 -18.10621,-4.938583 -18.83668,-10.215153 -4.63938,-1.911471 -7.32928,-4.753378 -7.33855,-7.753204 0.0147,-2.228519 1.5108,-4.391798 4.25454,-6.151573 -0.0636,-0.300422 -0.10005,-0.602117 -0.10927,-0.904171 0.004,-5.566459 10.52665,-11.084454 21.69667,-11.08349 8.94561,0.0088 16.52698,2.186541 19.06549,6.461244 7.15054,1.644719 10.55954,6.973203 10.57465,10.897846 v 0.0061 c -0.0186,3.094135 -2.00826,7.733241 -6.90296,9.636911 -0.0912,5.534649 -2.56982,8.834583 -13.67638,8.834405 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,18.829693,-8.5304031)"
+       id="text4"
+       style="font-size:16px;font-family:Sans;-inkscape-font-specification:Sans;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.37197;stroke-opacity:1" />
+    <path
+       id="path19"
+       style="fill:#ffaaaa;stroke:#000000;stroke-width:0.84709;stroke-opacity:1"
+       d="m 109.37148,30.745511 c 20.56202,0.02293 35.07822,9.567797 36.4934,19.7904 8.98815,3.703206 14.19945,9.208995 14.2174,15.020731 -0.0285,4.31744 -2.92696,8.508484 -8.24256,11.917799 0.12317,0.582023 0.19383,1.166515 0.21169,1.751702 -0.008,10.784222 -20.3939,21.474557 -42.03422,21.472687 C 92.686346,100.68173 77.998506,96.462717 73.080506,88.181086 59.227346,84.994679 52.622886,74.671498 52.593616,67.06806 v -0.01174 c 0.0359,-5.994448 3.89072,-14.982055 13.37351,-18.670145 0.17678,-10.722595 4.97866,-17.115744 26.49606,-17.115404 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+       x="47.774197"
+       y="49.992485"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         style="stroke-width:0.363"
+         x="47.774197"
+         y="49.992485" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.64798px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;stroke:none;stroke-width:0.398555;stroke-opacity:1"
+       x="181.3231"
+       y="23.005735"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="fill:#000000;stroke:none;stroke-width:0.398555"
+         x="181.3231"
+         y="23.005735">Internet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+       x="165.2963"
+       y="79.293022"
+       id="text7"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="165.2963"
+         y="79.293022"
+         id="tspan6">Carrier-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="165.2963"
+         y="84.584686"
+         id="tspan7">NAT-Router</tspan></text>
+    <path
+       style="fill:#55ddff;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+       id="path14"
+       sodipodi:type="arc"
+       sodipodi:cx="161.73965"
+       sodipodi:cy="64.850937"
+       sodipodi:rx="9.2948542"
+       sodipodi:ry="9.2948542"
+       sodipodi:start="0"
+       sodipodi:end="6.2825569"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 171.03451,64.850937 a 9.2948542,9.2948542 0 0 1 -9.2934,9.294854 9.2948542,9.2948542 0 0 1 -9.29631,-9.291934 9.2948542,9.2948542 0 0 1 9.29047,-9.297773 9.2948542,9.2948542 0 0 1 9.29924,9.289012" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="M 161.86991,64.197367 V 59.036516"
+       id="path15"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 161.86991,65.745452 v 5.160851"
+       id="path16"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 153.3835,64.706828 h 5.16088"
+       id="path17"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 170.35628,64.706828 h -5.16085"
+       id="path18"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+       x="39.784649"
+       y="58.142441"
+       id="text21"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="39.784649"
+         y="58.142441"
+         id="tspan20">Kunden-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="39.784649"
+         y="63.434105"
+         id="tspan21">NAT-Router</tspan></text>
+    <g
+       id="g38"
+       transform="translate(3.5923939)">
+      <path
+         id="path20"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.344302;stroke-opacity:1"
+         d="m 18.037161,63.918755 c -8.3575031,0.0093 -18.79582803,1.119511 -19.3710315,5.274519 -3.6532481,1.505179 -4.6621459,4.459908 -4.6694323,6.822107 0.011527,1.754835 -0.1481238,6.054687 2.0124158,7.440413 -0.050086,0.236565 2.412787,2.102988 2.4055188,2.340838 0.0028,4.383281 8.3883182,5.11016 17.1840892,5.109398 7.044176,-0.0069 13.242611,-2.318927 15.24154,-5.685021 5.630651,-1.295125 9.24093,-4.101143 9.252833,-7.191583 v -0.0048 c -0.01461,-2.436462 -2.27387,-4.734598 -6.128171,-6.233632 -0.07187,-4.358232 -7.18196,-7.87236 -15.927762,-7.872218 z"
+         sodipodi:nodetypes="cccccccccccc" />
+      <rect
+         style="fill:#cdde87;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect21"
+         width="7.7403903"
+         height="5.2601585"
+         x="2.8243542"
+         y="66.60585" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect22"
+         width="6.0679822"
+         height="3.9375079"
+         x="3.6647949"
+         y="67.272179"
+         ry="0.8301726" />
+      <path
+         style="fill:#9dac93;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         d="m 2.8263595,73.336647 h 7.8272185 l 2.077207,2.07721 H 0.60364053 Z"
+         id="path22" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.51273px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.386959;stroke-opacity:1"
+         x="-1.3362774"
+         y="81.905632"
+         id="text27"><tspan
+           sodipodi:role="line"
+           id="tspan27"
+           style="fill:#000000;stroke-width:0.386959"
+           x="-1.3362774"
+           y="81.905632">IPv4-Netzwerk</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:4.64798px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;stroke:none;stroke-width:0.398555;stroke-opacity:1"
+         x="14.408023"
+         y="72.315964"
+         id="text28"><tspan
+           sodipodi:role="line"
+           id="tspan28"
+           style="fill:#000000;stroke:none;stroke-width:0.398555"
+           x="14.408023"
+           y="72.315964">LAN</tspan></text>
+    </g>
+    <g
+       id="g39"
+       transform="translate(3.5923939)">
+      <path
+         style="fill:#55ddff;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+         id="path23"
+         sodipodi:type="arc"
+         sodipodi:cx="46.40649"
+         sodipodi:cy="77.22934"
+         sodipodi:rx="9.2948542"
+         sodipodi:ry="9.2948542"
+         sodipodi:start="0"
+         sodipodi:end="6.2825569"
+         sodipodi:open="true"
+         sodipodi:arc-type="arc"
+         d="m 55.701344,77.22934 a 9.2948542,9.2948542 0 0 1 -9.293393,9.294854 9.2948542,9.2948542 0 0 1 -9.296314,-9.291934 9.2948542,9.2948542 0 0 1 9.290473,-9.297774 9.2948542,9.2948542 0 0 1 9.299233,9.289013" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="M 46.537015,76.575776 V 71.414925"
+         id="path24"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 46.537015,78.123861 v 5.160851"
+         id="path25"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 38.050595,77.085237 h 5.16088"
+         id="path26"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 55.023385,77.085237 h -5.16085"
+         id="path27"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+       x="82.893364"
+       y="119.2131"
+       id="text30"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="82.893364"
+         y="119.2131"
+         id="tspan29">Kunden-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="82.893364"
+         y="124.50476"
+         id="tspan30">NAT-Router</tspan></text>
+    <g
+       id="g41"
+       transform="translate(35.325207,29.936616)">
+      <path
+         id="path39"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.344302;stroke-opacity:1"
+         d="m 18.037161,63.918755 c -8.3575031,0.0093 -18.79582803,1.119511 -19.3710315,5.274519 -3.6532481,1.505179 -4.6621459,4.459908 -4.6694323,6.822107 0.011527,1.754835 -0.1481238,6.054687 2.0124158,7.440413 -0.050086,0.236565 2.412787,2.102988 2.4055188,2.340838 0.0028,4.383281 8.3883182,5.11016 17.1840892,5.109398 7.044176,-0.0069 13.242611,-2.318927 15.24154,-5.685021 5.630651,-1.295125 9.24093,-4.101143 9.252833,-7.191583 v -0.0048 c -0.01461,-2.436462 -2.27387,-4.734598 -6.128171,-6.233632 -0.07187,-4.358232 -7.18196,-7.87236 -15.927762,-7.872218 z"
+         sodipodi:nodetypes="cccccccccccc" />
+      <rect
+         style="fill:#cdde87;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect39"
+         width="7.7403903"
+         height="5.2601585"
+         x="2.8243542"
+         y="66.60585" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect40"
+         width="6.0679822"
+         height="3.9375079"
+         x="3.6647949"
+         y="67.272179"
+         ry="0.8301726" />
+      <path
+         style="fill:#9dac93;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         d="m 2.8263595,73.336647 h 7.8272185 l 2.077207,2.07721 H 0.60364053 Z"
+         id="path40" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.51273px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.386959;stroke-opacity:1"
+         x="-1.3362774"
+         y="81.905632"
+         id="text40"><tspan
+           sodipodi:role="line"
+           id="tspan40"
+           style="fill:#000000;stroke-width:0.386959"
+           x="-1.3362774"
+           y="81.905632">IPv4-Netzwerk</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:4.64798px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;stroke:none;stroke-width:0.398555;stroke-opacity:1"
+         x="14.408023"
+         y="72.315964"
+         id="text41"><tspan
+           sodipodi:role="line"
+           id="tspan41"
+           style="fill:#000000;stroke:none;stroke-width:0.398555"
+           x="14.408023"
+           y="72.315964">LAN</tspan></text>
+    </g>
+    <g
+       id="g43"
+       transform="translate(3.5923939)">
+      <path
+         style="fill:#55ddff;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+         id="path32"
+         sodipodi:type="arc"
+         sodipodi:cx="79.336761"
+         sodipodi:cy="104.77102"
+         sodipodi:rx="9.2948542"
+         sodipodi:ry="9.2948542"
+         sodipodi:start="0"
+         sodipodi:end="6.2825569"
+         sodipodi:open="true"
+         sodipodi:arc-type="arc"
+         d="m 88.631616,104.77102 a 9.2948542,9.2948542 0 0 1 -9.293394,9.29485 9.2948542,9.2948542 0 0 1 -9.296314,-9.29193 9.2948542,9.2948542 0 0 1 9.290473,-9.297774 9.2948542,9.2948542 0 0 1 9.299233,9.289014" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="M 79.467284,104.11749 V 98.956636"
+         id="path33"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 79.467284,105.66557 v 5.16085"
+         id="path34"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 70.980864,104.62695 h 5.16088"
+         id="path35"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 87.953654,104.62695 h -5.16085"
+         id="path36"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+       x="66.727592"
+       y="17.428642"
+       id="text2"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="66.727592"
+         y="17.428642"
+         id="tspan1">Kunden-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="66.727592"
+         y="22.720304"
+         id="tspan3">NAT-Router</tspan></text>
+    <g
+       id="g45"
+       transform="translate(19.758166,-44.904925)">
+      <path
+         id="path43"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.344302;stroke-opacity:1"
+         d="m 18.037161,63.918755 c -8.3575031,0.0093 -18.79582803,1.119511 -19.3710315,5.274519 -3.6532481,1.505179 -4.6621459,4.459908 -4.6694323,6.822107 0.011527,1.754835 -0.1481238,6.054687 2.0124158,7.440413 -0.050086,0.236565 2.412787,2.102988 2.4055188,2.340838 0.0028,4.383281 8.3883182,5.11016 17.1840892,5.109398 7.044176,-0.0069 13.242611,-2.318927 15.24154,-5.685021 5.630651,-1.295125 9.24093,-4.101143 9.252833,-7.191583 v -0.0048 c -0.01461,-2.436462 -2.27387,-4.734598 -6.128171,-6.233632 -0.07187,-4.358232 -7.18196,-7.87236 -15.927762,-7.872218 z"
+         sodipodi:nodetypes="cccccccccccc" />
+      <rect
+         style="fill:#cdde87;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect43"
+         width="7.7403903"
+         height="5.2601585"
+         x="2.8243542"
+         y="66.60585" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect44"
+         width="6.0679822"
+         height="3.9375079"
+         x="3.6647949"
+         y="67.272179"
+         ry="0.8301726" />
+      <path
+         style="fill:#9dac93;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         d="m 2.8263595,73.336647 h 7.8272185 l 2.077207,2.07721 H 0.60364053 Z"
+         id="path44" />
+      <text
+         xml:space="preserve"
+         style="font-size:4.51273px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.386959;stroke-opacity:1"
+         x="-1.3362774"
+         y="81.905632"
+         id="text44"><tspan
+           sodipodi:role="line"
+           id="tspan44"
+           style="fill:#000000;stroke-width:0.386959"
+           x="-1.3362774"
+           y="81.905632">IPv4-Netzwerk</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:4.64798px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;stroke:none;stroke-width:0.398555;stroke-opacity:1"
+         x="14.408023"
+         y="72.315964"
+         id="text45"><tspan
+           sodipodi:role="line"
+           id="tspan45"
+           style="fill:#000000;stroke:none;stroke-width:0.398555"
+           x="14.408023"
+           y="72.315964">LAN</tspan></text>
+    </g>
+    <g
+       id="g42"
+       transform="translate(3.5923939)">
+      <path
+         style="fill:#55ddff;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+         id="path8"
+         sodipodi:type="arc"
+         sodipodi:cx="63.170986"
+         sodipodi:cy="33.521889"
+         sodipodi:rx="9.2948542"
+         sodipodi:ry="9.2948542"
+         sodipodi:start="0"
+         sodipodi:end="6.2825569"
+         sodipodi:open="true"
+         sodipodi:arc-type="arc"
+         d="m 72.46584,33.521889 a 9.2948542,9.2948542 0 0 1 -9.293394,9.294854 9.2948542,9.2948542 0 0 1 -9.296314,-9.291934 9.2948542,9.2948542 0 0 1 9.290473,-9.297773 9.2948542,9.2948542 0 0 1 9.299234,9.289012" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="M 63.301511,32.868322 V 27.707471"
+         id="path9"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 63.301511,34.416407 v 5.160851"
+         id="path11"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 54.815091,33.377783 h 5.16088"
+         id="path12"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 71.787881,33.377783 h -5.16085"
+         id="path13"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="80.023575"
+       y="66.229568"
+       id="text38"><tspan
+         sodipodi:role="line"
+         id="tspan38"
+         style="fill:#000000;stroke-width:0.606979"
+         x="80.023575"
+         y="66.229568">IPv6-Netzwerk</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="91.38063"
+       y="27.460972"
+       id="text46"><tspan
+         sodipodi:role="line"
+         id="tspan46"
+         style="fill:#000000;stroke-width:0.606979"
+         x="91.38063"
+         y="27.460972">Carrier-Netzwerk</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="172.827"
+       y="67.427032"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#000000;stroke-width:0.606979"
+         x="172.827"
+         y="67.427032">IPv4-Netzwerk</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="166.8396"
+       y="44.076485"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="fill:#000000;stroke-width:0.606979"
+         x="166.8396"
+         y="44.076485">IPv6-Netzwerk</tspan></text>
+  </g>
+</svg>
