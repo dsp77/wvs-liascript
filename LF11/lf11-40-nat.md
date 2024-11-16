@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.1
-date:     15.11.2024
+version:  1.1.1
+date:     16.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -133,6 +133,8 @@ Das Tunneling von IPv4-Pakete über ein nur IPv6-basiertes Carrier-Netzwerk wird
 ## Dual Stack Lite
 
 Dual Stack Lite (DS-Lite), im [RFC6333](https://datatracker.ietf.org/doc/rfc6333/) beschrieben, ist eine Übergangstechnologie, die es Internet Service Providern (ISPs) ermöglicht, ihren Kunden sowohl IPv4- als auch IPv6-Dienste anzubieten, ohne dass sie ihre gesamte Infrastruktur auf IPv6 umstellen müssen. Es ist eine Art Brücke zwischen den beiden Internetprotokollversionen.
+
+![Dual-Stack Lite Netzwerk](02_img/lf11-40-dual-stack-lite.svg)
 
 Wie funktioniert DS-Lite?
 

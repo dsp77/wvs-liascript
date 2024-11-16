@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="208.85091mm"
+   height="109.0034mm"
+   viewBox="0 0 236.307 123.33328"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="lf11-40-dual-stack-lite.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1"
+     inkscape:cx="320"
+     inkscape:cy="211.5"
+     inkscape:window-width="1600"
+     inkscape:window-height="828"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker31"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path31" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker12"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path12" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker11"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path10" />
+    </marker>
+    <rect
+       x="664.81372"
+       y="180.04716"
+       width="61.275303"
+       height="114.62556"
+       id="rect4" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(7.4030686,-8.9735514)">
+    <rect
+       style="fill:#ffe6d5;fill-opacity:1;stroke:#000000;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       id="rect13"
+       width="160.66103"
+       height="14.697777"
+       x="5.6137185"
+       y="113.48871"
+       ry="1.7054478" />
+    <path
+       id="path1"
+       style="fill:#ffeeaa;stroke:#000000;stroke-width:0.43724;stroke-opacity:1"
+       d="m 178.71943,60.886088 c -10.61343,-0.01184 -18.10621,-4.938583 -18.83668,-10.215153 -4.63938,-1.911471 -7.32928,-4.753378 -7.33855,-7.753204 0.0147,-2.228519 1.5108,-4.391798 4.25454,-6.151573 -0.0636,-0.300422 -0.10005,-0.602117 -0.10927,-0.904171 0.004,-5.566459 10.52665,-11.084454 21.69667,-11.08349 8.94561,0.0088 16.52698,2.186541 19.06549,6.461244 7.15054,1.644719 10.55954,6.973203 10.57465,10.897846 v 0.0061 c -0.0186,3.094135 -2.00826,7.733241 -6.90296,9.636911 -0.0912,5.534649 -2.56982,8.834583 -13.67638,8.834405 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <path
+       id="path4"
+       style="fill:#fff6d5;stroke:#000000;stroke-width:0.43724;stroke-opacity:1"
+       d="m 195.48389,83.039181 c -10.61343,-0.01184 -18.10621,-4.938583 -18.83668,-10.215153 -4.63938,-1.911471 -7.32928,-4.753378 -7.33855,-7.753204 0.0147,-2.228519 1.5108,-4.391798 4.25454,-6.151573 -0.0636,-0.300422 -0.10005,-0.602117 -0.10927,-0.904171 0.004,-5.566459 10.52665,-11.084454 21.69667,-11.08349 8.94561,0.0088 16.52698,2.186541 19.06549,6.461244 7.15054,1.644719 10.55954,6.973203 10.57465,10.897846 v 0.0061 c -0.0186,3.094135 -2.00826,7.733241 -6.90296,9.636911 -0.0912,5.534649 -2.56982,8.834583 -13.67638,8.834405 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,18.829693,-8.5304031)"
+       id="text4"
+       style="font-size:16px;font-family:Sans;-inkscape-font-specification:Sans;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.37197;stroke-opacity:1" />
+    <path
+       id="path19"
+       style="fill:#ffaaaa;stroke:#000000;stroke-width:0.84709;stroke-opacity:1"
+       d="m 109.37148,30.745511 c 20.56202,0.02293 35.07822,9.567797 36.4934,19.7904 8.98815,3.703206 14.19945,9.208995 14.2174,15.020731 -0.0285,4.31744 -2.92696,8.508484 -8.24256,11.917799 0.12317,0.582023 0.19383,1.166515 0.21169,1.751702 -0.008,10.784222 -20.3939,21.474557 -42.03422,21.472687 C 92.686346,100.68173 77.998506,96.462717 73.080506,88.181086 59.227346,84.994679 52.622886,74.671498 52.593616,67.06806 v -0.01174 c 0.0359,-5.994448 3.89072,-14.982055 13.37351,-18.670145 0.17678,-10.722595 4.97866,-17.115744 26.49606,-17.115404 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+       x="47.774197"
+       y="49.992485"
+       id="text14"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         style="stroke-width:0.363"
+         x="47.774197"
+         y="49.992485" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.64798px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;stroke:none;stroke-width:0.398555;stroke-opacity:1"
+       x="181.3231"
+       y="23.005735"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="fill:#000000;stroke:none;stroke-width:0.398555"
+         x="181.3231"
+         y="23.005735">Internet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+       x="165.2963"
+       y="79.293022"
+       id="text7"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="165.2963"
+         y="79.293022"
+         id="tspan6">Carrier-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="165.2963"
+         y="84.584686"
+         id="tspan7">NAT-Router</tspan></text>
+    <path
+       style="fill:#55ddff;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+       id="path14"
+       sodipodi:type="arc"
+       sodipodi:cx="161.73965"
+       sodipodi:cy="64.850937"
+       sodipodi:rx="9.2948542"
+       sodipodi:ry="9.2948542"
+       sodipodi:start="0"
+       sodipodi:end="6.2825569"
+       sodipodi:open="true"
+       sodipodi:arc-type="arc"
+       d="m 171.03451,64.850937 a 9.2948542,9.2948542 0 0 1 -9.2934,9.294854 9.2948542,9.2948542 0 0 1 -9.29631,-9.291934 9.2948542,9.2948542 0 0 1 9.29047,-9.297773 9.2948542,9.2948542 0 0 1 9.29924,9.289012" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="M 161.86991,64.197367 V 59.036516"
+       id="path15"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 161.86991,65.745452 v 5.160851"
+       id="path16"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 153.3835,64.706828 h 5.16088"
+       id="path17"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+       d="m 170.35628,64.706828 h -5.16085"
+       id="path18"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+       x="53.707561"
+       y="37.929829"
+       id="text21"><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="53.707561"
+         y="37.929829"
+         id="tspan20">Kunden-</tspan><tspan
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.363;stroke-opacity:1"
+         x="53.707561"
+         y="43.221493"
+         id="tspan21">NAT-Router</tspan></text>
+    <path
+       id="path20"
+       style="fill:#e5ffd5;stroke:#000000;stroke-width:0.344302;stroke-opacity:1"
+       d="m 21.629555,63.918755 c -8.357503,0.0093 -18.7958281,1.119511 -19.3710316,5.274519 -3.6532481,1.505179 -4.6621459,4.459908 -4.6694323,6.822107 0.011527,1.754835 -0.1481238,6.054687 2.0124158,7.440413 -0.050086,0.236565 2.412787,2.102988 2.4055188,2.340838 0.0028,4.383281 8.3883183,5.11016 17.1840893,5.109398 7.044176,-0.0069 13.242611,-2.318927 15.24154,-5.685021 5.630651,-1.295125 9.24093,-4.101143 9.252833,-7.191583 v -0.0048 c -0.01461,-2.436462 -2.27387,-4.734598 -6.128171,-6.233632 -0.07187,-4.358232 -7.18196,-7.87236 -15.927762,-7.872218 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <rect
+       style="fill:#cdde87;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+       id="rect21"
+       width="7.7403903"
+       height="5.2601585"
+       x="6.416748"
+       y="66.60585" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+       id="rect22"
+       width="6.0679822"
+       height="3.9375079"
+       x="7.2571888"
+       y="67.272179"
+       ry="0.8301726" />
+    <path
+       style="fill:#9dac93;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+       d="m 6.4187534,73.336647 h 7.8272186 l 2.077207,2.07721 H 4.1960344 Z"
+       id="path22" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.51273px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.386959;stroke-opacity:1"
+       x="2.2561166"
+       y="81.905632"
+       id="text27"><tspan
+         sodipodi:role="line"
+         id="tspan27"
+         style="fill:#000000;stroke-width:0.386959"
+         x="2.2561166"
+         y="81.905632">IPv4-Netzwerk</tspan></text>
+    <path
+       id="path2"
+       style="fill:#ccffaa;stroke:#000000;stroke-width:0.344302;stroke-opacity:1"
+       d="m 25.632345,42.364393 c 8.357504,0.0093 18.795828,1.119511 19.371032,5.274519 3.653248,1.505179 4.662146,4.459908 4.669432,6.822107 -0.01153,1.754835 0.148124,6.054687 -2.012416,7.440413 0.05009,0.236565 -2.412787,2.102988 -2.405518,2.340838 -0.0028,4.383281 -8.388319,5.11016 -17.18409,5.109398 -7.044176,-0.0069 -13.24261,-2.318927 -15.241539,-5.685021 C 7.1985948,62.371522 3.5883158,59.565504 3.5764128,56.475064 v -0.0048 c 0.01461,-2.436462 2.27387,-4.734598 6.128171,-6.233632 0.07187,-4.358232 7.1819602,-7.87236 15.9277612,-7.872218 z"
+       sodipodi:nodetypes="cccccccccccc" />
+    <g
+       id="g39"
+       transform="translate(3.5923939,-7.78352)">
+      <path
+         style="fill:#55ddff;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1"
+         id="path23"
+         sodipodi:type="arc"
+         sodipodi:cx="46.40649"
+         sodipodi:cy="77.22934"
+         sodipodi:rx="9.2948542"
+         sodipodi:ry="9.2948542"
+         sodipodi:start="0"
+         sodipodi:end="6.2825569"
+         sodipodi:open="true"
+         sodipodi:arc-type="arc"
+         d="m 55.701344,77.22934 a 9.2948542,9.2948542 0 0 1 -9.293393,9.294854 9.2948542,9.2948542 0 0 1 -9.296314,-9.291934 9.2948542,9.2948542 0 0 1 9.290473,-9.297774 9.2948542,9.2948542 0 0 1 9.299233,9.289013" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="M 46.537015,76.575776 V 71.414925"
+         id="path24"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 46.537015,78.123861 v 5.160851"
+         id="path25"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 38.050595,77.085237 h 5.16088"
+         id="path26"
+         sodipodi:nodetypes="cc" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.363;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
+         d="m 55.023385,77.085237 h -5.16085"
+         id="path27"
+         sodipodi:nodetypes="cc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="80.023575"
+       y="66.229568"
+       id="text38"><tspan
+         sodipodi:role="line"
+         id="tspan38"
+         style="fill:#000000;stroke-width:0.606979"
+         x="80.023575"
+         y="66.229568">IPv6-Netzwerk</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="91.38063"
+       y="27.460972"
+       id="text46"><tspan
+         sodipodi:role="line"
+         id="tspan46"
+         style="fill:#000000;stroke-width:0.606979"
+         x="91.38063"
+         y="27.460972">Carrier-Netzwerk</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="172.827"
+       y="67.427032"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#000000;stroke-width:0.606979"
+         x="172.827"
+         y="67.427032">IPv4-Netzwerk</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.07863px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.606979;stroke-opacity:1"
+       x="156.06229"
+       y="44.076485"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="fill:#000000;stroke-width:0.606979"
+         x="156.06229"
+         y="44.076485">IPv6-Netzwerk</tspan></text>
+    <g
+       id="g10"
+       transform="translate(17.96197)">
+      <rect
+         style="fill:#cdde87;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+         id="rect2"
+         width="7.7403903"
+         height="5.2601585"
+         x="12.404072"
+         y="45.051487" />
+      <g
+         id="g9">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+           id="rect3"
+           width="6.0679822"
+           height="3.9375079"
+           x="13.244513"
+           y="45.717815"
+           ry="0.8301726" />
+        <path
+           style="fill:#9dac93;fill-opacity:1;stroke:#000000;stroke-width:0.22214;stroke-opacity:1"
+           d="m 12.406077,51.782285 h 7.827218 l 2.077207,2.07721 H 10.183358 Z"
+           id="path3" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:4.51273px;font-family:Sans;-inkscape-font-specification:Sans;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.386959;stroke-opacity:1"
+       x="8.2434397"
+       y="60.351269"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="fill:#000000;stroke-width:0.386959"
+         x="8.2434397"
+         y="60.351269">IPv6-Netzwerk</tspan></text>
+    <path
+       style="fill:none;stroke:#006680;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11);marker-end:url(#marker12)"
+       d="m 43.050965,52.366809 c 0,0 3.095077,2.534363 10.529409,12.31517 7.434332,9.780807 95.853126,5.732858 102.015426,-3.243295 6.16231,-8.976152 14.1295,-12.885988 14.1295,-12.885988"
+       id="path11"
+       sodipodi:nodetypes="czzc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.78986px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:none;stroke:#008066;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       x="23.546202"
+       y="122.41287"
+       id="text13"><tspan
+         sodipodi:role="line"
+         id="tspan13"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.976452"
+         x="23.546202"
+         y="122.41287">IPv6-Header</tspan></text>
+    <path
+       style="fill:#ffe6d5;fill-opacity:1;stroke:#000000;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       d="m 42.694812,113.4341 v 14.74214"
+       id="path21" />
+    <rect
+       style="fill:#e5ffd5;fill-opacity:1;stroke:#000000;stroke-width:0.84948;stroke-dasharray:none;stroke-opacity:1"
+       id="rect23"
+       width="121.18465"
+       height="14.74752"
+       x="44.54137"
+       y="94.788826"
+       ry="1.7112199" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.78986px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       x="100.04884"
+       y="104.06647"
+       id="text23"><tspan
+         sodipodi:role="line"
+         id="tspan23"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.976452"
+         x="100.04884"
+         y="104.06647">IPv4-Paket</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.78986px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:none;stroke:#008066;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       x="98.387733"
+       y="122.41287"
+       id="text24"><tspan
+         sodipodi:role="line"
+         id="tspan24"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.976452"
+         x="98.387733"
+         y="122.41287">IPv6-Daten</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       d="m 152.1369,103.25995 v 17.72603"
+       id="path28" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1"
+       d="m 150.3083,102.83478 v 18.88174"
+       id="path29" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.637013;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker31)"
+       d="m 148.15535,100.22816 v 19.59898"
+       id="path30" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.637013;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker31)"
+       d="m 64.332852,100.22816 v 19.59898"
+       id="path32" />
+    <path
+       style="fill:none;stroke:#008066;stroke-width:0.976452;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker11);marker-end:url(#marker12)"
+       d="m 30.328839,73.870781 c 0,0 15.817203,-6.994963 23.251535,2.785844 3.72515,4.900907 -1.945194,21.79127 25.093396,21.850202 11.395935,0.02484 38.77473,2.378023 56.75561,-2.094947 16.97749,-4.22336 10.88917,-22.17359 12.4722,-24.479468 6.1623,-8.976158 33.66088,-0.434048 33.66088,-0.434048"
+       id="path13"
+       sodipodi:nodetypes="cssssc" />
+  </g>
+</svg>
