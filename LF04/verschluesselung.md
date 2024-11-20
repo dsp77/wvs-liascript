@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.1.2
-date:     23.05.2024
+version:  2.1.3
+date:     20.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -12,7 +12,7 @@ comment:  Verschlüsselung; symmetrische und asymmetrische Verschlüsselung;
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:    02_img/logo-encryption.jpg
 
-tags:    LiaScript
+tags:    LiaScript, Kryptographie, Symmetrische Verschlüsselung, Asymmetrische Verschlüsselung, Hashfunktion, digitale Zertifikate, X.509
 
 link:    https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -372,7 +372,7 @@ Nach Austausch des Sessionschlüssels findet zwischen Webbrowser und Server eine
  * Privater Schlüssel mit Zertifikat erstellen: `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout private_ca.key -out certificate_ca.crt`
  * Privaten Schlüssel und CSR erstellen: `openssl req -new -newkey rsa:2048 -nodes -out csr_customer.csr -keyout private_customer.key`
  * Zertifikat aus CSR erstellen und mit privaten Schlüssel signieren: `openssl x509 -req -in csr_customer.csr -signkey private_ca.key -out certificate_customer.crt`
- * Zertifikat anzeigen: `openssl x509 -in certificate.crt -text -noout`
+ * Zertifikat anzeigen: `openssl x509 -in certificate_customer.crt -text -noout`
 
 Sie wechseln von der Rolle des Admin der CA zum Kunden der CA. Es ist sinnvoll, die zwei Ordner CA und Kunde anzulegen und die jeweiligen Aktivitäten in den entsprechenden Ordnern durchzuführen.
 
