@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.0
-date:     02.11.2024
+version:  2.2.0
+date:     28.11.2024
 language: de
 narrator: Deutsch Female
 
@@ -253,3 +253,94 @@ Die Aufschlüsselung im Detail:
 Der folgende Film von Cyrill Gössi erklärt die Cipher Suites:
 
  !?[ TLS cipher suites explained von Cyrill Gössi](https://www.youtube.com/watch?v=mFdDap9A9-Q&t=323s)
+
+
+# Praktische Übung: Webserver NGINX mit Zertifikat einrichten
+
+Benutze Domäne `werner.wvs`
+
+Webserver installieren: `sudo apt install nginx`
+
+Editieren `sudo nano /etc/hosts`
+
+````
+...
+127.0.0.1  werner.wvs
+...
+````
+
+## Setup Ordnerstruktur für Zertifikate
+
+````
+mkdir ca
+mkdir Webserver
+````
+
+## CA-Admin: CA Zertifkat erstellen
+
+`openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout ca/private_ca.key -out ca/certificate_ca.crt`
+
+Parameter:
+
+````
+Country Name: DE
+State or Province Name: Hessen
+Locality Name:Frankfurt
+Organization Name: WvS-CA
+Organization Unit Name []:
+Common Name: ca.wvs
+Email Address : ca-admin@wvs-ffm.wvs
+````
+
+ 
+## Web-Admin: CSR erstellen 
+ 
+`openssl req -new -newkey rsa:2048 -nodes -out webserver/csr_customer.csr -keyout webserver/private_customer.key`
+ 
+Parameter:
+
+````
+Country Name: DE
+State or Province Name: Hessen
+Locality Name:Frankfurt
+Organization Name: WvS-Webserver
+Organization Unit Name []:
+Common Name: werner.wvs
+Email Address : werner@wvs-ffm.wvs
+A challenge password []:
+n optional company name []:
+````
+
+## CA-Admin: 
+ 
+`openssl x509 -req -in webserver/csr_customer.csr -CA ca/certificate_ca.crt -CAkey ca/private_ca.key -CAcreateserial -out webserver/certificate_customer.crt`
+
+
+# NGINX mit Zertifikat konfigurieren
+
+````
+sudo mkdir /var/www/werner.wvs
+echo 'Hallo HTTPS' > /var/www/werner.wvs/index.html
+````
+
+`sudo nano /etc/nginx/sites-available/default`
+
+````
+server {
+
+   listen 443;
+   listen [::]:443;
+
+   ssl_certificate /home/schule/webserver/certificate_customer.crt;
+   ssl_certificate_key /home/schule/webserver/private_customer.key;
+
+   server_name werner.wvs;
+
+   root /var/www/werner.wvs;
+   index index.html;
+
+
+}
+````
+
+ 
