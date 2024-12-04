@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.0
-date:     28.11.2024
+version:  2.2.1
+date:     04.12.2024
 language: de
 narrator: Deutsch Female
 
@@ -316,7 +316,7 @@ n optional company name []:
 `openssl x509 -req -in webserver/csr_customer.csr -CA ca/certificate_ca.crt -CAkey ca/private_ca.key -CAcreateserial -out webserver/certificate_customer.crt`
 
 
-# NGINX mit Zertifikat konfigurieren
+## NGINX mit Zertifikat konfigurieren
 
 ````
 sudo mkdir /var/www/werner.wvs
