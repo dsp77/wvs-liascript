@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.2
+version:  2.2.3
 date:     06.12.2024
 language: de
 narrator: Deutsch Female
@@ -322,6 +322,7 @@ n optional company name []:
 sudo mkdir /var/www/werner.wvs
 echo 'Hallo HTTPS' | sudo tee -a /var/www/werner.wvs/index.html
 ````
+TODO:  Sicherheitskopie der Datei erstellen
 
 `sudo nano /etc/nginx/sites-available/default`
 
@@ -342,5 +343,10 @@ server {
 
 }
 ````
+TODO: teste die config
+
+`sudo systemctl restart nginx`
+
+TODO: Fehlerbehebung wenn was schief ging
 
  
