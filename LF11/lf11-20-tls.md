@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.1
-date:     04.12.2024
+version:  2.2.2
+date:     06.12.2024
 language: de
 narrator: Deutsch Female
 
@@ -320,7 +320,7 @@ n optional company name []:
 
 ````
 sudo mkdir /var/www/werner.wvs
-echo 'Hallo HTTPS' > /var/www/werner.wvs/index.html
+echo 'Hallo HTTPS' | sudo tee -a /var/www/werner.wvs/index.html
 ````
 
 `sudo nano /etc/nginx/sites-available/default`
