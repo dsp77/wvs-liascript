@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.3
-date:     06.12.2024
+version:  2.2.4
+date:     08.12.2024
 language: de
 narrator: Deutsch Female
 
@@ -312,19 +312,42 @@ n optional company name []:
 ````
 
 ## CA-Admin: 
- 
-`openssl x509 -req -in webserver/csr_customer.csr -CA ca/certificate_ca.crt -CAkey ca/private_ca.key -CAcreateserial -out webserver/certificate_customer.crt`
+
+Für das Webserver-Zertifikat soll ein Subject Alternate Name (SAN) hinzugefügt werden. Das erfolgt mithilfe eines Extension-Files.
+
+`nano ca/webserver.v3.ext`
+
+````
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = werner.wvs
+IP.1 = 127.0.0.1
+````
+
+
+`openssl x509 -req -in webserver/csr_customer.csr -CA ca/certificate_ca.crt -CAkey ca/private_ca.key -CAcreateserial -out webserver/certificate_customer.crt -extfile ca/webserver.v3.ext`
 
 
 ## NGINX mit Zertifikat konfigurieren
+
+Eine `index.html`-Datei für den Webserver erstellen:
 
 ````
 sudo mkdir /var/www/werner.wvs
 echo 'Hallo HTTPS' | sudo tee -a /var/www/werner.wvs/index.html
 ````
-TODO:  Sicherheitskopie der Datei erstellen
 
-`sudo nano /etc/nginx/sites-available/default`
+Bevor die Konfiguration erstellt wird, soll von der bestehenden Konfigurationsdatei eine Sicherheitskopie erstellt werden. Dann wird die Date editiert.
+
+````
+sudo nano cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+sudo nano /etc/nginx/sites-available/default
+````
+
+Die folgende Konfiguration für die https-Verbindung wird ans Ende der Datei hinzugefügt.
 
 ````
 server {
@@ -343,10 +366,18 @@ server {
 
 }
 ````
-TODO: teste die config
+
+Die gespeicherte Konfiguration kann auf Syntax-Fehler überprüft werden mit dem Kommando `sudo nginx -t`.
+
+Wenn die Überprüfung fehlerfrei ist, kann die Konfiguation aktiviert werden mit:
 
 `sudo systemctl restart nginx`
 
-TODO: Fehlerbehebung wenn was schief ging
+Der Status des Webservers kann überprüft werden mit `sudo systemctl status nginx`.
+
+Wurde der Server nicht gestartet oder sind Fehler aufgetreten, sind in der Logdatei weitere Hinweise dazu zu finden. Anzeigbar ist die Logdatei durch:
+
+`sudo cat /var/log/nginx/error.log`
+
 
  
