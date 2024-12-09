@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.4
-date:     08.12.2024
+version:  2.2.5
+date:     09.12.2024
 language: de
 narrator: Deutsch Female
 
@@ -273,7 +273,7 @@ Editieren `sudo nano /etc/hosts`
 
 ````
 mkdir ca
-mkdir Webserver
+mkdir webserver
 ````
 
 ## CA-Admin: CA Zertifkat erstellen
@@ -352,8 +352,8 @@ Die folgende Konfiguration für die https-Verbindung wird ans Ende der Datei hin
 ````
 server {
 
-   listen 443;
-   listen [::]:443;
+   listen 443 ssl;
+   listen [::]:443 ssl;
 
    ssl_certificate /home/schule/webserver/certificate_customer.crt;
    ssl_certificate_key /home/schule/webserver/private_customer.key;
