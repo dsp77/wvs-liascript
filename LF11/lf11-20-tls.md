@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.2.5
+version:  2.3.0
 date:     09.12.2024
 language: de
 narrator: Deutsch Female
@@ -379,5 +379,10 @@ Wurde der Server nicht gestartet oder sind Fehler aufgetreten, sind in der Logda
 
 `sudo cat /var/log/nginx/error.log`
 
+## Webseite mit Browser aufrufen
 
+Geben Sie in der Adressleiste des Browsers die Adresse des Webservers ein: `https://werner.wvs`.
+
+  * wenn der Browser mit der Fehlermeldung antwortet, dass die Verbindung nicht sicher ist und das Zertifikat nicht überprüft werden kann, überlegen Sie, warum das Zertifikat nicht überprüft werden kann.
+ * führen Sie die notwendige Konfiguration im Browser durch, damit das Zertifikat überprüft werden kann. Wiederholen Sie den Aufruf der Webseite.
  
