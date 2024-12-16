@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.0
+version:  1.3.0
 date:     16.12.2024
 language: de
 narrator: Deutsch Female
@@ -100,7 +100,11 @@ Verwendung:
 
 # Praktische Übung LXC/LXD-Container
 
+Für die Nutzung der Linux-Container-Virtualisierung ist die Installation durch `sudo apt install lxc` nötig.
+
 Die Ubuntu-Anleitung [How to access the LXD web UI](https://documentation.ubuntu.com/lxd/en/latest/howto/access_ui/) beschreibt die Einrichtung des browserbasierten Zugangs zu LXD.
+
+Um unter Ubuntu nötige Proxy-Konfiguration durchzuführen, kann das BASH-Skript [setup-proxy.sh](setup-proxy.sh) helfen.
 
 ## Zertifikatbasierte Authentifizierung
 
