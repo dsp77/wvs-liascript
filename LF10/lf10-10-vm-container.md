@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
-date:     26.09.2024
+version:  1.2.0
+date:     16.12.2024
 language: de
 narrator: Deutsch Female
 
@@ -98,3 +98,35 @@ Verwendung:
  * Für die schnelle Entwicklung und Bereitstellung von Anwendungen.
 
 
+# Praktische Übung LXC/LXD-Container
+
+Die Ubuntu-Anleitung [How to access the LXD web UI](https://documentation.ubuntu.com/lxd/en/latest/howto/access_ui/) beschreibt die Einrichtung des browserbasierten Zugangs zu LXD.
+
+## Zertifikatbasierte Authentifizierung
+
+Die Grundlage der digitalen Signatur kann im Lernfeld 4 [Kryptographie](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/verschluesselung.md) nachgelesen werden. Die zertifikatbasierte Authentifizierung ist vom Ablauf vergleichbar mit der passwortlosen Anmeldung nach FIDO2 oder deren Erweiterung der Anmeldung mithilfe von Passkeys.
+
+ * LXD-Oberfläche, Einrichtung als Grundlage nehmen
+ * privater Schlüssel in den Browser, Zertifikat auf dem Server (Umdrehung von https)
+ * Ablauf der Authentifizierung erklären.
+
+### Einrichtung der zertifikatbasierten Authentifizierung
+
+ Ein Schritt der Einrichtung ist die Erstellung eines Zertifikats:
+
+ ![Erstellung eines Zeritifikats](02_img/lf10-20-ui_set_up_certificates.png)
+
+ Mit Betätigung des Knopfes **Generate** werden zwei Dateien erzeugt. In der gezeigten Abbildung sind das:
+
+   * `lxd-ui.crt` - Zeritifikat, wird auf dem Server gespeichert, hier die der Server, der die LXD-Oberfläche zur Verfügung stellt.
+   * `lxd-ui.pfx` - PFX-Datei enthält den privaten Schlüssel der zu dem Zertifikat gehört. Die PFX-Datei wird im Browser gespeichert, mit dem eine Verbindung zu dem LXD-Server aufgebaut werden soll.
+
+### Ablauf der zertifikatbasierten Authentifizierung
+
+Der Browser möchte sich mit dem Webserver der LXD-Oberfläche verbinden. Um zu überprüfen, ob der Browser dazu authorisiert ist, muss er dem Webserver beweisen, dass er Inhaber des privaten Schlüssels zu dem auf dem Webserver hinterlegten Zertifikates ist. Der Ablauf sieht folgendermaßen aus:
+
+
+ * Der Webserver erstellt eine zufällige Zahl und sendet diese an den Browser.
+ * Der Browser verschlüsselt die Zahl mit dem privaten Schlüssel und sendet sie zu dem Webserver.
+ * Der Webserver entschlüsselt die Nachricht von dem Browser mit dem hinterlegten Zertifikat und überprüft, ob die entschlüsselt Zahl die zuvor gesendete Zahl ist.
+ * Wenn es die gesendete Zahl ist, weiß der Server, dass der Browser im Besitz des privaten Schlüssels zu dem hinterlegten Zertifikat ist und er autorisiert den Browser für den Zugriff.
