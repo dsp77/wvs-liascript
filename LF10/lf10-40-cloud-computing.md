@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.1
+version:  1.0.2
 date:     10.01.2025
 language: de
 narrator: Deutsch Female
@@ -71,7 +71,7 @@ Zusammenfassung
 
 Diese fünf Charakteristiken machen ein Cloud-System aus und stellen sicher, dass es skalierbar, effizient und flexibel ist. Sie bilden die Grundlage für die wirtschaftlichen und technischen Vorteile, die Cloud Computing mit sich bringt.
 
-Nach der Characterisierung beschreibt die NIST-Empfehlung zwei Modelle, nach denen einmal die Umsetzung  der Implementierung beschrieben wird, was mithilfe des sogenannten **Deployment Model** geschieht. In einer anderen Dimension werden die Dienste beschrieben, was in dem sogenannten **Service Model** geschieht.
+Nach der Charakterisierung beschreibt die NIST-Empfehlung zwei Modelle, nach denen einmal die Umsetzung der Implementierung beschrieben wird, was mithilfe des sogenannten **Deployment-Models** geschieht. In einer anderen Dimension werden die Dienste beschrieben, was in dem sogenannten **Service-Model** geschieht.
 
 ## Deployment Model
 
@@ -254,17 +254,18 @@ Neue Abstraktionsebenen: Manche *aaS-Modelle bieten Abstraktionen, die sich nich
 | Database as a Service (DBaaS) | Bietet eine vollständig verwaltete Datenbank über die Cloud an. |Unterkategorie von PaaS, da es eine spezifische Plattform für Datenbanken bereitstellt. |
 | Function as a Service (FaaS) | Ermöglicht die Ausführung von Code als kleine, unabhängige Funktionen, ohne sich um die Infrastruktur zu kümmern. | Baut auf PaaS oder IaaS auf, häufig Teil von Serverless Computing. |
 | Storage as a Service (STaaS) | Stellt Speicherplatz über die Cloud zur Verfügung. | Unterkategorie von IaaS, da es sich auf die Infrastrukturebene konzentriert. |
-Backend as a Service (BaaS)	Bietet vorgefertigte Back-End-Dienste wie Authentifizierung, Datenbanken, und APIs.	Zwischen PaaS und SaaS, da es Entwicklern eine Plattform für Back-End-Dienste bietet.
-Desktop as a Service (DaaS)	Stellt virtuelle Desktops bereit, die über die Cloud genutzt werden können.	Meist eine Mischung aus SaaS (für den Endnutzer) und IaaS (für die Infrastruktur).
-Security as a Service (SECaaS)	Bietet Sicherheitsdienste wie Firewalls, Bedrohungserkennung und Verschlüsselung über die Cloud an.	Kann auf allen Schichten basieren, häufig auf IaaS oder SaaS.
+| Backend as a Service (BaaS) | Bietet vorgefertigte Back-End-Dienste wie Authentifizierung, Datenbanken, und APIs. | Zwischen PaaS und SaaS, da es Entwicklern eine Plattform für Back-End-Dienste bietet. |
+| Desktop as a Service (DaaS) | Stellt virtuelle Desktops bereit, die über die Cloud genutzt werden können.| Meist eine Mischung aus SaaS (für den Endnutzer) und IaaS (für die Infrastruktur). |
+| Security as a Service (SECaaS) | Bietet Sicherheitsdienste wie Firewalls, Bedrohungserkennung und Verschlüsselung über die Cloud an. | Kann auf allen Schichten basieren, häufig auf IaaS oder SaaS. |
 
 4. Hauptunterschiede zwischen NIST-Modellen und neuen aaS-Modellen
 
-Merkmal	NIST-Modelle (IaaS, PaaS, SaaS)	*Zusätzliche aaS-Modelle
-Abstraktionsebene	Fokus auf breite Schichten des Cloud-Stacks	Spezifische Dienste oder Funktionen innerhalb der Schichten.
-Flexibilität	Generisch und anpassbar für verschiedene Anwendungen	Stark spezialisiert, weniger flexibel.
-Zielgruppe	Breites Spektrum von Nutzern (Infrastruktur- bis Endnutzer)	Entwicklern oder Endnutzern mit spezifischen Anforderungen.
-Innovationsgrad	Standardisiert und etabliert	Oft auf neue Technologien oder Trends ausgerichtet, z. B. Serverless, KI.
+| Merkmal | NIST-Modelle (IaaS, PaaS, SaaS) | *Zusätzliche aaS-Modelle |
+|---------|---------------------------------|---------------------------|
+| Abstraktionsebene | Fokus auf breite Schichten des Cloud-Stacks | Spezifische Dienste oder Funktionen innerhalb der Schichten. |
+| Flexibilität | Generisch und anpassbar für verschiedene Anwendungen | Stark spezialisiert, weniger flexibel. |
+| Zielgruppe | Breites Spektrum von Nutzern (Infrastruktur- bis Endnutzer) | Entwicklern oder Endnutzern mit spezifischen Anforderungen. |
+| Innovationsgrad | Standardisiert und etabliert | Oft auf neue Technologien oder Trends ausgerichtet, z. B. Serverless, KI. |
 
 5. Einordnung der spezialisierten Modelle in die NIST-Modelle
 
@@ -272,20 +273,22 @@ Fast alle zusätzlichen Dienste (*aaS) können entweder als Unterkategorien oder
 
 Unterkategorie von IaaS:
 
-Beispiele: Storage as a Service (STaaS), Network as a Service (NaaS).
-Fokus auf einzelne Infrastrukturkomponenten.
+ * Beispiele: Storage as a Service (STaaS), Network as a Service (NaaS).
+ * Fokus auf einzelne Infrastrukturkomponenten.
+
 Unterkategorie von PaaS:
 
-Beispiele: Database as a Service (DBaaS), Function as a Service (FaaS).
-Plattformen für spezifische Entwicklungs- oder Ausführungsaufgaben.
+ * Beispiele: Database as a Service (DBaaS), Function as a Service (FaaS).
+ * Plattformen für spezifische Entwicklungs- oder Ausführungsaufgaben.
+
 Erweiterung von SaaS:
 
-Beispiele: Desktop as a Service (DaaS), Security as a Service (SECaaS).
-Anwendungen für spezialisierte Endnutzungszwecke.
+ * Beispiele: Desktop as a Service (DaaS), Security as a Service (SECaaS).
+ * Anwendungen für spezialisierte Endnutzungszwecke.
+
 Zusammenfassung
 
 Die drei NIST-Modelle sind die Basis des Cloud Computing und definieren breite Kategorien. Die neueren *aaS-Modelle sind:
 
-Erweiterungen oder Spezialisierungen dieser Modelle, angepasst an spezifische Bedürfnisse.
-Oft ein Ergebnis technologischer Weiterentwicklungen wie Serverless Computing oder KI.
-Wenn Sie möchten, kann ich eine Übersichtstabelle oder ein Diagramm erstellen, das die Beziehung zwischen den NIST-Modellen und den spezialisierten *aaS-Diensten darstellt. Soll ich das tun?
+ 1. **Erweiterungen oder Spezialisierungen** dieser Modelle, angepasst an spezifische Bedürfnisse.
+ 2. Oft ein Ergebnis technologischer Weiterentwicklungen wie Serverless Computing oder KI.
