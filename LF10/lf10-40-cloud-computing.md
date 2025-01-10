@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
+version:  1.0.1
 date:     10.01.2025
 language: de
 narrator: Deutsch Female
@@ -60,12 +60,15 @@ Optimiert Kosten, da nur tatsächlich benötigte Ressourcen verwendet werden.
 Beispiel: Ein Online-Shop kann während des Weihnachtsgeschäfts die Anzahl der Server erhöhen und nach dem Geschäftsrückgang wieder reduzieren.
 
 5. Measured Service (Messbarer Dienst)
-Beschreibung: Cloud-Systeme überwachen und messen automatisch die Ressourcennutzung (z. B. Speicher, Bandbreite, Rechenleistung). Diese Nutzung wird oft transparent und exakt abgerechnet.
+Beschreibung: Cloud-Systeme überwachen und messen automatisch die Ressourcennutzung (z. B. Speicher, Bandbreite, Rechenleistung). Diese Nutzung wird oft transparent und exakt abgerechnet, was unter dem Begriff **pay-per-use** bekannt ist. 
 Vorteile:
 Bietet eine genaue Kostenkontrolle, da nur genutzte Ressourcen berechnet werden.
 Fördert Effizienz durch Transparenz und Verfügbarkeit von Nutzungsdaten.
 Beispiel: Ein Unternehmen bezahlt für Cloud-Speicherplatz nur auf Basis der tatsächlich genutzten Gigabytes pro Monat.
+
+
 Zusammenfassung
+
 Diese fünf Charakteristiken machen ein Cloud-System aus und stellen sicher, dass es skalierbar, effizient und flexibel ist. Sie bilden die Grundlage für die wirtschaftlichen und technischen Vorteile, die Cloud Computing mit sich bringt.
 
 Nach der Characterisierung beschreibt die NIST-Empfehlung zwei Modelle, nach denen einmal die Umsetzung  der Implementierung beschrieben wird, was mithilfe des sogenannten **Deployment Model** geschieht. In einer anderen Dimension werden die Dienste beschrieben, was in dem sogenannten **Service Model** geschieht.
