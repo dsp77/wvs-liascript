@@ -36,6 +36,7 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
  * [Umgebungsvariablen eines Betriebssystems](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-05-umgebungsvariablen.md)
  * [Virtuelle Maschinen und Container](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-10-vm-container.md)
  * [Software Repositories und Integrität](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-20-sw-repositories.md)
+ * [Cloud Computing](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-40-cloud-computing.md)
 
 ## Lernfeld 11
 

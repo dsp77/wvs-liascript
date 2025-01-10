@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="76.562241mm"
+   height="48.091526mm"
+   viewBox="0 0 81.562 51.232057"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="lf10-40-service-model.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.5900198"
+     inkscape:cx="150.31259"
+     inkscape:cy="56.917529"
+     inkscape:window-width="940"
+     inkscape:window-height="828"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-8.0720177,-47.104325)">
+    <rect
+       style="fill:#ffd5d5;fill-opacity:1;stroke:#000000;stroke-width:0.163;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8"
+       width="76.399239"
+       height="15.12018"
+       x="10.972131"
+       y="48.876999"
+       ry="1.5072948" />
+    <rect
+       style="fill:#c6e9af;fill-opacity:1;stroke:#000000;stroke-width:0.163;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9"
+       width="76.399239"
+       height="15.12018"
+       x="10.972131"
+       y="65.281174"
+       ry="1.5072948" />
+    <rect
+       style="fill:#aaccff;fill-opacity:1;stroke:#000000;stroke-width:0.163;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10"
+       width="76.399239"
+       height="15.12018"
+       x="10.972131"
+       y="81.685333"
+       ry="1.5072948" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#ffe6d5;stroke:#000000;stroke-width:0.562999"
+       x="49.367302"
+       y="55.309402"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.563;stroke-opacity:1"
+         x="49.367302"
+         y="55.309402">Software as a Service (SaaS)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#ffe6d5;stroke:#000000;stroke-width:0.562999"
+       x="49.367302"
+       y="88.117737"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.563;stroke-opacity:1"
+         x="49.367302"
+         y="88.117737">Infrastructure as a Service (IaaS)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#ffe6d5;stroke:#000000;stroke-width:0.562999"
+       x="49.367302"
+       y="70.655228"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.563;stroke-opacity:1"
+         x="49.367302"
+         y="70.655228">Platform as a Service (IaaS)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.562999;stroke-opacity:1"
+       x="49.674042"
+       y="58.828854"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-size:2.82222px;stroke-width:0.563"
+         x="49.674042"
+         y="58.828854">Anwendungen, Dienste</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.562999;stroke-opacity:1"
+       x="49.674042"
+       y="74.174683"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="font-size:2.82222px;stroke-width:0.563"
+         x="49.674042"
+         y="74.174683">APIs, Datenbanken,</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:2.82222px;stroke-width:0.563"
+         x="49.674042"
+         y="77.702461"
+         id="tspan6">Entwicklungsumgebung (.NET, Java, etc.)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.82222px;font-family:Sans;-inkscape-font-specification:Sans;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.562999;stroke-opacity:1"
+       x="49.674042"
+       y="92.695503"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="font-size:2.82222px;stroke-width:0.563"
+         x="49.674042"
+         y="92.695503">VMs, Container, Load Balancer</tspan></text>
+  </g>
+</svg>
