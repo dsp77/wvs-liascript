@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.2
+version:  1.0.3
 date:     10.01.2025
 language: de
 narrator: Deutsch Female
@@ -224,7 +224,7 @@ Anwendungsfälle
  * PaaS: Entwickler, die schnell Anwendungen erstellen möchten, ohne sich um die Infrastruktur zu kümmern.
  * SaaS: Endnutzer, die einfach Anwendungen verwenden möchten (z. B. E-Mail, CRM).
 
-### Abgrenzung anderen *aaS-Modelle
+### Abgrenzung zu anderen *aaS-Modellen
 
 Es gibt weitere Dienste, die nach dem Schema *aaS benannt sind, z. B. Database as a Service (DBaaS), Function as a Service (FaaS), Backend as a Service (BaaS), usw. Diese zusätzlichen Dienste bauen auf den drei Haupt-Service-Modellen des NIST (IaaS, PaaS, SaaS) auf und erweitern oder spezifizieren sie. Schauen wir uns die Unterschiede genauer an:
 
