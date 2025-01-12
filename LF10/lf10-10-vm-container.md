@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.0
+version:  1.3.1
 date:     16.12.2024
 language: de
 narrator: Deutsch Female
@@ -108,7 +108,7 @@ Um unter Ubuntu nötige Proxy-Konfiguration durchzuführen, kann das BASH-Skript
 
 ## Zertifikatbasierte Authentifizierung
 
-Die Grundlage der digitalen Signatur kann im Lernfeld 4 [Kryptographie](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/verschluesselung.md) nachgelesen werden. Die zertifikatbasierte Authentifizierung ist vom Ablauf vergleichbar mit der passwortlosen Anmeldung nach FIDO2 oder deren Erweiterung der Anmeldung mithilfe von Passkeys.
+Die Grundlage der digitalen Signatur kann im Lernfeld 4 [Kryptographie](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/verschluesselung.md) nachgelesen werden. Die zertifikatbasierte Authentifizierung ist vom Ablauf vergleichbar mit der [passwortlose Anmeldung nach FIDO2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/10-lf11-50-password-passkeys.md) oder deren Erweiterung der Anmeldung mithilfe von Passkeys.
 
  * LXD-Oberfläche, Einrichtung als Grundlage nehmen
  * privater Schlüssel in den Browser, Zertifikat auf dem Server (Umdrehung von https)
