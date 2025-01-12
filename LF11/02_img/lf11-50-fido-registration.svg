@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="616"
+   height="572"
+   id="svg51"
+   sodipodi:docname="lf11-50-fido-registration.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview51"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1031469"
+     inkscape:cx="308.20919"
+     inkscape:cy="286"
+     inkscape:window-width="1600"
+     inkscape:window-height="828"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg51" />
+  <defs
+     id="defs1" />
+  <g
+     id="g51">
+    <g
+       id="g1" />
+    <g
+       id="g2" />
+    <g
+       id="g3" />
+    <g
+       id="g4" />
+    <g
+       id="g5" />
+    <g
+       id="g6" />
+    <g
+       id="g7" />
+    <g
+       id="g8" />
+    <g
+       id="g9" />
+    <g
+       id="g10" />
+    <g
+       id="g11" />
+    <g
+       id="g12" />
+    <g
+       id="g13" />
+    <g
+       id="g14">
+      <rect
+         fill="white"
+         stroke="none"
+         x="0"
+         y="0"
+         width="616"
+         height="572"
+         id="rect13" />
+    </g>
+    <g
+       id="g15">
+      <text
+         fill="black"
+         stroke="none"
+         font-family="sans-serif"
+         font-size="16.5pt"
+         font-style="normal"
+         font-weight="normal"
+         text-decoration="normal"
+         x="143.53762999823243"
+         y="22.6179738"
+         text-anchor="start"
+         dominant-baseline="alphabetic"
+         xml:space="preserve"
+         id="text14">FIDO2 registration of a device</text>
+    </g>
+    <g
+       id="g16" />
+    <g
+       id="g17">
+      <path
+         fill="none"
+         stroke="black"
+         paint-order="fill stroke markers"
+         d=" M 218.08220741410156 88.511670804 L 218.08220741410156 572.5363101240001"
+         stroke-miterlimit="10"
+         stroke-width="1.2565541"
+         stroke-dasharray="11.598960923076923,5.0262164"
+         id="path16" />
+      <path
+         fill="none"
+         stroke="black"
+         paint-order="fill stroke markers"
+         d=" M 439.4597350164453 88.511670804 L 439.4597350164453 572.5363101240001"
+         stroke-miterlimit="10"
+         stroke-width="1.2565541"
+         stroke-dasharray="11.598960923076923,5.0262164"
+         id="path17" />
+    </g>
+    <g
+       id="g25">
+      <path
+         fill="none"
+         stroke="none"
+         id="path18" />
+      <g
+         id="g19">
+        <path
+           fill="white"
+           stroke="black"
+           paint-order="fill stroke markers"
+           d=" M 151.5385386815156 47.799317964000004 L 284.62587614668746 47.799317964000004 L 284.62587614668746 88.511670804 L 151.5385386815156 88.511670804 L 151.5385386815156 47.799317964000004 Z"
+           stroke-miterlimit="10"
+           stroke-width="2.4125838720000004"
+           stroke-dasharray=""
+           id="path19" />
+      </g>
+      <g
+         id="g21">
+        <g
+           id="g20" />
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="167.89887306351562"
+           y="73.43302160400002"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text20">Authenticator</text>
+      </g>
+      <path
+         fill="none"
+         stroke="none"
+         id="path21" />
+      <g
+         id="g22">
+        <path
+           fill="white"
+           stroke="black"
+           paint-order="fill stroke markers"
+           d=" M 399.03273307768256 47.799317964000004 L 479.88673695520794 47.799317964000004 L 479.88673695520794 88.511670804 L 399.03273307768256 88.511670804 L 399.03273307768256 47.799317964000004 Z"
+           stroke-miterlimit="10"
+           stroke-width="2.4125838720000004"
+           stroke-dasharray=""
+           id="path22" />
+      </g>
+      <g
+         id="g24">
+        <g
+           id="g23" />
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="415.3930674596826"
+           y="73.43302160400002"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text23">Server</text>
+      </g>
+    </g>
+    <g
+       id="g48">
+      <g
+         id="g27">
+        <g
+           id="g26">
+          <rect
+             fill="white"
+             stroke="none"
+             x="257.1091723093945"
+             y="118.668969204"
+             width="143.32359781175782"
+             height="19.602243960000003"
+             id="rect25" />
+        </g>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="259.37096968939454"
+           y="132.239753484"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text26">Request public key</text>
+      </g>
+      <g
+         id="g29">
+        <path
+           fill="none"
+           stroke="black"
+           paint-order="fill stroke markers"
+           d=" M 439.4597350164453 138.27121316400002 L 220.59531561410157 138.27121316400002"
+           stroke-miterlimit="10"
+           stroke-width="1.2565541"
+           stroke-dasharray=""
+           id="path27" />
+        <g
+           transform="translate(218.08220741410156,138.27121316400002) translate(-218.08220741410156,-138.27121316400002)"
+           id="g28">
+          <path
+             fill="black"
+             stroke="none"
+             paint-order="stroke fill markers"
+             d=" M 230.64774841410156 131.98844266400002 L 218.08220741410156 138.27121316400002 L 230.64774841410156 144.55398366400001 Z"
+             id="path28" />
+        </g>
+      </g>
+      <path
+         fill="white"
+         stroke="black"
+         paint-order="fill stroke markers"
+         d=" M 218.08220741410156 178.22963354400002 L 210.54288281410157 178.22963354400002 M 17.7893246 160.889186964 L 196.97209853410158 160.889186964 L 210.54288281410157 174.459971244 L 210.54288281410157 195.57008012400001 L 17.7893246 195.57008012400001 L 17.7893246 160.889186964 M 196.97209853410158 160.889186964 L 196.97209853410158 174.459971244 L 210.54288281410157 174.459971244"
+         stroke-miterlimit="10"
+         stroke-width="1.2565541"
+         stroke-dasharray=""
+         id="path29" />
+      <g
+         id="g30">
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="38.89943348"
+           y="181.99929584400002"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text29">Wait for push button</text>
+      </g>
+      <g
+         id="g37">
+        <g
+           id="g31">
+          <rect
+             fill="white"
+             stroke="none"
+             x="235.92527563410155"
+             y="218.18805392400003"
+             width="198.25693216234376"
+             height="19.602243960000003"
+             id="rect30" />
+        </g>
+        <g
+           id="g32">
+          <rect
+             fill="white"
+             stroke="none"
+             x="235.92527563410155"
+             y="233.26670312400003"
+             width="69.70692911058593"
+             height="19.602243960000003"
+             id="rect31" />
+        </g>
+        <g
+           id="g33">
+          <rect
+             fill="white"
+             stroke="none"
+             x="235.92527563410155"
+             y="248.34535232400003"
+             width="75.84026040941406"
+             height="19.602243960000003"
+             id="rect32" />
+        </g>
+        <g
+           id="g34">
+          <rect
+             fill="white"
+             stroke="none"
+             x="235.92527563410155"
+             y="263.424001524"
+             width="79.94025888353515"
+             height="19.602243960000003"
+             id="rect33" />
+        </g>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="238.18707301410154"
+           y="231.75883820400003"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text34">Create key pair based on: </text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="238.18707301410154"
+           y="246.83748740400003"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text35">+ device</text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="238.18707301410154"
+           y="261.91613660400003"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text36">+ session</text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="238.18707301410154"
+           y="276.994785804"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text37">+ account</text>
+      </g>
+      <g
+         id="g39">
+        <path
+           fill="none"
+           stroke="black"
+           paint-order="fill stroke markers"
+           d=" M 218.08220741410156 283.026245484 L 278.39680421410156 283.026245484 L 278.39680421410156 302.628489444 L 220.59531561410157 302.628489444"
+           stroke-miterlimit="10"
+           stroke-width="1.2565541"
+           stroke-dasharray=""
+           id="path37" />
+        <g
+           transform="translate(218.08220741410156,302.628489444) translate(-218.08220741410156,-302.628489444)"
+           id="g38">
+          <path
+             fill="black"
+             stroke="none"
+             paint-order="stroke fill markers"
+             d=" M 230.64774841410156 296.345718944 L 218.08220741410156 302.628489444 L 230.64774841410156 308.91125994400005 Z"
+             id="path38" />
+        </g>
+      </g>
+      <path
+         fill="white"
+         stroke="black"
+         paint-order="fill stroke markers"
+         d=" M 218.08220741410156 357.665559024 L 210.54288281410157 357.665559024 M 7.5393246000000005 325.246463244 L 196.97209853410158 325.246463244 L 210.54288281410157 338.817247524 L 210.54288281410157 390.084654804 L 7.5393246000000005 390.084654804 L 7.5393246000000005 325.246463244 M 196.97209853410158 325.246463244 L 196.97209853410158 338.817247524 L 210.54288281410157 338.817247524"
+         stroke-miterlimit="10"
+         stroke-width="1.2565541"
+         stroke-dasharray=""
+         id="path39" />
+      <g
+         id="g41">
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="28.64943348"
+           y="346.3565721240001"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text39">Store key pair and</text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="28.64943348"
+           y="361.43522132400005"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text40"> associate with server</text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="28.64943348"
+           y="376.513870524"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text41"> and account</text>
+      </g>
+      <g
+         id="g43">
+        <g
+           id="g42">
+          <rect
+             fill="white"
+             stroke="none"
+             x="268.434173072334"
+             y="412.70262860400004"
+             width="120.6735962858789"
+             height="19.602243960000003"
+             id="rect41" />
+        </g>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="270.695970452334"
+           y="426.2734128840001"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text42">Send public key</text>
+      </g>
+      <g
+         id="g45">
+        <path
+           fill="none"
+           stroke="black"
+           paint-order="fill stroke markers"
+           d=" M 218.08220741410156 432.30487256400005 L 436.9466268164453 432.30487256400005"
+           stroke-miterlimit="10"
+           stroke-width="1.2565541"
+           stroke-dasharray=""
+           id="path43" />
+        <g
+           transform="translate(439.4597350164453,432.30487256400005) translate(-439.4597350164453,-432.30487256400005)"
+           id="g44">
+          <path
+             fill="black"
+             stroke="none"
+             paint-order="stroke fill markers"
+             d=" M 426.8941940164453 426.022102064 L 439.4597350164453 432.30487256400005 L 426.8941940164453 438.5876430640001 Z"
+             id="path44" />
+        </g>
+      </g>
+      <path
+         fill="white"
+         stroke="black"
+         paint-order="fill stroke markers"
+         d=" M 439.4597350164453 487.3419421440001 L 446.99905961644527 487.3419421440001 M 446.99905961644527 454.92284636400007 L 595.2984946223241 454.92284636400007 L 608.8692789023241 468.49363064400006 L 608.8692789023241 519.7610379240001 L 446.99905961644527 519.7610379240001 L 446.99905961644527 454.92284636400007 M 595.2984946223241 454.92284636400007 L 595.2984946223241 468.49363064400006 L 608.8692789023241 468.49363064400006"
+         stroke-miterlimit="10"
+         stroke-width="1.2565541"
+         stroke-dasharray=""
+         id="path45" />
+      <g
+         id="g47">
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="468.10916849644525"
+           y="476.03295524400016"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text45">Server stores </text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="468.10916849644525"
+           y="491.11160444400014"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text46"> public key with </text>
+        <text
+           fill="black"
+           stroke="none"
+           font-family="sans-serif"
+           font-size="11pt"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="normal"
+           x="468.10916849644525"
+           y="506.1902536440001"
+           text-anchor="start"
+           dominant-baseline="alphabetic"
+           xml:space="preserve"
+           id="text47">user account</text>
+      </g>
+    </g>
+    <g
+       id="g49" />
+    <g
+       id="g50" />
+  </g>
+  <metadata
+     id="metadata51">
+    <rdf:RDF>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+      <cc:Work
+         rdf:about="">
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Günter Dannoritzer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
