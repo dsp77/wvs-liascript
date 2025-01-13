@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.1
+version:  1.4.0
 date:     16.12.2024
 language: de
 narrator: Deutsch Female
@@ -122,15 +122,16 @@ Die Grundlage der digitalen Signatur kann im Lernfeld 4 [Kryptographie](https://
 
  Mit Betätigung des Knopfes **Generate** werden zwei Dateien erzeugt. In der gezeigten Abbildung sind das:
 
-   * `lxd-ui.crt` - Zeritifikat, wird auf dem Server gespeichert, hier die der Server, der die LXD-Oberfläche zur Verfügung stellt.
-   * `lxd-ui.pfx` - PFX-Datei enthält den privaten Schlüssel der zu dem Zertifikat gehört. Die PFX-Datei wird im Browser gespeichert, mit dem eine Verbindung zu dem LXD-Server aufgebaut werden soll.
+ * `lxd-ui.crt` - Zeritifikat, wird auf dem Server gespeichert, hier der Server, der die LXD-Oberfläche zur Verfügung stellt.
+ * `lxd-ui.pfx` - PFX-Datei enthält den privaten Schlüssel der zu dem Zertifikat gehört. Die PFX-Datei wird im Browser gespeichert, mit dem eine Verbindung zu dem LXD-Server aufgebaut werden soll.
 
 ### Ablauf der zertifikatbasierten Authentifizierung
 
-Der Browser möchte sich mit dem Webserver der LXD-Oberfläche verbinden. Um zu überprüfen, ob der Browser dazu authorisiert ist, muss er dem Webserver beweisen, dass er Inhaber des privaten Schlüssels zu dem auf dem Webserver hinterlegten Zertifikates ist. Der Ablauf sieht folgendermaßen aus:
+Ein Nutzer möchte sich über den Browser mit dem Webserver der LXD-Oberfläche verbinden. Bei einer herkömmlichen Authentifizierung müsste er einen Benutzernamen und Passwort dazu eingeben. Mit der zertifikatbasierten Authentifizierung wird ein asymmetrisches Schlüsselpaar verwendet. Auf dem Server wird der öffentliche Schlüssel mit dem Zertifikat hinterlegt. In dem Browser, von dem sich ein Nutzer auf dem Server anmelden möchte, wird der zugehörige private Schlüssel hinterlegt.
 
+Für die Authentifizierung muss der Nutzer beweisen, dass er im Besitz des privaten Schlüssels ist. Der Ablauf sieht folgendermaßen aus:
 
- * Der Webserver erstellt eine zufällige Zahl und sendet diese an den Browser.
- * Der Browser verschlüsselt die Zahl mit dem privaten Schlüssel und sendet sie zu dem Webserver.
- * Der Webserver entschlüsselt die Nachricht von dem Browser mit dem hinterlegten Zertifikat und überprüft, ob die entschlüsselt Zahl die zuvor gesendete Zahl ist.
+ * Der Webserver erstellt eine zufällige Zahl, die sogenannte Challenge, und sendet diese an den Browser.
+ * Der Browser verschlüsselt die Zahl mit dem privaten Schlüssel und sendet sie zu dem Webserver zurück.
+ * Der Webserver entschlüsselt die Nachricht von dem Browser mit dem hinterlegten Zertifikat und überprüft, ob die entschlüsselte Zahl die zuvor gesendete Zahl ist.
  * Wenn es die gesendete Zahl ist, weiß der Server, dass der Browser im Besitz des privaten Schlüssels zu dem hinterlegten Zertifikat ist und er autorisiert den Browser für den Zugriff.
