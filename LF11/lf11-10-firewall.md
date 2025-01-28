@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.1
-date:     22.09.2024
+version:  1.3.0
+date:     25.01.2025
 language: de
 narrator: Deutsch Female
 
@@ -150,12 +150,54 @@ Nachteile von Paketfilter-Firewalls:
 
 ### Erklärung
 
- * (1) Die IP-Adresse 192.168.1.100 darf jede Adresse im Internet adressieren.
- * (2) Die IP-Adresse 192.168.1.200 darf HTTP-Anfragen (80) ins Internet senden.
- * (3) Die IP-Adresse 192.168.1.200 darf HTTPS-Anfragen (443) ins Internet senden.
- * (4) Das Netzwerk 192.168.1.0/24 darf SMTP-Anfragen (25) an die Adresse 10.0.0.10 senden.
- * (5) Das Netzwerk 192.168.1.0/24 darf IMAP-Anfragen (110) an die Adresse 10.0.0.10 senden.
- * (6) Alle anderen einkommenden Pakete im LAN-Interface werden verworfen.
+#### Regel (1) 
+
+Die IP-Adresse 192.168.1.100 darf jede Adresse im Internet adressieren.
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 1 | Permit | IP  | 192.168.1.100/32 | Any |  -  |  -  | LAN | IN |
+
+#### Regel (2)
+
+ Die IP-Adresse 192.168.1.200 darf HTTP-Anfragen (80) ins Internet senden.
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 2 | Permit | TCP | 192.168.1.200/32 | Any | Any |  80 | LAN | IN |
+
+#### Regel (3)
+
+Die IP-Adresse 192.168.1.200 darf HTTPS-Anfragen (443) ins Internet senden.
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 3 | Permit | TCP | 192.168.1.200/32 | Any | Any | 443 | LAN | IN |
+
+#### Regel (4)
+
+Das Netzwerk 192.168.1.0/24 darf SMTP-Anfragen (25) an die Adresse 10.0.0.10 senden.
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 4 | Permit | TCP | 192.168.1.0/24   | 10.0.0.10/32 | Any | 25 | LAN | IN |
+
+#### Regel (5)
+
+Das Netzwerk 192.168.1.0/24 darf IMAP-Anfragen (110) an die Adresse 10.0.0.10 senden.
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 5 | Permit | TCP | 192.168.1.0/24   | 10.0.0.10/32 | Any | 110 | LAN | IN |
+
+#### Regel (6)
+
+Alle anderen einkommenden Pakete im LAN-Interface werden verworfen.
+
+| Nr | Aktion | Protokoll | Quell-IP | Ziel-IP | Quell-Port | Ziel-Port | Interface | Richtung|
+|:-:|:------|:---:|:-----------------|:----|:----|:----|:---:|:--:|
+| 6 | Deny  | IP  | Any | Any | - | - | Any | IN |
+
 
 ## Webzugang mit Paketfilter
 
@@ -301,6 +343,13 @@ Anwendungsbereiche einer NGFW:
  * Sicherung von Cloud-Umgebungen: NGFWs können in Cloud-Umgebungen eingesetzt werden, um den Datenverkehr zwischen verschiedenen Cloud-Diensten und lokalen Netzwerken zu schützen.
  * Schutz von Remote-Arbeitsplätzen: NGFWs können für den sicheren Zugriff auf Unternehmensressourcen aus dem Homeoffice oder unterwegs eingesetzt werden.
 
+## SSL/TLS-Inspection
+
+ * Funktion der TLS-Inspection
+ * Sicherheitsrelevante Vorteile
+ * Nachteile die gegen den Einsatz sprechen
+ * Rechtliche bzw. organisatorische Maßnahmen, die durchgeführt werden müssen, damit die Technik eingesetzt werden darf.
+
 ## Unterschied NGFW vs AFL
 
 Next-Generation-Firewall (NGFW) vs. Application Layer Firewall (ALF): Ein Vergleich
@@ -339,6 +388,7 @@ Wann welche Firewall?
 
   * NGFW: Ideal für Unternehmen, die einen umfassenden Schutz für ihr gesamtes Netzwerk benötigen.
  * ALF: Optimal für Unternehmen, die einen besonders hohen Schutz für ihre Webanwendungen und andere kritische Anwendungen benötigen.
+
 
 # Demilitarisierte Zone (DMZ)
 
