@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.0
-date:     25.01.2025
+version:  1.4.0
+date:     28.01.2025
 language: de
 narrator: Deutsch Female
 
@@ -431,61 +431,35 @@ Nachteile einer DMZ:
 <!-- # Zonenkonzept nach BSI -->
 
 
-# Firwall-Übung mit GNS3
+# Firewall-Übung mit Filius
 
-![Übersicht; GNS3 mit Alpine Linux](02_img/lf11_fw_gns3_alpine_liunx.png)
+![Übersicht; Firewall Netzwerk](02_img/lf11-fw-simulation.png)
 
-## Setup der Umgebung
+## Konfiguration
 
-https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-with-awall-on-alpine-linux/
+ * Clients:
 
-````
-udhcpc
-apk update
-apk upgrade
-reboot
-apk add ip6tables iptables
-````
+    * Webbrowser
+   * Befehlszeile
 
+ * `www.domain.de`
 
-````
-iptables -L
-Chain INPUT (policy ACCEPT)
-target     prot opt source       destination         
+    * Webserver
+ 
+ * `dns.de`
 
-Chain FORWARD (policy ACCEPT)
-target     prot opt source       destination         
+    * DNS-Server
 
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source       destination
-````
+      * A-Record: `www.domain.de` - `10.0.0.10`
 
+## Aufgabe
 
+### Verbindungen überprüfen
 
-````
-apk add lighttpd
-rc-update add lighttpd default
-rc-service lighttpd restart
-````
+ * Clients untereinander
+ * Clients - Server
 
-````
-wget 192.168.122.52
-Connecting to 192.168.122.52 (192.168.122.52:80)
-wget: server returned error: HTTP/1.1 403 Forbidden
-````
+### Firewall konfigurieren
 
-
-````
-echo '<!DOCTYPE html><html><head><title>✔️</title><meta charset="utf-8"></head><body>Lighttpd is running!</body></html>' > /var/www/localhost/htdocs/index.html
-````
-
-````
-alpine:~# wget 192.168.122.52
-Connecting to 192.168.122.52 (192.168.122.52:80)
-saving to 'index.html'
-index.html           100% |********************************|   118  0:00:00 ETA
-'index.html' saved
-````
-
-## Übung
-
+ * Gast-Netzwerk Zugang auf HTTP (TCP 80) und DNS (UDP 53) im externen Netzwerk erlauben.
+ * Überprüfen ob vom Gast-Netzwerk auf das Firmen-Netzwerk möglich ist.
