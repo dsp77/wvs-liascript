@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.4.0
-date:     28.01.2025
+version:  1.5.0
+date:     29.01.2025
 language: de
 narrator: Deutsch Female
 
@@ -433,33 +433,99 @@ Nachteile einer DMZ:
 
 # Firewall-Übung mit Filius
 
+Die folgende Abbildung zeigt das Netzwerkdiagramm für die Übung. Im ersten Schritt wird nur ein Client im Gast-Netzwerk über den Firewall-Router (Vermittlungsrechner) mit dem Webserver verbunden. Die anderen Komponenten werden später hinzugefügt.
+
 ![Übersicht; Firewall Netzwerk](02_img/lf11-fw-simulation.png)
 
 ## Konfiguration
 
- * Clients:
+Im ersten Schritt wird nur der Client über einen Firewall-Router (Vermittlungsrechner) mit einem Webserver verbunden.
 
-    * Webbrowser
-   * Befehlszeile
+ * Client:
 
- * `www.domain.de`
+    * IP: `192.168.2.100`
+   * Gateway: `192.168.2.1`
+   * Installierte Software:
 
-    * Webserver
+       * Webbrowser
+     * Befehlszeile
+
+ * Vermittlungsrechner (Firewall-Router)
+
+    * Interface zum Client - IP: `192.168.2.1`
+   * Interface zum Webserver - IP: `10.0.0.1`
+
+ * `www.domain.de` - Webserver
+
+    * IP: `10.0.0.10`
+   * Gateway: `10.0.0.1`
+   * Installierte Software:
+    
+       * Webserver
  
- * `dns.de`
-
-    * DNS-Server
-
-      * A-Record: `www.domain.de` - `10.0.0.10`
-
 ## Aufgabe
 
-### Verbindungen überprüfen
+Rufen Sie mit dem Webbrowser des Clients die IP-Adresse des Webservers `10.0.0.10` auf und überpüfen die korrekte Verbindung zum Webserver.
 
- * Clients untereinander
- * Clients - Server
+## Fehlersuche
 
-### Firewall konfigurieren
+Wenn eine Verbindungsaufbau nicht wie gewünscht stattfindet, überprüfen Sie über dem Mitschnitt der Datenpakete entlang des Übertragungsweges, an welcher Stelle der Netzwerkverkehr nicht mehr korrekt stattfindet.
 
- * Gast-Netzwerk Zugang auf HTTP (TCP 80) und DNS (UDP 53) im externen Netzwerk erlauben.
- * Überprüfen ob vom Gast-Netzwerk auf das Firmen-Netzwerk möglich ist.
+Als Beispiel
+
+1. Client Netzwerkanschluss
+2. Vermittlungsrechner Eingang
+3. Vermittlungsrechner Ausgang
+4. Webserver Eingang
+
+Erwarteter Protokollablauf:
+
+1. ARP nach IP-Adresse des Gateways
+2. TCP-Verbindungsaufbau
+3. HTTP-Get
+4. HTTP-200-OK-Antwort
+
+## Firewall konfigurieren
+
+ * Gast-Netzwerk Zugang auf HTTP (TCP 80) erlauben.
+ * Überprüfen Sie, ob vom Client auf den Webserver der Zugriff mögich ist.
+ * Analysieren Sie den Mitschnitt des Netzwerk beim Notebook des Gast-Netzwerks
+
+
+## Konfiguration erweitern
+
+Fügen Sie einen DNS-Server in das externe Netzwerk hinzu.
+
+Konfigurieren Sie den Client um die Namensauflösung mit dem Namensserver durchzuführen.
+
+Im Detail:
+
+ * `dns.de`
+
+    * IP-Adresse: `10.0.0.5`
+   * Gateway: `10.0.0.1`
+   * Installierte Software:
+    
+     * DNS-Server
+    
+        * A-Record: `www.domain.de` - `10.0.0.10`
+
+* Client im Gast-Netzwerk
+
+   * DNS: `10.0.0.5`
+
+
+## Aufgabe - Webseite mit Domain-Name aufrufen
+
+Rufen Sie die Webseite auf:
+
+ - a) per IP-Adresse
+ - b) per Domainname
+
+Bei fehlerhafter Verbindung überprüfen Sie den Fehlergrund mithilfe des Netzwerkmitschnitts.
+
+## Firmen-Netzwerk hinzufügen
+
+  - Fügen Sie das Firmennetzwerk `192.168.1.0/24` mit einem Client hinzu.
+  - Konfigurieren Sie den Client und die Firewall, damit er wie das Gast-Netzwerk auf das externe Netzwerk zugreifen kann.
+  - Überprüfung Sie den Zugang zum Webserver vom Client **NB2** mit IP-Adresse und mit Domain-Name.
