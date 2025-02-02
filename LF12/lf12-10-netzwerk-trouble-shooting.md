@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.0
+version:  0.1.2
 date:     02.02.2025
 language: de
 narrator: Deutsch Female
@@ -27,7 +27,7 @@ Die folgende Abbildung zeigt ein einfaches Netzwerkszenario. Ein Notebook (NB1),
 
 ![Einfaches Client-Server-Szenario](02_img/lf12-10-www-dns-client-server.png)
 
-Auf dem Computer und den Servern wurde in Filius im Simulationsmodus die entsprechende Software installiert. Der Computer ist konfiguriert, um den DNS-Server für die Namensauflösung zu verwenden. Im DNS-Server ist die Namensauflösung für den Webserver konfiguriert.
+Auf dem Computer und den Servern wurde in Filius im Simulationsmodus die entsprechende Software installiert. Der Computer ist konfiguriert, um den DNS-Server für die Namensauflösung zu verwenden. Im DNS-Server ist die Namensauflösung für den Webserver konfiguriert. Die zugehörige [Filius-Datei](01-www-dns-client-server.fls) enthält diese Ausgangssituation.
 
 Die Fehlersuche sollte immer von dem Rechner ausgehen, der in der Fehlerbeschreibung als Ursprung genannt wird.
 
@@ -38,6 +38,8 @@ In der folgenden Abbildung ist der Weg der Testpunkte gezeigt, für die eine Pak
 Für die Namensauflösung ist der Port 53 zuständig und die Testpunkte sind entsprechend gezeigt.
 
 ![Testpunkte bei der Fehlersuche](02_img/lf12-10-www-dns-client-server-testpunkte.svg)
+
+Wenn die Verbindung zum entsprechenden Server funktioniert, überprüfen Sie, ob die Antwort den Ausgangsrechner erreicht.
 
 Wenn für alle Testpunkte die Datenanalyse geöffnet ist, sieht das Fenster wie folgt aus:
 
@@ -66,6 +68,4 @@ Hier erscheinen die Details des ausgewählten Pakets. Die Informationen sind geg
  * Vermittlungsschicht
  * Transportschicht
  * Anwendungsschicht
-
-
 
