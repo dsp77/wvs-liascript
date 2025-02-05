@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.2.0
+version:  0.2.1
 date:     05.02.2025
 language: de
 narrator: Deutsch Female
@@ -100,7 +100,7 @@ Beispiel Informationen aus einer Anfrage einer Webseite:
 
 Mit einem einzelnen Router sind die beiden Netze direkt verbunden und es sind keine extra Routingeinträge nötig. Im Router werden Einträge für die über die beiden Schnittstellen erreichbaren Netzwerke eingetragen.
 
-![Router mit Interface-IP](02_img/lf10-10-router.svg)
+![Router mit Interface-IP](02_img/lf12-10-router.svg)
 
 **Routing-Tabelle**
 
