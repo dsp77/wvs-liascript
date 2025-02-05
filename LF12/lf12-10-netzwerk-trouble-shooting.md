@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.2
-date:     02.02.2025
+version:  0.2.0
+date:     05.02.2025
 language: de
 narrator: Deutsch Female
 
@@ -69,3 +69,116 @@ Hier erscheinen die Details des ausgewählten Pakets. Die Informationen sind geg
  * Transportschicht
  * Anwendungsschicht
 
+> Nutzen Sie die Informationen der **Vermittlungs-** und der **Transportschicht**, um daraus auf dem Weg zum Ziel alle nötigen Konfigurationen zu überprüfen.
+
+Beispiel Informationen aus einer Anfrage einer Webseite:
+
+ * Vermittlung (IP):
+
+    * Quelle: `192.168.0.100`
+   * Ziel: `10.0.0.10`
+
+ * Transportschicht (TCP/UDP):
+
+    * Quellport: `54863`
+   * Zielport: `80`
+   * Protokoll: TCP
+
+ * Anwendungsschicht:
+
+    * Protokoll: `HTTP`
+   * GET / HTTP/1.1
+   * Host: `10.0.0.10`
+
+## Routing
+
+> Routing
+>
+>> Mit statischem Routing müssen alle Router auf dem Weg zum Zieladresse `10.0.0.10` einen Routing-Eintrag für die **IP**, das **Netzwerk** oder eine **Default-Route** (`0.0.0.0`) haben.
+
+### Einzelner Router
+
+Mit einem einzelnen Router sind die beiden Netze direkt verbunden und es sind keine extra Routingeinträge nötig. Im Router werden Einträge für die über die beiden Schnittstellen erreichbaren Netzwerke eingetragen.
+
+![Router mit Interface-IP](02_img/lf10-10-router.svg)
+
+**Routing-Tabelle**
+
+| Nr    | Ziel | Netzmaske | Nächstes Gateway | Über Schnittstelle |
+|:-:|------|-----------|------------------|--------------------|
+| 1 | `10.0.0.1` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
+| 2 | `192.168.0.1` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
+| 3 | `10.0.0.0` | `255.255.255.0` | `10.0.0.1` | `10.0.0.1` |
+| 4 | `192.168.0.0` | `255.255.255.0` | `192.168.0.1` | `192.168.0.1` |
+
+
+{{1}} + {{2}} Einträge beschreiben die IP-Adressen der beiden Schnittstellen, die lokal (`127.0.0.1`--> Local Host) verfügbar sind.
+
+{{3}} Das Netzwerk `10.0.0.0` ist über die Schnittstelle `10.0.0.1` erreichbar.
+
+{{4}} Das Netzwerk `192.168.0.0` ist über die Schnittstelle `192.168.0.1` erreichbar.
+
+### Mehrere Router
+
+Bei mehreren Routern sind extra Einträge für die nicht direkt angeschlossenen Netzwerk nötig. Am Beispiel von zwei Routern soll das erläutert werden.
+
+![Routerkonfiguration mit verketteten Routern](02_img/lf12-10-zwei-router.png)
+
+**Routing-Tabelle des Router 1**
+
+| Nr. | Ziel | Netzmaske | Nächstes Gateway | Über Schnittstelle |
+|:-:|-------------|-----------------|-----------|----------------|
+| 1 | `192.168.1.2` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
+| 2 | `192.168.0.1` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
+| 3 | `192.168.1.0` | `255.255.255.0` | `192.168.1.2` | `192.168.1.2` |
+| 4 | `192.168.0.0` | `255.255.255.0` | `192.168.0.1` | `192.168.0.1` |
+| **5** | **`10.0.0.0`** | **`255.255.255.0`** | **`192.168.1.1`** | **`192.168.1.2`** |
+
+{{5}} Ein zusätzlicher Eintrag für das nicht direkt angeschlossene Netzwerk `10.0.0.0/24`.
+
+Die folgende Abbildung erläutert den Eintrag detaillierter.
+
+![Routing-Tabelle erklärt](02_img/lf12-10-zwei-router.svg)
+
+{{1}} Das Netzwerk `10.0.0.0/24` ist nicht direkt an Router 1 angeschlossen, sondern über Router 2 erreichbar.
+
+{{2}} Von Router 1 ist das Netzwerk `10.0.0.0/24` über das Gateway `192.168.1.1`, der IP-Adresse von Router 2, erreichbar.
+
+{{3}} Der Router 2 ist über die Schnittstelle `192.168.1.2` des Routers 1 erreichbar.
+
+Für das Netzwerk `192.168.0.0/24` ist im Router 2 ein entsprechender Eintrag nötig.
+
+## Firewall
+
+> Firewall
+>
+>> Bei einer Firewall auf dem Weg zum Ziel muss eine Regel für den entsprechenden Verkehr vorhanden sein, damit die Pakete nicht verworfen werden.
+>> Mit **Stateful Packet Inspection (SPI)** muss nur eine Regel für den Verkehr zum Ziel vorhanden sein, durch das SPI wird der Rückweg automatisch geöffnet.
+
+Aus dem zuvor erstellten Paket-Mitschnitt eines Clients soll für das gesamte Netzwerk eine Regel erstellt werden, die aus dem Netzwerk den Zugriff auf Webserver in anderen Netzwerken erlaubt.
+
+| Nr | | Paket-Mitschnitt | Firewall-Regel |
+|:--:|-------|------------|----------------|
+| 1 | Quell-IP | `192.168.0.100` | `192.168.0.0/24` |
+| 2 | Ziel-IP | `10.0.0.10` | `0.0.0.0` |
+| 3 | Quell-Port | `54863` | -- |
+| 4 | Ziel-Port | `80` | `80` |
+| 5 | Protokoll | TCP | TCP |
+
+{{1}} Aus der Quell-IP wird die Regel auf das gesamte Netzwerk erweitert.
+
+{{2}} Rechner aus dem Quellnetzwerk sollen nicht nur auf das eine Netzwerk aus dem Mitschnitt, sondern auch auf andere Zielnetze zugreifen, daher wird die Pseudoadresse `0.0.0.0` verwendet, die ein Synonym für »jede andere Adresse« ist.
+
+{{3}} Der Rechner öffnet für die Antwort einen zufälligen Port aus dem sogenannten Ephemeral Port-Bereich (meist zwischen 49152 und 65535, je nach Betriebssystem). Dieser Port ist nur für die Dauer der Verbindung aktiv. In der Firewall-Regel kann der Portbereich auf diesen Bereich begrenzt werden. Dann besteht die Gefahr, dass ein Betriebssystem, dass einen Port unterhalb 49152 öffnet, gesperrt wird. Daher ist ein unbestimmter Port sinnvoll.
+
+{{4}} Für HTTP-Anfragen soll nur Port 80 freigegeben werden.
+
+{{5}} Eine HTTP-Verbindung wird über TCP aufgebaut.
+
+
+
+## Domain Name System (DNS)
+
+[Domain Name System - Teil 1](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md)
+
+[Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md)
