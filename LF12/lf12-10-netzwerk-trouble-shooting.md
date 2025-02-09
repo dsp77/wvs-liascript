@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.2
+version:  0.3.3
 date:     07.02.2025
 language: de
 narrator: Deutsch Female
@@ -186,7 +186,7 @@ In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauf
 
 ![](../LF10/02_img/lf10-01-dns-firma-provider-dns-hierarchie.png)
 
-
+Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
 
 ## Network Address Translation (NAT)
 
