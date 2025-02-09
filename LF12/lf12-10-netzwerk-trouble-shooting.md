@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.2.1
-date:     05.02.2025
+version:  0.3.2
+date:     07.02.2025
 language: de
 narrator: Deutsch Female
 
@@ -124,6 +124,8 @@ Bei mehreren Routern sind extra Einträge für die nicht direkt angeschlossenen 
 
 ![Routerkonfiguration mit verketteten Routern](02_img/lf12-10-zwei-router.png)
 
+Die folgende Routing-Tabelle von Router 1 hat in **Zeile 5** einen extra Eintrag für das entfernte Netzwerk `10.0.0.0/24`.
+
 **Routing-Tabelle des Router 1**
 
 | Nr. | Ziel | Netzmaske | Nächstes Gateway | Über Schnittstelle |
@@ -176,9 +178,41 @@ Aus dem zuvor erstellten Paket-Mitschnitt eines Clients soll für das gesamte Ne
 {{5}} Eine HTTP-Verbindung wird über TCP aufgebaut.
 
 
-
 ## Domain Name System (DNS)
 
-[Domain Name System - Teil 1](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md)
+Die folgende Abbildung zeigt ein Netzwerkszenario aus den Informationen [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md), die aufbauend auf [Domain Name System - Teil 1](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md) aus dem Lernfeld 3 sind.
 
-[Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md)
+In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauflösung für lokale Ressourcen übernimmt. Anfragen die der lokale DNS-Server nicht beantworten kann, werden an den DNS-Resolver des Internet-Service-Providers `dns.telekom.de` weitergeleitet, der dann die Abfrage in der DNS-Hierarchie übernimmt.
+
+![](../LF10/02_img/lf10-01-dns-firma-provider-dns-hierarchie.png)
+
+
+
+## Network Address Translation (NAT)
+
+Aufbauend auf den Informationen [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md) kann mithilfe des **Heim Routers** in Filius ein einfaches Netzwerkszenario erstellt werden, in dem Network Address Translation simuliert werden kann.
+
+Die folgende Abbildung zeigt ein einfaches Netzwerkszenario in dem Network Address Translation (NAT) umgesetzt wird.
+
+![Einfaches Netzwerkszenario mit NAT](02_img/lf12-10-nat.png)
+
+Die entsprechende [Filius-Datei zu NAT](./02-nat.fls) kann über den Link heruntergeladen werden.
+
+### Aufgabe
+
+Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysieren Sie den Datenverkehr am Internet-Router.
+
+ * Vergleichen Sie das **erste DNS-Paket** am LAN- und am WAN-Port des Internet-Routers füllen Sie folgende Lücken aus:
+
+|             |      LAN-Seite    |   WAN-Seite   |
+|:------------|:-----------------:|:-------------:|
+| Quell-IP    | [[192.168.0.100]] | [[42.0.0.10]] |
+| Ziel-IP     | [[42.0.0.53]]     | [[42.0.0.53]] |
+| Quell-Port  | `49152`           | `50100`       |
+| Ziel-Port   | [[53]]            | [[53]]        |
+| TTL         | [[64]]            | [[63]]        |
+
+
+ * Der Quell-Port mag nicht mit Ihrem Quell-Port übereinstimmen, da er zufällig gebildet wird. Disktutieren Sie, warum auf der LAN- und der WAN-Seite hier unterschiedliche Werte zu finden sind.
+ * Diskutieren Sie, warum der TTL-Wert zwischen LAN- und WAN-Seite unterschiedlich ist.
+ * Vergleichen Sie entsprechend das erste HTTP-Paket zwischen der LAN- und WAN-Seite.
