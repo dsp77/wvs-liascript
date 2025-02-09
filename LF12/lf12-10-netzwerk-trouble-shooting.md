@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.3
+version:  0.3.5
 date:     07.02.2025
 language: de
 narrator: Deutsch Female
@@ -186,6 +186,8 @@ In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauf
 
 ![](../LF10/02_img/lf10-01-dns-firma-provider-dns-hierarchie.png)
 
+Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](02_img/lf10-01-dns-firma-provider-dns-hierarchie.fls) kann über den Link heruntergeladen werden.
+
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
 
 ## Network Address Translation (NAT)
@@ -213,6 +215,6 @@ Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysi
 | TTL         | [[64]]            | [[63]]        |
 
 
- * Der Quell-Port mag nicht mit Ihrem Quell-Port übereinstimmen, da er zufällig gebildet wird. Disktutieren Sie, warum auf der LAN- und der WAN-Seite hier unterschiedliche Werte zu finden sind.
+ * Der Quell-Port mag nicht mit Ihrem Quell-Port übereinstimmen, da er zufällig gebildet wird. Diskutieren Sie, warum auf der LAN- und der WAN-Seite hier unterschiedliche Werte zu finden sind.
  * Diskutieren Sie, warum der TTL-Wert zwischen LAN- und WAN-Seite unterschiedlich ist.
  * Vergleichen Sie entsprechend das erste HTTP-Paket zwischen der LAN- und WAN-Seite.
