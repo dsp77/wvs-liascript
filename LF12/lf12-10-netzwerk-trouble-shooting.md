@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.5
+version:  0.3.6
 date:     07.02.2025
 language: de
 narrator: Deutsch Female
