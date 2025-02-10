@@ -186,7 +186,7 @@ In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauf
 
 ![](../LF10/02_img/lf10-01-dns-firma-provider-dns-hierarchie.png)
 
-Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](02_img/lf10-01-dns-firma-provider-dns-hierarchie.fls) kann über den Link heruntergeladen werden.
+Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](dns-firma-provider-dns-hierarchie.fls) kann über den Link heruntergeladen werden.
 
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
 
