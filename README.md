@@ -45,4 +45,9 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
   * [Firewall](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-10-firewall.md)
   * [Passwortlose Anmeldung mit FIDO2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-50-password-passkeys.md)
   * [Transport Layer Security (TLS)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-20-tls.md)
-  * [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md)
+  * [Network Adress Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md)
+
+
+## Lernfeld 12
+
+  * [Netzwerk Fehlersuche mit Filius)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-10-netzwerk-fehlersuche.md)
