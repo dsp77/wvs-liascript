@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.6
-date:     07.02.2025
+version:  0.5.0
+date:     16.03.2025
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Fehlersuche im Netzwerk
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-net-ts.jpg
 
-tags:     LiaScript, Netzwerk, Fehlersuche, Filius
+tags:     LiaScript, Netzwerk, Fehlersuche, Filius, Routing, Firewall, DMZ, DNS
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -82,7 +82,7 @@ Beispiel Informationen aus einer Anfrage einer Webseite:
 
     * Quellport: `54863`
    * Zielport: `80`
-   * Protokoll: TCP
+   * Protokoll: `TCP`
 
  * Anwendungsschicht:
 
@@ -104,7 +104,7 @@ Mit einem einzelnen Router sind die beiden Netze direkt verbunden und es sind ke
 
 **Routing-Tabelle**
 
-| Nr    | Ziel | Netzmaske | Nächstes Gateway | Über Schnittstelle |
+| Nr    | Ziel | Netzmaske | Nächstes Gateway (Hop) | Über Schnittstelle |
 |:-:|------|-----------|------------------|--------------------|
 | 1 | `10.0.0.1` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
 | 2 | `192.168.0.1` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
@@ -128,7 +128,7 @@ Die folgende Routing-Tabelle von Router 1 hat in **Zeile 5** einen extra Eintrag
 
 **Routing-Tabelle des Router 1**
 
-| Nr. | Ziel | Netzmaske | Nächstes Gateway | Über Schnittstelle |
+| Nr. | Ziel | Netzmaske | Nächstes Gateway (Hop) | Über Schnittstelle |
 |:-:|-------------|-----------------|-----------|----------------|
 | 1 | `192.168.1.2` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
 | 2 | `192.168.0.1` | `255.255.255.255` | `127.0.0.1` | `127.0.0.1` |
@@ -165,13 +165,13 @@ Aus dem zuvor erstellten Paket-Mitschnitt eines Clients soll für das gesamte Ne
 | 2 | Ziel-IP | `10.0.0.10` | `0.0.0.0` |
 | 3 | Quell-Port | `54863` | -- |
 | 4 | Ziel-Port | `80` | `80` |
-| 5 | Protokoll | TCP | TCP |
+| 5 | Protokoll | `TCP` | `TCP` |
 
 {{1}} Aus der Quell-IP wird die Regel auf das gesamte Netzwerk erweitert.
 
 {{2}} Rechner aus dem Quellnetzwerk sollen nicht nur auf das eine Netzwerk aus dem Mitschnitt, sondern auch auf andere Zielnetze zugreifen, daher wird die Pseudoadresse `0.0.0.0` verwendet, die ein Synonym für »jede andere Adresse« ist.
 
-{{3}} Der Rechner öffnet für die Antwort einen zufälligen Port aus dem sogenannten Ephemeral Port-Bereich (meist zwischen 49152 und 65535, je nach Betriebssystem). Dieser Port ist nur für die Dauer der Verbindung aktiv. In der Firewall-Regel kann der Portbereich auf diesen Bereich begrenzt werden. Dann besteht die Gefahr, dass ein Betriebssystem, dass einen Port unterhalb 49152 öffnet, gesperrt wird. Daher ist ein unbestimmter Port sinnvoll.
+{{3}} Der Rechner öffnet für die Antwort einen **zufälligen Port** aus dem sogenannten **Ephemeral Port-Bereich** (meist zwischen 49152 und 65535, je nach Betriebssystem). Dieser Port ist nur für die Dauer der Verbindung aktiv. In der Firewall-Regel kann der Portbereich auf diesen Bereich begrenzt werden. Dann besteht die Gefahr, dass ein Betriebssystem, dass einen Port unterhalb 49152 öffnet, gesperrt wird. Daher ist ein unbestimmter Port sinnvoll.
 
 {{4}} Für HTTP-Anfragen soll nur Port 80 freigegeben werden.
 
@@ -218,3 +218,70 @@ Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysi
  * Der Quell-Port mag nicht mit Ihrem Quell-Port übereinstimmen, da er zufällig gebildet wird. Diskutieren Sie, warum auf der LAN- und der WAN-Seite hier unterschiedliche Werte zu finden sind.
  * Diskutieren Sie, warum der TTL-Wert zwischen LAN- und WAN-Seite unterschiedlich ist.
  * Vergleichen Sie entsprechend das erste HTTP-Paket zwischen der LAN- und WAN-Seite.
+
+## Router-Szenario mit drei Standorten
+
+Die folgende Abbildung zeigt ein Netzwerkszenario aus der IHK-Prüfung der Fachinformatiker im Winter 2023. Die zugehörige [Filius-Datei kann über den Link heruntergeladen werden](./lf12-10-ihk-w-2023-si-2-ohne-routing-config-ohne-firewall.fls).
+
+
+![Dreistandort-Szenario IHK-Prüfung Winter 2023/24](./02_img/lf12-10-ihk-w-2023-si-2.png)
+
+Der Hauptstandort Berlin ist über einen Internet Service Provider (ISP) ans Internet angeschlossen. Der Router **RB1** ist sowohl für den Internetzugang, als auch für die Anbindung der Standorte Hamburg und München zuständig. Als Änderung zur Originalaufgabe ist im Router RB1 kein NAT konfiguriert.
+
+### Statisches Routing 
+
+Für das statische Routing ist es sinnvoll, das Netzwerk auf das Wesentliche zu reduzieren. Die folgende Abbildung zeigt nur noch die Router mit den Netzwerken. Der Router **RB1** wird als zentraler Router das **Gateway**.
+
+![Dreistandort-Szenario-Routing](./02_img/lf12-10-drei-standorte-netzwerke-reduziert.svg)
+
+Im Abschnitt Routerkonfiguration mit zwei Routern wurde gezeigt, dass in einem Router jedes Netzwerk, das jenseits eines anderen Routers erreichbar sein soll, in dem entsprechenden Router konfiguriert werden muss. Das würde z.B. bedeuten, dass im **Router RM** in München die Netzwerke für Hamburg, Berlin-DMZ und Berlin-LAN konfiguriert werden müssten. Um das zu vereinfachen, wird in den Routern **RM**, **RH** und **RB2** jeweils der Router **RB1** als Gateway konfiguriert. Damit lässt sich die Konfiguration der Netzwerke auf den Router **RB1** reduzieren.
+
+Die folgende Tabelle zeigt die Routingeinträge für den Router **RB1**. Vervollständigen Sie die fehlenden Next-Hop-Einträge:
+
+
+|     Netz-ID     | Subnetzmaske (CIDR)     | Next-Hop | Interface |
+|:----------------|-------------------------|----------------|---------|
+| `10.10.10.0`    | `255.255.255.240` (/28) | `10.10.10.13`  | `Eth 0` |
+| `10.1.1.0`      | `255.255.255.252` (/30) | `10.1.1.1`     | `Eth 1` |
+| `10.2.2.0`      | `255.255.255.252` (/30) | `10.2.2.1`     | `Eth 2` |
+| `172.16.64.0`   | `255.255.252.0` (/22)   | [[10.1.1.2]]   | `Eth 1` |
+| `192.168.100.0` | `255.255.255.0` (/24)   | [[10.2.2.2]]   | `Eth 2` |
+| `203.0.113.12`  | `255.255.255.252` (/30) | `203.0.113.13` | `Eth 3` |
+| `0.0.0.0`       | `255.255.255.255` (/0)  | [[203.0.113.14]] | `Eth 3` |
+
+
+**Aufgabe 1**
+
+In der zur Verfügung gestellten Filius-Datei fehlen einige Routingeinträge beim Router **RB1**.
+
+ * Vervollständigen Sie die Routingkonfiguration für **RB1**
+ * Fügen Sie in den Routern **RM**, **RH** und **RB2** die jeweilige IP-Adresse des Routers **RB1** als Gateway hinzu.
+ * Überprüfen Sie mithilfe der Kommandozeile, dass aus den Netzwerken **Hamburg**, **München** und **Berlin LAN** folgende Ziele erreichbar sind:
+
+  * Berlin-DMZ
+  * die jeweiligen anderen Standorte
+  * der IHK-Server
+
+
+**Aufgabe 2**
+
+Beim Router **RB1** wird am Interface `Eth 3` Network Address Translation (NAT) eingeschaltet. Welche zusätzliche Konfiguration ist nötig, damit der Webserver mit Port `80` und der Dateiserver mit Port `22` vom Internet erreichbar sind?
+
+Anmerkung: Um die privaten IP-Adressen der drei Standorte im Internet zu nutzen, muss die private Adresse mithilfe von Network Address Translation (NAT) umgesetzt werden. Um das Beispiel mit Filius umzusetzen und das Routing zu üben, war der Kunstgriff ohne NAT möglich.
+
+### Firewall-Konfiguration
+
+Die Router **RB1** und **RB2** sollen als Demilitarisierte Zone (DMZ) konfiguriert werden.
+
+Folgende Erreichbarkeit soll möglich sein:
+
+ * Berlin-DMZ erreichbar von: München, Hamburg, Berlin-LAN ohne Beschränkung
+ * Berlin-DMZ erreichbar vom Internet mit Port `80` auf den Webserver und Port `22` für SFTP auf den Dateiserver.
+ * München, Hamburg, Berlin-LAN erreichen sich untereinander; sind aber nicht aus dem Internet erreichbar
+ * München, Hamburg, Berlin-LAN und Berlin-DMZ erreichen das Internet
+
+**Aufgabe**
+
+ * Konfigurieren Sie die Firewalls in den Routern **RB1** und **RB2**, um das oben beschriebene Zugriffsszenario zu ermöglichen.
+ 
+
