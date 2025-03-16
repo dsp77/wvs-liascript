@@ -50,4 +50,4 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
 
 ## Lernfeld 12
 
-  * [Netzwerk Fehlersuche mit Filius)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-10-netzwerk-fehlersuche.md)
+  * [Netzwerk Fehlersuche mit Filius](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-10-netzwerk-fehlersuche.md)
