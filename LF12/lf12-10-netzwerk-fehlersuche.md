@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.5.0
+version:  0.5.1
 date:     16.03.2025
 language: de
 narrator: Deutsch Female
@@ -247,7 +247,7 @@ Die folgende Tabelle zeigt die Routingeinträge für den Router **RB1**. Vervoll
 | `172.16.64.0`   | `255.255.252.0` (/22)   | [[10.1.1.2]]   | `Eth 1` |
 | `192.168.100.0` | `255.255.255.0` (/24)   | [[10.2.2.2]]   | `Eth 2` |
 | `203.0.113.12`  | `255.255.255.252` (/30) | `203.0.113.13` | `Eth 3` |
-| `0.0.0.0`       | `255.255.255.255` (/0)  | [[203.0.113.14]] | `Eth 3` |
+| `0.0.0.0`       | `0.0.0.0` (/0)  | [[203.0.113.14]] | `Eth 3` |
 
 
 **Aufgabe 1**
