@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.5.1
-date:     16.03.2025
+version:  0.6.0
+date:     21.03.2025
 language: de
 narrator: Deutsch Female
 
@@ -177,6 +177,91 @@ Aus dem zuvor erstellten Paket-Mitschnitt eines Clients soll für das gesamte Ne
 
 {{5}} Eine HTTP-Verbindung wird über TCP aufgebaut.
 
+### Einfaches Firewall-Szenario
+
+Die folgende Abbildung zeigt ein einfaches Netzwerkszenario für eine Firewall-Konfiguration. Ein externes Netzwerk `10.0.0.0/24` enthält einen Webserver, einen DNS-Server und einen Echo-Server. Ein Firmennetzwerk `192.168.1.0/24` und ein Gästenetzwerk `192.168.3.0/24` greifen über einen Router mit Firewall auf das externe Netzwerk zu.
+
+![Einfaches Firewall-Szenario](./02_img/lf12-10-firewall-einfach.png)
+
+Die [Filius-Datei](lf12-10-firewall-einfach.fls) kann über den Link heruntergeladen werden.
+
+Die Clients in den beiden Netzwerken sind mit einem Webbrowser und einem einfachen Client verbunden. Der einfache Client erlaubt eine Verbindung mit dem Echo-Server `echo.server.de`, der die gesendeten Nachrichten wieder zurücksendet. Der Echo-Server soll als Verbindungstest für alle anderen Verbindungen gelten.
+
+Folgende Firewall-Regeln sollen für das Gast- und Firmen-Netzwerk auf das externe Netzwerk gelten:
+
+1. Aus dem Firmen-Netzwerk heraus ist ein voller Zugang auf das externe Netzwerk möglich.
+2. Aus dem Gast-Netzwerk ist nur ein Zugriff auf das WWW möglich, eine Namensauflösung der Servernamen soll möglich sein.
+
+#### Erstellen der Firewall-Regeln
+
+Die Firewall-Regeln werden anhand des gewünschten Verkehrs erstellt. Die Default-Policy der Firewall ist `verwerfen`, es werden also nur Regeln für den zugelassenen Verkehr erstellt. Wie zuvor beschrieben, werden die Regeln für das Gastnetzwerk wie folgt erstellt:
+
+| Quell-IP | Netzmaske | Ziel-IP | Netzmaske | Protokoll | Port | Aktion |
+|----------|--------------|--------|--------------|-----------|------|---------|
+| `192.168.3.0` | `255.255.255.0` | `0.0.0.0` | | `TCP` | `80` | `akzeptieren` |
+| `192.168.3.0` | `255.255.255.0` | `0.0.0.0` | | `UDP` | `53` | `akzeptieren` |
+
+Mit den Regeln ist aus dem Gast-Netzwerk ein Zugang auf DNS- (`53`) und WWW-Server (`80`) im externen Netzwerk möglich.
+
+Jedoch ist mit den beiden Regeln auch das Firmen-Netzwerk `192.168.0.0/24` für die beiden Ports erreichbar. Daher ist eine extra Regel zum Sperren dieses Zugriffs nötig. Die Regel wird erweitert und bezieht **als Ziel** das ganze Netzwerk `192.168.0.0/16` mit ein. Dadurch ist zwar auch das Gast-Netzwerk eingeschlossen, aber über den Router wird kein Paket mit gleichem Quell- und Ziel-Netzwerk gesendet. Die Reihenfolge der Regeln ist wichtig, daher werden Verwerfen-Regeln vor den Zulassenregeln gesetzt.
+
+| Quell-IP | Netzmaske | Ziel-IP | Netzmaske | Protokoll | Port | Aktion |
+|----------|--------------|--------|--------------|-----------|------|---------|
+| `192.168.3.0` | `255.255.255.0` | `192.168.0.0` | `255.255.0.0` | `*` |  | `verwerfen`  |
+| `192.168.3.0` | `255.255.255.0` | `0.0.0.0` | | `TCP` | `80` | `akzeptieren` |
+| `192.168.3.0` | `255.255.255.0` | `0.0.0.0` | | `UDP` | `53` | `akzeptieren` |
+
+Jetzt wird noch dem Firmen-Netzwerk `192.168.1.0/24` voller Zugriff auf alle Adressen gegeben.
+
+Die fertigen Regeln sehen folgendermaßen aus:
+
+|----------|--------------|--------|--------------|-----------|------|---------|
+| `192.168.3.0` | `255.255.255.0` | `192.168.0.0` | `255.255.0.0` | `*` |  | `verwerfen`  |
+| `192.168.3.0` | `255.255.255.0` | `0.0.0.0` | | `TCP` | `80` | `akzeptieren` |
+| `192.168.3.0` | `255.255.255.0` | `0.0.0.0` | | `UDP` | `53` | `akzeptieren` |
+| `192.168.1.0` | `255.255.255.0` | `0.0.0.0` | | `*` | | `akzeptieren` |
+
+#### Aufgabe
+
+ * Deaktivieren Sie die Firewall und überprüfen Sie die Verbindungen:
+
+   * Der Client **NB1** hat Zugriff auf:
+      
+       * `www.domain.de` per Webbrowser mit Eingabe des Domainnamens
+       * Client **NB2** per Webbrowser mit Eingabe der IP-Adresse
+       * `echo.server.de` mithilfe des **einfachen Clients**
+
+   *  Der Client **NB2** hat Zugriff auf:
+      
+       * `www.domain.de` per Webbrowser mit Eingabe des Domainnamens
+       * `echo.server.de` mithilfe des **einfachen Clients**
+
+ * Aktivieren Sie die Firewall und überprüfen Sie die Verbindungen:
+
+   * Der Client **NB1** hat:
+   
+       * Zugriff auf `www.domain.de` per Webbrowser mit Eingabe des Domainnamens
+       * keinen Zugriff auf Client **NB2** per Webbrowser mit Eingabe der IP-Adresse
+       * keinen Zugriff auf den `echo.server.de` mithilfe des **einfachen Clients**
+
+   *  Der Client **NB2** hat Zugriff auf:
+      
+       * `www.domain.de` per Webbrowser mit Eingabe des Domainnamens
+       * `echo.server.de` mithilfe des **einfachen Clients**
+
+### Demilitarisierte Zone (DMZ)
+
+Die folgende Abbildung zeigt ein Netzwerk, in dem das vorherige einfache Firewall-Szenario zu einer DMZ erweitert wurde.
+
+![Erweiterung des einfachen Firewall-Szenarios zu einer DMZ](02_img/lf12-10-firewall-dmz.png)
+
+Die [Filus-Datei](./lf12-10-firewall-dmz.fls) kann über den Link heruntergeladen werden.
+
+Der Server `wwww.firmenserver.de` soll aus dem externen Netzwerk und den internen Netzwerken erreichbar sein.
+
+#### Aufgabe
+
+ Erstellen Sie die Firewallregeln, damit nur die gewünschten Zugriffe möglich sind.
 
 ## Domain Name System (DNS)
 
