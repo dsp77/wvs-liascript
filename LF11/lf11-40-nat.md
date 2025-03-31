@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.1
+version:  1.1.2
 date:     16.11.2024
 language: de
 narrator: Deutsch Female
