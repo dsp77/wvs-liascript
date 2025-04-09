@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.3.0
-date:     09.12.2024
+version:  2.4.0
+date:     09.05.2025
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Transport Layer Security (TLS)
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-tls.jpg
 
-tags:     LiaScript, TLS, SSL, Cipher Suite, Diffie Hellman, AES, FIPS197, SHA2, SHA256, NIST
+tags:     LiaScript, TLS, SSL, Cipher Suite, Diffie Hellman, AES, FIPS197, SHA2, SHA256, NIST, Post-Quantum-Verschlüsselung
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -386,3 +386,69 @@ Geben Sie in der Adressleiste des Browsers die Adresse des Webservers ein: `http
   * wenn der Browser mit der Fehlermeldung antwortet, dass die Verbindung nicht sicher ist und das Zertifikat nicht überprüft werden kann, überlegen Sie, warum das Zertifikat nicht überprüft werden kann.
  * führen Sie die notwendige Konfiguration im Browser durch, damit das Zertifikat überprüft werden kann. Wiederholen Sie den Aufruf der Webseite.
  
+# Post-Quantum-Verschlüsselung
+
+Viele der heute gebräuchlichen Verschlüsselungsverfahren – z. B. RSA, ECC (Elliptic Curve Cryptography) oder DH (Diffie-Hellman) – beruhen auf mathematischen Problemen, die für klassische Computer sehr schwer zu lösen sind, z. B.:
+
+ * das Faktorisieren großer Zahlen (RSA)
+ * das Diskrete-Logarithmus-Problem (DH, ECC)
+
+Ein ausreichend leistungsfähiger Quantencomputer könnte mit dem sogenannten Shor-Algorithmus diese Probleme in polynomieller Zeit lösen – das heißt: heutige Verschlüsselung wäre damit unsicher.
+
+Post-Quantum-Kryptografie entwickelt neue Verfahren, die:
+
+ * nicht auf den "angreifbaren" Problemen wie Faktorisierung basieren, sondern z. B. auf:
+
+   * Gittern (Lattices),
+   * Code-basierten Problemen,
+   * Hash-basierten Verfahren,
+   * oder multivariaten Gleichungssystemen.
+
+ * auch für klassische Computer effizient umsetzbar sind.
+ * resistent gegen sowohl klassische als auch Quantenangriffe sind.
+
+
+Beispiele für Post-Quantum-Verfahren
+
+Einige bekannte Kandidaten (teilweise vom NIST bereits zur Standardisierung ausgewählt):
+
+ * Kyber (Public-Key-Verschlüsselung, auf Gittern basierend)
+ * Dilithium (digitale Signaturen, ebenfalls Gitter-basiert)
+ * SPHINCS+ (hash-basierte Signaturen)
+ * BIKE, Classic McEliece, etc. (Code-basierte Verfahren)
+
+## Umsetzung in OpenSSL
+
+Mit der im April 2025 veröffentlichten Version 3.5.0 von OpenSSL werden die Verfahren:
+
+ * ML-KEM
+ * ML-DSA
+ * SLH-DSA
+
+unterstützt.
+
+Die Verfahren sind aus dem 2016 gestarteten Auswahlverfahren des National Institute of Standards and Technology (NIST) entstanden und in den Standards FIPS-203, FIPS-204 und FIPS-205 übernommen worden.
+
+## ML-KEM
+
+Der asymmetrische Kyber-Algorithmus soll das klassische Schlüsselaustauschverfahren wie RSA oder ECDSA ablösen.
+
+Kyber basiert auf einem Problem namens "Learning with Errors" (LWE) – das ist auch für Quantencomputer extrem schwer zu lösen. Statt mit großen Primzahlen oder elliptischen Kurven arbeitet Kyber mit Vektoren und Matrizen von Zahlen. In diese mathematischen Strukturen wird ein bisschen „Zufallsrauschen“ (Error) eingebaut – daher „Learning with Errors“. Dieses Rauschen schützt die Nachricht vor Rückrechnung (also Entschlüsselung durch Angreifer).
+
+## ML-DSA
+
+Module-Lattice-Based Digital Signature Algorithm (ML-DSA), ein digitales Signaturverfahren, das auf gitterbasierten mathematischen Strukturen basiert und als widerstandsfähig gegenüber Angriffen durch Quantencomputer gilt.
+
+Bei klassischen Signaturen wie RSA hängt die Sicherheit z. B. vom Faktorisieren großer Zahlen ab. ML-DSA dagegen nutzt ein schwer lösbares Problem aus der Gitter-Kryptografie namens: Module Learning With Errors (Module-LWE)
+
+Dabei wird ein „geheimes“ Gitter aufgebaut, das durch Zufallsrauschen (Error) verschleiert wird – dadurch kann niemand aus der Signatur auf den geheimen Schlüssel zurückrechnen.
+
+## SLH-DSA
+
+SLH-DSA steht für Stateless Hash-Based Digital Signature Algorithm. Es handelt sich um ein digitales Signaturverfahren, das auf hash-basierten Methoden basiert und speziell entwickelt wurde, um sicher gegen Angriffe von Quantencomputern zu sein. Dieses Verfahren wurde vom National Institute of Standards and Technology (NIST) im Standard FIPS 205 spezifiziert.
+
+Hash-basierte Sicherheit: SLH-DSA nutzt die Schwierigkeit, Preimages von Hash-Funktionen zu finden, als Grundlage für seine Sicherheit. Dies bedeutet, dass die Sicherheit des Verfahrens auf der Annahme beruht, dass es extrem schwierig ist, eine Eingabe zu einer gegebenen Hash-Ausgabe zu finden.
+
+Stateless Design: Im Gegensatz zu einigen anderen hash-basierten Signaturverfahren benötigt SLH-DSA keinen internen Zustand zwischen den Signaturvorgängen. Dies reduziert das Risiko von Sicherheitslücken, die durch fehlerhaftes Zustandsmanagement entstehen könnten.
+
+Basierend auf SPHINCS+: SLH-DSA basiert auf dem SPHINCS+-Schema, einem bekannten stateless hash-basierten Signaturverfahren, das im Rahmen des NIST Post-Quantum Cryptography Standardisierungsprozesses ausgewählt wurde.
