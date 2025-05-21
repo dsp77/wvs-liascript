@@ -304,6 +304,13 @@ Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysi
  * Diskutieren Sie, warum der TTL-Wert zwischen LAN- und WAN-Seite unterschiedlich ist.
  * Vergleichen Sie entsprechend das erste HTTP-Paket zwischen der LAN- und WAN-Seite.
 
+
+### Destination NAT (DNAT)
+
+Ein Firmennetzwerk ist über einen NAT-Router mit dem Internet verbunden. In dem privaten Netzwerk soll ein Webserver betrieben werden, der aus dem Internet erreichbar ist. Welche Konfiguration müssen Sie an dem NAT-Router vornehmen, damit der Webserver erreichbar ist?
+
+[^1]: Erfordert Filius ab Version 2.9
+
 ## Router-Szenario mit drei Standorten
 
 Die folgende Abbildung zeigt ein Netzwerkszenario aus der IHK-Prüfung der Fachinformatiker im Winter 2023. Die zugehörige [Filius-Datei kann über den Link heruntergeladen werden](./lf12-10-ihk-w-2023-si-2-ohne-routing-config-ohne-firewall.fls).
