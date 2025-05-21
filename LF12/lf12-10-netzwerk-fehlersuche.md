@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.7.1
-date:     22.04.2025
+version:  0.8.0
+date:     21.05.2025
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Fehlersuche im Netzwerk
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-net-ts.jpg
 
-tags:     LiaScript, Netzwerk, Fehlersuche, Filius, Routing, Firewall, DMZ, DNS
+tags:     LiaScript, Netzwerk, Fehlersuche, Filius, Routing, Firewall, DMZ, DNS, NAT
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -307,9 +307,24 @@ Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysi
 
 ### Destination NAT (DNAT)
 
-Ein Firmennetzwerk ist über einen NAT-Router mit dem Internet verbunden. In dem privaten Netzwerk soll ein Webserver betrieben werden, der aus dem Internet erreichbar ist. Welche Konfiguration müssen Sie an dem NAT-Router vornehmen, damit der Webserver erreichbar ist?
+Ein Firmennetzwerk ist über einen NAT-Router mit dem Internet verbunden. In dem privaten Netzwerk soll ein Webserver betrieben werden, der aus dem Internet erreichbar ist. Der NAT-Router hat eine feste IP-Adresse im Internet.
+
+Die folgende Abbildung zeigt das Netzwerk[^1]. Die [Filiusdatei](./02-dnat.fls) kann heruntergeladen werden.
+
+![DNAT](./02_img/lf12-10-dnat.png)
+
 
 [^1]: Erfordert Filius ab Version 2.9
+
+Vervollständigen Sie die NAT-Tabelle, damit der Webserer `www.firma.de` aus dem Internet erreichbar ist.
+
+| Protokoll | Port (WAN) | LAN-Adresse | Port (LAN) |
+|:----------|:----------:|:-----------:|:----------:|
+| [[TCP]]   | [[80]]   | [[192.168.0.10]] | [[80]]  |
+
+Für die Namensauflösung soll im DNS-Server `dns.de` ein Eintrag für `www.firma.de` eingetragen werden. Vervollständigen Sie das `A-Record`:
+
+ * `www.firma.de` A [[42.0.0.10]]
 
 ## Router-Szenario mit drei Standorten
 
