@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.1
+version:  0.1.2
 date:     21.08.2025
 language: de
 narrator: Deutsch Female
@@ -27,9 +27,9 @@ Verständlich erklärbar ist dieses Routing anhand der Funktion IP-Anycast im Zu
 
 Auf der Webseite iana.org/domains/root/servers findet man eine Liste der 13 DNS-Root-Server und ihre IP-Adressen. Die 13 Server sind benannt mit den Buchstaben a-m. Als Beispiel soll der k-Server dienen:
 
-    k.root-servers.net
-        IPv4-Adresse: 193.0.14.129
-        IPv6-Adresse: 2001:7fd::1
+  * `k.root-servers.net`
+     * IPv4-Adresse: `193.0.14.129`
+     * IPv6-Adresse: `2001:7fd::1`
 
 Im Internet müssen die IP-Adressen eindeutig sein. Schaut man auf der Karte der DNS-Root-Server, auf der Webseite https://root-servers.org/, findet man z.B. in Frankfurt einen K-Server.
 
