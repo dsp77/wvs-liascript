@@ -28,6 +28,7 @@ Verständlich erklärbar ist dieses Routing anhand der Funktion IP-Anycast im Zu
 Auf der Webseite iana.org/domains/root/servers findet man eine Liste der 13 DNS-Root-Server und ihre IP-Adressen. Die 13 Server sind benannt mit den Buchstaben a-m. Als Beispiel soll der k-Server dienen:
 
   * `k.root-servers.net`
+  
      * IPv4-Adresse: `193.0.14.129`
      * IPv6-Adresse: `2001:7fd::1`
 
