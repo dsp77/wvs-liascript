@@ -19,6 +19,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
+# Distributed Denial of Service Attack
 
 Content-Delivery-Netzwerk (CDN) wie Cloudflare oder Cloudanbieter wie Amazon bieten einen Schutz gegen DDOS-Attacken. Dabei splitten sie Dienste auf und routen weltweite Anfragen immer zu einem nächsten Knoten, der den Dienst lokal anbietet.
 
