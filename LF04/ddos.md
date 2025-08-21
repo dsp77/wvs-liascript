@@ -33,15 +33,15 @@ Auf der Webseite iana.org/domains/root/servers findet man eine Liste der 13 DNS-
 
 Im Internet müssen die IP-Adressen eindeutig sein. Schaut man auf der Karte der DNS-Root-Server, auf der Webseite https://root-servers.org/, findet man z.B. in Frankfurt einen K-Server.
 
-[DNS-K-Server in Frankfurt](./02_img/lf4_ddos_k-root-fra.png)
+![DNS-K-Server in Frankfurt](./02_img/lf4_ddos_k-root-fra.png)
 
 Weiter südlich steht auch ein K-Server in Karlsruhe. Eigentlich muss eine IP-Adresse im Internet eindeutig sein. Mithilfe von IP-Anycast kann aber eine IP-Adresse an mehreren Stellen im Internet sein.
 
-[DNS-K-Server in Karlsruhe](./02_img/lf4_ddos_k-root-ka.png)
+![DNS-K-Server in Karlsruhe](./02_img/lf4_ddos_k-root-ka.png)
 
 Hier zeigt die Abbildung, wie ein Botnet den K-Server mit der IP-Adresse 2001:7fd::1 angreift. Durch IP-Anycast werden die Anfragen aus dem Raum Frankfurt über den Router an den K-Server in Frankfurt und die Anfragen aus dem Raum Karlsruhe an den Server in Karlsruhe geleitet.
 
-[Bot-Netzwerk-Angriff auf den K-Server](./02_img/lf4_ddos-ipanycast-k-server-fra-ka.svg)
+![Bot-Netzwerk-Angriff auf den K-Server](./02_img/lf4_ddos-ipanycast-k-server-fra-ka.svg)
 
 Die Summe der Botnet-Knoten kann also nicht auf ein Ziel konzentriert werden, sondern wird aufgeteilt auf verschiedene Server.
 
