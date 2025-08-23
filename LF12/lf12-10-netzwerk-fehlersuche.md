@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.8.0
-date:     21.05.2025
+version:  0.9.0
+date:     23.08.2025
 language: de
 narrator: Deutsch Female
 
@@ -149,6 +149,18 @@ Die folgende Abbildung erläutert den Eintrag detaillierter.
 {{3}} Der Router 2 ist über die Schnittstelle `192.168.1.2` des Routers 1 erreichbar.
 
 Für das Netzwerk `192.168.0.0/24` ist im Router 2 ein entsprechender Eintrag nötig.
+
+### Zentraler Router ab drei Router
+
+Ab drei Routern wird die Konfiguration von Netzwerken in allen Routern sehr umfangreich. Eine Vereinfachung ist, einen Router als zentralen Router festzulegen, in dem alle Netzwerke konfiguriert werden. Alle anderen Router bekommen diesen zentralen Router als Default-Route eingetragen. Dadurch müssen Änderungen im Netzwerk nur in dem einen zentralen Router konfiguriert werden.
+
+![Zentraler Router](./02_img/lf12-10-zentral-router.svg)
+
+Die Abbildung zeigt den zentralen Router, mit den drei Routern 1, 2 und 3, an denen die drei Netzwerke 1, 2 und 3 angeschlossen sind. Die drei Router 1, 2 und 3 sind jeweils mit den Routernetzwerken R1-ZR, R2-ZR und R3-ZR verbunden.
+
+In den drei Routern 1, 2 und 3 ist nur die Standardroute zum zentralen Router konfiguriert. Jede Änderung im Netzwerk erfordert keine Änderung in den drei Routern.
+
+Im zentralen Router werden Routingeinträge zu den Netzwerken 1, 2 und 3 konfiguriert. Jede Änderung an den Netzwerken muss so nur im zentralen Router konfiguriert werden.
 
 ## Firewall
 
