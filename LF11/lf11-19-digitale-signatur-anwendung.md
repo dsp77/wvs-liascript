@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1.0
-date:     01.12.2024
+version:  0.2.0
+date:     03.09.2025
 language: de
 narrator: Deutsch Female
 
@@ -66,6 +66,24 @@ Für die Nutzung ist die im Schritt **(1)** gezeigte Konfiguration nötig. Der A
 ## Signierung von E-Mail
 
 ## Domain Name System Security Extensions (DNSSEC)
+
+Die Grundidee von DNSSEC ist, dass DNS selbst unsicher ist und aufgrund der verbindungslosen Übermittlung mit UDP Antworten gefälscht werden können („DNS Spoofing“). DNSSEC ergänzt DNS um Kryptografie. Mithilfe digitaler Signaturen kann damit der Client überprüfen, ob eine DNS-Antwort unverändert und wirklich von autoritativen DNS-Servern kommt oder gefälscht wurde.
+
+Die zentrale Funktionsweise ist, dass jede Zone ein Schlüsselpaar, bestehend aus privatem und öffentlichem Schlüssel, besitzt. Mit dem privaten Schlüssel signiert der Betreiber die DNS-Records. Der öffentliche Schlüssel wird im DNS veröffentlicht, damit Resolver die Signatur prüfen können.
+
+Die Vertrauenskette („Chain of Trust“) geht von der Root-Zone (.) → TLD (z. B. .de) → Domain (z. B. wvs-ffm.de).
+
+Wichtige DNSSEC Records sind:
+
+ * DS-Record - Delegation Signer; Hashwert des öffentlichen Schlüssels; wird im übergeordneten Namensserver abgelegt.
+ * DNSKEY Record - Öffentlicher Schlüssel, der zur Überprüfung der Signatur verwendet wird.
+ * RRSIG Record - Signatur eines Records
+
+![DNSSEC](./02_img/lf11-19-dnssec.svg)
+
+Auf der Webseite verisignlabs.com gibt es einen [DNSSEC-Debugger](https://dnssec-debugger.verisignlabs.com), mit dem für eine beliebige Webseite die ganze Chain-Of-Trust analyisiert werden kann.
+
+
 
 ## Passwortlose Anmeldung nach FIDO2, Passkeys
 
