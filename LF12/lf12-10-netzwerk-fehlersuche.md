@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.9.0
-date:     23.08.2025
+version:  0.9.1
+date:     05.09.2025
 language: de
 narrator: Deutsch Female
 
@@ -27,7 +27,7 @@ Die folgende Abbildung zeigt ein einfaches Netzwerkszenario. Ein Notebook (NB1),
 
 ![Einfaches Client-Server-Szenario](02_img/lf12-10-www-dns-client-server.png)
 
-Auf dem Computer und den Servern wurde in Filius im Simulationsmodus die entsprechende Software installiert. Der Computer ist konfiguriert, um den DNS-Server für die Namensauflösung zu verwenden. Im DNS-Server ist die Namensauflösung für den Webserver konfiguriert. Die zugehörige [Filius-Datei](01-www-dns-client-server.fls) enthält diese Ausgangssituation.
+Auf dem Computer und den Servern wurde in Filius im Simulationsmodus die entsprechende Software installiert. Der Computer ist konfiguriert, um den DNS-Server für die Namensauflösung zu verwenden. Im DNS-Server ist die Namensauflösung für den Webserver konfiguriert. Die zugehörige [Filius-Datei](lf12-10-www-dns-client-server.fls) enthält diese Ausgangssituation.
 
 Die Fehlersuche sollte immer von dem Rechner ausgehen, der in der Fehlerbeschreibung als Ursprung genannt wird.
 
