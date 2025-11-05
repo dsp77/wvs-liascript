@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.4.2
-date:     10.05.2024
+version:  1.5.0
+date:     05.11.2025
 language: de
 narrator: Deutsch Female
 
@@ -12,7 +12,7 @@ comment:  Internetprotokoll Version 4 (IPv4); Aufbau der Adresse, Subnetzwerkmas
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-ipv4.png
 
-tags:     LiaScript, IPv4, Gateway, IP-Header, ICMP, Trace Route
+tags:     LiaScript, IPv4, Gateway, IP-Header, ICMP, Trace Route, Don't Fragment
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -292,6 +292,7 @@ Die folgende Tabelle beschreibt die Felder des Headers und deren Bedeutung.
 | Destination Address: | IP-Adresse des Empfängers | 32 Bit |
 | Options: | Möglichkeit zur Erweiterung; kann, muss aber nicht unterstützt werden. z.B. Option „Security“ kann theoretisch zur Kennzeichnung geheimer Infos verwendet werden | Variabel;vgl. IHL |
 
+Ohne die Optionen hat der IP-Header eine Größe von 20 Byte.
 
 Im Folgenden sollen ausgewählte Felder und deren Funktion genauer besprochen werden.
 
@@ -315,6 +316,53 @@ Um so ein großes Paket mit Ethernet zu übertragen, muss das IP-Paket aufgeteil
 
  * DF - Don't Fragment - dieses Paket darf nicht aufgeteilt werden
  * MF - More Fragments - es folgen noch weitere Fragmente, die zu einem Gesamtpaket zusammengesetzt werden müssen
+
+# Übung Ping und Don't Fragment
+
+Mithilfe des `ping`-Befehls kann die Option gesetzt werden, dass das IP-Paket auf dem Übertragungsweg nicht fragmentiert werden darf. Dadurch kann die kleinste MTU-Größe auf dem Übertragungsweg ermittelt werden.
+
+Die Option `-s` legt die Anzahl der Datenbytes fest, die in den ICMP-Rahmen als Daten gesendet werden.
+
+````
+  -s packetsize
+           Specifies the number of data bytes to be sent. The default is 56,
+           which translates into 64 ICMP data bytes when combined with the 8
+           bytes of ICMP header data.
+````
+
+Der ICMP-Rahmen hat eine Größe von 8 Byte. Mit der Option `-s 1500` werden also 1508 Byte mit dem IP-Packet gesendet.
+
+````
+  -M pmtudisc_opt
+           Select Path MTU Discovery strategy.  pmtudisc_option may be either do (set DF flag
+           but subject to PMTU checks by kernel, packets too large will be rejected), want (do
+           PMTU discovery, fragment locally when packet size is large), probe (set DF flag and
+           bypass PMTU checks, useful for probing), or dont (do not set DF flag).
+````
+
+Mit der `-M do` wird das **Don't Fragment**-Bit im IP-Header gesetzt und das Paket darf nicht fragmentiert werden.
+
+Mit dem Befehl `ping -s 1600 -M do google.de` wird versucht ein so großes IP-Paket in einen Ethernetrahmen zu packen, dass es fragmentiert werden müsste. Durch das gesetzte **Don't Fragment**-Flag wird das Paket nicht versendet und eine entsprechende Fehlermeldung kommt als Antwort.
+
+````
+ping -s 1600 -M do google.de
+PING google.de (172.217.18.3) 1600(1628) bytes of data.
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+````
+
+## Maximale ICMP-Datengröße ohne Fragmentierung
+
+Der ICMP-Header hat eine Größe von 8 Byte. Ermitteln Sie von den Informationen über den IP-Header, wie groß dieser Header ist: [[28]] Byte.
+
+Berechnen Sie, wie viele Bytes an ICMP-Daten höchstens gesendet werden können, damit das IP-Paket nicht in Fragmente aufgeteilt wird? 
+
+Maximale ICMP-Daten: [[1472]] Byte 
+[[?]] Ausgangspunkt der Berechnung ist die MTU von 1500 Byte
+[[?]] 1500 Byte - 20 Byte IP-Header - 8 Byte ICMP-Header
+
+Überprüfen Sie das Ergebnis mithilfe eines Ping-Befehls in einem Ethernetnetzwerk mit einer MTU von 1500 Byte. Nutzen Sie als Zieladresse diesmal eine IP-Adresse in dem LAN. Ein Ping an google.de wird auf dem Übertragungsweg möglicherweise eine kleinere MTU finden und damit erneut eine Fehlermeldung liefern.
 
 # Übung Ping und Traceroute
 
