@@ -43,13 +43,13 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
 
 ## Lernfeld 11
 
-  * [Verfügbarkeit berechnen und umsetzen](lf11-05-verfuegbarkeit.md)
+  * [Verfügbarkeit berechnen und umsetzen](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-05-verfuegbarkeit.md)
   * [Firewall](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-10-firewall.md)
   * [Passwortlose Anmeldung mit FIDO2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-50-password-passkeys.md)
   * [Transport Layer Security (TLS)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-20-tls.md)
   * [Anwendungen der digitalen Signatur](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-19-digitale-signatur-anwendung.md)
   * [Network Adress Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md)
-  * [VLAN und Layer3-Switche](lf11-50-vlan-l3-switch.md)
+  * [VLAN und Layer3-Switche](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-50-vlan-l3-switch.md)
 
 ## Lernfeld 12
 
