@@ -82,12 +82,12 @@ $$A = \frac{MTBF}{MTBF+MTTR}$$
 
 Hier eine vereinfachte Skizze der Zusammenhänge:
 
-```text
-Zeit →
+``` text
+Zeit -->
 |<--------- MTBF ---------->|<---- MTTR ---->|<--------- MTBF ---------->|
-|---------------------------|~~~~~~~|---------------------------|~~~~~~~|
+|---------------------------|~~~~~~~|----------------------------|~~~~~~~|
  Betrieb ohne Ausfall      Ausfall  Reparatur  Betrieb ohne Ausfall     ...
-````
+```
 
  * `---` = Betriebszeit (System funktioniert)
  * `~~~~` = Ausfall- und Reparaturzeit
