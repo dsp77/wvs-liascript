@@ -67,7 +67,7 @@ Beispiel
 10 Router werden jeweils 1.000 Stunden lang betrieben (also 10.000 Stunden Gesamtbetriebszeit)
 und es gibt insgesamt 5 Ausfälle. Dann gilt:
 
-$$MTBF = \frac{10.000 h}{5} =2.000 h$$
+$$\text{MTBF} = \frac{10.000 h}{5} = 2.000 h$$
 
 Ein Router fällt im Durchschnitt alle 2.000 Stunden aus.
 
@@ -76,7 +76,7 @@ Ein Router fällt im Durchschnitt alle 2.000 Stunden aus.
 
 Die MTTR (Mean Time To Repair) ist die mittlere Reparaturzeit. Nach einem Ausfall dauert es im Mittel MTTR Stunden, bis das System wieder läuft.
 
-$$MTTR = \frac{\text{Anzahl der Reparaturen}}{\text{Gesamte Reparaturzeit}}
+$$\text{MTTR} = \frac{\text{Anzahl der Reparaturen}}{\text{Gesamte Reparaturzeit}}$$
 
 Angenommen bei einem Server treten über ein Jahr 4 Ausfälle auf:
 
@@ -89,7 +89,7 @@ Angenommen bei einem Server treten über ein Jahr 4 Ausfälle auf:
 
 Die MTTR berechnet sich dann zu:
 
-$$MTTR =\frac{2+3+1+4}{4} = \frac{10}{4} = 2,5 \text{Stunden}$$
+$$\text{MTTR} =\frac{2+3+1+4}{4} = \frac{10}{4} = 2,5 \text{Stunden}$$
 
 Im Durchschnitt dauert es 2,5 Stunden, bis der Server nach einem Ausfall wieder läuft.
 
@@ -119,7 +119,7 @@ Beispiel:
  * MTBF = 1000 Stunden
  * MTTR = 2,5 Stunden
  
-$$A = \frac{1000}{1000+2} = 0,9975 = 99,75\%$$	​
+$$A = \frac{1000}{1000+2} = 0,9975 = 99,75 \%$$	​
 
 Der Server ist 99,75 % der Zeit verfügbar und 0,25 % der Zeit nicht verfügbar, was etwa 2,2 Stunden Ausfall pro Jahr entspricht.
 
@@ -140,7 +140,7 @@ Beispiel: Ein Server hat:
 
 Dann:
 
-$$A = \frac{1000}{1000+10} = 0,9901 = 99,01\%$$
+$$A = \frac{1000}{1000+10} = 0,9901 = 99,01 \%$$
 
 Das bedeutet, der Server ist zu 99,01 % der Zeit verfügbar – also etwa 1 % Ausfallzeit, was rund 10 Stunden im Jahr wären.
 
@@ -165,21 +165,21 @@ An Switch A ist an Port 1 ein Computer angeschlossen. Die Ports 3 und 4 sind bei
 In der Lernphase sind die beiden Source Address Tables (SAT) noch leer und jeder Ethernetrahmen, der den Switch erreicht, wird im Flooding über alle anderen angeschlossenen Ports ausgesendet. Wenn z.B. der Computer einen Ethernetrahmen an den Switch mit einer bestimmten Ziel-MAC-Adresse sendet, die dem Switch nicht bekannt ist, sendet der Switch A im Flooding den Rahmen über den Port (3) und (4) aus. Die beiden Rahmen kommen am Port (1) und (2) von Switch B an, der wiederum die Ziel-MAC-Adresse nicht kennt und im Flooding den Rahmen über den jeweilig anderen Port aussendet. So kommen wieder zwei Rahmen zurück am Switch A an, bei dem sich der Ablauf wiederholt.
 
 ````                                                                            
-   ┌────────┐                                                        
+   ┌--------┐                                                        
    │        │                                                               
    │        │                                                               
-   └────────┘                 Switch A                         Switch B     
-                            ┌───────────┐                    ┌───────────┐  
-    ────────                │           │                    │           │  
-  /          \──────────────┼────(1)    │          ┌─────────┼────(1)    │  
- ──────────────             │           │          │         │           │  
-                            │    (2)    │          │  ┌──────┼────(2)    │  
+   └--------┘                 Switch A                         Switch B     
+                            ┌-----------┐                    ┌-----------┐  
+    --------                │           │                    │           │  
+  /          \--------------+----(1)    │          ┌---------+----(1)    │  
+ --------------             │           │          │         │           │  
+                            │    (2)    │          │  ┌------+----(2)    │  
   [Ethernetrahmen] --->     │           │          │  │      │           │  
-                            │    (3)────┼──────────┘  │      │    (3)    │  
+                            │    (3)----+----------┘  │      │    (3)    │  
                             │           │             │      │           │  
-                            │    (4)────┼─────────────┘      │    (4)    │  
+                            │    (4)----+-------------┘      │    (4)    │  
                             │           │                    │           │  
-                            └───────────┘                    └───────────┘  
+                            └-----------┘                    └-----------┘  
 ````                                                                            
                                                                             
 Die Rahmen kreisen ständig zwischen Switch A und B hin und her, ohne jemals verworfen zu werden.
@@ -192,21 +192,21 @@ In der Zeichnung unten wurde die Schleife erkannt und der Port 1 von Switch B wu
 
 
 ````                                                                            
-   ┌────────┐                                                        
+   ┌--------┐                                                        
    │        │                                                               
    │        │                                                               
-   └────────┘                 Switch A                         Switch B     
-                            ┌───────────┐                    ┌───────────┐  
-    ────────                │           │                    │           │  
-  /          \──────────────┼────(1)    │          ┌──────(─)┼────(1)    │  
- ──────────────             │           │          │         │           │  
-                            │    (2)    │          │  ┌──────┼────(2)    │  
+   └--------┘                 Switch A                         Switch B     
+                            ┌-----------┐                    ┌-----------┐  
+    --------                │           │                    │           │  
+  /          \--------------+----(1)    │          ┌------(─)+----(1)    │  
+ --------------             │           │          │         │           │  
+                            │    (2)    │          │  ┌------+----(2)    │  
   [Ethernetrahmen] --->     │           │          │  │      │           │  
-                            │    (3)────┼──────────┘  │      │    (3)    │  
+                            │    (3)----+----------┘  │      │    (3)    │  
                             │           │             │      │           │  
-                            │    (4)────┼─────────────┘      │    (4)    │  
+                            │    (4)----+-------------┘      │    (4)    │  
                             │           │                    │           │  
-                            └───────────┘                    └───────────┘  
+                            └-----------┘                    └-----------┘  
 ````
 
 Mithilfe des Spanning Tree Protocols können Schleifen als redundante Verbindungen in Netzwerk eingebaut werden. Durch STP wird eine Verbindung in Stand-by geschaltet und sollte die aktive Verbindung ausfallen, wird die Stand-by-Verbindung aktiv geschaltet.
@@ -218,21 +218,21 @@ Ein Weg, um die Datenrate zu erhöhen, ist das sogenannte **Link Aggregation**. 
 In dem Beispiel sind im Switch A die Ports (3) und (4) und im Switch B die Ports (1) und (2) als zusammengehörig konfiguriert. Die Ports können jetzt miteinander verbunden werden und STP erkennt sie nicht als Schleife. Es werden auch die kreisenden Rahmen vermieden, weil z. B. beim Flooding ein Rahmen nur über einen der beiden aggregierten Ports ausgesendet wird.
 
 ````                                                                        
-    ┌────────┐                                                                              
+    ┌--------┐                                                                              
     │        │                                                                
     │        │                                                                
-    └────────┘                 Switch A                         Switch B      
-                             ┌───────────┐                    ┌───────────┐   
-     ────────                │           │                    │   ┌───┐   │   
-   /          \──────────────┼────(1)    │          ┌─────────┼───│(1)│   │   
-  ──────────────             │           │          │         │   │   │   │   
-                             │    (2)    │          │  ┌──────┼───│(2)│   │   
-                             │   ┌───┐   │          │  │      │   └───┘   │   
-                             │   │(3)│───┼──────────┘  │      │    (3)    │   
+    └--------┘                 Switch A                         Switch B      
+                             ┌-----------┐                    ┌-----------┐   
+     --------                │           │                    │   ┌---┐   │   
+   /          \--------------+----(1)    │          ┌---------+---│(1)│   │   
+  --------------             │           │          │         │   │   │   │   
+                             │    (2)    │          │  ┌------+---│(2)│   │   
+                             │   ┌---┐   │          │  │      │   └---┘   │   
+                             │   │(3)│---+----------┘  │      │    (3)    │   
                              │   │   │   │             │      │           │   
-                             │   │(4)│───┼─────────────┘      │    (4)    │   
-                             │   └───┘   │                    │           │   
-                             └───────────┘                    └───────────┘   
+                             │   │(4)│---+-------------┘      │    (4)    │   
+                             │   └---┘   │                    │           │   
+                             └-----------┘                    └-----------┘   
                                                                               
 ````
 
