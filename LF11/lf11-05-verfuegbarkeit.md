@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1
-date:     09.11.2025
+version:  0.2
+date:     12.11.2025
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Verfügbarkeit
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-availability.jpg
 
-tags:     LiaScript, Verfügbarkeit
+tags:     LiaScript, Verfügbarkeit, MTBF, MTTR, Spanning Tree Protocol (STP), Link Aggregation
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -76,9 +76,23 @@ Ein Router fällt im Durchschnitt alle 2.000 Stunden aus.
 
 Die MTTR (Mean Time To Repair) ist die mittlere Reparaturzeit. Nach einem Ausfall dauert es im Mittel MTTR Stunden, bis das System wieder läuft.
 
-Die Verfügbarkeit (A) ergibt sich dann zu:
+$$MTTR = \frac{\text{Anzahl der Reparaturen}}{\text{Gesamte Reparaturzeit}}
 
-$$A = \frac{MTBF}{MTBF+MTTR}$$
+Angenommen bei einem Server treten über ein Jahr 4 Ausfälle auf:
+
+| Ausfall | Dauer bis zur Wiederherstellung |
+|---------|---------------------------------|
+| 1 | 2 Stunden |
+| 2 | 3 Stunden |
+| 3 | 1 Stunde |
+| 4 | 4 Stunden |​
+
+Die MTTR berechnet sich dann zu:
+
+$$MTTR =\frac{2+3+1+4}{4} = \frac{10}{4} = 2,5 \text{Stunden}$$
+
+Im Durchschnitt dauert es 2,5 Stunden, bis der Server nach einem Ausfall wieder läuft.
+
 
 Hier eine vereinfachte Skizze der Zusammenhänge:
 
@@ -94,7 +108,20 @@ Zeit -->
  * MTBF misst den Zeitraum zwischen zwei Ausfällen.
  * MTTR misst die Reparaturzeit nach einem Ausfall.
 
+### Zusammenhang MTBF, MTTR und Verfügbarkeit
 
+Die MTBF im Zusammenhang mit der MTTR kann genommen werden, um die Verfügbarkeit zu berechnen.
+
+$$A = \frac{MTBF}{MTBF+MTTR}$$
+
+Beispiel:
+
+ * MTBF = 1000 Stunden
+ * MTTR = 2,5 Stunden
+ 
+$$A = \frac{1000}{1000+2} = 0,9975 = 99,75\%$$	​
+
+Der Server ist 99,75 % der Zeit verfügbar und 0,25 % der Zeit nicht verfügbar, was etwa 2,2 Stunden Ausfall pro Jahr entspricht.
 
 ## Verfügbarkeit und Ausfallwahrscheinlichkeit
 
