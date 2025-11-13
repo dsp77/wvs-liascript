@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.1
+version:  0.2
 date:     09.11.2025
 language: de
 narrator: Deutsch Female
@@ -20,9 +20,6 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 attribute: Lizenz: [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/)
 -->
 # Virtual LAN (VLAN)
-
- * Portbasiertes vs. Tagging
- * IP-Vergabe mit VLANs
 
 VLAN steht für Virtual Local Area Network. Es handelt sich dabei um eine Methode, physisch zusammenhängende Netzwerke logisch zu trennen. Mit einer hardwaremäßigen Netzwerkinstallation können logische Einheiten wie Abteilungen einer Firma oder Server- und Client-Netzwerke voneinander getrennt werden. Die so logisch gruppierten Geräte in einem VLAN können miteinander kommunizieren, auch wenn sie an unterschiedlichen physischen Switches angeschlossen sind. Voraussetzung dafür ist eine entsprechende Konfiguration der Switche.
 
@@ -48,97 +45,14 @@ Das Tagging findet mit einem modifizierten Ethernetrahmen statt, der im **IEEE-8
 
 Schließlich gibt es noch den **Hybrid-Port** an dem sowohl getaggte, als auch ein ungetaggter Ethernetrahmen gesendet werden kann.
 
-<!-- ## Erweiterte VLAN-Typen 
-
-Es gibt mehrere grundlegende Arten von VLANs, die je nach Einsatzzweck und Netzwerkarchitektur eingesetzt werden. Hier sind die wichtigsten VLAN-Typen:
-
-🔹 1. Port-basiertes VLAN (Static VLAN)
-
-Definition: VLAN-Zuweisung erfolgt anhand des Switch-Ports, an dem ein Gerät angeschlossen ist.
-
-Ein bestimmter Port gehört fest zu einem bestimmten VLAN.
-
-Wird häufig in Unternehmen eingesetzt.
-
-Einfach zu konfigurieren, aber unflexibel bei Standortwechseln von Geräten.
-
-Beispiel:
-
-Port 1–10 → VLAN 10 (z. B. „Marketing“)
-
-Port 11–20 → VLAN 20 (z. B. „IT“)
-
-🔹 2. MAC-basiertes VLAN
-
-Definition: VLAN-Zuweisung erfolgt anhand der MAC-Adresse des Endgeräts.
-
-Wird verwendet, wenn Geräte flexibel angeschlossen werden und unabhängig vom Port in ihr VLAN einsortiert werden sollen.
-
-Vorteilhaft bei häufigem Standortwechsel (z. B. Laptops).
-
-🔹 3. Protokoll-basiertes VLAN
-
-Definition: VLAN-Zuweisung erfolgt anhand des verwendeten Protokolls auf Layer 3 (z. B. IPv4 vs. IPv6, AppleTalk, IPX).
-
-Kommt selten vor.
-
-Nutzt z. B. verschiedene VLANs für verschiedene Netzprotokolle.
-
-🔹 4. IP-subnetz-basiertes VLAN
-
-Definition: Zuweisung erfolgt basierend auf dem IP-Subnetz des Geräts.
-
-Häufig in Verbindung mit Layer-3-Switches.
-
-Geräte in einem bestimmten IP-Subnetz werden einem VLAN zugeordnet.
-
-Benötigt Routing zwischen den VLANs.
-
-🔹 5. Voice VLAN (auch „Auxiliary VLAN“)
-
-Definition: Spezielles VLAN für IP-Telefone.
-
-Ermöglicht die Trennung von Sprach- und Datenverkehr auf demselben Port (z. B. PC und IP-Telefon an einem Port).
-
-QoS (Quality of Service) kann gezielt auf Sprachverkehr angewendet werden.
-
-Wird oft mit portbasiertem VLAN kombiniert.
-
-🔹 6. Management VLAN
-
-Definition: VLAN, das ausschließlich für den Zugriff auf die Verwaltungsschnittstellen von Netzwerkgeräten genutzt wird.
-
-Erhöht die Sicherheit.
-
-Sollte vom normalen Benutzer-Datenverkehr getrennt sein.
-
-🔹 7. Default VLAN
-
-Definition: Das VLAN, dem alle Ports standardmäßig zugewiesen sind, wenn nichts anderes konfiguriert ist.
-
-Bei vielen Switches ist das VLAN 1 das Default VLAN.
-
-Sollte im Produktivbetrieb nicht verwendet werden (Sicherheitsrisiko).
-
-🔹 8. Private VLAN (PVLAN)
-
-Definition: Erweiterung eines VLANs, um innerhalb eines VLANs Isolation zwischen Ports zu ermöglichen.
-
-Wird häufig in Rechenzentren eingesetzt.
-
-Unterteilt in „Primary VLAN“ und „Secondary VLANs“ (Isolated, Community).
-
-
-
-
--->
-
 
 ## IP-Vergabe mit VLANs
 
 Mit der Einführung verschiedener VLANs stellt sich die Frage nach der IP-Vergabe in den VLANs. 
 
 Eine Lösung für kleinere oder virtuelle Netzwerke ist, den DHCP-Server per Trunk-Port an den Switch anzuschließen. Der Linux- oder Windows-Server erhält mehrere virtuelle Interfaces und in dem DHCP-Server wird für jedes VLAN ein entsprechender IP-Bereich konfiguriert, der dann über das virtuelle Interface die Anfragen und Vergaben durchführt.
+
+![IP-Adressvergabe mit DHCP über Trunk Port](./02_img/lf11-50-vlan-dhcp-trunk-port.svg)
 
 Konfiguration mit Netplan sieht folgendermaßen aus:
 
@@ -195,21 +109,21 @@ subnet 10.0.10.0 netmask 255.255.255.0 {
 
 # VLAN 20 - Entwicklung
 subnet 10.0.20.0 netmask 255.255.255.0 {
-  range 10.0.20.100 10.0.20.150;
+  range 10.0.20.100 10.0.20.200;
   option routers 10.0.20.1;
   option domain-name-servers 8.8.8.8;
 }
 
 # VLAN 30 - Produktion
 subnet 10.0.30.0 netmask 255.255.255.0 {
-  range 10.0.30.50 10.0.30.100;
+  range 10.0.30.100 10.0.30.200;
   option routers 10.0.30.1;
   option domain-name-servers 8.8.8.8;
 }
 
 # VLAN 99 - Server
 subnet 10.0.99.0 netmask 255.255.255.0 {
-  range 10.0.99.50 10.0.99.100;
+  range 10.0.99.50 10.0.99.200;
   option routers 10.0.99.1;
   option domain-name-servers 8.8.8.8;
 }
