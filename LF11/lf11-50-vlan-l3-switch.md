@@ -1,17 +1,17 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.2
+version:  1.0
 date:     09.11.2025
 language: de
 narrator: Deutsch Female
 
-comment:  VLAN und Layer-3-Switch
+comment:  VLAN und Layer-3-Switch; Router-on-a-Stick
 
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-availability.jpg
 
-tags:     LiaScript, VLAN, 802.1q, Tagging, Trunkport
+tags:     LiaScript, VLAN, 802.1q, Tagging, Trunkport, Layer-3-Switch, Router-on-a-Stick
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -220,3 +220,26 @@ Technik: DHCP Relay (IP Helper Address)
  * Der DHCP-Server weiß (z. B. durch den VLAN-Tag oder die Relay-Informationen), aus welchem VLAN die Anfrage kam und weist eine passende Adresse aus dem entsprechenden IP-Pool zu
 
 
+# Router-on-a-Stick
+
+„Router-on-a-Stick“ (auch Single-Arm-Router) bezeichnet eine Netzwerktopologie, bei der ein einzelner physischer Router-Port genutzt wird, um mehrere VLANs zu routen.
+
+![Router-on-a-Stick über Trunk-Port angebunden](./02_img/lf11-50-router-on-a-stick.svg)
+
+Ein Router hat nur eine physische Schnittstelle. Diese Schnittstelle wird als Trunk-Port konfiguriert und in mehrere Subinterfaces aufgeteilt – etwa:
+
+ * Eth0.10 für VLAN 10
+
+ * Eth0.20 für VLAN 20
+
+Der Switch sendet die VLAN-getaggten Frames über diesen Trunk zum Router. Der Router führt dann das Inter-VLAN-Routing durch und schickt die Pakete wieder über denselben Port zurück.
+
+Router-on-a-Stick wird verwendet, wenn:
+
+ * ein klassischer Layer-3-Switch nicht vorhanden ist,
+
+ * aber Inter-VLAN-Routing benötigt wird,
+
+ * und man nur eine Router-Schnittstelle zur Verfügung hat.
+
+Es ist also eine kostengünstige Lösung, aber weniger performant als Routing direkt auf einem Layer-3-Switch.
