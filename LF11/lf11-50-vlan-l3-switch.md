@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0
+version:  1.1
 date:     09.11.2025
 language: de
 narrator: Deutsch Female
@@ -222,7 +222,7 @@ Technik: DHCP Relay (IP Helper Address)
 
 # Router-on-a-Stick
 
-„Router-on-a-Stick“ (auch Single-Arm-Router) bezeichnet eine Netzwerktopologie, bei der ein einzelner physischer Router-Port genutzt wird, um mehrere VLANs zu routen.
+„Router-on-a-Stick“, auch als Single-Arm-Router oder Inter-VLAN-Routing bezeichnet eine Netzwerktopologie, bei der ein einzelner physischer Router-Port genutzt wird, um mehrere VLANs zu routen.
 
 ![Router-on-a-Stick über Trunk-Port angebunden](./02_img/lf11-50-router-on-a-stick.svg)
 
@@ -234,12 +234,6 @@ Ein Router hat nur eine physische Schnittstelle. Diese Schnittstelle wird als Tr
 
 Der Switch sendet die VLAN-getaggten Frames über diesen Trunk zum Router. Der Router führt dann das Inter-VLAN-Routing durch und schickt die Pakete wieder über denselben Port zurück.
 
-Router-on-a-Stick wird verwendet, wenn:
+Als Nachteil dieser Methode, gegenüber der Nutzung eines Layer-3-Switches wird häufig der Flaschenhals der einen Verbindung genannt, da der Verkehr zwischen zwei VLANs zwei Mal über die eine Schnittstelle gesendet wird. Durch Link-Aggregation lässt sich diese Engstelle jedoch vermeiden.
 
- * ein klassischer Layer-3-Switch nicht vorhanden ist,
-
- * aber Inter-VLAN-Routing benötigt wird,
-
- * und man nur eine Router-Schnittstelle zur Verfügung hat.
-
-Es ist also eine kostengünstige Lösung, aber weniger performant als Routing direkt auf einem Layer-3-Switch.
+Ein wesentlicher Vorteil gegenüber der Nutzung eines Layer-3-Switches ist, dass der Router mit einer entsprechenden Firewall ausgestattet werden kann und dann ein Zonenkonzept umgesetzt werden kann. Der Verkehr zwischen den VLANs kann dann durch entsprechende Firewall-Regeln geregelt werden. Mithilfe einer Next-Generation-Firewall sind dann auch Intrusion Detection und Prevention möglich. 
