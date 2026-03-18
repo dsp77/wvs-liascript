@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.2.0
-date:     15.03.2026
+version:  0.3.0
+date:     18.03.2026
 language: de
 narrator: Deutsch Female
 
@@ -140,6 +140,17 @@ jagged[1] = new int[5];   // Länge 5
 jagged[2] = new int[3];   // Länge 3
 ```
 - Zugriff: `jagged[1][4]`.
+
+# Aufgabe zu Arrays
+
+Aufgabe
+
+- Erstellen Sie ein Array mit 20 ganzzahligen Werten im Bereich von 0 bis 100.
+Recherchieren Sie, ob C# eine Funktion bietet, diese Werte zu erzeugen.
+- Berechnen Sie den Mittelwert der 20 Werte. Anmerkung: C# stellt hier eine Funktion zur Verfügung. Zur Vorbereitung auf die Abschlussprüfung sollen Sie den Wert aber selbst berechnen.
+    - Der Mittelwert berechnet sich aus dem Verhältnis: Summe aller Werte geteilt durch die Anzahl der Werte.
+- Die Werte in dem Array sollen die prozentuale Auslastung einer CPU darstellen. Alle 10 Sekunden wird ein Wert ermittelt und im Array abgelegt.
+    - Berechnen Sie alle 10 Sekunden mit einem gleitenden Fenster von 30 Sekunden ab dem aktuellen Wert die durchschnittliche CPU-Last für 30 Sekunden.
 
 
 # Grundlegende Variablentypen, ihr Bereich und Speicherbereich
