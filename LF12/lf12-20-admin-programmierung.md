@@ -191,14 +191,14 @@ jagged[2] = new int[3];   // Länge 3
 
 # Gleitendes Fenster; Berechnung mit Arrays
 
-![Gleitendes Fenster](./02_img/lf12-20-array.svg)
+![Gleitendes Fenster](02_img/lf12-20-array.svg)
 
 ``` csharp
 int[] meinArray = {2, 4, 6, 8, 10};
 
 int durchschnitt, summe;
 
-for(int i=0; i < meinArray.Length; i++){
+for(int i=1; i < meinArray.Length -1; i++){
 
     summe = meinArray[i-1] + meinArray[i] + meinArray[i+1];
 
