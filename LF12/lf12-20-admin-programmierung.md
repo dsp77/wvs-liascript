@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.3.0
-date:     18.03.2026
+version:  0.4.0
+date:     20.03.2026
 language: de
 narrator: Deutsch Female
 
@@ -59,8 +59,8 @@ Console.WriteLine($"Das Array 'zahlen' ist {zahlen.Length} Elemente groß.");
 ## Beispiel für ein Array-Datentyp ohne Setzung von Daten
 
 ```csharp
-// Ein Array mit 5 Elementen, alle Standardwert = 0
-int[] zahlen = new int[5];
+// Ein Array mit 6 Elementen, alle Standardwert = 0
+int[] zahlen = new int[6];
 
 // Ausgabe der Werte
 for (int i = 0; i < zahlen.Length; i++){
@@ -74,11 +74,59 @@ for (int i = 0; i < zahlen.Length; i++){
 
 Weisen Sie dem Array Zahlen in umgekehrter Reihenfolge mit aufsteigendem Index, wie in der folgenden Tabelle gezeigt, zu:
 
-| Index | 0 | 1 | 2 | 3 | 4 |
-|-------|---|---|---|---|---|
-| Wert  | 4 | 3 | 2 | 1 | 0 |
+| Index | 0 | 1 | 2 | 3 | 4 | 5 |
+|-------|---|---|---|---|---|---|
+| Wert  | 5 | 4 | 3 | 2 | 1 | 0 |
+
+### Lösung: Werte zuweisen
+
+``` csharp
+// Ein Array mit 6 Elementen, alle Standardwert = 0
+int[] zahlen = new int[6];
+
+// Werte zuweisen und ausgeben
+for (int i = 0; i < zahlen.Length; i++){
+
+    zahlen[i] = zahlen.Length - i - 1;
+    Console.WriteLine($"Index {i}: {zahlen[i]}");
+    
+}
+```
+
+### Aufgabe: Nur geradezahlige oder ungeradzahlige Elemente adressieren
+
+Den Elementen mit einem geraden Index soll der Wert **99** zugewiesen werden. Elementen mit einem ungeraden Index soll der Wert Array.Length - 1 - Index zugewiesen werden.
+
+| Index | **0** | 1 | **2** | 3 | **4** | 5 |
+|-------|-------|---|-------|---|-------|---|
+| Wert  | **99** | 4 | **99** | 2 | **99** | 0 |
+
+### Lösung: Nur geradzahlige Elemente adressieren
+
+Für die Adressierung von nur geradzahligen oder ungeradzahligen Elemente wird eine for-Schleife nur über die Hälfte der Array-Länge gezählt. Dabei ist zu beachten, dass das Array eine geradzahlige Anzahl an Elemente haben muss. Bei ungeradzahligen gibt es mehr geradzahlige als ungeradzahlige Elemente und die for-Schleife muss entsprechend angepasst werden.
+
+``` csharp
+// Ein Array mit 6 Elementen, alle Standardwert = 0
+int[] zahlen = new int[6];
+
+// Die for-Schleife geht nur über die Hälfte des Arrays
+for (int i = 0; i < zahlen.Length / 2; i++){
+
+    zahlen[i * 2] = 99;                             // geradzahlige Zuweisung
+    zahlen[i * 2 + 1] = zahlen.Length - i*2 - 2 ;   // ungeradzahlige Zuweisung
+    
+    Console.WriteLine($"Geradzahliger Index   {i * 2}: {zahlen[i * 2]}");
+    Console.WriteLine($"Ungeradzahliger Index {i * 2 + 1}: {zahlen[i * 2 + 1]}");
+```
+
+> Die Variable i der for-Schleife ist in dem Fall nicht der Index für das Array. Der Index wird berechnet basierend auf der Variablen i.
+>
+>> Geradzahliger Index: $i \cdot 2$
+>>
+>> Ungeradzahliger Index: $i \cdot 2 + 1$
 
 ## Beispiel: Verschiedene Array-Typen
+
 
 ``` csharp
 // Ganzzahlen
@@ -141,6 +189,25 @@ jagged[2] = new int[3];   // Länge 3
 ```
 - Zugriff: `jagged[1][4]`.
 
+# Gleitendes Fenster; Berechnung mit Arrays
+
+![Gleitendes Fenster](./02_img/lf12-20-array.svg)
+
+``` csharp
+int[] meinArray = {2, 4, 6, 8, 10};
+
+int durchschnitt, summe;
+
+for(int i=0; i < meinArray.Length; i++){
+
+    summe = meinArray[i-1] + meinArray[i] + meinArray[i+1];
+
+    durchschnitt = summe / 3;
+
+    Console.WriteLine("Durchschnitt um i=" + i + " ist: " + durchschnitt); 
+}
+```
+
 # Aufgabe zu Arrays
 
 Aufgabe
@@ -150,7 +217,7 @@ Recherchieren Sie, ob C# eine Funktion bietet, diese Werte zu erzeugen.
 - Berechnen Sie den Mittelwert der 20 Werte. Anmerkung: C# stellt hier eine Funktion zur Verfügung. Zur Vorbereitung auf die Abschlussprüfung sollen Sie den Wert aber selbst berechnen.
     - Der Mittelwert berechnet sich aus dem Verhältnis: Summe aller Werte geteilt durch die Anzahl der Werte.
 - Die Werte in dem Array sollen die prozentuale Auslastung einer CPU darstellen. Alle 10 Sekunden wird ein Wert ermittelt und im Array abgelegt.
-    - Berechnen Sie alle 10 Sekunden mit einem gleitenden Fenster von 30 Sekunden ab dem aktuellen Wert die durchschnittliche CPU-Last für 30 Sekunden.
+    - Berechnen Sie alle 10 Sekunden mit einem gleitenden Fenster von 30 Sekunden um den aktuellen Wert die durchschnittliche CPU-Last für 30 Sekunden.
 
 
 # Grundlegende Variablentypen, ihr Bereich und Speicherbereich
@@ -167,6 +234,15 @@ Recherchieren Sie, ob C# eine Funktion bietet, diese Werte zu erzeugen.
 | `long`   | 64-Bit Ganzzahl mit Vorzeichen | \-9.223.372.036.854.775.808 bis 9.223.372.036.854.775.807 |
 | `ulong`  | 64-Bit Ganzzahl ohne Vorzeichen | 0 bis 18.446.744.073.709.551.615                         |
 | `char`   | 16-Bit (Unicode) | Ein einzelnes Zeichen (U+0000 bis U+FFFF)                |
+
+> Der Wertebereich für vorzeichenlose Ganzzahlen ist:
+>> $0 \quad bis \quad 2^{Bitanzahl} -1$
+>
+> Der Wertebereich für vorzeichenbehaftete Datentypen zu berechnen geht folgendermaßen:
+>> negativste Zahl: $- (2^{Bitanzahl -1})$ hier: $- (2^{4-1}) = -8$
+>>
+>> postivste Zahl: $- (negativste Zahl + 1)$ hier: $- (-8+1) = 7$
+
 
 ## Zahlenbereich verstehen
 
@@ -262,11 +338,6 @@ Beispiel für −5:
 Also: `1011` = -5
 
 Der Wertebereich eines 4-Bit Zweierkomplement-Typs ist: **-8 bis +7**
-
-Der Wertebereich für vorzeichenbehaftete Datentypen zu berechnen geht folgendermaßen:
-
- * negativste Zahl: $- (2^{Bitanzahl -1})$ hier: $- (2^{4-1}) = -8$
- * postivste Zahl: $- (negativste Zahl + 1)$ hier: $- (-8+1) = 7$
 
 ## Über- und Unterlauf von Variablen
 
