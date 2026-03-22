@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.4.0
-date:     20.03.2026
+version:  0.5.0
+date:     22.03.2026
 language: de
 narrator: Deutsch Female
 
@@ -93,37 +93,6 @@ for (int i = 0; i < zahlen.Length; i++){
 }
 ```
 
-### Aufgabe: Nur geradezahlige oder ungeradzahlige Elemente adressieren
-
-Den Elementen mit einem geraden Index soll der Wert **99** zugewiesen werden. Elementen mit einem ungeraden Index soll der Wert Array.Length - 1 - Index zugewiesen werden.
-
-| Index | **0** | 1 | **2** | 3 | **4** | 5 |
-|-------|-------|---|-------|---|-------|---|
-| Wert  | **99** | 4 | **99** | 2 | **99** | 0 |
-
-### Lösung: Nur geradzahlige Elemente adressieren
-
-Für die Adressierung von nur geradzahligen oder ungeradzahligen Elemente wird eine for-Schleife nur über die Hälfte der Array-Länge gezählt. Dabei ist zu beachten, dass das Array eine geradzahlige Anzahl an Elemente haben muss. Bei ungeradzahligen gibt es mehr geradzahlige als ungeradzahlige Elemente und die for-Schleife muss entsprechend angepasst werden.
-
-``` csharp
-// Ein Array mit 6 Elementen, alle Standardwert = 0
-int[] zahlen = new int[6];
-
-// Die for-Schleife geht nur über die Hälfte des Arrays
-for (int i = 0; i < zahlen.Length / 2; i++){
-
-    zahlen[i * 2] = 99;                             // geradzahlige Zuweisung
-    zahlen[i * 2 + 1] = zahlen.Length - i*2 - 2 ;   // ungeradzahlige Zuweisung
-    
-    Console.WriteLine($"Geradzahliger Index   {i * 2}: {zahlen[i * 2]}");
-    Console.WriteLine($"Ungeradzahliger Index {i * 2 + 1}: {zahlen[i * 2 + 1]}");
-```
-
-> Die Variable i der for-Schleife ist in dem Fall nicht der Index für das Array. Der Index wird berechnet basierend auf der Variablen i.
->
->> Geradzahliger Index: $i \cdot 2$
->>
->> Ungeradzahliger Index: $i \cdot 2 + 1$
 
 ## Beispiel: Verschiedene Array-Typen
 
@@ -189,9 +158,115 @@ jagged[2] = new int[3];   // Länge 3
 ```
 - Zugriff: `jagged[1][4]`.
 
+# Geradzahlige oder ungeradzahlige Elemente
+
+Es gibt Fälle, da sollen nur alle geradzahligen oder ungeradzahligen Elemente eines Arrays adressiert werden. Hierbei ist zu beachten, dass die Null auch als geradzahliges Element zählt.
+
+Die folgende Abbildung zeigt den Zugriff auf geradzahlige bzw. ungeradzahlige Elemente.
+
+![Gerad-/ungeradzahlige Elemente adressieren](02_img/lf12-20-array-even-odd.svg)
+
+Zu erkennen ist, dass von den sechs Elementen nur jeweils auf die Hälfte zugegriffen werden muss. Daher wird für die Adressierung eine for-Schleife nur über die Hälfte der Array-Länge gezählt.
+
+Dabei ist zu beachten, dass das Array eine geradzahlige Anzahl an Elemente haben muss. Bei ungeradzahligen gibt es mehr geradzahlige als ungeradzahlige Elemente und die for-Schleife muss entsprechend angepasst werden.
+
+> Mit der for-Schleife über nur die Hälfte der Elemente wird der Zugriffsindex jetzt berechnet mit 
+>
+>> - `i * 2` für geradzahlige Elemente
+>> - `i * 2 + 1` für ungeradzahlige Elemente
+
+ Als Beispiel für das Array mit sechs Elemente sieht vereinfacht der Zugriff wie folgt aus:
+
+``` csharp
+int[] meinArray = new int[6];
+
+for (int i=0; i < meinArray.Length/2; i++){    // i = 0, 1, 2
+
+    meinArray[i*2] = ...;   // Index: 0, 2, 4
+    meinArray[i*2+1] = ...; // Index: 1, 3, 5
+}
+```
+
+> Es ist sinnvoll den Array-Zugriff mit dem Schema `i*2` und `i*2+1` als Adressierung der geradzahligen und ungeradzahligen Elemente zu merken.
+
+## Aufgabe: Nur geradezahlige oder ungeradzahlige Elemente adressieren
+
+Den Elementen mit einem geraden Index soll der Wert **99** zugewiesen werden. Elementen mit einem ungeraden Index soll der Wert Array.Length - 1 - Index zugewiesen werden.
+
+| Index | **0** | 1 | **2** | 3 | **4** | 5 |
+|-------|-------|---|-------|---|-------|---|
+| Wert  | **99** | 4 | **99** | 2 | **99** | 0 |
+
+## Lösung: Nur geradzahlige Elemente adressieren
+
+
+``` csharp
+// Ein Array mit 6 Elementen, alle Standardwert = 0
+int[] zahlen = new int[6];
+
+// Die for-Schleife geht nur über die Hälfte des Arrays
+for (int i = 0; i < zahlen.Length / 2; i++){
+
+    zahlen[i * 2] = 99;                             // geradzahlige Zuweisung
+    zahlen[i * 2 + 1] = zahlen.Length - i*2 - 2 ;   // ungeradzahlige Zuweisung
+    
+    Console.WriteLine($"Geradzahliger Index   {i * 2}: {zahlen[i * 2]}");
+    Console.WriteLine($"Ungeradzahliger Index {i * 2 + 1}: {zahlen[i * 2 + 1]}");
+```
+
+> Die Variable i der for-Schleife ist in dem Fall nicht der Index für das Array. Der Index wird berechnet basierend auf der Variablen i.
+>
+>> Geradzahliger Index: $i \cdot 2$
+>>
+>> Ungeradzahliger Index: $i \cdot 2 + 1$
+
+
 # Gleitendes Fenster; Berechnung mit Arrays
 
+Unter einem gleitenden Fenster versteht man die Adressierung von bestimmten Werten eines Arrays, um unter anderem einen Mittelwert über die adressierten Werte zu berechnen. Ein typisches Beispiel ist, dass die Auslastung einer CPU in zeitlichen Abständen gespeichert wird. Um eine längere CPU-Last zu berechnen, wird der Mittelwert über drei Werte gebildet und entschieden, ob eine Dauerauslastung der CPU vorhanden ist. Die Berechnung wird dann fortschreitend über das ganze Array durchgeführt.
+
+Die folgende Abbildung zeigt grafisch, wie die drei Werte entnommen werden und das Fenster fortschreitet.
+
 ![Gleitendes Fenster](02_img/lf12-20-array.svg)
+
+Der Zugriff auf die drei Werte erfolgt mit dem Schema:
+
+ - `summe = meinArray[i-1] + meinArray[i] + meinArray[i+1];`
+
+Wird die for-Schleife wie bisher über alle Index-Werte des Arrays gebildet, kommt es im linken und rechten Randbereich zu Problemen. Wie in der Abbildung dargestellt, wird durch die Berechnung der Index-Werte es zu unerlaubten Array-Zugriffen kommen.
+
+Beispiel: `i=0` - linker Bereich
+
+Mit `i=0` erfolgt der Zugriff auf die drei Array-Werte:
+
+ - `i-1 = -1`
+ - `i = 0`
+ - `i+1 = 1`
+
+Der Zugriff `meinArray[-1]` ist nicht gültig und führt zu einem Programmabbruch.
+
+Beispiel: `i=4` - rechter Bereich
+
+Mit `i=4` erfolgt der Zugriff auf die drei Array-Werte:
+
+ - `i-1 = 3`
+ - `i = 4`
+ - `i+1 = 5`
+
+Der Zugriff `meinArray[5]` ist nicht gültig und führt zu einem Programmabbruch.
+
+## Richtige for-Schleife für gleitende Fenster
+
+Die for-Schleife für ein gleitendes Fenster muss um die Größe des Fensters angepasst werden. Maßgeblich dabei ist die Anzahl der Werte, die ober und unterhalb des zentralen Wertes dem Array entnommen werden. Entsprechend muss der Startwert und der Endwert angepasst werden.
+
+Beispiele für Fenstergrößen und die entsprechende Anpassung der for-Schleife:
+
+| Größe | Adressierung | for-Schleife |
+|:-----:|--------------|--------------|
+| 3     | `i-1, i, i+1`| `for(i=1; i < array.Length - 1; i++)` |
+| 5     | `i-2, i-1, i, i+1, i+2`| `for(i=2; i < array.Length - 2; i++)` |
+
+
 
 ``` csharp
 int[] meinArray = {2, 4, 6, 8, 10};
@@ -207,6 +282,9 @@ for(int i=1; i < meinArray.Length -1; i++){
     Console.WriteLine("Durchschnitt um i=" + i + " ist: " + durchschnitt); 
 }
 ```
+
+> Es ist sinnvoll den Array-Zugriff mit dem Schema `i-1`, `i` und `i+1` als gleitendes Fenster zu merken.
+> Entsprechende Erweiterungen wie `i-2`, `i+2`, etc. deuten auf ein größeres Fenster hin.
 
 # Aufgabe zu Arrays
 
