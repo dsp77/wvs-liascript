@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.5.0
-date:     22.03.2026
+version:  0.7.0
+date:     06.04.2026
 language: de
 narrator: Deutsch Female
 
@@ -285,6 +285,234 @@ for(int i=1; i < meinArray.Length -1; i++){
 
 > Es ist sinnvoll den Array-Zugriff mit dem Schema `i-1`, `i` und `i+1` als gleitendes Fenster zu merken.
 > Entsprechende Erweiterungen wie `i-2`, `i+2`, etc. deuten auf ein größeres Fenster hin.
+
+# Springendes Fenster
+
+Neben dem gleitenden Fenster, das über jeden Index des Arrays geht und Werte ausliest, gibt es auch das springende Fenster, das immer genauso viele Werte des Arrays bearbeitet, wie das Fenster groß ist, und dann entsprechend um die Fenstergröße weiterspringt. Die folgende Abbildung verdeutlicht das.
+
+![Springendes Fenster](02_img/lf12-20-array-jumping-window.svg)
+
+1. Ein Array mit 9 Datenelementen soll bearbeitet werden.
+2. Ein Fenster mit jeweils drei Datenelementen wird bearbeitet und das Fenster springt dann um drei Datenelemente weiter. In der Indizierung der Fensterelemente sind die Werte i – 1 im ersten Fenster und i+1 im letzten Fenster farbig hervorgehoben. Diese Hervorhebung wird unter 4. und 5. noch mal erklärt.
+3. Das Dreierfenster springt also in Schritten der Größe (+3) über das Array. Von den möglichen Indizes 0–8 sind also nur die Werte i=1, I=4 und i=7 nötig.
+4. Der Startwert i=1 ergibt sich aus der ersten Platzierung des Fensters. Da das Fenster mit i – 1 adressiert wird, darf i nicht bei 0 beginnen, sondern muss bei i+1 → i=1 beginnen.
+5. Der Endwert ergibt sich aus der letzten Platzierung des Fensters. Da das Fenster mit i+1 adressiert wird, darf i nicht über 8 hinausgehen. Damit muss in der for-Schleife der letzte Index i = 7 → 8 – 1 sein.
+6. Daraus ergibt sich eine for-Schleife in der Form: `for ( int i = 1; i < 7; i+=3)`. Die farbliche Hervorhebung der Zahlen zeigt, woher die Werte stammen.
+
+# Berechnung über Teilsegmente eines Arrays
+
+Berechnungen mithilfe von Fenstern sind nur hilfreich für eine begrenzte Anzahl von Werten. Werden zum Beispiel für eine Mittelwertbildung eine größere Anzahl von Werten benötigt, ist das über eine for-Schleife effizienter. Sollen hierzu nur Bereiche verwendet werden, kann das mit if-Anweisungen durchgeführt werden.
+
+In einem Array werden die Nutzung des Arbeitsspeichers pro Stunde eines Rechners gespeichert. Für die 24 Stunden des Tages gibt es entsprechende Werte:
+
+| Tageszeit | 0-1 | 1-2 | 2-3 | 3-4 | ... | 22-23 | 23-24 |
+|-----------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Index     |  0  | 1   |  2  |  3  |     |  22 |  23 |
+
+Der folgende Codeausschnitt zeigt die Daten:
+
+``` csharp
+//Array mit Testdaten
+int[] maxRAM = new int[24] {52, 33, 60, 44, 40, 56, 33, 52, 44, 60, 40, 33, 56, 44, 60, 52, 40, 56, 33, 40, 44, 56, 60, 52};
+```
+
+Es soll ein Mittelwert über die erste und zweite Tageshälfte berechnet werden. Hier bietet sich kein springendes Fenster mehr an, da die erste Tageshälfte 12 Werte beinhaltet und der Ausdruck für die Berechnung entsprechend lang wird.
+
+Daher werden die Berechnungen über for-Schleifen durchgeführt. Das folgende Beispiel zeigt die Berechnung über zwei for-Schleifen, je eine für die erste und eine für die zweite Tageshälfte.
+
+
+``` csharp
+//Berechnung Mittelwert erste Tageshälfte
+int sumLast = 0;
+for (int i = 0; i < 12; i++)
+{
+	sumLast = sumLast + maxRAM[i];
+}
+
+mwVormittag = sumLast / 12;
+
+//Berechnung Mittelwert zweite Tageshälfte
+sumLast = 0;
+for (int i = 12; i < 24; i++)
+{
+	sumLast = sumLast + maxRAM[i];
+}
+mwNachmittag = sumLast / 12;
+
+Console.WriteLine("Mittelwert vormittags: " + mwVormittag);
+Console.WriteLine("Mittelwert nachmittags: " + mwNachmittag);	
+```
+
+Alternativ kann die Berechung mit einer for-Schleife und einer entsprechenden if-Anweisung durchgeführt werden.
+
+```csharp
+		int sumLastVorm = 0;
+		int sumLastNachm = 0;
+		
+		for (int i = 0; i < 24; i++)
+		{
+		
+			if( i < 12){
+				
+				//Berechnung Mittelwert erste Tageshälfte
+				sumLastVorm = sumLastVorm + maxRAM[i];
+				
+			} else {
+				
+				//Berechnung Mittelwert zweite Tageshälfte
+				sumLastNachm = sumLastNachm + maxRAM[i];
+				
+			}
+		}
+
+		mwVormittag = sumLastVorm / 12;
+		mwNachmittag = sumLastNachm / 12;
+
+		Console.WriteLine("Mittelwert vormittags: " + mwVormittag);
+		Console.WriteLine("Mittelwert nachmittags: " + mwNachmittag);
+```
+
+
+# Ganzzzahldivision und Modulo-Operation (Divisionsrest)
+
+Bei der **Ganzzahldivision** werden zwei ganzahlige Werte dividiert. Wenn die Division nicht aufgeht, wie z.B. bei $\frac{4}{3}$ ist das Ergebnis $1$. Bei einer Gleitkommadivision würde $\frac{4}{3} = 1,5$ ergeben. Es findet also bei der Ganzzahldivision keine Rundung statt.
+
+Mit einer ganzzahldivision durch 10, 100, 1000, etc. können entsprechende Stellen einer Zahl abgeschnitten werden. Das folgende Beispiel zeigt einige Ganzzahldivisionen.
+
+``` csharp
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("4 / 2 = "+ 4/2);
+		Console.WriteLine("4 / 3 = "+ 4/3);
+		Console.WriteLine("123456 / 10 = "+ 123456/10);
+		Console.WriteLine("123456 / 100 = "+ 123456/100);
+		Console.WriteLine("123456 / 1000 = "+ 123456/1000);
+	}
+}
+```
+
+Ausgabe:
+
+```
+4 / 2 = 2
+4 / 3 = 1
+123456 / 10 = 12345
+123456 / 100 = 1234
+123456 / 1000 = 123
+```
+
+Die **Modulo-Operation** liefert den Divisionsrest:
+
+```
+4 % 2 = 0               -> kein Divisionsrest, da 4 / 2 aufgeht.
+4 % 3 = 1               -> Divisionsrest 1, da 4 / 3 nicht aufgeht.
+123456 % 10 = 6         -> die weggefallenen Ziffern ergeben den Divisionsrest
+123456 % 100 = 56
+123456 % 1000 = 456
+```
+
+Interessanterweise können bei Ganzzahldivisionen mit Zehnerpotenzen (10, 100, 1000, etc.) mithilfe des Divisionsrests die weggefallenen Stellen bestimmt werden:
+
+ * `123456 % 10 = 6`
+ * `123456 % 100 = 56`
+ * `123456 % 1000 = 456`
+
+Das zugehörige Codebeispiel:
+
+``` csharp
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("4 % 2 = "+ 4 % 2);
+		Console.WriteLine("4 % 3 = "+ 4 % 3);
+		Console.WriteLine("123456 % 10 = "+ 123456 % 10);
+		Console.WriteLine("123456 % 100 = "+ 123456 % 100);
+		Console.WriteLine("123456 % 1000 = "+ 123456 % 1000);
+	}
+}
+```
+
+
+## Geradzahligkeit einer Zahl bestimmen
+
+Mithilfe der Modulo-Operation kann bestimmt werden, ob eine Zahl geradzahlig oder ungeradzahlig ist. Jede geradezahlige Zahl hat bei der Modulo-Operation mit `2` einen Divisionsrest von `0`.
+
+``` csharp
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		for(int i=0; i < 10; i++){
+			if( i % 2 == 0){
+				Console.WriteLine("Geradzahliges i: " + i);
+			} else {
+				Console.WriteLine("Ungeradzahliges i: " + i);
+			}
+		}
+	}
+}
+```
+
+Die Ausgabe des vorherigen Codes:
+
+```
+Geradzahliges i: 0
+Ungeradzahliges i: 1
+Geradzahliges i: 2
+Ungeradzahliges i: 3
+Geradzahliges i: 4
+Ungeradzahliges i: 5
+Geradzahliges i: 6
+Ungeradzahliges i: 7
+Geradzahliges i: 8
+Ungeradzahliges i: 9
+```
+
+
+## Bestimmte Stelle einer Zahl bestimmen
+
+Mithilfe der Ganzzahldivision und der Modul-Operation können jetzt einzelne Ziffern isoliert werden. Als Beispiel ist eine siebenstellige Service-ID gegeben, deren Aufbau in der folgenden Tabelle beschrieben wird:
+
+| Fehlerquelle | Priorität | Fehlercode |
+|--------------|-----------|---------|
+| Selle 1 und 2 | Stelle 3 | Stelle 4 bis 7|
+| 91 | 2 | 3456 |
+
+Die fünfte Ziffer von rechts enthält die Priorität und es soll ein Programm entwickelt werden, das die Priorität der Service-ID bestimmt.
+
+Nach dem zuvor gezeigten Schema mit der Ganzzahldivision und der Modulo-Operation können erst die Stellen 4 bis 7 durch eine Ganzzahldivision abgetrennt und mit einer Modulo-Operation kann die Priorität bestimmt werden.
+
+``` csharp
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+        int service_id = 9123456;
+        Console.WriteLine("Service-ID: " + service_id);
+        Console.WriteLine("Priorität nach rechts verschoben (service_id / 10000): " + service_id / 10000);
+        Console.WriteLine("Priorität extrahiert ((service_id / 10000) % 10): " + ((service_id / 10000) % 10));
+	}
+}
+```
+
+Ausgabe:
+
+```
+Service-ID: 9123456
+Priorität (hier 2) nach rechts verschoben (service_id / 10000): 912
+Priorität extrahiert ((service_id / 10000) % 10): 2
+```
 
 # Aufgabe zu Arrays
 
