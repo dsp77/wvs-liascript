@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.5.0
-date:     05.11.2025
+version:  1.6.0
+date:     30.04.2026
 language: de
 narrator: Deutsch Female
 
@@ -47,6 +47,28 @@ Ein Netzwerk setzt sich zusammen aus:
  * Netzwerkadresse; die erste Adresse im Adressbereich des Netzwerks
  * Hostadressen; die Adressen für die Netzwerkknoten in dem Netzwerk
  * Broadcastadresse; die letzte Adresse in dem Netzwerk
+
+## Öffentliche und private Adressen
+
+Es werden öffentliche und private IP-Adressen unterschieden.
+
+Öffentliche IP-Adressen sind weltweit eindeutig. Das bedeutet: Jede öffentliche IP-Adresse gibt es nur einmal im gesamten Internet. Sie wird in der Regel vom Internetanbieter vergeben und sorgt dafür, dass ein Gerät oder Server im Internet erreichbar ist. Wenn etwa eine Webseite aufgerufen wird, kommuniziert das Endgerät mit einer öffentlichen IP-Adresse des Webservers.
+
+Private IP-Adressen hingegen werden nur in lokalen Netzwerken verwendet, also zum Beispiel zu Hause im WLAN oder in einem Firmennetzwerk. Diese Adressen sind nicht direkt aus dem Internet erreichbar und können deshalb in vielen verschiedenen Netzwerken gleichzeitig verwendet werden. Damit Geräte mit privaten IP-Adressen trotzdem ins Internet gelangen können, wird meist ein Router eingesetzt. Dieser übersetzt die privaten Adressen in eine öffentliche Adresse – dieses Verfahren nennt man NAT (Network Address Translation).
+
+Die privaten IPv4-Adressbereiche sind im Standard RFC 1918 festgelegt. Dazu gehören folgende Bereiche:
+
+| Bereich (CIDR) | Startadresse | Endadresse |
+|--------------------|-------------------|------------------|
+| 10.0.0.0/8     | 10.0.0.0       | 10.255.255.255   |
+| 172.16.0.0/16 |  172.16.0.0  | 172.31.255.255 |
+| 192.168.0.0/24 | 192.168.0.0  | 192.168.255.255 |
+
+Diese Bereiche sind speziell dafür reserviert, in internen Netzwerken genutzt zu werden.
+
+Zusammengefasst kann man sagen: Öffentliche IP-Adressen sind im Internet sichtbar und eindeutig, während private IP-Adressen nur innerhalb eines lokalen Netzwerks gelten und dort mehrfach verwendet werden können.
+
+Im Zusammenhang mit IPv6 gibt es sogenannte Scopes für bestimmte Adressbereiche. Siehe dazu die entsprechende Erklärung im Bereich IPv6.
 
 ## Berechnung eines Netzwerks
 
