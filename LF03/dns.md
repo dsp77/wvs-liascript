@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.6.1
-date:     03.06.2024
+version:  0.7.0
+date:     02.06.2026
 language: de
 narrator: Deutsch Female
 
@@ -109,14 +109,54 @@ Die Verbindung vom DNS-Client zum abfragenden DNS-Server ist unverschlüsselt un
 
 Um sicherzustellen, dass Abfragen wirklich von autoritativen DNS-Servern kommen und nicht gespooft sind, implementieren die autoritativen DNS-Server eine digitale Signierung der Antworten, was unter dem Begriff **DNSSEC** standardisiert ist.
 
-## DoT
+Während bei DoT und DoH die Vertraulichkeit einer DNS-Anfrage gewährleistet wird, steht bei DNSSEC die Authentizität und Integrität 
+
+## DNS over TLS (DoT)
 
 **DNS over TLS (DOT)** nutzt die **Transport Layer Security (TLS)** über Port 853, um die DNS-Anfrage über eine verschlüsselte Verbindung an den DNS-Server zu senden. Damit kann die Abfrage im Netzwerk nicht mitgelesen werden. Die Abfrage wird immer noch von dem DNS-Resolver des Betriebssystems durchgeführt.
 
-## DoH
+## DNS over HTTPS (DoH)
 
 **DNS over HTTPS (DOH)** nutzt eine HTTPS-Verbindung über Port 443, um die DNS-Anfrage über eine verschlüsselte Verbindung zu versenden. Mit DoH kann der Browser den DNS-Resolver des Betriebssystems umgehen und die Anfrage direkt zu einem DoH-unterstützenden Server senden.
 
+## DNS Security Extensions (DNSSEC)
+
+Bei DNS over HTTPS (DoH) und DNS over TLS (DoT) geht es um die Vertraulichkeit der Abfrage. Da DNS-Anfragen über UDP verbindungslos zum Server gesendet werden, kann durch Spoofing die Antwort einfach gefälscht werden. Um sicherzustellen, dass die Antwort einer DNS-Anfrage wirklich vom angefragten autoritativen DNS-Server stammt, führt DNSSEC eine Signierung der Einträge ein, über die ein anfragender DNS-Resolver die Authentizität der Antwort überprüfen kann. Hierzu wird keine Verschlüsselung verwendet.
+
+Die folgende Abbildung zeigt vereinfacht, wie mithilfe der digitalen Signatur eine Vertrauenskette zwischen dem abfragenden DNS-Resolver und dem DNS-Root-Server aufgebaut wird. Das Thema wird bei den Systemintegratoren im Lernfeld 10 bzw. 11 noch mal vertieft.
+
+![DNSSEC auf DNS-Resolver und DNS-Root-Server reduziert](./02_img/lf03-dnssec-simple.svg)
+
+### Konfiguration
+
+Wird der DNS-Resolver für die Nutzung von DNSSEC konfiguriert, erhält er den sogenannten Trust-Anchor. Das ist der öffentliche Schlüssel zum zugehörigen privaten Schlüssel, mit dem öffentliche Schlüssel der DNS-Root-Server signiert werden.
+
+Zur Überprüfung, kann auf der Webseite der IANA unter https://www.iana.org/domains/root/files der öffentliche Schlüssel heruntergeladen und mit dem im Resolver hinterlegten verglichen werden.
+
+Im Root-Server werden alle Einträge mit einem privaten Schlüssel signiert. Der zugehörige öffentliche Schlüssel liegt auch auf dem Root-Server abrufbar zur Verfügung. Dieser öffentliche Schlüssel ist mit dem privaten Schlüssel des Trust-Anchors signiert.
+
+### Ablauf der Überprüfung
+
+Die Überprüfung einer Anfrage an den Root-Server geht jetzt folgendermaßen vonstatten:
+
+1. Vor der eigentlichen DNS-Anfrage an den Root-Server fragt der Resolver den öffentlichen Schlüssel des Root-Servers und die zugehörige Signatur ab.
+2. Er bildet einen Hashwert über den empfangenen öffentlichen Schlüssel.
+3. Mithilfe des Trust-Anchors entschlüsselt er die Signatur, des empfangenen öffentlichen Schlüssels. Wenn der selbsterstellte Hashwert und der von der Signatur entschlüsselte Hashwert übereinstimmen, kam die Antwort wirklich vom entsprechenden Root-Server.
+
+Jetzt erfolgt die eigentliche DNS-Anfrage an den Root-Server
+
+1. Der DNS-Resolver stellt die Anfrage an den DNS-Root-Server.
+2. Er erhält als Antwort den entsprechenden DNS-Eintrag.
+3. Zur Antwort fragt er die zugehörige Signatur ab, die mit dem privaten Schlüssel des Root-Servers erstellt wurde.
+4. Der Resolver bildet einen Hashwert der erhaltenen DNS-Antwort.
+5. Der Resolver entschlüsselt die Signatur zur zugehörigen DNS-Antwort und vergleicht den entschlüsselten Hashwert mit dem selbst gebildeten Hashwert.
+6. Wenn beide übereinstimmen, vertraut er der erhaltenen Antwort.
+
+Die Chain of Trust besteht folgendermaßen:
+
+ - DNS-Antwort wird vertraut, weil, dem öffentlichen Schlüssel des DNS-Root-Servers vertraut wird.
+ - Dem öffentlichen Schlüssel des DNS-Root-Servers wird vertraut, weil dessen Signatur mithilfe des öffentlichen Schlüssels des Trust-Anchors bestätigt werden konnte.
+ - Der öffentliche Schlüssel des Trust-Anchors, der im Resolver installiert wurde, kann überprüft werden, indem er mit dem auf der IANA-Webseite veröffentlichten Schlüssel verglichen wird.
 
 # DNS-Übung mit Filius
 
