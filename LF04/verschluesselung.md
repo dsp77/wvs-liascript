@@ -84,7 +84,7 @@ Wichtige Eigenschaften
 
 Dem offensichtlichen Vorteil der asymmetrischen Verschlüsselung steht der Nachteil entgegen, dass sie sehr rechenaufwendig und langsam ist. Symmetrische Verschlüsselungsverfahren sind im Vergleich um Größenordnungen schneller, erfordern aber einen sicheren Schlüsselaustausch.
 
-In der Praxis nutzt mand ie Vorteile beider Verfahren, indem man sie zur hybriden Verschlüsselung kombiniert.
+In der Praxis nutzt man die Vorteile beider Verfahren, indem man sie zur hybriden Verschlüsselung kombiniert.
 
 Ablauf einer hybriden Verschlüsselung beim Aufruf einer HTTPS-Seite über einen Webbrowser.
 
