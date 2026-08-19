@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.9.1
-date:     05.09.2025
+version:  0.10.1
+date:     19.08.2026
 language: de
 narrator: Deutsch Female
 
@@ -286,6 +286,15 @@ In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauf
 Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](dns-firma-provider-dns-hierarchie.fls) kann über den Link heruntergeladen werden.
 
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
+
+### Aufgabe: DNS-Hierarchie erweitern
+
+Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensauflösung erreichen zu können.
+
+ - Mithilfe eines DNS-Tools wie z. B. **dig** alle DNS-Server der Hierarchie ermitteln. Beispiel Online-Tool: https://www.digwebinterface.com Optionen: Trace + All
+ - Aus der Antwort jeweils nur einen DNS-Server in der Simulation hinzufügen und konfigurieren
+ - Den Webserver www.amazon.com hinzufügen und konfigurieren
+ - Vom Webclient den Zugriff auf den Webserver überprüfen
 
 ## Network Address Translation (NAT)
 
