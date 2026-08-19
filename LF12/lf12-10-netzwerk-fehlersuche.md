@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.10.0
+version:  0.10.1
 date:     19.08.2026
 language: de
 narrator: Deutsch Female
@@ -287,8 +287,6 @@ Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](dns-firma-p
 
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
 
-## Network Address Translation (NAT)
-
 ### Aufgabe: DNS-Hierarchie erweitern
 
 Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensauflösung erreichen zu können.
@@ -297,6 +295,8 @@ Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensaufl
  - Aus der Antwort jeweils nur einen DNS-Server in der Simulation hinzufügen und konfigurieren
  - Den Webserver www.amazon.com hinzufügen und konfigurieren
  - Vom Webclient den Zugriff auf den Webserver überprüfen
+
+## Network Address Translation (NAT)
 
 Aufbauend auf den Informationen [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md) kann mithilfe des **Heim Routers** in Filius ein einfaches Netzwerkszenario erstellt werden, in dem Network Address Translation simuliert werden kann.
 
