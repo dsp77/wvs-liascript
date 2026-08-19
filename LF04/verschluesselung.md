@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  2.1.4
-date:     21.11.2024
+version:  2.1.5
+date:     19.08.2026
 language: de
 narrator: Deutsch Female
 
@@ -30,11 +30,11 @@ Verschlüsselung ist eine zentrale Technik, um das *Schutzziel* der **Vertraulic
  * Algorithmus der Ver- und Entschlüsselung erlaubt
  * Ein Schlüssel oder Schlüsselpaar, durch das die Geheimhaltung erfolgt
 
-Bereits 1883 wurde von Auguste Kerckhoffs ein Grundsatz der modernen Kryptographie aufgestellt. Dieser besagt, dass die Sicherheit eines Verschlüsselungsverfahrens auf der Geheimhaltung des Schlüssels und nicht des Algorithmus beruht.
+Bereits 1883 wurde von Auguste Kerckhoffs ein Grundsatz der modernen Kryptografie aufgestellt. Dieser besagt, dass die Sicherheit eines Verschlüsselungsverfahrens auf der Geheimhaltung des Schlüssels und nicht des Algorithmus beruht.
 
 In dieser Lektion werden die Konzepte von symmetrischer und asymmetrischer Verschlüsselung und deren Verbindung in der hybriden Verschlüsselung erklärt. Die Lösung des Authentizitätsproblems in der hybriden Verschlüsselung wird mithilfe von digitalen Zertifikaten nach X.509 beschrieben. Um die Handhabung der Zertifikate zu verstehen, ist die Anwendung der asymmetrischen Verschlüsselung in der digitalen Signatur nötig. Dazu sind Kenntnisse über Hashfunktionen nötig, die hier ebenfalls erklärt werden.
 
-Der Inhalt ist geglieder int:
+Der Inhalt ist gegliedert in:
 
  * Symmetrische Verschlüsselung
  * Asymmetrische Verschlüsselung
@@ -69,7 +69,7 @@ Ablauf einer asymmetrischen Verschlüsselung
 
 ![Ablauf asymmetrische Verschlüsselung](02_img/lf4_ls1_asymmetrische_verschluesselung.svg)
 
- 1. Der Empfänger erzeugt ein Schlüsselpaar, mit privaten und öffentlichen Schlüssel.
+ 1. Der Empfänger erzeugt ein Schlüsselpaar, mit privatem und öffentlichem Schlüssel.
  2. Den öffentlichen Schlüssel stellt der Empfänger öffentlich zur Verfügung.
  3. Der Sender verschlüsselt seine Nachricht mit dem öffentlichen Schlüssel des Empfängers.
  4. Das Chiffre wird vom Sender zum Empfänger übertragen.
