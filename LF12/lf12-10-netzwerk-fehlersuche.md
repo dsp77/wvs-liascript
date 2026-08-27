@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  0.10.1
-date:     19.08.2026
+version:  1.0.0
+date:     27.08.2026
 language: de
 narrator: Deutsch Female
 
@@ -279,6 +279,10 @@ Der Server `wwww.firmenserver.de` soll aus dem externen Netzwerk und den interne
 
 Die folgende Abbildung zeigt ein Netzwerkszenario aus den Informationen [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md), die aufbauend auf [Domain Name System - Teil 1](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md) aus dem Lernfeld 3 sind.
 
+![Verweis](02_img/verweis.png) [Domain Name System - Teil 1](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md)
+
+![Verweis](02_img/verweis.png) [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md)
+
 In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauflösung für lokale Ressourcen übernimmt. Anfragen die der lokale DNS-Server nicht beantworten kann, werden an den DNS-Resolver des Internet-Service-Providers `dns.telekom.de` weitergeleitet, der dann die Abfrage in der DNS-Hierarchie übernimmt.
 
 ![](../LF10/02_img/lf10-01-dns-firma-provider-dns-hierarchie.png)
@@ -299,6 +303,8 @@ Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensaufl
 ## Network Address Translation (NAT)
 
 Aufbauend auf den Informationen [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md) kann mithilfe des **Heim Routers** in Filius ein einfaches Netzwerkszenario erstellt werden, in dem Network Address Translation simuliert werden kann.
+
+![Verweis](02_img/verweis.png) [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md)
 
 Die folgende Abbildung zeigt ein einfaches Netzwerkszenario in dem Network Address Translation (NAT) umgesetzt wird.
 
