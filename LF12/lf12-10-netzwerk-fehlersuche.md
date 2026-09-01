@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
-date:     31.08.2026
+version:  1.2.0
+date:     01.09.2026
 language: de
 narrator: Deutsch Female
 
@@ -360,14 +360,150 @@ Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](dns-firma-p
 
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
 
-### Aufgabe: DNS-Hierarchie erweitern
+### `dig` - DNS lookup utility
+
+Das Kommandozeilen-Tool `dig` erlaubt Anfragen an DNS-Server zu stellen. Eine webbasierte Version gibt es unter [https://www.digwebinterface.com Optionen](https://www.digwebinterface.com).
+
+Für einen Webserver soll ermittelt werden:
+
+- die IP-Adresse des Servers
+- der autoritative DNS-Server für den Server
+- der Top-Level-DNS-Server für die zugehörige Top-Level-Domäne
+
+Vorgehensweise im Detail:
+
+ 1. Ermittle mit einem A-Record die IPv4-Adresse von www.amazon.com.
+ 2. Ermittle mit einem NS-Record für amazon.com einen autoritativen DNS-Server der Domain.
+ 3. Ermittle mit einem NS-Record für com. einen DNS-Server der Top-Level-Domain .com.
+ 4. Kontrolliere deine Ergebnisse anschließend mit einer Trace-Abfrage für www.amazon.com.
+ 5. Erweitere das vorhandene Filius-Netzwerk um die ermittelten DNS-Server und den Webserver und konfiguriere die notwendigen DNS-Einträge.
+
+Diese Schritte werden jetzt detailiert beschrieben.
+
+#### 1. IP-Adresse von www.amazon.com ermitteln
+
+ - Trage bei Hostnames or IP addresses ein: `www.amazon.com`
+ - Typ: A
+ - Namensserver: Google
+
+ Das Ergebnis sieht z. B. so aus:
+
+````
+www.amazon.com@1.1.1.1 (Cloudflare):   [Copy results to clipboard]
+
+www.amazon.com.		1754	IN	CNAME	tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com. 14 IN	CNAME	cf.47cf2c8c9-frontier.amazon.com.
+cf.47cf2c8c9-frontier.amazon.com. 14 IN	A	3.171.29.237
+````
+
+Über **CNAME** wird hier ein Loadbalancing erreicht. Kürzen Sie das ab, indem Sie dem FQDN direkt die IP-Adresse zuweisen. Also:
+
+`www.amazon.com IN A 3.171.29.237`
+
+#### 2. Autoritativen DNS-Server für Amazon ermitteln
+
+Nun soll festgestellt werden, welcher DNS-Server für die Domain zuständig ist. Dazu wird nicht `www.amazon.com`, sondern die Domain `amazon.com` abgefragt.
+
+Bei Type wird **NS** gewählt und anschließend wieder Dig ausgeführt.
+
+Im Ergebnis erscheinen NS-Records nach diesem Muster:
+
+````
+amazon.com.    ...    IN    NS    ns-1447.awsdns-52.org.
+amazon.com.    ...    IN    NS    ns-1707.awsdns-21.co.uk.
+amazon.com.    ...    IN    NS    ns-264.awsdns-33.com.
+amazon.com.    ...    IN    NS    ns-521.awsdns-01.net.
+````
+
+Diese Server sind die autoritativen Nameserver für amazon.com. Eine aktuelle Trace-Abfrage des Tools zeigt beispielsweise genau diese vier Nameserver. digwebinterface.com
+
+Für Filius genügt es normalerweise, einen dieser Server nachzubilden, zum Beispiel: `ns-521.awsdns-01.net`
+
+Darauf sollte dann die Information hinterlegt werden, die schließlich zur Auflösung von www.amazon.com benötigt wird.
+
+#### 3. DNS-Server für die Top-Level-Domain .com ermitteln
+
+Nun wird eine Stufe höher in der DNS-Hierarchie gegangen.
+Bei Hostnames or IP addresses wird eingetragen: `com.`
+
+Der Punkt am Ende verdeutlicht, dass es sich um einen vollständig qualifizierten DNS-Namen handelt.
+
+Als Type wird wieder **NS** gewählt. Anschließend Dig ausführen.
+
+Die Ausgabe enthält unter anderem:
+
+````
+com.    ...    IN    NS    a.gtld-servers.net.
+com.    ...    IN    NS    b.gtld-servers.net.
+com.    ...    IN    NS    c.gtld-servers.net.
+...
+com.    ...    IN    NS    m.gtld-servers.net.
+````
+
+Für .com gibt es also mehrere Nameserver von a.gtld-servers.net bis m.gtld-servers.net. Die aktuelle Abfrage des Tools zeigt diese 13 Server. digwebinterface.com
+
+Für das Filius-Modell kann wiederum einer davon ausgewählt werden, beispielsweise: `a.gtld-servers.net`
+
+#### 4. Die ganze Hierarchie abfragen
+
+Besonders anschaulich: die gesamte Hierarchie mit „Trace“
+
+Eintragen: `www.amazon.com`
+bei Type: **A**
+Resolver: **Cloudflare**
+und unter Options zusätzlich: **Trace** aktivieren.
+
+Bei einer Trace-Abfrage führt dig die Namensauflösung schrittweise durch. Das Ergebnis lässt sich sinngemäß so lesen:
+
+````
+Root-Server
+     │
+     │  Wer kennt .com?
+     ▼
+.com-Nameserver
+z. B. a.gtld-servers.net
+     │
+     │  Wer ist für amazon.com zuständig?
+     ▼
+Amazon-Nameserver
+z. B. ns-521.awsdns-01.net
+     │
+     │  Wie lautet www.amazon.com?
+     ▼
+www.amazon.com
+     │
+     ▼
+IP-Adresse
+````
+
+
+### Aufgabe: DNS-Hierarchie um .com erweitern
 
 Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensauflösung erreichen zu können.
 
- - Mithilfe eines DNS-Tools wie z. B. **dig** alle DNS-Server der Hierarchie ermitteln. Beispiel Online-Tool: https://www.digwebinterface.com Optionen: Trace + All
+ - Mithilfe eines DNS-Tools wie z. B. **dig** alle DNS-Server der Hierarchie ermitteln. Beispiel Online-Tool: [https://www.digwebinterface.com Optionen](https://www.digwebinterface.com): Trace + All
  - Aus der Antwort jeweils nur einen DNS-Server in der Simulation hinzufügen und konfigurieren
  - Den Webserver www.amazon.com hinzufügen und konfigurieren
+ - Die Webseite des Webservers individualisieren.
  - Vom Webclient den Zugriff auf den Webserver überprüfen
+
+Anmerkung: Für die Anpassung der Webseite können Sie über den Dateiexplorer eine HTML-Datei zum Webserver hochladen.
+
+![Filius Dateiexplorer](02_img/lf12-10-filius-dateiexplorer.png)
+
+### Aufgabe: DNS-Hierarchie um Mail-Server erweitern
+
+ - Sie sollen in das Szenario zwei E-Mail-Server hinzufügen:
+
+   - `imap.web.de`
+   - `imap.yandex.ru`
+
+ - Ermitteln Sie die autoritativen DNS-Server für die beiden Mail-Server
+ - Richten Sie die nötige Weiterleitung von dem `a.nic.de`-Server zum autoritativen DNS-Server für `imap.web.de`ein.
+ - Ermitteln Sie den Top-Level-DNS-Server für `ru.`.
+ - Richten Sie vom `a.root-server.net`eine Weiterleitung zum Top-Level-DNS-Server für `ru.` ein.
+ - Richten Sie die Weiterleitung zum autoritativen DNS-Server für `imap.yandex.ru` ein.
+ - Fügen Sie die Mail-Server zu der Simulation hinzu.
 
 ## Network Address Translation (NAT)
 
