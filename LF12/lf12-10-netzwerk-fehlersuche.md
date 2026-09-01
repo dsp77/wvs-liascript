@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.0
-date:     27.08.2026
+version:  1.1.0
+date:     31.08.2026
 language: de
 narrator: Deutsch Female
 
@@ -162,6 +162,57 @@ In den drei Routern 1, 2 und 3 ist nur die Standardroute zum zentralen Router ko
 
 Im zentralen Router werden Routingeinträge zu den Netzwerken 1, 2 und 3 konfiguriert. Jede Änderung an den Netzwerken muss so nur im zentralen Router konfiguriert werden.
 
+## Router-Szenario mit drei Standorten
+
+Die folgende Abbildung zeigt ein Netzwerkszenario aus der IHK-Prüfung der Fachinformatiker im Winter 2023. Die zugehörige [Filius-Datei kann über den Link heruntergeladen werden](./lf12-10-ihk-w-2023-si-2-ohne-routing-config-ohne-firewall.fls).
+
+
+![Dreistandort-Szenario IHK-Prüfung Winter 2023/24](./02_img/lf12-10-ihk-w-2023-si-2.png)
+
+Der Hauptstandort Berlin ist über einen Internet Service Provider (ISP) ans Internet angeschlossen. Der Router **RB1** ist sowohl für den Internetzugang, als auch für die Anbindung der Standorte Hamburg und München zuständig. Als Änderung zur Originalaufgabe ist im Router RB1 kein NAT konfiguriert.
+
+### Statisches Routing 
+
+Für das statische Routing ist es sinnvoll, das Netzwerk auf das Wesentliche zu reduzieren. Die folgende Abbildung zeigt nur noch die Router mit den Netzwerken. Der Router **RB1** wird als zentraler Router das **Gateway**.
+
+![Dreistandort-Szenario-Routing](./02_img/lf12-10-drei-standorte-netzwerke-reduziert.svg)
+
+Im Abschnitt Routerkonfiguration mit zwei Routern wurde gezeigt, dass in einem Router jedes Netzwerk, das jenseits eines anderen Routers erreichbar sein soll, in dem entsprechenden Router konfiguriert werden muss. Das würde z.B. bedeuten, dass im **Router RM** in München die Netzwerke für Hamburg, Berlin-DMZ und Berlin-LAN konfiguriert werden müssten. Um das zu vereinfachen, wird in den Routern **RM**, **RH** und **RB2** jeweils der Router **RB1** als Gateway konfiguriert. Damit lässt sich die Konfiguration der Netzwerke auf den Router **RB1** reduzieren.
+
+Die folgende Tabelle zeigt die Routingeinträge für den Router **RB1**. Vervollständigen Sie die fehlenden Next-Hop-Einträge:
+
+
+|     Netz-ID     | Subnetzmaske (CIDR)     | Next-Hop | Interface |
+|:----------------|-------------------------|----------------|---------|
+| `10.10.10.0`    | `255.255.255.240` (/28) | `10.10.10.13`  | `Eth 0` |
+| `10.1.1.0`      | `255.255.255.252` (/30) | `10.1.1.1`     | `Eth 1` |
+| `10.2.2.0`      | `255.255.255.252` (/30) | `10.2.2.1`     | `Eth 2` |
+| `172.16.32.0`   | `255.255.224.0` (/19)   | [[10.10.10.14]] | `Eth 0` |
+| `172.16.64.0`   | `255.255.252.0` (/22)   | [[10.1.1.2]]   | `Eth 1` |
+| `192.168.100.0` | `255.255.255.0` (/24)   | [[10.2.2.2]]   | `Eth 2` |
+| `203.0.113.12`  | `255.255.255.252` (/30) | `203.0.113.13` | `Eth 3` |
+| `0.0.0.0`       | `0.0.0.0` (/0)  | [[203.0.113.14]] | `Eth 3` |
+
+
+**Aufgabe 1**
+
+In der zur Verfügung gestellten Filius-Datei fehlen einige Routingeinträge beim Router **RB1**.
+
+ * Vervollständigen Sie die Routingkonfiguration für **RB1**
+ * Fügen Sie in den Routern **RM**, **RH** und **RB2** die jeweilige IP-Adresse des Routers **RB1** als Gateway hinzu.
+ * Überprüfen Sie mithilfe der Kommandozeile, dass aus den Netzwerken **Hamburg**, **München** und **Berlin LAN** folgende Ziele erreichbar sind:
+
+  * Berlin-DMZ
+  * die jeweiligen anderen Standorte
+  * der IHK-Server
+
+
+**Aufgabe 2**
+
+Beim Router **RB1** wird am Interface `Eth 3` Network Address Translation (NAT) eingeschaltet. Welche zusätzliche Konfiguration ist nötig, damit der Webserver mit Port `80` und der Dateiserver mit Port `22` vom Internet erreichbar sind?
+
+Anmerkung: Um die privaten IP-Adressen der drei Standorte im Internet zu nutzen, muss die private Adresse mithilfe von Network Address Translation (NAT) umgesetzt werden. Um das Beispiel mit Filius umzusetzen und das Routing zu üben, war der Kunstgriff ohne NAT möglich. 
+
 ## Firewall
 
 > Firewall
@@ -275,6 +326,24 @@ Der Server `wwww.firmenserver.de` soll aus dem externen Netzwerk und den interne
 
  Erstellen Sie die Firewallregeln, damit nur die gewünschten Zugriffe möglich sind.
 
+### Firewall-Konfiguration zum Drei-Standort-Szenario
+
+Die Konfiguration bezieht sich auf das vorherige Drei-Standort-Szenario.
+
+Die Router **RB1** und **RB2** sollen als Demilitarisierte Zone (DMZ) konfiguriert werden.
+
+Folgende Erreichbarkeit soll möglich sein:
+
+ * Berlin-DMZ erreichbar von: München, Hamburg, Berlin-LAN ohne Beschränkung
+ * Berlin-DMZ erreichbar vom Internet mit Port `80` auf den Webserver und Port `22` für SFTP auf den Dateiserver.
+ * München, Hamburg, Berlin-LAN erreichen sich untereinander; sind aber nicht aus dem Internet erreichbar
+ * München, Hamburg, Berlin-LAN und Berlin-DMZ erreichen das Internet
+
+**Aufgabe**
+
+ * Konfigurieren Sie die Firewalls in den Routern **RB1** und **RB2**, um das oben beschriebene Zugriffsszenario zu ermöglichen.
+
+
 ## Domain Name System (DNS)
 
 Die folgende Abbildung zeigt ein Netzwerkszenario aus den Informationen [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md), die aufbauend auf [Domain Name System - Teil 1](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF03/dns.md) aus dem Lernfeld 3 sind.
@@ -352,71 +421,4 @@ Vervollständigen Sie die NAT-Tabelle, damit der Webserer `www.firma.de` aus dem
 Für die Namensauflösung soll im DNS-Server `dns.de` ein Eintrag für `www.firma.de` eingetragen werden. Vervollständigen Sie das `A-Record`:
 
  * `www.firma.de` A [[42.0.0.10]]
-
-## Router-Szenario mit drei Standorten
-
-Die folgende Abbildung zeigt ein Netzwerkszenario aus der IHK-Prüfung der Fachinformatiker im Winter 2023. Die zugehörige [Filius-Datei kann über den Link heruntergeladen werden](./lf12-10-ihk-w-2023-si-2-ohne-routing-config-ohne-firewall.fls).
-
-
-![Dreistandort-Szenario IHK-Prüfung Winter 2023/24](./02_img/lf12-10-ihk-w-2023-si-2.png)
-
-Der Hauptstandort Berlin ist über einen Internet Service Provider (ISP) ans Internet angeschlossen. Der Router **RB1** ist sowohl für den Internetzugang, als auch für die Anbindung der Standorte Hamburg und München zuständig. Als Änderung zur Originalaufgabe ist im Router RB1 kein NAT konfiguriert.
-
-### Statisches Routing 
-
-Für das statische Routing ist es sinnvoll, das Netzwerk auf das Wesentliche zu reduzieren. Die folgende Abbildung zeigt nur noch die Router mit den Netzwerken. Der Router **RB1** wird als zentraler Router das **Gateway**.
-
-![Dreistandort-Szenario-Routing](./02_img/lf12-10-drei-standorte-netzwerke-reduziert.svg)
-
-Im Abschnitt Routerkonfiguration mit zwei Routern wurde gezeigt, dass in einem Router jedes Netzwerk, das jenseits eines anderen Routers erreichbar sein soll, in dem entsprechenden Router konfiguriert werden muss. Das würde z.B. bedeuten, dass im **Router RM** in München die Netzwerke für Hamburg, Berlin-DMZ und Berlin-LAN konfiguriert werden müssten. Um das zu vereinfachen, wird in den Routern **RM**, **RH** und **RB2** jeweils der Router **RB1** als Gateway konfiguriert. Damit lässt sich die Konfiguration der Netzwerke auf den Router **RB1** reduzieren.
-
-Die folgende Tabelle zeigt die Routingeinträge für den Router **RB1**. Vervollständigen Sie die fehlenden Next-Hop-Einträge:
-
-
-|     Netz-ID     | Subnetzmaske (CIDR)     | Next-Hop | Interface |
-|:----------------|-------------------------|----------------|---------|
-| `10.10.10.0`    | `255.255.255.240` (/28) | `10.10.10.13`  | `Eth 0` |
-| `10.1.1.0`      | `255.255.255.252` (/30) | `10.1.1.1`     | `Eth 1` |
-| `10.2.2.0`      | `255.255.255.252` (/30) | `10.2.2.1`     | `Eth 2` |
-| `172.16.32.0`   | `255.255.224.0` (/19)   | [[10.10.10.14]] | `Eth 0` |
-| `172.16.64.0`   | `255.255.252.0` (/22)   | [[10.1.1.2]]   | `Eth 1` |
-| `192.168.100.0` | `255.255.255.0` (/24)   | [[10.2.2.2]]   | `Eth 2` |
-| `203.0.113.12`  | `255.255.255.252` (/30) | `203.0.113.13` | `Eth 3` |
-| `0.0.0.0`       | `0.0.0.0` (/0)  | [[203.0.113.14]] | `Eth 3` |
-
-
-**Aufgabe 1**
-
-In der zur Verfügung gestellten Filius-Datei fehlen einige Routingeinträge beim Router **RB1**.
-
- * Vervollständigen Sie die Routingkonfiguration für **RB1**
- * Fügen Sie in den Routern **RM**, **RH** und **RB2** die jeweilige IP-Adresse des Routers **RB1** als Gateway hinzu.
- * Überprüfen Sie mithilfe der Kommandozeile, dass aus den Netzwerken **Hamburg**, **München** und **Berlin LAN** folgende Ziele erreichbar sind:
-
-  * Berlin-DMZ
-  * die jeweiligen anderen Standorte
-  * der IHK-Server
-
-
-**Aufgabe 2**
-
-Beim Router **RB1** wird am Interface `Eth 3` Network Address Translation (NAT) eingeschaltet. Welche zusätzliche Konfiguration ist nötig, damit der Webserver mit Port `80` und der Dateiserver mit Port `22` vom Internet erreichbar sind?
-
-Anmerkung: Um die privaten IP-Adressen der drei Standorte im Internet zu nutzen, muss die private Adresse mithilfe von Network Address Translation (NAT) umgesetzt werden. Um das Beispiel mit Filius umzusetzen und das Routing zu üben, war der Kunstgriff ohne NAT möglich.
-
-### Firewall-Konfiguration
-
-Die Router **RB1** und **RB2** sollen als Demilitarisierte Zone (DMZ) konfiguriert werden.
-
-Folgende Erreichbarkeit soll möglich sein:
-
- * Berlin-DMZ erreichbar von: München, Hamburg, Berlin-LAN ohne Beschränkung
- * Berlin-DMZ erreichbar vom Internet mit Port `80` auf den Webserver und Port `22` für SFTP auf den Dateiserver.
- * München, Hamburg, Berlin-LAN erreichen sich untereinander; sind aber nicht aus dem Internet erreichbar
- * München, Hamburg, Berlin-LAN und Berlin-DMZ erreichen das Internet
-
-**Aufgabe**
-
- * Konfigurieren Sie die Firewalls in den Routern **RB1** und **RB2**, um das oben beschriebene Zugriffsszenario zu ermöglichen.
- 
 
