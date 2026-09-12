@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2.0
-date:     01.09.2026
+version:  1.3.0
+date:     12.09.2026
 language: de
 narrator: Deutsch Female
 
@@ -182,8 +182,8 @@ Im Abschnitt Routerkonfiguration mit zwei Routern wurde gezeigt, dass in einem R
 Die folgende Tabelle zeigt die Routingeinträge für den Router **RB1**. Vervollständigen Sie die fehlenden Next-Hop-Einträge:
 
 
-|     Netz-ID     | Subnetzmaske (CIDR)     | Next-Hop | Interface |
-|:----------------|-------------------------|----------------|---------|
+|     Netz-ID     |   Subnetzmaske (CIDR)   |     Next-Hop       |   Interface   |
+|:----------------|-------------------------|--------------------|---------|
 | `10.10.10.0`    | `255.255.255.240` (/28) | `10.10.10.13`  | `Eth 0` |
 | `10.1.1.0`      | `255.255.255.252` (/30) | `10.1.1.1`     | `Eth 1` |
 | `10.2.2.0`      | `255.255.255.252` (/30) | `10.2.2.1`     | `Eth 2` |
@@ -211,7 +211,68 @@ In der zur Verfügung gestellten Filius-Datei fehlen einige Routingeinträge bei
 
 Beim Router **RB1** wird am Interface `Eth 3` Network Address Translation (NAT) eingeschaltet. Welche zusätzliche Konfiguration ist nötig, damit der Webserver mit Port `80` und der Dateiserver mit Port `22` vom Internet erreichbar sind?
 
-Anmerkung: Um die privaten IP-Adressen der drei Standorte im Internet zu nutzen, muss die private Adresse mithilfe von Network Address Translation (NAT) umgesetzt werden. Um das Beispiel mit Filius umzusetzen und das Routing zu üben, war der Kunstgriff ohne NAT möglich. 
+Anmerkung: Um die privaten IP-Adressen der drei Standorte im Internet zu nutzen, muss die private Adresse mithilfe von Network Address Translation (NAT) umgesetzt werden. Um das Beispiel mit Filius umzusetzen und das Routing zu üben, war der Kunstgriff ohne NAT möglich.
+
+## Network Address Translation (NAT)
+
+Aufbauend auf den Informationen [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md) kann mithilfe des **Heim Routers** in Filius ein einfaches Netzwerkszenario erstellt werden, in dem Network Address Translation simuliert werden kann.
+
+![Verweis](02_img/verweis.png) [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md)
+
+Die folgende Abbildung zeigt ein einfaches Netzwerkszenario in dem Network Address Translation (NAT) umgesetzt wird.
+
+![Einfaches Netzwerkszenario mit NAT](02_img/lf12-10-nat.png)
+
+Die entsprechende [Filius-Datei zu NAT](./02-nat.fls) kann über den Link heruntergeladen werden.
+
+### Aufgabe: IP-Paketvergleich LAN-WAN-Seite am NAT-Router
+
+Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysieren Sie den Datenverkehr am Internet-Router.
+
+ * Vergleichen Sie das **erste DNS-Paket** am LAN- und am WAN-Port des Internet-Routers füllen Sie folgende Lücken aus:
+<!--data-type="none"-->
+|             |      LAN-Seite    |   WAN-Seite   |
+|:------------|:-----------------:|:-------------:|
+| Quell-IP    | [[192.168.0.100]] | [[42.0.0.10]] |
+| Ziel-IP     | [[42.0.0.53]]     | [[42.0.0.53]] |
+| Quell-Port  | `49152`           | `50100`       |
+| Ziel-Port   | [[53]]            | [[53]]        |
+| TTL         | [[64]]            | [[63]]        |
+
+
+ * Der Quell-Port mag nicht mit Ihrem Quell-Port übereinstimmen, da er zufällig gebildet wird. Diskutieren Sie, warum auf der LAN- und der WAN-Seite hier unterschiedliche Werte zu finden sind.
+ * Diskutieren Sie, warum der TTL-Wert zwischen LAN- und WAN-Seite unterschiedlich ist.
+ * Vergleichen Sie entsprechend das erste HTTP-Paket zwischen der LAN- und WAN-Seite.
+
+### Aufgabe: Zwei Clients im LAN
+
+ - Fügen Sie einen zweiten Client mit der IP `192.168.0.200` in das lokale Netzwerk hinzu
+Führen Sie mit beiden Clients über die Befehlszeile das Kommando `nslookup www.domain.de` aus.
+ - Vergleichen Sie die DNS-Anfrage von Client 1 und 2 am NAT-Router zwischen der LAN‑ und WAN-Seite
+ - Was beobachten Sie in Bezug auf den geöffneten Quellport der Clients und des Routers auf der WAN-Seite?
+ - Diskutieren Sie, wenn beide Clients zufällig den gleichen Quellport öffnen, welche Ports der Router auf der WAN-Seite als Quellports öffnet.
+
+### Destination NAT (DNAT)
+
+Ein Firmennetzwerk ist über einen NAT-Router mit dem Internet verbunden. In dem privaten Netzwerk soll ein Webserver betrieben werden, der aus dem Internet erreichbar ist. Der NAT-Router hat eine feste IP-Adresse im Internet.
+
+Die folgende Abbildung zeigt das Netzwerk[^1]. Die [Filiusdatei](./02-dnat.fls) kann heruntergeladen werden.
+
+![DNAT](./02_img/lf12-10-dnat.png)
+
+
+[^1]: Erfordert Filius ab Version 2.9
+
+Vervollständigen Sie die NAT-Tabelle, damit der Webserer `www.firma.de` aus dem Internet erreichbar ist.
+
+| Protokoll | Port (WAN) | LAN-Adresse | Port (LAN) |
+|:----------|:----------:|:-----------:|:----------:|
+| [[TCP]]   | [[80]]   | [[192.168.0.10]] | [[80]]  |
+
+Für die Namensauflösung soll im DNS-Server `dns.de` ein Eintrag für `www.firma.de` eingetragen werden. Vervollständigen Sie das `A-Record`:
+
+ * `www.firma.de` A [[42.0.0.10]]
+
 
 ## Firewall
 
@@ -504,57 +565,4 @@ Anmerkung: Für die Anpassung der Webseite können Sie über den Dateiexplorer e
  - Richten Sie vom `a.root-server.net`eine Weiterleitung zum Top-Level-DNS-Server für `ru.` ein.
  - Richten Sie die Weiterleitung zum autoritativen DNS-Server für `imap.yandex.ru` ein.
  - Fügen Sie die Mail-Server zu der Simulation hinzu.
-
-## Network Address Translation (NAT)
-
-Aufbauend auf den Informationen [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md) kann mithilfe des **Heim Routers** in Filius ein einfaches Netzwerkszenario erstellt werden, in dem Network Address Translation simuliert werden kann.
-
-![Verweis](02_img/verweis.png) [Network Address Translation (NAT)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-40-nat.md)
-
-Die folgende Abbildung zeigt ein einfaches Netzwerkszenario in dem Network Address Translation (NAT) umgesetzt wird.
-
-![Einfaches Netzwerkszenario mit NAT](02_img/lf12-10-nat.png)
-
-Die entsprechende [Filius-Datei zu NAT](./02-nat.fls) kann über den Link heruntergeladen werden.
-
-### Aufgabe
-
-Rufen Sie mit dem Webbrowser von NB1 die Adresse `www.domain.de` auf und Analysieren Sie den Datenverkehr am Internet-Router.
-
- * Vergleichen Sie das **erste DNS-Paket** am LAN- und am WAN-Port des Internet-Routers füllen Sie folgende Lücken aus:
-
-|             |      LAN-Seite    |   WAN-Seite   |
-|:------------|:-----------------:|:-------------:|
-| Quell-IP    | [[192.168.0.100]] | [[42.0.0.10]] |
-| Ziel-IP     | [[42.0.0.53]]     | [[42.0.0.53]] |
-| Quell-Port  | `49152`           | `50100`       |
-| Ziel-Port   | [[53]]            | [[53]]        |
-| TTL         | [[64]]            | [[63]]        |
-
-
- * Der Quell-Port mag nicht mit Ihrem Quell-Port übereinstimmen, da er zufällig gebildet wird. Diskutieren Sie, warum auf der LAN- und der WAN-Seite hier unterschiedliche Werte zu finden sind.
- * Diskutieren Sie, warum der TTL-Wert zwischen LAN- und WAN-Seite unterschiedlich ist.
- * Vergleichen Sie entsprechend das erste HTTP-Paket zwischen der LAN- und WAN-Seite.
-
-
-### Destination NAT (DNAT)
-
-Ein Firmennetzwerk ist über einen NAT-Router mit dem Internet verbunden. In dem privaten Netzwerk soll ein Webserver betrieben werden, der aus dem Internet erreichbar ist. Der NAT-Router hat eine feste IP-Adresse im Internet.
-
-Die folgende Abbildung zeigt das Netzwerk[^1]. Die [Filiusdatei](./02-dnat.fls) kann heruntergeladen werden.
-
-![DNAT](./02_img/lf12-10-dnat.png)
-
-
-[^1]: Erfordert Filius ab Version 2.9
-
-Vervollständigen Sie die NAT-Tabelle, damit der Webserer `www.firma.de` aus dem Internet erreichbar ist.
-
-| Protokoll | Port (WAN) | LAN-Adresse | Port (LAN) |
-|:----------|:----------:|:-----------:|:----------:|
-| [[TCP]]   | [[80]]   | [[192.168.0.10]] | [[80]]  |
-
-Für die Namensauflösung soll im DNS-Server `dns.de` ein Eintrag für `www.firma.de` eingetragen werden. Vervollständigen Sie das `A-Record`:
-
- * `www.firma.de` A [[42.0.0.10]]
 
