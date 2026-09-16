@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.2
+version:  1.4.0
 date:     16.09.2026
 language: de
 narrator: Deutsch Female
@@ -161,6 +161,59 @@ Die Abbildung zeigt den zentralen Router, mit den drei Routern 1, 2 und 3, an de
 In den drei Routern 1, 2 und 3 ist nur die Standardroute zum zentralen Router konfiguriert. Jede Änderung im Netzwerk erfordert keine Änderung in den drei Routern.
 
 Im zentralen Router werden Routingeinträge zu den Netzwerken 1, 2 und 3 konfiguriert. Jede Änderung an den Netzwerken muss so nur im zentralen Router konfiguriert werden.
+
+### Traceroute
+
+traceroute ist ein Netzwerkwerkzeug, mit dem der Pfad von IP-Paketen zu einem Zielsystem untersucht werden kann. Es zeigt die Router bzw. Hops, die ein Paket auf dem Weg zum Ziel durchläuft, sowie die ungefähren Antwortzeiten.
+
+Benutzung
+
+Unter Linux/macOS:
+
+traceroute example.com
+
+Unter Windows heißt das entsprechende Werkzeug tracert:
+
+tracert example.com
+
+Funktionsweise mit TTL
+
+Traceroute nutzt das TTL-Feld (Time To Live) im IP-Header. Jeder Router, der ein IP-Paket weiterleitet, reduziert dessen TTL um 1.
+
+Traceroute sendet zunächst ein Paket mit:
+
+TTL = 1
+
+Der erste Router reduziert die TTL auf 0, verwirft das Paket und sendet normalerweise eine ICMP Time Exceeded-Nachricht zurück. Dadurch erfährt Traceroute die Adresse des ersten Routers.
+
+Anschließend wird die TTL schrittweise erhöht:
+
+TTL = 1  → erster Router
+TTL = 2  → zweiter Router
+TTL = 3  → dritter Router
+...
+
+Dieser Vorgang wird wiederholt, bis das eigentliche Ziel erreicht oder eine maximale Anzahl von Hops überschritten wird.
+
+Die TTL stellt bei IP-Paketen praktisch einen Hop-Zähler dar und verhindert unter anderem, dass Pakete bei Routing-Schleifen unbegrenzt im Netzwerk zirkulieren.
+
+Ausgabeformat
+
+Eine typische Ausgabe kann beispielsweise so aussehen:
+
+traceroute to example.com (93.184.216.34), 30 hops max
+1  192.168.1.1     1.2 ms   1.0 ms   1.1 ms
+2  10.20.0.1       8.4 ms   8.1 ms   8.3 ms
+3  203.0.113.10   15.2 ms  14.8 ms  15.0 ms
+4  93.184.216.34  22.1 ms  21.9 ms  22.0 ms
+
+Dabei steht jede Zeile für einen Hop. Typischerweise werden angezeigt:
+
+* die Nummer des Hops,
+* die IP-Adresse bzw. der Hostname des Routers,
+* mehrere gemessene Round-Trip-Zeiten (RTT) in Millisekunden.
+
+Eine Ausgabe wie * * * bedeutet, dass innerhalb des vorgesehenen Zeitlimits keine Antwort empfangen wurde. Das kann beispielsweise durch Firewalls, Paketfilter oder Router verursacht werden, die entsprechende ICMP-Antworten nicht senden.
 
 ## Router-Szenario mit drei Standorten
 
