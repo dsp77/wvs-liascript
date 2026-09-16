@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3.0
-date:     12.09.2026
+version:  1.3.1
+date:     16.09.2026
 language: de
 narrator: Deutsch Female
 
@@ -542,7 +542,7 @@ IP-Adresse
 
 Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensauflösung erreichen zu können.
 
- - Mithilfe eines DNS-Tools wie z. B. **dig** alle DNS-Server der Hierarchie ermitteln. Beispiel Online-Tool: [https://www.digwebinterface.com Optionen](https://www.digwebinterface.com): Trace + All
+ - Mithilfe eines DNS-Tools wie z. B. **dig** alle DNS-Server der Hierarchie ermitteln. Beispiel Online-Tool: [https://www.digwebinterface.com Optionen](https://www.digwebinterface.com): Trace
  - Aus der Antwort jeweils nur einen DNS-Server in der Simulation hinzufügen und konfigurieren
  - Den Webserver www.amazon.com hinzufügen und konfigurieren
  - Die Webseite des Webservers individualisieren.
