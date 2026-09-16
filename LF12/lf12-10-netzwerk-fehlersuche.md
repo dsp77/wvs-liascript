@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.5.0
+version:  1.5.1
 date:     16.09.2026
 language: de
 narrator: Deutsch Female
@@ -164,34 +164,30 @@ Im zentralen Router werden Routingeinträge zu den Netzwerken 1, 2 und 3 konfigu
 
 ### Traceroute
 
-traceroute ist ein Netzwerkwerkzeug, mit dem der Pfad von IP-Paketen zu einem Zielsystem untersucht werden kann. Es zeigt die Router bzw. Hops, die ein Paket auf dem Weg zum Ziel durchläuft, sowie die ungefähren Antwortzeiten.
+`traceroute` ist ein Netzwerkwerkzeug, mit dem der Pfad von IP-Paketen zu einem Zielsystem untersucht werden kann. Es zeigt die Router bzw. Hops, die ein Paket auf dem Weg zum Ziel durchläuft, sowie die ungefähren Antwortzeiten.
 
 Benutzung
 
-Unter Linux/macOS:
+Unter Linux/macOS: `traceroute example.com`
 
-traceroute example.com
-
-Unter Windows heißt das entsprechende Werkzeug tracert:
-
-tracert example.com
+Unter Windows heißt das entsprechende Werkzeug `tracert`: `tracert example.com`
 
 Funktionsweise mit TTL
 
 Traceroute nutzt das TTL-Feld (Time To Live) im IP-Header. Jeder Router, der ein IP-Paket weiterleitet, reduziert dessen TTL um 1.
 
-Traceroute sendet zunächst ein Paket mit:
-
-TTL = 1
+Traceroute sendet zunächst ein Paket mit: `TTL = 1`
 
 Der erste Router reduziert die TTL auf 0, verwirft das Paket und sendet normalerweise eine ICMP Time Exceeded-Nachricht zurück. Dadurch erfährt Traceroute die Adresse des ersten Routers.
 
 Anschließend wird die TTL schrittweise erhöht:
 
+````
 TTL = 1  → erster Router
 TTL = 2  → zweiter Router
 TTL = 3  → dritter Router
 ...
+````
 
 Dieser Vorgang wird wiederholt, bis das eigentliche Ziel erreicht oder eine maximale Anzahl von Hops überschritten wird.
 
@@ -201,11 +197,13 @@ Ausgabeformat
 
 Eine typische Ausgabe kann beispielsweise so aussehen:
 
+````
 traceroute to example.com (93.184.216.34), 30 hops max
 1  192.168.1.1     1.2 ms   1.0 ms   1.1 ms
 2  10.20.0.1       8.4 ms   8.1 ms   8.3 ms
 3  203.0.113.10   15.2 ms  14.8 ms  15.0 ms
 4  93.184.216.34  22.1 ms  21.9 ms  22.0 ms
+````
 
 Dabei steht jede Zeile für einen Hop. Typischerweise werden angezeigt:
 
@@ -474,41 +472,41 @@ Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](dns-firma-p
 
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
 
-### dig und nslookup
+### `dig` und `nslookup`
 
-dig (Domain Information Groper) und nslookup (Name Server Lookup) sind Kommandozeilenwerkzeuge zur Durchführung von DNS-Abfragen. Mit ihnen kann beispielsweise ermittelt werden, welche IP-Adresse zu einem Domainnamen gehört oder welche DNS-Einträge für eine Domain hinterlegt sind.
+`dig` (Domain Information Groper) und `nslookup` (Name Server Lookup) sind Kommandozeilenwerkzeuge zur Durchführung von DNS-Abfragen. Mit ihnen kann beispielsweise ermittelt werden, welche IP-Adresse zu einem Domainnamen gehört oder welche DNS-Einträge für eine Domain hinterlegt sind.
 
-dig
+#### `dig`
 
-dig bietet eine detaillierte Ausgabe und eignet sich besonders zur Analyse und Fehlersuche von DNS-Problemen.
+`dig` bietet eine detaillierte Ausgabe und eignet sich besonders zur Analyse und Fehlersuche von DNS-Problemen.
 
 Benutzung
 
-Eine einfache DNS-Abfrage:
-
-dig example.com
+Eine einfache DNS-Abfrage: `dig example.com`
 
 Ein bestimmter Record-Typ kann ebenfalls abgefragt werden:
 
+````
 dig example.com A
 dig example.com AAAA
 dig example.com MX
 dig example.com TXT
+````
 
-Ein bestimmter DNS-Server lässt sich mit @ angeben:
-
-dig @8.8.8.8 example.com
+Ein bestimmter DNS-Server lässt sich mit @ angeben: `dig @8.8.8.8 example.com`
 
 Ausgabeformat
 
 Eine typische, gekürzte Ausgabe sieht beispielsweise so aus:
 
+````
 ;; QUESTION SECTION:
 ;example.com.        IN  A
 ;; ANSWER SECTION:
 example.com.   300   IN  A   93.184.216.34
 ;; Query time: 24 msec
 ;; SERVER: 192.168.1.1#53
+````
 
 Die wichtigsten Bereiche sind:
 
@@ -518,37 +516,35 @@ Die wichtigsten Bereiche sind:
 * Query time – benötigte Zeit für die DNS-Abfrage.
 * SERVER – DNS-Server, der die Anfrage beantwortet hat.
 
-Mit +short lässt sich die Ausgabe auf das Wesentliche reduzieren:
+Mit `+short` lässt sich die Ausgabe auf das Wesentliche reduzieren: `dig +short example.com`
 
-dig +short example.com
+#### `nslookup`
 
-nslookup
-
-nslookup erfüllt einen ähnlichen Zweck wie dig, liefert jedoch meist eine einfachere und kompaktere Ausgabe.
+`nslookup` erfüllt einen ähnlichen Zweck wie `dig`, liefert jedoch meist eine einfachere und kompaktere Ausgabe.
 
 Benutzung
 
-Eine einfache Abfrage:
+Eine einfache Abfrage: `nslookup example.com`
 
-nslookup example.com
-
-Ein bestimmter DNS-Server kann als zweites Argument angegeben werden:
-
-nslookup example.com 8.8.8.8
+Ein bestimmter DNS-Server kann als zweites Argument angegeben werden: `nslookup example.com 8.8.8.8`
 
 Bestimmte Record-Typen können ebenfalls abgefragt werden:
 
+````
 nslookup -type=MX example.com
 nslookup -type=TXT example.com
+````
 
 Ausgabeformat
 
 Eine typische Ausgabe sieht beispielsweise so aus:
 
+````
 Server:     192.168.1.1
 Address:    192.168.1.1#53
 Name:       example.com
 Address:    93.184.216.34
+````
 
 Dabei bezeichnet Server den verwendeten DNS-Resolver. Unter Name und Address wird das Ergebnis der Namensauflösung angezeigt.
 
@@ -556,6 +552,7 @@ Funktionsweise von DNS-Abfragen
 
 Beide Werkzeuge senden eine DNS-Anfrage an einen DNS-Resolver. Bei einer normalen Namensauflösung wird beispielsweise nach einem A-Record für eine IPv4-Adresse oder einem AAAA-Record für eine IPv6-Adresse gefragt.
 
+````
 Client
    │
    │ DNS Query: example.com A?
@@ -565,6 +562,7 @@ DNS-Resolver
    │ DNS Response
    ▼
 93.184.216.34
+````
 
 Besitzt der Resolver die Antwort bereits in seinem Cache, kann er sie direkt zurückgeben. Andernfalls muss er die benötigten Informationen über die DNS-Hierarchie ermitteln, typischerweise über Root-, TLD- und autoritative Nameserver.
 
@@ -572,7 +570,7 @@ Die TTL (Time To Live) eines DNS-Records gibt dabei an, wie lange ein Resolver d
 
 Die DNS-TTL ist nicht mit der IP-TTL von traceroute gleichzusetzen. Bei DNS beschreibt sie die Cache-Lebensdauer eines Records, während die IP-TTL die maximale Anzahl von Hops eines Pakets begrenzt.
 
-### `dig` - DNS lookup utility
+### Mit `dig` DNS-Hierarchie erkunden
 
 Das Kommandozeilen-Tool `dig` erlaubt Anfragen an DNS-Server zu stellen. Eine webbasierte Version gibt es unter [https://www.digwebinterface.com Optionen](https://www.digwebinterface.com).
 
@@ -584,10 +582,10 @@ Für einen Webserver soll ermittelt werden:
 
 Vorgehensweise im Detail:
 
- 1. Ermittle mit einem A-Record die IPv4-Adresse von www.amazon.com.
- 2. Ermittle mit einem NS-Record für amazon.com einen autoritativen DNS-Server der Domain.
- 3. Ermittle mit einem NS-Record für com. einen DNS-Server der Top-Level-Domain .com.
- 4. Kontrolliere deine Ergebnisse anschließend mit einer Trace-Abfrage für www.amazon.com.
+ 1. Ermittle mit einem **A-Record** die IPv4-Adresse von `www.amazon.com`.
+ 2. Ermittle mit einem **NS-Record** für `amazon.com` einen autoritativen DNS-Server der Domain.
+ 3. Ermittle mit einem NS-Record für `com.` einen DNS-Server der Top-Level-Domain `com.`
+ 4. Kontrolliere deine Ergebnisse anschließend mit einer Trace-Abfrage für `www.amazon.com.`
  5. Erweitere das vorhandene Filius-Netzwerk um die ermittelten DNS-Server und den Webserver und konfiguriere die notwendigen DNS-Einträge.
 
 Diese Schritte werden jetzt detailiert beschrieben.
@@ -652,7 +650,7 @@ com.    ...    IN    NS    c.gtld-servers.net.
 com.    ...    IN    NS    m.gtld-servers.net.
 ````
 
-Für .com gibt es also mehrere Nameserver von a.gtld-servers.net bis m.gtld-servers.net. Die aktuelle Abfrage des Tools zeigt diese 13 Server. digwebinterface.com
+Für `com.` gibt es also mehrere Nameserver von `a.gtld-servers.net` bis `m.gtld-servers.net.` Die aktuelle Abfrage des Tools zeigt diese 13 Server.
 
 Für das Filius-Modell kann wiederum einer davon ausgewählt werden, beispielsweise: `a.gtld-servers.net`
 
@@ -688,15 +686,14 @@ www.amazon.com
 IP-Adresse
 ````
 
-
 ### Aufgabe: DNS-Hierarchie um .com erweitern
 
-Erweitern Sie die DNS-Hierarchie, um den Webserver www.amazon.com mit Namensauflösung erreichen zu können.
+Erweitern Sie die DNS-Hierarchie, um den Webserver `www.amazon.com` mit Namensauflösung erreichen zu können.
 
  - Mithilfe eines DNS-Tools wie z. B. **dig** alle DNS-Server der Hierarchie ermitteln. Beispiel Online-Tool: [https://www.digwebinterface.com](https://www.digwebinterface.com): 
    - Option: Trace
  - Aus der Antwort jeweils nur einen DNS-Server in der Simulation hinzufügen und konfigurieren
- - Den Webserver www.amazon.com hinzufügen und konfigurieren
+ - Den Webserver `www.amazon.com` hinzufügen und konfigurieren
  - Die Webseite des Webservers individualisieren.
  - Vom Webclient den Zugriff auf den Webserver überprüfen
 
@@ -717,4 +714,7 @@ Anmerkung: Für die Anpassung der Webseite können Sie über den Dateiexplorer e
  - Richten Sie vom `a.root-server.net`eine Weiterleitung zum Top-Level-DNS-Server für `ru.` ein.
  - Richten Sie die Weiterleitung zum autoritativen DNS-Server für `imap.yandex.ru` ein.
  - Fügen Sie die Mail-Server zu der Simulation hinzu.
+ - Richten Sie zwei Heimnetzwerke ein, die mithilfe von NAT-Router an den ISP angebunden sind.
+ - Richten Sie jeweils ein `user1@web.de` und `user1@yandex.ru` ein.
+ - Senden Sie eine E-Mail von `user1@web.de` an `user1@yandex.ru` und überprüfen Sie die richtige Funktion.
 
