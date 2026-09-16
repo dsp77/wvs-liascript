@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.4.0
+version:  1.5.0
 date:     16.09.2026
 language: de
 narrator: Deutsch Female
@@ -473,6 +473,104 @@ In dem Szenario ist ein Firmennetzwerk mit eigenem DNS-Server, der die Namensauf
 Die zugehörige [Filius-Datei mit DNS-Abfrage in der DNS-Hierarchie](dns-firma-provider-dns-hierarchie.fls) kann über den Link heruntergeladen werden.
 
 Nutzen Sie die Aufgaben im [Domain Name System - Teil 2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF10/lf10-01-dns2.md) um das oben gezeigte Sezenario zu verstehen.
+
+### dig und nslookup
+
+dig (Domain Information Groper) und nslookup (Name Server Lookup) sind Kommandozeilenwerkzeuge zur Durchführung von DNS-Abfragen. Mit ihnen kann beispielsweise ermittelt werden, welche IP-Adresse zu einem Domainnamen gehört oder welche DNS-Einträge für eine Domain hinterlegt sind.
+
+dig
+
+dig bietet eine detaillierte Ausgabe und eignet sich besonders zur Analyse und Fehlersuche von DNS-Problemen.
+
+Benutzung
+
+Eine einfache DNS-Abfrage:
+
+dig example.com
+
+Ein bestimmter Record-Typ kann ebenfalls abgefragt werden:
+
+dig example.com A
+dig example.com AAAA
+dig example.com MX
+dig example.com TXT
+
+Ein bestimmter DNS-Server lässt sich mit @ angeben:
+
+dig @8.8.8.8 example.com
+
+Ausgabeformat
+
+Eine typische, gekürzte Ausgabe sieht beispielsweise so aus:
+
+;; QUESTION SECTION:
+;example.com.        IN  A
+;; ANSWER SECTION:
+example.com.   300   IN  A   93.184.216.34
+;; Query time: 24 msec
+;; SERVER: 192.168.1.1#53
+
+Die wichtigsten Bereiche sind:
+
+* QUESTION SECTION – zeigt die gestellte DNS-Anfrage.
+* ANSWER SECTION – enthält die gefundenen DNS-Records.
+* TTL – gibt an, wie lange der Record noch gecacht werden darf.
+* Query time – benötigte Zeit für die DNS-Abfrage.
+* SERVER – DNS-Server, der die Anfrage beantwortet hat.
+
+Mit +short lässt sich die Ausgabe auf das Wesentliche reduzieren:
+
+dig +short example.com
+
+nslookup
+
+nslookup erfüllt einen ähnlichen Zweck wie dig, liefert jedoch meist eine einfachere und kompaktere Ausgabe.
+
+Benutzung
+
+Eine einfache Abfrage:
+
+nslookup example.com
+
+Ein bestimmter DNS-Server kann als zweites Argument angegeben werden:
+
+nslookup example.com 8.8.8.8
+
+Bestimmte Record-Typen können ebenfalls abgefragt werden:
+
+nslookup -type=MX example.com
+nslookup -type=TXT example.com
+
+Ausgabeformat
+
+Eine typische Ausgabe sieht beispielsweise so aus:
+
+Server:     192.168.1.1
+Address:    192.168.1.1#53
+Name:       example.com
+Address:    93.184.216.34
+
+Dabei bezeichnet Server den verwendeten DNS-Resolver. Unter Name und Address wird das Ergebnis der Namensauflösung angezeigt.
+
+Funktionsweise von DNS-Abfragen
+
+Beide Werkzeuge senden eine DNS-Anfrage an einen DNS-Resolver. Bei einer normalen Namensauflösung wird beispielsweise nach einem A-Record für eine IPv4-Adresse oder einem AAAA-Record für eine IPv6-Adresse gefragt.
+
+Client
+   │
+   │ DNS Query: example.com A?
+   ▼
+DNS-Resolver
+   │
+   │ DNS Response
+   ▼
+93.184.216.34
+
+Besitzt der Resolver die Antwort bereits in seinem Cache, kann er sie direkt zurückgeben. Andernfalls muss er die benötigten Informationen über die DNS-Hierarchie ermitteln, typischerweise über Root-, TLD- und autoritative Nameserver.
+
+Die TTL (Time To Live) eines DNS-Records gibt dabei an, wie lange ein Resolver diesen Record zwischenspeichern darf, bevor er ihn erneut abfragen muss.
+
+Die DNS-TTL ist nicht mit der IP-TTL von traceroute gleichzusetzen. Bei DNS beschreibt sie die Cache-Lebensdauer eines Records, während die IP-TTL die maximale Anzahl von Hops eines Pakets begrenzt.
 
 ### `dig` - DNS lookup utility
 
