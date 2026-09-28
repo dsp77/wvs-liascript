@@ -44,6 +44,7 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
 ## Lernfeld 11
 
   * [Verfügbarkeit berechnen und umsetzen](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-05-verfuegbarkeit.md)
+  * [Schutzbedarf vernetzter Systeme](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md)
   * [Firewall](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-10-firewall.md)
   * [Passwortlose Anmeldung mit FIDO2](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-50-password-passkeys.md)
   * [Transport Layer Security (TLS)](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-20-tls.md)
