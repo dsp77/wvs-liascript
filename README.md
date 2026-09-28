@@ -28,7 +28,7 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
  * [DDOS](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/ddos.md) 
  * [Verschlüsselung](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/verschluesselung.md)
  * [IT-Sicherheit](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/it-sicherheit.md)
- * [IT-Grundschutz nach BSI](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/it-grundschutz.md)
+ * [IT-Grundschutz nach BSI](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md)
 
 
 ## Lernfeld 10
