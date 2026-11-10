@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1
-date:     09.11.2025
+version:  1.2
+date:     10.11.2026
 language: de
 narrator: Deutsch Female
 
@@ -142,66 +142,16 @@ subnet 10.0.99.0 netmask 255.255.255.0 {
 
 ## Layer-2-Switch
 
-````
-        ┌------------------------------┐
-        │          Layer 2 Switch      │
-        │    (Switching Matrix + SAT)  │
-        ├---------------+--------------┤
-        │               │              │
-     Port 1          Port 2         Port 3
-        │               │              │
-        │               │              │
-   ┌----+-----┐   ┌-----+----┐    ┌----+-----┐
-   │  PC A    │   │  PC B    │    │  PC C    │
-   │ MAC A    │   │ MAC B    │    │ MAC C    │
-   └----------┘   └----------┘    └----------┘
+![Layer-2-Switch](./02_img/lf11-50-layer-2-switch_rahmenverarbeitung.png)
 
-         ┌----------------------------┐
-         │ Source Address Table (SAT) │
-         ├--------------+-------------┤
-         │ MAC Address  │ Port        │
-         ├--------------+-------------┤
-         │ MAC A        │ 1           │
-         │ MAC B        │ 2           │
-         │ MAC C        │ 3           │
-         └--------------+-------------┘
-````
 
-➡ Ein eingehender Ethernet-Frame wird anhand der **Destination-MAC** 
-   in der SAT nachgeschlagen und an den passenden Port weitergeleitet.
+> Ein eingehender Ethernet-Frame wird anhand der **Destination-MAC** in der SAT nachgeschlagen und an den passenden Port weitergeleitet.
 
 ## Layer-3-Switch
 
+![Layer-3-Switch](./02_img/lf11-50-layer-3-switch_paketweiterleitung.png)
 
-``` text
-                ┌--------------------------------------------┐
-                │               Layer 3 Switch               │
-                │        (Switching Matrix + Routing)        │
-                ├--------------+--------------+--------------┤
-                │  VLAN 10     │  VLAN 20     │ VLAN 30      │ VLAN 99
-                │ IP 10.0.10.1 │ IP 10.0.20.1 │ IP 10.0.30.1 │ IP 10.0.99.1
-           ┌----+-----┐   ┌----+-----┐  ┌-----+----┐    ┌----+------┐
-           │ PC A     │   │ PC B     │  │ PC C     │    │ Server    │
-           │10.0.10.10│   │10.0.20.10│  │10.0.30.10│    │ 10.0.99.10│
-           └----------┘   └----------┘  └----------┘    └-----------┘
-
-Routing Table (im Layer-3-Switch)
-┌---------------------+------------┐
-│ Destination Network │ Interface  │
-├---------------------+------------┤
-│ 10.0.10.0/24        │ VLAN 10    │
-│ 10.0.20.0/24        │ VLAN 20    │
-│ 10.0.30.0/24        │ VLAN 30    │
-│ 10.0.99.0/24        │ VLAN 99    │
-└---------------------+------------┘
-```
-
-➡ Wenn PC A (10.0.10.10) mit PC B (10.0.20.10) kommunizieren will,
-   erkennt der Switch an der Ziel-IP, dass sich das Ziel in einem
-   anderen Subnetz befindet.  
-   ⇒ Er routet das Paket auf Layer 3, ändert die MAC-Adressen,
-      und leitet es über das passende VLAN-Interface weiter.
-
+> Ethernetrahmen werden basierend auf der Ziel-IP-Adresse mithilfe der Routingtabelle über den entsprechenden Port weitergeleitet.
 
 ## Logische Sicht des Netzwerks mit einem Layer-3-Switch
 
