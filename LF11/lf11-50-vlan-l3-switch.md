@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.2
-date:     10.11.2026
+version:  1.3
+date:     11.11.2026
 language: de
 narrator: Deutsch Female
 
@@ -187,3 +187,61 @@ Der Switch sendet die VLAN-getaggten Frames über diesen Trunk zum Router. Der R
 Als Nachteil dieser Methode, gegenüber der Nutzung eines Layer-3-Switches wird häufig der Flaschenhals der einen Verbindung genannt, da der Verkehr zwischen zwei VLANs zwei Mal über die eine Schnittstelle gesendet wird. Durch Link-Aggregation lässt sich diese Engstelle jedoch vermeiden.
 
 Ein wesentlicher Vorteil gegenüber der Nutzung eines Layer-3-Switches ist, dass der Router mit einer entsprechenden Firewall ausgestattet werden kann und dann ein Zonenkonzept umgesetzt werden kann. Der Verkehr zwischen den VLANs kann dann durch entsprechende Firewall-Regeln geregelt werden. Mithilfe einer Next-Generation-Firewall sind dann auch Intrusion Detection und Prevention möglich. 
+
+# Link Aggregation – Bündelung mehrerer Netzwerkverbindungen
+
+Link Aggregation bezeichnet die Zusammenfassung mehrerer physischer Netzwerkverbindungen zu einer logischen Verbindung. Dadurch können die verfügbare Gesamtbandbreite zwischen zwei Switches erhöht und die Ausfallsicherheit verbessert werden.
+
+## 1. Zwei Verbindungen ohne Link Aggregation
+
+Werden zwei Switches über zwei separate Ethernet-Kabel miteinander verbunden, entsteht eine redundante Verbindung. Ohne geeignete Schutzmechanismen könnten dadurch Netzwerkschleifen entstehen.
+
+lf11-50-switche-mit-schleife.png
+
+Das Spanning Tree Protocol (STP) verhindert solche Schleifen, indem es einen der beiden Übertragungswege blockiert.
+
+● Verbindung 1: Aktiv – Daten werden übertragen.
+
+● Verbindung 2: Blockiert – STP hält diesen Weg als Reserve bereit.
+
+● Nachteil: Trotz zweier Kabel steht nur die Bandbreite einer Verbindung zur Verfügung.
+
+Bei zwei Verbindungen mit jeweils 1 Gbit/s beträgt die nutzbare Gesamtbandbreite zwischen den Switches somit maximal 1 Gbit/s.
+
+## 2. Zwei Verbindungen mit Link Aggregation
+
+Mit Link Aggregation werden die beiden physischen Verbindungen zu einer logischen Verbindung zusammengefasst. Die Switches behandeln die gebündelten Ports als eine gemeinsame Schnittstelle.
+
+[https://edudocs.de/wvs-ffm/f/555339](https://edudocs.de/wvs-ffm/f/555339 (preview))
+
+Da STP das Bündel als eine logische Verbindung betrachtet, muss keine der beiden Leitungen wegen einer Netzwerkschleife blockiert werden.
+
+Bei zwei Verbindungen mit jeweils 1 Gbit/s ergibt sich:
+
+● Aggregierte Bandbreite: 2 Gbit/s
+
+● Beide Verbindungen: Aktiv
+
+● Ausfallsicherheit: Fällt ein Kabel aus, kann die Kommunikation über das verbleibende Kabel weiterlaufen.
+
+Die Bündelung kann beispielsweise mit dem Standard IEEE 802.1AX und dem Protokoll LACP (Link Aggregation Control Protocol) realisiert werden.
+
+Wichtige technische Einschränkung
+
+Die doppelte aggregierte Bandbreite bedeutet nicht, dass eine einzelne Datenübertragung automatisch mit 2 Gbit/s erfolgt.
+
+Bei der üblichen Link Aggregation verteilt der Switch unterschiedliche Datenströme auf die verfügbaren Verbindungen. Ein einzelner Datenstrom nutzt normalerweise nur einen physischen Link.
+
+## Vergleich
+
+| Eigenschaft            | Ohne Link Aggregation    | Mit Link Aggregation                     |
+|------------------------|--------------------------|------------------------------------------|
+| Physische Kabel        | 2 × 1 Gbit/s             | 2 × 1 Gbit/s                             |
+| Aktive Verbindungen    | 1                        | 2                                        |
+| Aggregierte Bandbreite | 1 Gbit/s                 | 2 Gbit/s                                 |
+| Schleifenvermeidung    | STP blockiert einen Pfad | STP betrachtet das Bündel als einen Link |
+| Redundanz              | Ja                       | Ja                                       |
+
+## Zusammenfassung
+
+Link Aggregation verbindet mehrere physische Netzwerkleitungen zu einer logischen Verbindung. Dadurch erhöht sich die verfügbare Gesamtbandbreite, ohne dass STP eine der gebündelten Leitungen blockieren muss.
