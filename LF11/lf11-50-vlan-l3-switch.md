@@ -210,9 +210,7 @@ Bei zwei Verbindungen mit jeweils 1 Gbit/s beträgt die nutzbare Gesamtbandbreit
 
 ## 2. Zwei Verbindungen mit Link Aggregation
 
-Mit Link Aggregation werden die beiden physischen Verbindungen zu einer logischen Verbindung zusammengefasst. Die Switches behandeln die gebündelten Ports als eine gemeinsame Schnittstelle.
-
-[https://edudocs.de/wvs-ffm/f/555339](https://edudocs.de/wvs-ffm/f/555339 (preview))
+Mit Link Aggregation werden die beiden physischen Verbindungen zu einer logischen Verbindung zusammengefasst. Die Switches behandeln die gebündelten Ports als eine gemeinsamme Schnittstelle.
 
 Da STP das Bündel als eine logische Verbindung betrachtet, muss keine der beiden Leitungen wegen einer Netzwerkschleife blockiert werden.
 
