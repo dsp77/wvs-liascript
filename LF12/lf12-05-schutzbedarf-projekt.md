@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.0
-date:     28.09.20026
+version:  1.0.1
+date:     15.11.20026
 language: de
 narrator: Deutsch Female
 comment:  LF12b: Projektbezogene Schutzbedarfsfeststellung und Schutzmaßnahmen in der Fachrichtung Systemintegration.
@@ -13,7 +13,7 @@ logo: ../02_img/logo-schutzbedarf-projekt.png
 
 # Informationssicherheit im Systemintegrationsprojekt
 
-> **Ausgangssituation:** Das Beispielunternehmen aus [LF4](../LF04/it-grundschutz.md) und [LF11b](../LF11b/schutzbedarf-vernetzte-systeme.md) migriert seinen Fileserver auf eine virtualisierte Plattform. Ihre Aufgabe ist ein **abgegrenzter Projektausschnitt** mit begründeten Sicherheitsentscheidungen und nachweisbarer Umsetzung.
+> **Ausgangssituation:** Das Beispielunternehmen aus [LF4](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md) und [LF11b](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md) migriert seinen Fileserver auf eine virtualisierte Plattform. Ihre Aufgabe ist ein **abgegrenzter Projektausschnitt** mit begründeten Sicherheitsentscheidungen und nachweisbarer Umsetzung.
 
 **Lernziel:** Sie können Schutzbedarf für projektbetroffene Informationen, Dienste und Systeme begründen, konkrete Schwachstellen untersuchen, Maßnahmen auswählen, umsetzen, prüfen und verständlich dokumentieren.
 
