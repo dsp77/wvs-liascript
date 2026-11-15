@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.3
-date:     11.11.2026
+version:  1.4
+date:     15.11.2026
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  VLAN und Layer-3-Switch; Router-on-a-Stick
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-availability.jpg
 
-tags:     LiaScript, VLAN, 802.1q, Tagging, Trunkport, Layer-3-Switch, Router-on-a-Stick
+tags:     LiaScript, VLAN, 802.1q, Tagging, Trunkport, DHCP Relay, Layer-3-Switch, Router-on-a-Stick, Link Aggregation
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -196,15 +196,13 @@ Link Aggregation bezeichnet die Zusammenfassung mehrerer physischer Netzwerkverb
 
 Werden zwei Switches über zwei separate Ethernet-Kabel miteinander verbunden, entsteht eine redundante Verbindung. Ohne geeignete Schutzmechanismen könnten dadurch Netzwerkschleifen entstehen.
 
-lf11-50-switche-mit-schleife.png
+![2 Switche mit Schleife](./02_img/lf11-50-switche-mit-schleife.png)
 
 Das Spanning Tree Protocol (STP) verhindert solche Schleifen, indem es einen der beiden Übertragungswege blockiert.
 
-● Verbindung 1: Aktiv – Daten werden übertragen.
-
-● Verbindung 2: Blockiert – STP hält diesen Weg als Reserve bereit.
-
-● Nachteil: Trotz zweier Kabel steht nur die Bandbreite einer Verbindung zur Verfügung.
+- Verbindung 1: Aktiv – Daten werden übertragen.
+- Verbindung 2: Blockiert – STP hält diesen Weg als Reserve bereit.
+- Nachteil: Trotz zweier Kabel steht nur die Bandbreite einer Verbindung zur Verfügung.
 
 Bei zwei Verbindungen mit jeweils 1 Gbit/s beträgt die nutzbare Gesamtbandbreite zwischen den Switches somit maximal 1 Gbit/s.
 
@@ -212,15 +210,15 @@ Bei zwei Verbindungen mit jeweils 1 Gbit/s beträgt die nutzbare Gesamtbandbreit
 
 Mit Link Aggregation werden die beiden physischen Verbindungen zu einer logischen Verbindung zusammengefasst. Die Switches behandeln die gebündelten Ports als eine gemeinsamme Schnittstelle.
 
+![2 Switche mit Link Aggregation verbunden](./02_img/lf11-50-link_aggregation.svg)
+
 Da STP das Bündel als eine logische Verbindung betrachtet, muss keine der beiden Leitungen wegen einer Netzwerkschleife blockiert werden.
 
 Bei zwei Verbindungen mit jeweils 1 Gbit/s ergibt sich:
 
-● Aggregierte Bandbreite: 2 Gbit/s
-
-● Beide Verbindungen: Aktiv
-
-● Ausfallsicherheit: Fällt ein Kabel aus, kann die Kommunikation über das verbleibende Kabel weiterlaufen.
+- Aggregierte Bandbreite: 2 Gbit/s
+- Beide Verbindungen: Aktiv
+- Ausfallsicherheit: Fällt ein Kabel aus, kann die Kommunikation über das verbleibende Kabel weiterlaufen.
 
 Die Bündelung kann beispielsweise mit dem Standard IEEE 802.1AX und dem Protokoll LACP (Link Aggregation Control Protocol) realisiert werden.
 
