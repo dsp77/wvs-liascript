@@ -57,3 +57,6 @@ Die Inhalte sind lizensiert unter [CC BY-SA](https://creativecommons.org/license
   * [Netzwerk Fehlersuche mit Filius](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-10-netzwerk-fehlersuche.md)
   * [Administrative Programmierung](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-20-admin-programmierung.md)
   * [Schutzbedarf für das IHK-Projekt bestimmen](https://liascript.github.io/course/?https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-05-schutzbedarf-projekt.md)
+
+
+  Sollte es zu Ladefehlern kommen, kann der Link zur Markdownseite über die [Lia-Script-Seite](https://liascript.github.io/) geladen werden.
