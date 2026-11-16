@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.1
-date:     15.11.20026
+version:  1.0.2
+date:     16.11.20026
 language: de
 narrator: Deutsch Female
 comment:  LF12b: Projektbezogene Schutzbedarfsfeststellung und Schutzmaßnahmen in der Fachrichtung Systemintegration.
@@ -82,4 +82,4 @@ Das ist ein **Lehrbeispiel** und keine allgemeine Vorlage, die unverändert in e
 4. Untersuchen Sie mindestens eine **konkret festgestellte** Schwachstelle. Begründen Sie eine Maßnahme und eine alternative Lösung.
 5. Dokumentieren Sie Umsetzung, Test, Ergebnis und offene Risiken auf höchstens einer übersichtlichen Auszugsseite.
 
-**Rückblick:** [LF4 – Arbeitsplatz](../LF04/it-grundschutz.md) erklärt die Grundmethode; [LF11b – vernetzte Systeme](../LF11b/schutzbedarf-vernetzte-systeme.md) ergänzt Infrastruktur und Abhängigkeiten.
+**Rückblick:** [LF4 – Arbeitsplatz](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md) erklärt die Grundmethode; [LF11b – vernetzte Systeme](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md) ergänzt Infrastruktur und Abhängigkeiten.
