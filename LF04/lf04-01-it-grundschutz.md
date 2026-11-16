@@ -8,7 +8,7 @@ comment:  LF4: Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen. Übe
 tags:     LiaScript, LF4, IT-Grundschutz
 attribute: Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-logo:     02_img/logo-it-grundschutz.png
+logo:     02_img/logo-lf4-it-grundschutz.png
 
 -->
 
@@ -157,4 +157,13 @@ Weitere mögliche Maßnahmen sind passende Berechtigungen, aktuelle Software, ve
 4. Nennen Sie zwei konkrete Schwachstellen oder Gefährdungen und jeweils eine begründete Maßnahme.
 5. Markieren Sie Annahmen und noch offene Fragen zu zentralen Diensten.
 
-**Weiterlernen:** [LF11b – Schutzbedarf vernetzter Systeme](../LF11b/LF11-07-schutzbedarf-vernetzte-systeme.md) erweitert die Betrachtung auf Server, Netze und Virtualisierung. [LF12b – Informationssicherheit im Systemintegrationsprojekt](../LF12b/lf12-05-schutzbedarf-projekt.md) verwendet einen begrenzten Ausschnitt in der Projektarbeit.
+**Weiterlernen:** 
+
+Die folgende Information erweitert die Betrachtung auf Server, Netze und Virtualisierung.
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md)
+
+
+Die folgende Information verwendet einen begrenzten Ausschnitt in der Projektarbeit.
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-05-schutzbedarf-projekt.md)
