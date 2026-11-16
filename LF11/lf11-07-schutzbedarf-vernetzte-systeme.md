@@ -1,6 +1,6 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.1
+version:  1.0.3
 date:     16.11.2026
 language: de
 narrator: Deutsch Female
@@ -8,14 +8,19 @@ comment:  LF11b: Schutzbedarf von Servern, Diensten, Netzen und Virtualisierung 
 tags:     LiaScript, LF11b, IT-Grundschutz
 attribute: Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-logo: ../02_img/logo-schutzbedarf.png
+logo: ./02_img/logo-lf11b-schutzbedarf.png
 -->
 
 # Schutzbedarf vernetzter Systeme
 
-> **Ausgangssituation:** In [LF4](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md) haben Sie den Vertriebsarbeitsplatz untersucht. Nun fragen Sie, welche Dienste und Systeme hinter CRM, Anmeldung und Dateiablage stehen und welche Folgen ein gemeinsamer Ausfall hätte.
+> **Ausgangssituation:** In LF4 haben Sie den Vertriebsarbeitsplatz untersucht. Nun fragen Sie, welche Dienste und Systeme hinter CRM, Anmeldung und Dateiablage stehen und welche Folgen ein gemeinsamer Ausfall hätte.
 
 **Lernziel:** Sie können einen Informationsverbund abgrenzen, Abhängigkeiten erfassen, Schutzbedarf auf Dienste, Server, Netze und Räume übertragen und Kumulation sowie Verteilung begründet prüfen.
+
+Referenz zu LF4:
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md)
+
 
 ## Informationsverbund und Strukturanalyse
 
@@ -101,4 +106,8 @@ Bei hohem oder sehr hohem Schutzbedarf sowie weiteren besonderen Gefährdungslag
 3. Prüfen Sie eine Kumulation und eine mögliche Verteilung. Nennen Sie Annahmen und gemeinsame Ausfallpunkte.
 4. Identifizieren Sie eine konkrete Schwachstelle und formulieren Sie eine überprüfbare Maßnahme.
 
-**Nächster Schritt:** [LF12b – Informationssicherheit im Systemintegrationsprojekt](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-05-schutzbedarf-projekt.md#7) überträgt die Methode auf einen begrenzten Kundenauftrag.
+**Nächster Schritt:** 
+
+LF12b - Informationssicherheit im Systemintegrationsprojekt überträgt die Methode auf einen begrenzten Kundenauftrag.
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-05-schutzbedarf-projekt.md)
