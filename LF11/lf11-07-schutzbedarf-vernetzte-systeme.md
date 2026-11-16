@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.0
-date:     28.09.2026
+version:  1.0.1
+date:     16.11.2026
 language: de
 narrator: Deutsch Female
 comment:  LF11b: Schutzbedarf von Servern, Diensten, Netzen und Virtualisierung im Informationsverbund.
@@ -13,7 +13,7 @@ logo: ../02_img/logo-schutzbedarf.png
 
 # Schutzbedarf vernetzter Systeme
 
-> **Ausgangssituation:** In [LF4](../LF04/lf04-01-it-grundschutz.md) haben Sie den Vertriebsarbeitsplatz untersucht. Nun fragen Sie, welche Dienste und Systeme hinter CRM, Anmeldung und Dateiablage stehen und welche Folgen ein gemeinsamer Ausfall hätte.
+> **Ausgangssituation:** In [LF4](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md) haben Sie den Vertriebsarbeitsplatz untersucht. Nun fragen Sie, welche Dienste und Systeme hinter CRM, Anmeldung und Dateiablage stehen und welche Folgen ein gemeinsamer Ausfall hätte.
 
 **Lernziel:** Sie können einen Informationsverbund abgrenzen, Abhängigkeiten erfassen, Schutzbedarf auf Dienste, Server, Netze und Räume übertragen und Kumulation sowie Verteilung begründet prüfen.
 
@@ -101,4 +101,4 @@ Bei hohem oder sehr hohem Schutzbedarf sowie weiteren besonderen Gefährdungslag
 3. Prüfen Sie eine Kumulation und eine mögliche Verteilung. Nennen Sie Annahmen und gemeinsame Ausfallpunkte.
 4. Identifizieren Sie eine konkrete Schwachstelle und formulieren Sie eine überprüfbare Maßnahme.
 
-**Nächster Schritt:** [LF12b – Informationssicherheit im Systemintegrationsprojekt](../LF12b/lf12-05-schutzbedarf-projekt.md) überträgt die Methode auf einen begrenzten Kundenauftrag.
+**Nächster Schritt:** [LF12b – Informationssicherheit im Systemintegrationsprojekt](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF12/lf12-05-schutzbedarf-projekt.md#7) überträgt die Methode auf einen begrenzten Kundenauftrag.
