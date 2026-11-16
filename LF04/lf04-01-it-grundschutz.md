@@ -1,6 +1,6 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.1
+version:  1.0.2
 date:     16.11.2026
 language: de
 narrator: Deutsch Female
@@ -61,7 +61,7 @@ Unser Geltungsbereich ist **der Arbeitsplatz einer Person im Vertrieb**, einschl
 | C1 | IT-System | Arbeitsplatz-PC | A1 und A2 nutzen |
 | R1 | Raum | Büroarbeitsplatz | C1 und Ausdrucke aufbewahren |
 
-**Schnittstellen zum Umfeld:** Anmeldung, Netzwerk und zentrale Dateiablage werden benötigt. Welche Server, Switches und Leitungen dahinterstehen, untersuchen wir in [LF11b](../LF11b/schutzbedarf-vernetzte-systeme.md).
+**Schnittstellen zum Umfeld:** Anmeldung, Netzwerk und zentrale Dateiablage werden benötigt. Welche Server, Switches und Leitungen dahinterstehen, untersuchen wir in LF11b.
 
 ### Arbeitsauftrag: den eigenen Arbeitsbereich erfassen
 
@@ -113,7 +113,7 @@ Das CRM verarbeitet Kundendaten. Der Arbeitsplatz-PC zeigt sie an; je nach Arbei
 
 Wenn der PC sowohl wenig sensible E-Mails (**Vertraulichkeit normal**) als auch Kundendaten (**Vertraulichkeit hoch**) verarbeitet, wird für den PC der **höhere Wert** betrachtet. Das gilt jeweils *getrennt* für Vertraulichkeit, Integrität und Verfügbarkeit. Zusätzliche Zusammenhänge können eine eigene Begründung erfordern.
 
-**Kumulation als weiterer Prüfschritt:** Das Maximalprinzip allein kann zu kurz greifen. Wenn der Ausfall **mehrerer** auf demselben PC erledigter Aufgaben *gleichzeitig* einen beträchtlichen Schaden verursacht, kann dessen Schutzbedarf für **Verfügbarkeit** höher sein als der Bedarf jeder Aufgabe für sich. Beispiel: Ein Arbeitstag ohne Angebotsbearbeitung oder ohne Kundenkommunikation hätte jeweils für sich noch begrenzte Folgen (**normal**). Fallen beide Tätigkeiten gleichzeitig für einen Arbeitstag aus und entgehen dadurch wichtige Aufträge, kann der gemeinsame Ausfall **hoch** sein. Die Einstufung folgt aus dieser zusätzlichen Schadensannahme, nicht aus dem bloßen Vorhandensein zweier Anwendungen. Für unseren einzelnen Vertriebs-PC nehmen wir zunächst an, dass ein kurzer Ausfall überbrückbar ist. Ausführliche Kumulations- und Verteilungseffekte bei gemeinsam genutzten Servern behandeln wir in [LF11b](../LF11b/schutzbedarf-vernetzte-systeme.md).
+**Kumulation als weiterer Prüfschritt:** Das Maximalprinzip allein kann zu kurz greifen. Wenn der Ausfall **mehrerer** auf demselben PC erledigter Aufgaben *gleichzeitig* einen beträchtlichen Schaden verursacht, kann dessen Schutzbedarf für **Verfügbarkeit** höher sein als der Bedarf jeder Aufgabe für sich. Beispiel: Ein Arbeitstag ohne Angebotsbearbeitung oder ohne Kundenkommunikation hätte jeweils für sich noch begrenzte Folgen (**normal**). Fallen beide Tätigkeiten gleichzeitig für einen Arbeitstag aus und entgehen dadurch wichtige Aufträge, kann der gemeinsame Ausfall **hoch** sein. Die Einstufung folgt aus dieser zusätzlichen Schadensannahme, nicht aus dem bloßen Vorhandensein zweier Anwendungen. Für unseren einzelnen Vertriebs-PC nehmen wir zunächst an, dass ein kurzer Ausfall überbrückbar ist. Ausführliche Kumulations- und Verteilungseffekte bei gemeinsam genutzten Servern behandeln wir in LF11b.
 
 **Aufgabe:** Ergänzen Sie für Ihr Beispiel eine Tabelle mit den Spalten „Objekt“, „Grundwert“, „Kategorie“ und „Schadensbegründung“. Prüfen Sie anschließend, ob Ihre Einstufung des PCs zu den verarbeiteten Informationen passt.
 
