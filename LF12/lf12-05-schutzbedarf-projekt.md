@@ -1,6 +1,6 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.2
+version:  1.0.3
 date:     16.11.20026
 language: de
 narrator: Deutsch Female
@@ -20,6 +20,11 @@ logo: ./02_img/logo-lf12b-schutzbedarf-projekt.png
 Referenz zu LF4:
 
 [preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md)
+
+Referenz zu LF11b:
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md)
+
 
 
 ## Bezug zur Abschlussprüfung FISI
