@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.0
-date:     28.09.2026
+version:  1.0.1
+date:     16.11.2026
 language: de
 narrator: Deutsch Female
 comment:  LF4: Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen. Überarbeitung und Aufteilung der ursprünglichen Datei it-grundschutz.md.
