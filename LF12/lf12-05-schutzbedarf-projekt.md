@@ -8,14 +8,19 @@ comment:  LF12b: Projektbezogene Schutzbedarfsfeststellung und Schutzmaßnahmen 
 tags:     LiaScript, LF12b, Abschlussprojekt, Systemintegration
 attribute: Lizenz: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
-logo: ../02_img/logo-schutzbedarf-projekt.png
+logo: ./02_img/logo-lf12b-schutzbedarf-projekt.png
 -->
 
 # Informationssicherheit im Systemintegrationsprojekt
 
-> **Ausgangssituation:** Das Beispielunternehmen aus [LF4](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md) und [LF11b](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md) migriert seinen Fileserver auf eine virtualisierte Plattform. Ihre Aufgabe ist ein **abgegrenzter Projektausschnitt** mit begründeten Sicherheitsentscheidungen und nachweisbarer Umsetzung.
+> **Ausgangssituation:** Das Beispielunternehmen aus LF4 und LF11b migriert seinen Fileserver auf eine virtualisierte Plattform. Ihre Aufgabe ist ein **abgegrenzter Projektausschnitt** mit begründeten Sicherheitsentscheidungen und nachweisbarer Umsetzung.
 
 **Lernziel:** Sie können Schutzbedarf für projektbetroffene Informationen, Dienste und Systeme begründen, konkrete Schwachstellen untersuchen, Maßnahmen auswählen, umsetzen, prüfen und verständlich dokumentieren.
+
+Referenz zu LF4:
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md)
+
 
 ## Bezug zur Abschlussprüfung FISI
 
@@ -82,4 +87,13 @@ Das ist ein **Lehrbeispiel** und keine allgemeine Vorlage, die unverändert in e
 4. Untersuchen Sie mindestens eine **konkret festgestellte** Schwachstelle. Begründen Sie eine Maßnahme und eine alternative Lösung.
 5. Dokumentieren Sie Umsetzung, Test, Ergebnis und offene Risiken auf höchstens einer übersichtlichen Auszugsseite.
 
-**Rückblick:** [LF4 – Arbeitsplatz](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md) erklärt die Grundmethode; [LF11b – vernetzte Systeme](https://liascript.github.io/course/?https://api.allorigins.win/raw?url=https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md) ergänzt Infrastruktur und Abhängigkeiten.
+**Rückblick:**
+
+**LF4 - Arbeitsplatz** erklärt die Grundmethode:
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF04/lf04-01-it-grundschutz.md)
+
+**LF11b - vernetzte Systeme** ergänzt Infrastruktur und Abhängigkeiten:
+
+[preview-lia](https://raw.githubusercontent.com/dsp77/wvs-liascript/main/LF11/lf11-07-schutzbedarf-vernetzte-systeme.md)
+
