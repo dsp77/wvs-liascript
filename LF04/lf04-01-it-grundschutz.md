@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
-version:  1.0.2
-date:     16.11.2026
+version:  1.2
+date:     17.11.2026
 language: de
 narrator: Deutsch Female
 comment:  LF4: Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen. Überarbeitung und Aufteilung der ursprünglichen Datei it-grundschutz.md.
@@ -39,6 +39,8 @@ Der BSI-Standard 200-2 beschreibt drei **Vorgehensweisen zur Absicherung einer O
 | **Basis-Absicherung** | Einstieg: grundlegende Sicherheitsanforderungen für den gesamten betrachteten Informationsverbund zügig umsetzen. |
 | **Standard-Absicherung** | Umfassende, systematische Absicherung des gesamten betrachteten Informationsverbundes nach IT-Grundschutz. |
 | **Kern-Absicherung** | Einstieg bei besonders wichtigen Prozessen und den dafür erforderlichen Teilen des Informationsverbundes; weitere Bereiche können später folgen. |
+
+![Vorgehensweise nach BSI](./02_img/lf04-gs_bsi_absicherungen.svg)
 
 Daneben steht die **Schutzbedarfsfeststellung**. Sie fragt für Informationen, Anwendungen und Systeme: *Wie groß wäre der Schaden, wenn Vertraulichkeit, Integrität oder Verfügbarkeit verletzt werden?* Das Ergebnis wird für **jeden dieser drei Grundwerte** als „normal“, „hoch“ oder „sehr hoch“ begründet. Diese Kategorien beschreiben die mögliche Schadenshöhe; sie bezeichnen **keine** der drei Absicherungsvarianten.
 
@@ -157,7 +159,7 @@ Weitere mögliche Maßnahmen sind passende Berechtigungen, aktuelle Software, ve
 4. Nennen Sie zwei konkrete Schwachstellen oder Gefährdungen und jeweils eine begründete Maßnahme.
 5. Markieren Sie Annahmen und noch offene Fragen zu zentralen Diensten.
 
-**Weiterlernen:** 
+## Weiterlernen 
 
 Die folgende Information erweitert die Betrachtung auf Server, Netze und Virtualisierung.
 
