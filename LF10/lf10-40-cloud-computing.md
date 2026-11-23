@@ -1,8 +1,8 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.0.3
-date:     10.01.2025
+version:  1.1.0
+date:     23.11.2026
 language: de
 narrator: Deutsch Female
 
@@ -11,7 +11,7 @@ comment:  Cloud Computing
 icon:    https://raw.githubusercontent.com/dsp77/wvs-liascript/0938e2e0ce751e270e3e36b8ecfeb09044a41aa0/wvs-logo.png
 logo:     02_img/logo-cloud.jpg
 
-tags:     LiaScript, Cloud, Deployment Model, Service Model, NIST, * as a Service, *aaS, Public Cloud, Private Cloud, Hybrid Cloud
+tags:     LiaScript, Cloud, Deployment Model, Service Model, NIST, * as a Service, *aaS, Public Cloud, Private Cloud, Hybrid Cloud, Community Cloud, Shared Responsibility, DSGVO
 
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
@@ -132,6 +132,58 @@ Microsoft Azure: Azure Stack ermöglicht private Cloud-Umgebungen.
 Google Cloud: Anthos ermöglicht die Bereitstellung privater Cloud-Lösungen.
 Der entscheidende Unterschied zur Public Cloud ist die exklusive Nutzung der Ressourcen und die Kontrolle über Sicherheits- und Managementrichtlinien.
 
+
+### Deployment-Modelle als einheitliche Schemata
+
+Die folgenden vereinfachten Darstellungen verwenden immer dieselben Symbole. Ein Kasten steht für eine organisatorisch abgegrenzte Cloud-Umgebung, Kreise stehen für nutzende Organisationen und die Wolke für die bereitgestellten Cloud-Ressourcen.
+
+#### Private Cloud
+
+```ascii
+┌──────────── Organisation A ────────────┐
+│                                        │
+│   (Nutzer A)  ─────>  Private Cloud    │
+│                       exklusiv für A   │
+└────────────────────────────────────────┘
+```
+
+Die Ressourcen sind exklusiv einer Organisation zugeordnet. Der Betrieb kann im eigenen Rechenzentrum oder bei einem externen Anbieter erfolgen.
+
+#### Public Cloud
+
+```ascii
+ (Organisation A) ──┐
+ (Organisation B) ──┼──> Public Cloud
+ (Organisation C) ──┘    Ressourcen des Providers
+                           logisch getrennte Mandanten
+```
+
+Ein Provider stellt standardisierte, gemeinsam genutzte Ressourcen für viele voneinander unabhängige Kunden bereit.
+
+#### Community Cloud
+
+```ascii
+┌────── gemeinsame Community-Anforderungen ──────┐
+│ (Organisation A) ──┐                           │
+│ (Organisation B) ──┼──> Community Cloud        │
+│ (Organisation C) ──┘    nur für die Community  │
+└────────────────────────────────────────────────┘
+```
+
+Mehrere Organisationen mit gemeinsamen Anforderungen, etwa Behörden, Hochschulen oder Einrichtungen des Gesundheitswesens, teilen sich die Cloud.
+
+#### Hybrid Cloud
+
+```ascii
+┌──────── Organisation A ────────┐       Provider
+│ Private Cloud                  │        Public Cloud
+│ sensible Daten und Kernsysteme │<─────> Lastspitzen und Webdienste
+└────────────────────────────────┘  sichere Kopplung
+```
+
+Mindestens zwei unterschiedliche Deployment-Modelle bleiben eigenständig, sind aber technisch verbunden. Daten und Anwendungen können – abhängig von Schutzbedarf und Architektur – zwischen ihnen ausgetauscht werden.
+
+> **Merksatz:** Das Deployment-Modell beantwortet vor allem: *Wer darf die Cloud nutzen und wie ist sie organisatorisch bereitgestellt?* Das Service-Modell beantwortet: *Welche Schichten betreibt der Anbieter und welche der Kunde?*
 
 ## Service Model
 
@@ -292,3 +344,66 @@ Die drei NIST-Modelle sind die Basis des Cloud Computing und definieren breite K
 
  1. **Erweiterungen oder Spezialisierungen** dieser Modelle, angepasst an spezifische Bedürfnisse.
  2. Oft ein Ergebnis technologischer Weiterentwicklungen wie Serverless Computing oder KI.
+
+## Shared-Responsibility-Modell
+
+Cloud-Nutzung bedeutet nicht, dass die gesamte Verantwortung an den Anbieter abgegeben wird. Beim **Shared-Responsibility-Modell** teilen sich Cloud-Anbieter und Cloud-Kunde die Aufgaben. Grundsätzlich schützt der Anbieter die **Cloud-Infrastruktur**; der Kunde schützt seine **Daten, Identitäten, Zugriffsrechte und die von ihm konfigurierten Dienste**. Die genaue Grenze hängt vom Vertrag und vom gewählten Service-Modell ab.
+
+### Verantwortlichkeitsmatrix
+
+**Legende:** **K** = Kunde verantwortlich, **A** = Anbieter verantwortlich. Bei **K/A** bestehen geteilte oder vertraglich abzugrenzende Aufgaben.
+
+| Schicht / Aufgabe | On-Premises | IaaS | PaaS | SaaS |
+|---|:---:|:---:|:---:|:---:|
+| Daten und Datenklassifizierung | K | K | K | K |
+| Benutzer, Rollen und Zugriffsrechte | K | K | K | K/A |
+| Anwendung und Anwendungskonfiguration | K | K | K | A/K |
+| Laufzeitumgebung und Middleware | K | K | A | A |
+| Betriebssystem und Patches | K | K | A | A |
+| Virtualisierung | K | A | A | A |
+| Server, Speicher und physisches Netzwerk | K | A | A | A |
+| Rechenzentrum und physische Sicherheit | K | A | A | A |
+
+> **Wichtig:** Auch bei SaaS bleibt der Kunde insbesondere für rechtmäßige Verarbeitung, Datenklassifizierung, geeignete Benutzerberechtigungen und die sichere Nutzung verantwortlich. Ein Vertrag kann Zuständigkeiten konkretisieren, hebt gesetzliche Pflichten aber nicht automatisch auf.
+
+Je weiter man sich von On-Premises zu SaaS bewegt, desto mehr technische Betriebsverantwortung übernimmt der Anbieter. Gleichzeitig sinken meist die technische Kontrolle und die Freiheit, einzelne Schichten selbst zu gestalten.
+
+### Selbstkontrolle
+
+Wer patcht bei einem typischen IaaS-Angebot das Betriebssystem der virtuellen Maschine?
+
+[(X)] Der Cloud-Kunde
+[( )] Immer der Cloud-Anbieter
+[( )] Niemand, weil Cloud-Systeme keine Patches benötigen
+[[?]] IaaS stellt vor allem Infrastruktur bereit. Das Gastbetriebssystem gehört weiterhin zum Verantwortungsbereich des Kunden.
+
+****************************************
+
+Bei IaaS verantwortet der Anbieter die physische Infrastruktur und die Virtualisierung. Der Kunde administriert und patcht in der Regel das Gastbetriebssystem sowie seine Anwendungen.
+
+****************************************
+
+## Entscheidungshilfe für die Cloud-Auswahl
+
+Eine fachlich begründete Entscheidung betrachtet nicht nur den Preis. Zuerst werden Schutzbedarf, rechtliche Anforderungen und betriebliche Ziele ermittelt; anschließend werden geeignete Deployment- und Service-Modelle verglichen.
+
+| Kriterium | Leitfragen | Typische Auswirkung auf die Auswahl |
+|---|---|---|
+| DSGVO und Datenschutz | Werden personenbezogene Daten verarbeitet? Wer ist Verantwortlicher, wer Auftragsverarbeiter? Ist ein Vertrag zur Auftragsverarbeitung erforderlich? Sind technische und organisatorische Maßnahmen nachweisbar? | Anbieter, Vertrag, Berechtigungskonzept, Verschlüsselung, Löschkonzept und Nachweise müssen zur Verarbeitung passen. Eine Private Cloud ist nicht automatisch DSGVO-konform und eine Public Cloud nicht automatisch unzulässig. |
+| Datenstandort und Drittlandtransfer | In welchem Staat werden Daten gespeichert, verarbeitet, gesichert und administrativ zugänglich? Findet eine Übermittlung in ein Drittland statt? Gibt es einen Angemessenheitsbeschluss oder geeignete Garantien, etwa Standardvertragsklauseln? | Regionen und Supportzugriffe verbindlich klären; Transfergrundlage und zusätzliche Schutzmaßnahmen prüfen und dokumentieren. |
+| Kosten | Welche einmaligen und laufenden Kosten entstehen? Wie hoch sind Kosten für Betrieb, Personal, Datenübertragung, Support, Lizenzen und Lastspitzen? | Nicht nur Anschaffungspreise, sondern **Total Cost of Ownership** und variable Nutzungskosten vergleichen. Egress-Kosten beachten. |
+| Skalierung | Wie stark und wie schnell schwankt die Last? Muss automatisch hoch- und herunterskaliert werden? | Public-Cloud- und verwaltete Dienste sind oft schnell elastisch; eigene Kapazitäten bieten planbare Grenzen, müssen aber vorgehalten werden. |
+| Vendor Lock-in | Werden proprietäre APIs, Datenformate, Identitätsdienste oder Plattformfunktionen verwendet? Wie funktionieren Export und Anbieterwechsel? | Offene Standards, Container, dokumentierte Schnittstellen, Exit-Plan und regelmäßige Exporttests reduzieren Abhängigkeiten. |
+| Kontrolle | Welche Konfigurations-, Prüf- und Eingriffsmöglichkeiten werden benötigt? Muss Hardware exklusiv genutzt werden? | On-Premises und Private Cloud bieten meist mehr unmittelbare Kontrolle; PaaS und SaaS reduzieren Betriebsaufwand, aber auch Eingriffsmöglichkeiten. |
+
+### Vorgehensmodell
+
+1. Daten und Anwendungen klassifizieren und Schutzbedarf bestimmen.
+2. Muss-, Soll- und Kann-Anforderungen festlegen.
+3. Rechtliche und vertragliche Ausschlusskriterien prüfen.
+4. Deployment- und Service-Modelle anhand derselben Kriterien vergleichen.
+5. Risiken, Kosten und Nutzen über den gesamten Lebenszyklus bewerten.
+6. Exit-, Backup-, Notfall- und Wiederanlaufkonzept vor der Einführung festlegen.
+7. Entscheidung dokumentieren und regelmäßig überprüfen.
+
+> Diese Übersicht dient der fachlichen Orientierung und ersetzt keine Rechtsberatung. Datenschutzrechtliche Entscheidungen sollten mit den zuständigen Datenschutz- und Rechtsstellen abgestimmt werden.
