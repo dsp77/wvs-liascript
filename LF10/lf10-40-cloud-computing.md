@@ -1,7 +1,7 @@
 <!--
 author:   Günter Dannoritzer
 email:    g.dannoritzer@wvs-ffm.de
-version:  1.1.0
+version:  1.2.1
 date:     23.11.2026
 language: de
 narrator: Deutsch Female
@@ -142,7 +142,7 @@ Die folgenden vereinfachten Darstellungen verwenden immer dieselben Symbole. Ein
 ```ascii
 ┌──────────── Organisation A ────────────┐
 │                                        │
-│   (Nutzer A)  ─────>  Private Cloud    │
+│   (Nutzer A)  ─────>   Private Cloud   │
 │                       exklusiv für A   │
 └────────────────────────────────────────┘
 ```
@@ -153,7 +153,7 @@ Die Ressourcen sind exklusiv einer Organisation zugeordnet. Der Betrieb kann im 
 
 ```ascii
  (Organisation A) ──┐
- (Organisation B) ──┼──> Public Cloud
+ (Organisation B) ──┼──>  Public Cloud
  (Organisation C) ──┘    Ressourcen des Providers
                            logisch getrennte Mandanten
 ```
@@ -165,7 +165,7 @@ Ein Provider stellt standardisierte, gemeinsam genutzte Ressourcen für viele vo
 ```ascii
 ┌────── gemeinsame Community-Anforderungen ──────┐
 │ (Organisation A) ──┐                           │
-│ (Organisation B) ──┼──> Community Cloud        │
+│ (Organisation B) ──┼──>  Community Cloud       │
 │ (Organisation C) ──┘    nur für die Community  │
 └────────────────────────────────────────────────┘
 ```
@@ -176,7 +176,7 @@ Mehrere Organisationen mit gemeinsamen Anforderungen, etwa Behörden, Hochschule
 
 ```ascii
 ┌──────── Organisation A ────────┐       Provider
-│ Private Cloud                  │        Public Cloud
+│ ☁ Private Cloud                │        Public Cloud
 │ sensible Daten und Kernsysteme │<─────> Lastspitzen und Webdienste
 └────────────────────────────────┘  sichere Kopplung
 ```
@@ -376,7 +376,6 @@ Wer patcht bei einem typischen IaaS-Angebot das Betriebssystem der virtuellen Ma
 [( )] Immer der Cloud-Anbieter
 [( )] Niemand, weil Cloud-Systeme keine Patches benötigen
 [[?]] IaaS stellt vor allem Infrastruktur bereit. Das Gastbetriebssystem gehört weiterhin zum Verantwortungsbereich des Kunden.
-
 ****************************************
 
 Bei IaaS verantwortet der Anbieter die physische Infrastruktur und die Virtualisierung. Der Kunde administriert und patcht in der Regel das Gastbetriebssystem sowie seine Anwendungen.
@@ -407,3 +406,221 @@ Eine fachlich begründete Entscheidung betrachtet nicht nur den Preis. Zuerst we
 7. Entscheidung dokumentieren und regelmäßig überprüfen.
 
 > Diese Übersicht dient der fachlichen Orientierung und ersetzt keine Rechtsberatung. Datenschutzrechtliche Entscheidungen sollten mit den zuständigen Datenschutz- und Rechtsstellen abgestimmt werden.
+
+## Servicequalität, Zuverlässigkeit und Wiederherstellung
+
+Bei der Auswahl eines Cloud-Dienstes genügt es nicht, nur Deployment- und Service-Modell zu betrachten. Unternehmen müssen auch festlegen, **welche Dienstqualität benötigt wird**, **wie sie gemessen wird** und **wie schnell ein Dienst oder Datenbestand nach einer Störung wiederhergestellt werden muss**.
+
+### SLA, SLI und SLO
+
+Die drei Begriffe hängen zusammen, erfüllen aber unterschiedliche Aufgaben:
+
+| Begriff | Bedeutung | Leitfrage | Beispiel |
+|---|---|---|---|
+| **SLI – Service Level Indicator** | Tatsächlich gemessener Indikator für einen Dienst | Was wurde gemessen? | Im Monat waren 99,94 % der gültigen Anfragen erfolgreich. |
+| **SLO – Service Level Objective** | Intern oder gemeinsam festgelegter Zielwert für einen SLI | Welcher Wert soll erreicht werden? | Mindestens 99,9 % erfolgreiche Anfragen pro Kalendermonat. |
+| **SLA – Service Level Agreement** | Vertragliche Vereinbarung über die zu erbringende Dienstqualität | Was wird verbindlich zugesagt und was geschieht bei Nichterfüllung? | Monatliche Verfügbarkeit von 99,9 %; bei Unterschreitung entstehen vertraglich definierte Ansprüche. |
+
+Ein **SLI** liefert also den Messwert, ein **SLO** beschreibt das Ziel und ein **SLA** macht ausgewählte Leistungsziele zum Bestandteil einer vertraglichen Vereinbarung. Nicht jedes interne SLO muss Bestandteil eines SLA sein. Ein Anbieter kann intern strengere SLOs verwenden, um die vertragliche Zusage mit Sicherheitsabstand einzuhalten.
+
+Ein aussagekräftiges SLA sollte unter anderem festlegen:
+
+* den betrachteten Dienst und dessen Leistungsumfang,
+* eindeutige Messgrößen und Zielwerte,
+* Messpunkt, Messverfahren und Bezugszeitraum,
+* Betriebs- und Supportzeiten sowie Prioritätsklassen,
+* Reaktions-, Wiederherstellungs- und Eskalationszeiten,
+* Wartungsfenster und weitere vereinbarte Ausschlüsse,
+* Berichte, Nachweise und Ansprechpartner,
+* sowie Folgen einer Nichterfüllung, beispielsweise Servicegutschriften oder Sonderkündigungsrechte.
+
+> **Achtung:** Eine Angabe wie „99,9 % verfügbar“ ist ohne Bezugszeitraum, Messpunkt, Definition eines Ausfalls und Ausschlussregeln unvollständig. Außerdem ist eine Servicegutschrift kein technischer Ersatz für ein Notfallkonzept.
+
+### Verfügbarkeit
+
+Die Verfügbarkeit gibt an, welcher Anteil eines betrachteten Zeitraums ein System wie vereinbart nutzbar ist:
+
+$$
+Verfügbarkeit = \frac{vereinbarte\ Betriebszeit - anrechenbare\ Ausfallzeit}{vereinbarte\ Betriebszeit}
+$$
+
+Bei einer Betriebszeit von 24 Stunden an 365 Tagen ergeben sich näherungsweise folgende maximalen Ausfallzeiten:
+
+| zugesicherte Verfügbarkeit | maximale Ausfallzeit pro Jahr |
+|---:|---:|
+| 99 % | 87 Stunden 36 Minuten |
+| 99,9 % | 8 Stunden 45 Minuten 36 Sekunden |
+| 99,95 % | 4 Stunden 22 Minuten 48 Sekunden |
+| 99,99 % | 52 Minuten 34 Sekunden |
+
+Die tatsächlich anrechenbare Ausfallzeit hängt von der SLA-Definition ab. Geplante Wartung oder Störungen außerhalb eines festgelegten Messpunkts können beispielsweise ausgeschlossen sein.
+
+### MTBF – Mean Time Between Failures
+
+Die **MTBF** beschreibt bei einem reparierbaren System die durchschnittliche Betriebszeit **zwischen zwei Ausfällen**. Ein hoher Wert deutet darauf hin, dass Ausfälle vergleichsweise selten auftreten.
+
+$$
+MTBF = \frac{gesamte\ Betriebszeit}{Anzahl\ der\ Ausfälle}
+$$
+
+Beispiel: Ein System war zwischen mehreren Reparaturen insgesamt 4.800 Stunden in Betrieb und ist in diesem Zeitraum viermal ausgefallen.
+
+$$
+MTBF = \frac{4.800\ Stunden}{4} = 1.200\ Stunden
+$$
+
+Die MTBF ist ein statistischer Durchschnittswert. Sie bedeutet nicht, dass der nächste Ausfall exakt nach 1.200 Stunden eintritt, und sie ist keine garantierte Mindestlebensdauer.
+
+### MTTR – Mean Time to Repair oder Mean Time to Restore
+
+Die Abkürzung **MTTR** wird in der Praxis unterschiedlich verwendet. Häufig bedeutet sie:
+
+* **Mean Time to Repair:** durchschnittliche Zeit für die technische Reparatur oder
+* **Mean Time to Restore/Recover:** durchschnittliche Zeit, bis der Dienst wieder nutzbar ist.
+
+Deshalb muss in Dokumentationen und SLAs ausdrücklich festgelegt werden, welche Bedeutung, welcher Startzeitpunkt und welcher Endzustand gemeint sind. Eine kleinere MTTR steht für eine schnellere Wiederherstellung.
+
+$$
+MTTR = \frac{gesamte\ Reparatur-\ oder\ Wiederherstellungszeit}{Anzahl\ der\ Ausfälle}
+$$
+
+Unter vereinfachten Bedingungen kann die technische Verfügbarkeit eines reparierbaren Systems aus MTBF und MTTR abgeschätzt werden:
+
+$$
+Verfügbarkeit = \frac{MTBF}{MTBF + MTTR}
+$$
+
+Beispiel mit MTBF = 1.200 Stunden und MTTR = 3 Stunden:
+
+$$
+Verfügbarkeit = \frac{1.200}{1.200 + 3} \approx 99{,}751\,\%
+$$
+
+Diese Näherung ersetzt keine SLA-Berechnung. Sie betrachtet ein vereinfachtes System und berücksichtigt beispielsweise keine Wartungsfenster, Abhängigkeiten oder unterschiedlichen Fehlerklassen.
+
+### RTO – Recovery Time Objective
+
+Das **RTO** ist die angestrebte maximale Zeitspanne zwischen dem Ausfall und der Wiederherstellung eines Geschäftsprozesses oder IT-Dienstes auf ein zuvor definiertes Mindestniveau.
+
+Beispiel: Ein RTO von zwei Stunden bedeutet, dass der betroffene Dienst nach einer Störung innerhalb von höchstens zwei Stunden wieder in dem vereinbarten Umfang nutzbar sein soll.
+
+Ein kurzes RTO erfordert häufig zusätzliche technische und organisatorische Maßnahmen, etwa Redundanz, automatisiertes Failover, vorbereitete Ersatzumgebungen, klare Alarmierungswege und regelmäßig getestete Wiederanlaufpläne.
+
+### RPO – Recovery Point Objective
+
+Das **RPO** beschreibt den maximal tolerierbaren Datenverlust, ausgedrückt als Zeitspanne. Es beantwortet die Frage, bis zu welchem Zeitpunkt Daten nach einer Wiederherstellung mindestens vorliegen müssen.
+
+Beispiel: Bei einem RPO von 15 Minuten dürfen nach einer Störung höchstens die Änderungen der letzten 15 Minuten fehlen. Dafür müssen Sicherung oder Replikation in einem ausreichend kurzen Intervall erfolgen.
+
+Ein RPO von null würde bedeuten, dass kein Datenverlust akzeptiert wird. Dies erfordert in der Regel eine kontinuierliche oder synchrone Datenübertragung und ist technisch wie wirtschaftlich anspruchsvoll.
+
+### Abgrenzung von MTTR, RTO und RPO
+
+| Kennwert | Art | Kernaussage |
+|---|---|---|
+| **MTTR** | rückblickend gemessener Durchschnittswert | Wie lange dauerte die Reparatur oder Wiederherstellung durchschnittlich tatsächlich? |
+| **RTO** | vorausblickender Zielwert | Wie lange darf die Wiederherstellung höchstens dauern? |
+| **RPO** | vorausblickender Zielwert | Wie viele Minuten oder Stunden an Datenänderungen dürfen höchstens verloren gehen? |
+
+RTO und RPO werden aus dem Schutzbedarf und einer Business-Impact-Analyse abgeleitet. Sie beeinflussen Architektur, Backup-Konzept, Replikation, Personalbedarf und Kosten.
+
+### Selbstkontrolle: Begriffe unterscheiden
+
+Welcher Begriff bezeichnet einen **tatsächlich gemessenen** Wert?
+
+[(X)] SLI
+[( )] SLO
+[( )] SLA
+[( )] RTO
+****************************************
+
+Der SLI ist der gemessene Indikator. Das SLO ist der Zielwert; das SLA ist die vertragliche Vereinbarung.
+
+****************************************
+
+### Selbstkontrolle: Wiederherstellungsziele
+
+Nach einem Ausfall ist das System nach 90 Minuten wieder nutzbar. Es fehlen die Datenänderungen der letzten zehn Minuten. Welcher Wert beschreibt den maximal akzeptierten Datenverlust?
+
+[( )] MTBF
+[( )] MTTR
+[( )] RTO
+[(X)] RPO
+****************************************
+
+Das RPO wird als Zeitspanne angegeben und begrenzt den akzeptierten Datenverlust. Die Dauer bis zur Wiederherstellung gehört zum RTO beziehungsweise als Messwert zur MTTR.
+
+****************************************
+
+### Selbstkontrolle: Verfügbarkeit berechnen
+
+Ein reparierbares System hat eine MTBF von 500 Stunden und eine MTTR von 2 Stunden. Welche theoretische Verfügbarkeit ergibt sich näherungsweise?
+
+[( )] 96,000 %
+[( )] 98,000 %
+[(X)] 99,602 %
+[( )] 99,999 %
+****************************************
+
+$$
+\frac{500}{500 + 2} \cdot 100 \approx 99{,}602\,\%
+$$
+
+****************************************
+
+## Fallaufgabe: Cloud-Lösung für die NovaWerk Gerätebau GmbH
+
+Die **NovaWerk Gerätebau GmbH** ist ein vollständig fiktives Unternehmen mit rund 120 Beschäftigten. Sie entwickelt Mess- und Prüfgeräte für gewerbliche Kunden. Im eigenen Serverraum laufen derzeit eine Warenwirtschaft, eine Anwendung zur Produktionsplanung und eine zentrale Ablage für Konstruktionsunterlagen. Diese Systeme enthalten personenbezogene Kunden- und Beschäftigtendaten sowie vertrauliche technische Zeichnungen. Ein längerer Ausfall der Produktionsplanung würde Montage und Auslieferung verzögern.
+
+Zusätzlich soll ein neues Kundenportal eingeführt werden, über das Serviceeinsätze gebucht und Messprotokolle abgerufen werden können. Nach der Auslieferung neuer Produktserien rechnet NovaWerk zeitweise mit ungefähr sechsmal so vielen Portalzugriffen wie im Normalbetrieb. Die vierköpfige IT-Abteilung möchte den Aufwand für Plattformbetrieb und Patchmanagement reduzieren. Ein möglicher Cloud-Anbieter betreibt wählbare Regionen innerhalb der EU, greift für einzelne Supportleistungen aber auch auf Personal außerhalb der EU/des EWR zurück. Für das Kundenportal werden sowohl ein IaaS-Angebot als auch ein verwalteter PaaS-Dienst angeboten. Die Geschäftsführung fordert nachvollziehbare laufende Kosten, bedarfsgerechte Skalierung und eine realistische Wechselmöglichkeit zu einem anderen Anbieter.
+
+### Arbeitsauftrag – Grundniveau
+
+1. Ordnen Sie für die internen Produktionssysteme und das neue Kundenportal jeweils ein sinnvolles Deployment-Modell und Service-Modell zu.
+2. Begründen Sie jede Wahl mit mindestens drei Kriterien aus der Entscheidungshilfe.
+3. Nennen Sie je zwei Verantwortlichkeiten der NovaWerk Gerätebau GmbH und des Cloud-Anbieters.
+
+Welches Konzept ist unter den genannten Anforderungen am besten begründbar?
+
+[( )] Alle Systeme unverändert On-Premises betreiben; Datenschutz und Skalierung müssen dann nicht mehr geprüft werden.
+[(X)] Interne Produktionssysteme zunächst kontrolliert in einer privaten oder hybriden Umgebung betreiben und das Kundenportal elastisch in einer Public Cloud bereitstellen; für beide Teile Datenschutz, Verträge, Schnittstellen und Exit-Strategie prüfen.
+[( )] Sämtliche Systeme ohne weitere Prüfung als SaaS buchen; damit trägt ausschließlich der Anbieter die Verantwortung.
+[( )] Den billigsten Anbieter auswählen; Datenstandort und Exportmöglichkeiten sind nach Vertragsabschluss nachrangig.
+[[?]] Trennen Sie die Anforderungen der Workloads: Produktionsplanung und Konstruktionsdaten haben hohen Schutz- und Verfügbarkeitsbedarf; beim Kundenportal kommt eine stark schwankende Zugriffslast hinzu.
+****************************************
+
+Eine gut begründbare Lösung ist eine **Hybrid-Cloud-Strategie**: Die internen Produktionssysteme und vertraulichen Konstruktionsdaten verbleiben zunächst in einer kontrollierten privaten Umgebung oder werden erst nach einer Schutzbedarfs- und Migrationsanalyse verlagert. Das Kundenportal kann die Elastizität einer Public Cloud nutzen. PaaS kann die kleine IT-Abteilung stärker entlasten als IaaS, erhöht aber möglicherweise den Vendor Lock-in. Deshalb sind portable Datenformate, dokumentierte Schnittstellen, Exporttests und ein Exit-Plan wichtig. Für personenbezogene Daten müssen unter anderem Rollen, Auftragsverarbeitung, technische und organisatorische Maßnahmen sowie mögliche Drittlandzugriffe geprüft werden. Auch eine andere Lösung kann fachlich richtig sein, wenn sie die Anforderungen nachvollziehbar gewichtet und Risiken mit geeigneten Maßnahmen behandelt.
+
+****************************************
+
+### Arbeitsauftrag – Fachliche Vertiefung
+
+Erstellen Sie eine Nutzwertanalyse mit mindestens den Kriterien Datenschutz/Compliance, Verfügbarkeit, Skalierung, Gesamtkosten, Kontrollmöglichkeit und Vendor Lock-in. Gewichten Sie die Kriterien, bewerten Sie mindestens zwei Lösungsvarianten und führen Sie eine kurze Sensitivitätsanalyse durch: Ändert sich die Empfehlung, wenn Datenschutz oder Kosten stärker gewichtet werden?
+
+### Arbeitsauftrag – Expertenniveau
+
+Entwerfen Sie für Ihre bevorzugte Lösung zusätzlich:
+
+* eine Zuordnung der Verantwortlichkeiten nach dem Shared-Responsibility-Modell,
+* Maßnahmen für Verschlüsselung, Identitäts- und Berechtigungsmanagement, Protokollierung, Backup und Wiederanlauf,
+* ein Vorgehen zur Prüfung möglicher Drittlandtransfers,
+* messbare Anforderungen für ein Service Level Agreement,
+* sowie einen Exit-Plan mit Datenexport, Löschung, Fristen und Verantwortlichen.
+
+> **Bewertungshinweis:** Entscheidend ist nicht ein bestimmter Produktname. Bewertet werden die schlüssige Zuordnung der Modelle, die Gewichtung widersprüchlicher Anforderungen, der korrekte Umgang mit geteilter Verantwortung und die Qualität der begründeten Risikomaßnahmen.
+
+### Zusatzauftrag – Servicequalität und Notfallvorsorge
+
+Für das Kundenportal verlangt NovaWerk eine monatliche Verfügbarkeit von mindestens 99,9 %. Nach einer schwerwiegenden Störung soll das Portal innerhalb von 60 Minuten wieder eingeschränkt nutzbar sein. Es dürfen höchstens die Datenänderungen der letzten zehn Minuten fehlen.
+
+1. Ordnen Sie die drei Angaben den Begriffen Verfügbarkeit, RTO und RPO zu.
+2. Berechnen Sie die maximal anrechenbare Ausfallzeit in einem 30-Tage-Monat bei durchgehendem 24/7-Betrieb.
+3. Formulieren Sie mindestens zwei passende SLI, mit denen die Einhaltung gemessen werden kann.
+4. Nennen Sie mindestens vier Angaben, die im SLA zusätzlich präzisiert werden müssen.
+5. Schlagen Sie technische Maßnahmen vor, mit denen RTO und RPO erreicht und regelmäßig überprüft werden können.
+[[!]]
+****************************************
+
+**Lösungshinweise:** 99,9 % Verfügbarkeit erlauben in 30 Tagen mit insgesamt 43.200 Minuten höchstens 43,2 Minuten anrechenbare Ausfallzeit. Das RTO beträgt 60 Minuten, das RPO zehn Minuten. Geeignete SLI wären beispielsweise der gemessene Anteil erfolgreicher Portalaufrufe und die gemessene Zeit bis zur Wiederherstellung. Das SLA sollte unter anderem Messpunkt, Bezugszeitraum, Ausfalldefinition, Wartungsfenster, Reaktions- und Eskalationswege sowie Folgen einer Nichterfüllung bestimmen. Mögliche Maßnahmen sind redundante Komponenten, Überwachung, automatisiertes Failover, Replikation oder Sicherung in ausreichend kurzen Intervallen und regelmäßig getestete Wiederanlaufverfahren.
+
+****************************************
